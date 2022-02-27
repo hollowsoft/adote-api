@@ -1,4 +1,4 @@
-import { Entity, Column, OneToMany, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, OneToOne, OneToMany, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
 
 import { Post } from '../../post/entity/post.entity'
 import { Contact } from './contact.entity'
@@ -24,7 +24,7 @@ export class User {
   @JoinColumn()
   post: Post[]
 
-  @OneToMany(() => Contact, (contact) => contact.user)
+  @OneToOne(() => Contact)
   @JoinColumn()
-  contact: Contact[]
+  contact: Contact
 }
