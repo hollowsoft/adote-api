@@ -1,6 +1,6 @@
 import { Entity, Column, OneToOne, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
 
-import { Breed } from './breed.entity'
+import { Breed } from '../../breed/entity/breed.entity'
 import { PetSize } from './pet_size.entity'
 
 @Entity()
