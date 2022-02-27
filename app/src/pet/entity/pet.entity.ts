@@ -18,10 +18,6 @@ export class Pet {
   @Column()
   size: Size
 
-  @OneToOne(() => Kind)
-  @JoinColumn()
-  kind: Kind
-
   @OneToOne(() => Breed)
   @JoinColumn()
   breed: Breed

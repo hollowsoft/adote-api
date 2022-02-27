@@ -1,4 +1,4 @@
-import { Entity, Column, OneToOne, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
 import { Kind } from './kind.entity'
 
@@ -10,7 +10,6 @@ export class Breed {
   @Column()
   key: string
 
-  @OneToOne(() => Kind)
-  @JoinColumn()
+  @Column()
   kind: Kind
 }
