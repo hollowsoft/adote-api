@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
-import { Kind } from './kind.entity'
+import { PetKind } from './pet_kind.entity'
 
 @Entity()
 export class Breed {
@@ -11,5 +11,5 @@ export class Breed {
   key: string
 
   @Column()
-  kind: Kind
+  kind: PetKind
 }
