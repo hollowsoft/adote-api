@@ -1,6 +1,4 @@
-import { Entity, Column, OneToOne, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
-
-import { User } from './user.entity'
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
 
 @Entity()
 export class Contact {
@@ -15,8 +13,4 @@ export class Contact {
 
   @Column()
   social: string
-
-  @OneToOne(() => User)
-  @JoinColumn()
-  user: User
 }
