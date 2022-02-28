@@ -1,7 +1,7 @@
 import { Entity, Column, OneToOne, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
 
+import { Size } from './size.entity'
 import { Breed } from '../../breed/entity/breed.entity'
-import { PetSize } from './pet_size.entity'
 
 @Entity()
 export class Pet {
@@ -15,7 +15,7 @@ export class Pet {
   age: [number, number]
 
   @Column()
-  size: PetSize
+  size: Size
 
   @OneToOne(() => Breed)
   @JoinColumn()
