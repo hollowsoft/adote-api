@@ -1,4 +1,4 @@
-import { Entity, Column, OneToOne, JoinColumn, PrimaryGeneratedColumn, ManyToOne } from 'typeorm'
+import { Entity, Column, OneToOne, ManyToOne, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
 
 import { Pet } from '../../pet/entity/pet.entity'
 import { User } from '../../user/entity/user.entity'
@@ -22,7 +22,6 @@ export class Post {
   pet: Pet
 
   @ManyToOne(() => User, (user) => user.post)
-  @JoinColumn()
   user: User
 
   @Column()
