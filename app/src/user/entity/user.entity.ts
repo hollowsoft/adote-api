@@ -21,7 +21,6 @@ export class User {
   description: string
 
   @OneToMany(() => Post, (post) => post.user)
-  @JoinColumn()
   post: Post[]
 
   @OneToOne(() => Contact)
