@@ -1,7 +1,7 @@
 import { Entity, Column, OneToOne, ManyToOne, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
 
 import { Pet } from '../../pet/entity/pet.entity'
-import { City } from 'src/location/entity/city.entity'
+import { City } from '../../location/entity/city.entity'
 import { User } from '../../user/entity/user.entity'
 
 @Entity()
