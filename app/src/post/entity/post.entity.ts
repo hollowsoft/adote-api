@@ -25,8 +25,5 @@ export class Post {
   user: User
 
   @Column()
-  adopt: boolean
-
-  @Column()
   publish: boolean
 }
