@@ -26,4 +26,10 @@ export class User {
   @OneToOne(() => Contact)
   @JoinColumn()
   contact: Contact
+
+  @Column()
+  admin: boolean
+
+  @Column()
+  enable: boolean
 }
