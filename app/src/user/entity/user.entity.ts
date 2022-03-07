@@ -6,10 +6,10 @@ import { Contact } from './contact.entity'
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string
 
-  @Column()
+  @Column({ unique: true })
   mail: string
 
   @Column()
@@ -32,9 +32,9 @@ export class User {
   @JoinColumn()
   contact: Contact
 
-  @Column()
+  @Column({ default: false })
   admin: boolean
 
-  @Column()
+  @Column({ default: true })
   enable: boolean
 }
