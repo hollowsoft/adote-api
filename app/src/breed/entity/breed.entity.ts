@@ -4,12 +4,12 @@ import { Kind } from './kind.entity'
 
 @Entity()
 export class Breed {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string
 
   @Column()
   key: string
 
-  @Column()
+  @Column({ type: 'enum', enum: Kind })
   kind: Kind
 }
