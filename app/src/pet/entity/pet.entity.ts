@@ -5,7 +5,7 @@ import { Breed } from '../../breed/entity/breed.entity'
 
 @Entity()
 export class Pet {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string
 
   @Column()
@@ -14,7 +14,7 @@ export class Pet {
   @Column()
   age: [number, number]
 
-  @Column()
+  @Column({ type: 'enum', enum: Size })
   size: Size
 
   @OneToOne(() => Breed)
