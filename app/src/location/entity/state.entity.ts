@@ -4,7 +4,7 @@ import { Country } from './country.entity'
 
 @Entity()
 export class State {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string
 
   @Column()
