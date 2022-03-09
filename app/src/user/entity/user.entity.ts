@@ -1,4 +1,4 @@
-import { Entity, Column, OneToOne, OneToMany, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, JoinColumn, CreateDateColumn, UpdateDateColumn, OneToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
 
 import { Post } from '../../post/entity/post.entity'
 import { City } from '../../location/entity/city.entity'
@@ -8,6 +8,12 @@ import { Contact } from './contact.entity'
 export class User {
   @PrimaryGeneratedColumn('uuid')
   id: string
+
+  @CreateDateColumn()
+  create: Date
+
+  @UpdateDateColumn()
+  update: Date
 
   @Column({ unique: true })
   mail: string
