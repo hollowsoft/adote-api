@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedColumn } from 'typeorm'
 
 import { Kind } from './kind.entity'
 
@@ -6,6 +6,12 @@ import { Kind } from './kind.entity'
 export class Breed {
   @PrimaryGeneratedColumn('uuid')
   id: string
+
+  @CreateDateColumn()
+  create: Date
+
+  @UpdateDateColumn()
+  update: Date
 
   @Column()
   key: string
