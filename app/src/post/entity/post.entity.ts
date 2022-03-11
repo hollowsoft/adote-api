@@ -1,4 +1,4 @@
-import { Entity, Column, OneToOne, ManyToOne, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, JoinColumn, CreateDateColumn, UpdateDateColumn, OneToOne, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 
 import { Pet } from '../../pet/entity/pet.entity'
 import { City } from '../../location/entity/city.entity'
@@ -9,13 +9,19 @@ export class Post {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
+  @CreateDateColumn()
+  create: Date
+
+  @UpdateDateColumn()
+  update: Date
+
   @Column()
   name: string
 
   @Column()
   description: string
 
-  @Column()
+  @Column({ type: 'text', array: true })
   image: string[]
 
   @OneToOne(() => Pet)
