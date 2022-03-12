@@ -3,8 +3,8 @@ import { Injectable } from '@nestjs/common'
 import { Repository } from 'typeorm'
 import { InjectRepository } from '@nestjs/typeorm'
 
-import { Breed } from './entity/breed.entity'
 import { Kind } from './entity/kind.entity'
+import { Breed } from './entity/breed.entity'
 
 @Injectable()
 export class BreedService {
