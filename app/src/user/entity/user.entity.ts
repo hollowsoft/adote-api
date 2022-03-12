@@ -1,4 +1,15 @@
-import { Entity, Column, JoinColumn, CreateDateColumn, UpdateDateColumn, OneToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  Entity,
+  Column,
+  JoinTable,
+  JoinColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  OneToOne,
+  OneToMany,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm'
 
 import { Post } from '../../post/entity/post.entity'
 import { City } from '../../location/entity/city.entity'
@@ -29,6 +40,10 @@ export class User {
 
   @OneToMany(() => Post, (post) => post.user)
   post: Post[]
+
+  @ManyToMany(() => Post)
+  @JoinTable({ name: 'wish' })
+  wish: Post[]
 
   @OneToOne(() => City)
   @JoinColumn()
