@@ -1,4 +1,4 @@
-import { Entity, Column, OneToOne, OneToMany, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, JoinColumn, CreateDateColumn, UpdateDateColumn, OneToOne, OneToMany, PrimaryGeneratedColumn } from 'typeorm'
 
 import { Post } from '../../post/entity/post.entity'
 import { City } from '../../location/entity/city.entity'
@@ -6,10 +6,16 @@ import { Contact } from './contact.entity'
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string
 
-  @Column()
+  @CreateDateColumn()
+  create: Date
+
+  @UpdateDateColumn()
+  update: Date
+
+  @Column({ unique: true })
   mail: string
 
   @Column()
@@ -32,9 +38,9 @@ export class User {
   @JoinColumn()
   contact: Contact
 
-  @Column()
+  @Column({ default: false })
   admin: boolean
 
-  @Column()
+  @Column({ default: true })
   enable: boolean
 }

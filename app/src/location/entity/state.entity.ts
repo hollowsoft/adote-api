@@ -1,11 +1,17 @@
-import { Entity, Column, OneToOne, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, JoinColumn, CreateDateColumn, UpdateDateColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
 
 import { Country } from './country.entity'
 
 @Entity()
 export class State {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('uuid')
   id: string
+
+  @CreateDateColumn()
+  create: Date
+
+  @UpdateDateColumn()
+  update: Date
 
   @Column()
   name: string
