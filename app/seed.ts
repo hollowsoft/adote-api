@@ -602,6 +602,10 @@ const dogs = [
     kind: Kind.DOG
   },
   {
+    key: cimarron_uruguayo,
+    kind: Kind.DOG
+  },
+  {
     key: cirneco_dellEtna,
     kind: Kind.DOG
   },
@@ -1970,10 +1974,6 @@ const dogs = [
     kind: Kind.DOG
   },
   {
-    key: cimarron_uruguayo,
-    kind: Kind.DOG
-  },
-  {
     key: valencian_ratter,
     kind: Kind.DOG
   },
@@ -2056,5 +2056,404 @@ const dogs = [
   {
     key: yorkshire_terrier,
     kind: Kind.DOG
+  },
+]
+
+const cats = [
+  {
+    key: abyssinian,
+    kind: Kind.CAT
+  },
+  {
+    key: aegean,
+    kind: Kind.CAT
+  },
+  {
+    key: american_curl,
+    kind: Kind.CAT
+  },
+  {
+    key: american_bobtail,
+    kind: Kind.CAT
+  },
+  {
+    key: american_shorthair,
+    kind: Kind.CAT
+  },
+  {
+    key: american_wirehair,
+    kind: Kind.CAT
+  },
+  {
+    key: arabian_mau,
+    kind: Kind.CAT
+  },
+  {
+    key: australian_mist,
+    kind: Kind.CAT
+  },
+  {
+    key: asian,
+    kind: Kind.CAT
+  },
+  {
+    key: asian_semi_longhair,
+    kind: Kind.CAT
+  },
+  {
+    key: balinese,
+    kind: Kind.CAT
+  },
+  {
+    key: bambino,
+    kind: Kind.CAT
+  },
+  {
+    key: bengal,
+    kind: Kind.CAT
+  },
+  {
+    key: birman,
+    kind: Kind.CAT
+  },
+  {
+    key: bombay,
+    kind: Kind.CAT
+  },
+  {
+    key: brazilian_shorthair,
+    kind: Kind.CAT
+  },
+  {
+    key: british_semi_longhair,
+    kind: Kind.CAT
+  },
+  {
+    key: british_shorthair,
+    kind: Kind.CAT
+  },
+  {
+    key: british_longhair,
+    kind: Kind.CAT
+  },
+  {
+    key: burmese,
+    kind: Kind.CAT
+  },
+  {
+    key: burmilla,
+    kind: Kind.CAT
+  },
+  {
+    key: california_spangled,
+    kind: Kind.CAT
+  },
+  {
+    key: chantilly_tiffany,
+    kind: Kind.CAT
+  },
+  {
+    key: chartreux,
+    kind: Kind.CAT
+  },
+  {
+    key: chausie,
+    kind: Kind.CAT
+  },
+  {
+    key: cheetoh,
+    kind: Kind.CAT
+  },
+  {
+    key: colorpoint_shorthair,
+    kind: Kind.CAT
+  },
+  {
+    key: cornish_rex,
+    kind: Kind.CAT
+  },
+  {
+    key: cymric,
+    kind: Kind.CAT
+  },
+  {
+    key: cyprus,
+    kind: Kind.CAT
+  },
+  {
+    key: devon_rex,
+    kind: Kind.CAT
+  },
+  {
+    key: donskoy,
+    kind: Kind.CAT
+  },
+  {
+    key: dragon_li,
+    kind: Kind.CAT
+  },
+  {
+    key: dwarf_cat,
+    kind: Kind.CAT
+  },
+  {
+    key: egyptian_mau,
+    kind: Kind.CAT
+  },
+  {
+    key: european_shorthair,
+    kind: Kind.CAT
+  },
+  {
+    key: exotic_shorthair,
+    kind: Kind.CAT
+  },
+  {
+    key: foldex,
+    kind: Kind.CAT
+  },
+  {
+    key: german_rex,
+    kind: Kind.CAT
+  },
+  {
+    key: havana_brown,
+    kind: Kind.CAT
+  },
+  {
+    key: highlander,
+    kind: Kind.CAT
+  },
+  {
+    key: himalayan,
+    kind: Kind.CAT
+  },
+  {
+    key: japanese_bobtail,
+    kind: Kind.CAT
+  },
+  {
+    key: javanese,
+    kind: Kind.CAT
+  },
+  {
+    key: karelian_bobtail,
+    kind: Kind.CAT
+  },
+  {
+    key: khao_manee,
+    kind: Kind.CAT
+  },
+  {
+    key: korat,
+    kind: Kind.CAT
+  },
+  {
+    key: korean_bobtail,
+    kind: Kind.CAT
+  },
+  {
+    key: korn_ja,
+    kind: Kind.CAT
+  },
+  {
+    key: kurilian_bobtail,
+    kind: Kind.CAT
+  },
+  {
+    key: laperm,
+    kind: Kind.CAT
+  },
+  {
+    key: lykoi,
+    kind: Kind.CAT
+  },
+  {
+    key: maine_coon,
+    kind: Kind.CAT
+  },
+  {
+    key: manx,
+    kind: Kind.CAT
+  },
+  {
+    key: mekong_bobtail,
+    kind: Kind.CAT
+  },
+  {
+    key: minskin,
+    kind: Kind.CAT
+  },
+  {
+    key: munchkin,
+    kind: Kind.CAT
+  },
+  {
+    key: nebelung,
+    kind: Kind.CAT
+  },
+  {
+    key: napoleon,
+    kind: Kind.CAT
+  },
+  {
+    key: norwegian_forest_cat,
+    kind: Kind.CAT
+  },
+  {
+    key: ocicat,
+    kind: Kind.CAT
+  },
+  {
+    key: ojos_azules,
+    kind: Kind.CAT
+  },
+  {
+    key: oregon_rex,
+    kind: Kind.CAT
+  },
+  {
+    key: oriental_bicolor,
+    kind: Kind.CAT
+  },
+  {
+    key: oriental_shorthair,
+    kind: Kind.CAT
+  },
+  {
+    key: oriental_longhair,
+    kind: Kind.CAT
+  },
+  {
+    key: perfold,
+    kind: Kind.CAT
+  },
+  {
+    key: persian_modern_persian_cat,
+    kind: Kind.CAT
+  },
+  {
+    key: persian_traditional_persian_cat,
+    kind: Kind.CAT
+  },
+  {
+    key: peterbald,
+    kind: Kind.CAT
+  },
+  {
+    key: pixie_bob,
+    kind: Kind.CAT
+  },
+  {
+    key: raas,
+    kind: Kind.CAT
+  },
+  {
+    key: ragamuffin,
+    kind: Kind.CAT
+  },
+  {
+    key: ragdoll,
+    kind: Kind.CAT
+  },
+  {
+    key: russian_blue,
+    kind: Kind.CAT
+  },
+  {
+    key: russian_white_black_and_tabby,
+    kind: Kind.CAT
+  },
+  {
+    key: sam_sawet,
+    kind: Kind.CAT
+  },
+  {
+    key: savannah,
+    kind: Kind.CAT
+  },
+  {
+    key: scottish_fold,
+    kind: Kind.CAT
+  },
+  {
+    key: selkirk_rex,
+    kind: Kind.CAT
+  },
+  {
+    key: serengeti,
+    kind: Kind.CAT
+  },
+  {
+    key: serrade_petit,
+    kind: Kind.CAT
+  },
+  {
+    key: siamese,
+    kind: Kind.CAT
+  },
+  {
+    key: siberian,
+    kind: Kind.CAT
+  },
+  {
+    key: singapura,
+    kind: Kind.CAT
+  },
+  {
+    key: snowshoe,
+    kind: Kind.CAT
+  },
+  {
+    key: sokoke,
+    kind: Kind.CAT
+  },
+  {
+    key: somali,
+    kind: Kind.CAT
+  },
+  {
+    key: sphynx,
+    kind: Kind.CAT
+  },
+  {
+    key: suphalak,
+    kind: Kind.CAT
+  },
+  {
+    key: thai,
+    kind: Kind.CAT
+  },
+  {
+    key: thai_lilac,
+    kind: Kind.CAT
+  },
+  {
+    key: tiffany,
+    kind: Kind.CAT
+  },
+  {
+    key: tonkinese,
+    kind: Kind.CAT
+  },
+  {
+    key: toyger,
+    kind: Kind.CAT
+  },
+  {
+    key: turkish_angora,
+    kind: Kind.CAT
+  },
+  {
+    key: turkish_van,
+    kind: Kind.CAT
+  },
+  {
+    key: ukrainian_levkoy,
+    kind: Kind.CAT
+  },
+  {
+    key: york_chocolate,
+    kind: Kind.CAT
   },
 ]
