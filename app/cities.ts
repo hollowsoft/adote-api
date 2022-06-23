@@ -2424,3 +2424,117 @@ const ceara = [
     name: 'Viçosa do Ceará',
   },
 ]
+
+const distritoFederal = [
+  {
+    name: 'Águas Claras',
+  },
+  {
+    name: 'Arniqueira',
+  },
+  {
+    name: 'Brasília',
+  },
+  {
+    name: 'Brazlândia',
+  },
+  {
+    name: 'Candangolândia',
+  },
+  {
+    name: 'Ceilândia',
+  },
+  {
+    name: 'Cruzeiro',
+  },
+  {
+    name: 'Estrutural',
+  },
+  {
+    name: 'Fercal',
+  },
+  {
+    name: 'Gama',
+  },
+  {
+    name: 'Guará',
+  },
+  {
+    name: 'Itapoã',
+  },
+  {
+    name: 'Jardim Botânico',
+  },
+  {
+    name: 'Lago Norte',
+  },
+  {
+    name: 'Lago Sul',
+  },
+  {
+    name: 'Núcleo Bandeirante',
+  },
+  {
+    name: 'Octogonal',
+  },
+  {
+    name: 'Paranoá',
+  },
+  {
+    name: 'Park Way',
+  },
+  {
+    name: 'Planaltina',
+  },
+  {
+    name: 'Plano Piloto',
+  },
+  {
+    name: 'Pôr do Sol',
+  },
+  {
+    name: 'Recanto das Emas',
+  },
+  {
+    name: 'Riacho Fundo II',
+  },
+  {
+    name: 'Riacho Fundo',
+  },
+  {
+    name: 'Samambaia',
+  },
+  {
+    name: 'Santa Maria',
+  },
+  {
+    name: 'São Sebastião',
+  },
+  {
+    name: 'SIA',
+  },
+  {
+    name: 'Sobradinho',
+  },
+  {
+    name: 'Sobradinho II',
+  },
+  {
+    name: 'Sol Nascente',
+  },
+  {
+    name: 'Sudoeste',
+  },
+  {
+    name: 'Taguatinga',
+  },
+  {
+    name: 'Taguatinga',
+  },
+  {
+    name: 'Varjão',
+  },
+  {
+    name: 'Vicente Pires',
+  },
+]
