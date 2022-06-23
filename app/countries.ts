@@ -1,5 +1,5 @@
 const countries = [
   {
-    country: 'Brazil',
+    name: 'Brazil',
   },
 ]
