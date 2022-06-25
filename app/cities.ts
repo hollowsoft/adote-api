@@ -13191,3 +13191,162 @@ const rioGrandeDoSul = [
     name: 'Xangri-lá',
   },
 ]
+
+const rondonia = [
+  {
+    name: 'Alta Floresta dOeste',
+  },
+  {
+    name: 'Alto Alegre do Parecis',
+  },
+  {
+    name: 'Alto Paraíso',
+  },
+  {
+    name: 'Alvorada dOeste',
+  },
+  {
+    name: 'Ariquemes',
+  },
+  {
+    name: 'Buritis',
+  },
+  {
+    name: 'Cabixi',
+  },
+  {
+    name: 'Cacaulândia',
+  },
+  {
+    name: 'Cacoal',
+  },
+  {
+    name: 'Campo Novo de Rondônia',
+  },
+  {
+    name: 'Candeias do Jamari',
+  },
+  {
+    name: 'Castanheiras',
+  },
+  {
+    name: 'Cerejeiras',
+  },
+  {
+    name: 'Chupinguaia',
+  },
+  {
+    name: 'Colorado do Oeste',
+  },
+  {
+    name: 'Corumbiara',
+  },
+  {
+    name: 'Costa Marques',
+  },
+  {
+    name: 'Cujubim',
+  },
+  {
+    name: 'Espigão dOeste',
+  },
+  {
+    name: 'Governador Jorge Teixeira',
+  },
+  {
+    name: 'Guajará-Mirim',
+  },
+  {
+    name: 'Itapuã do Oeste',
+  },
+  {
+    name: 'Jaru',
+  },
+  {
+    name: 'Ji-Paraná',
+  },
+  {
+    name: 'Machadinho dOeste',
+  },
+  {
+    name: 'Ministro Andreazza',
+  },
+  {
+    name: 'Mirante da Serra',
+  },
+  {
+    name: 'Monte Negro',
+  },
+  {
+    name: 'Nova Brasilândia dOeste',
+  },
+  {
+    name: 'Nova Mamoré',
+  },
+  {
+    name: 'Nova União',
+  },
+  {
+    name: 'Novo Horizonte do Oeste',
+  },
+  {
+    name: 'Ouro Preto do Oeste',
+  },
+  {
+    name: 'Parecis',
+  },
+  {
+    name: 'Pimenta Bueno',
+  },
+  {
+    name: 'Pimenteiras do Oeste',
+  },
+  {
+    name: 'Porto Velho',
+  },
+  {
+    name: 'Presidente Médici',
+  },
+  {
+    name: 'Primavera de Rondônia',
+  },
+  {
+    name: 'Rio Crespo',
+  },
+  {
+    name: 'Rolim de Moura',
+  },
+  {
+    name: 'Santa Luzia dOeste',
+  },
+  {
+    name: 'São Felipe dOeste',
+  },
+  {
+    name: 'São Francisco do Guaporé',
+  },
+  {
+    name: 'São Miguel do Guaporé',
+  },
+  {
+    name: 'Seringueiras',
+  },
+  {
+    name: 'Teixeirópolis',
+  },
+  {
+    name: 'Theobroma',
+  },
+  {
+    name: 'Urupá',
+  },
+  {
+    name: 'Vale do Anari',
+  },
+  {
+    name: 'Vale do Paraíso',
+  },
+  {
+    name: 'Vilhena',
+  },
+]
