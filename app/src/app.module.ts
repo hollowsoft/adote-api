@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import { UserModule } from './user/user.module'
 import { BreedModule } from './breed/breed.module'
 
+// TODO: Review this
+import config from './env'
+
 @Module({
-  imports: [TypeOrmModule.forRoot(), UserModule, BreedModule],
+  imports: [TypeOrmModule.forRoot(config), BreedModule],
 })
 export class AppModule {}
