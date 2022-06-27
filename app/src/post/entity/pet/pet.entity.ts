@@ -3,7 +3,7 @@ import { Entity, Column, JoinColumn, CreateDateColumn, UpdateDateColumn, OneToOn
 import { Size } from './size.entity'
 import { Gender } from './gender.entity'
 
-import { Breed } from '../../breed/entity/breed.entity'
+import { Breed } from '../../../breed/entity/breed.entity'
 
 @Entity()
 export class Pet {
