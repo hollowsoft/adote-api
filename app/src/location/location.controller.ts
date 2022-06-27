@@ -1,15 +1,20 @@
 import { Controller, Get, Query } from '@nestjs/common'
 
-import { City } from './entity/city.entity'
-
 import { LocationService } from './location.service'
+
+import { SearchLocationRequest } from './request/search.location.request'
+import { SearchLocationResponse } from './response/search.location.response'
 
 @Controller('location')
 export class LocationController {
   constructor(private readonly service: LocationService) {}
 
   @Get('search')
-  search(@Query('term') term: string): Promise<City[]> {
-    return this.service.find(term)
+  async search(@Query() request: SearchLocationRequest): Promise<SearchLocationResponse[]> {
+    const { term } = request
+
+    const list = await this.service.search(term)
+
+    return list.map((city) => new SearchLocationResponse(city))
   }
 }
