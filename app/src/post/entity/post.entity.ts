@@ -1,6 +1,6 @@
 import { Entity, Column, JoinColumn, CreateDateColumn, UpdateDateColumn, OneToOne, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 
-import { Pet } from '../../pet/entity/pet.entity'
+import { Pet } from './pet/pet.entity'
 import { City } from '../../location/entity/city.entity'
 import { User } from '../../user/entity/user.entity'
 
