@@ -9,6 +9,11 @@ const config = {
   database: 'd48qme3gauv0gi',
   entities: [Breed],
   synchronize: true,
+  migrations: ['migration/*.ts'],
+  migrationsTableName: 'schema',
+  cli: {
+    migrationsDir: 'src/migration',
+  },
   extra: {
     ssl: {
       rejectUnauthorized: false,
