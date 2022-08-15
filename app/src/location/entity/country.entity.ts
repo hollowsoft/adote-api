@@ -2,15 +2,21 @@ import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedCol
 
 @Entity()
 export class Country {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'create' })
   create: Date
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'update' })
   update: Date
 
-  @Column()
+  @Column({ name: 'key' })
   key: string
+
+  @Column({ name: 'en' })
+  en: string
+
+  @Column({ name: 'pt' })
+  pt: string
 }

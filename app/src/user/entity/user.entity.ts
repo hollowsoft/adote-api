@@ -17,26 +17,26 @@ import { Contact } from './contact.entity'
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'create' })
   create: Date
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'update' })
   update: Date
 
-  @Column({ unique: true })
+  @Column({ name: 'mail', unique: true })
   mail: string
 
-  @Column()
-  name: string
+  @Column({ name: 'name', nullable: true })
+  name?: string
 
-  @Column()
-  image: string
+  @Column({ name: 'image', nullable: true })
+  image?: string
 
-  @Column()
-  description: string
+  @Column({ name: 'description', nullable: true })
+  description?: string
 
   @OneToMany(() => Post, (post) => post.user)
   post: Post[]
@@ -46,16 +46,16 @@ export class User {
   wish: Post[]
 
   @OneToOne(() => City)
-  @JoinColumn()
-  city: City
+  @JoinColumn({ name: 'city_id' })
+  city?: City
 
   @OneToOne(() => Contact)
-  @JoinColumn()
-  contact: Contact
+  @JoinColumn({ name: 'contact_id' })
+  contact?: Contact
 
-  @Column({ default: false })
+  @Column({ name: 'admin', default: false })
   admin: boolean
 
-  @Column({ default: true })
+  @Column({ name: 'enable', default: true })
   enable: boolean
 }

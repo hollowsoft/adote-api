@@ -7,28 +7,28 @@ import { Breed } from '../../../breed/entity/breed.entity'
 
 @Entity()
 export class Pet {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'create' })
   create: Date
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'update' })
   update: Date
 
-  @Column()
+  @Column({ name: 'name' })
   name: string
 
-  @Column({ type: 'int', array: true })
+  @Column({ name: 'age', type: 'int', array: true })
   age: [number, number]
 
-  @Column({ type: 'enum', enum: Size })
+  @Column({ name: 'size', type: 'enum', enum: Size })
   size: Size
 
-  @Column({ type: 'enum', enum: Gender })
+  @Column({ name: 'gender', type: 'enum', enum: Gender })
   gender: Gender
 
   @OneToOne(() => Breed)
-  @JoinColumn()
+  @JoinColumn({ name: 'breed_id' })
   breed: Breed
 }

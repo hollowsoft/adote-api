@@ -4,19 +4,19 @@ import { State } from './state.entity'
 
 @Entity()
 export class City {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'create' })
   create: Date
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'update' })
   update: Date
 
-  @Column()
+  @Column({ name: 'name' })
   name: string
 
   @OneToOne(() => State)
-  @JoinColumn()
+  @JoinColumn({ name: 'state_id' })
   state: State
 }
