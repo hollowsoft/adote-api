@@ -16,7 +16,7 @@ export class Post {
   update: Date
 
   @Column()
-  name: string
+  title: string
 
   @Column()
   description: string

@@ -12,5 +12,5 @@ export class Country {
   update: Date
 
   @Column()
-  name: string
+  key: string
 }

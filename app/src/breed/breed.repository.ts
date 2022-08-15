@@ -11,6 +11,6 @@ export class BreedRepository {
   constructor(@InjectRepository(Breed) private readonly repository: Repository<Breed>) {}
 
   find(kind?: Kind): Promise<Breed[]> {
-    return this.repository.find({ kind })
+    return this.repository.findBy({ kind })
   }
 }

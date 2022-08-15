@@ -7,6 +7,6 @@ import { BreedModule } from './breed/breed.module'
 import config from './env'
 
 @Module({
-  imports: [TypeOrmModule.forRoot(config), BreedModule],
+  imports: [TypeOrmModule.forRootAsync(config), BreedModule],
 })
 export class AppModule {}
