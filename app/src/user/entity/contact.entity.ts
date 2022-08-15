@@ -2,21 +2,21 @@ import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedCol
 
 @Entity()
 export class Contact {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'create' })
   create: Date
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'update' })
   update: Date
 
-  @Column()
-  mail: string
+  @Column({ name: 'mail', unique: true })
+  mail?: string
 
-  @Column()
-  phone: string
+  @Column({ name: 'phone', nullable: true })
+  phone?: string
 
-  @Column()
-  social: string
+  @Column({ name: 'social', nullable: true })
+  social?: string
 }
