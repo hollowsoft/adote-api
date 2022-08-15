@@ -6,35 +6,36 @@ import { User } from '../../user/entity/user.entity'
 
 @Entity()
 export class Post {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 
-  @CreateDateColumn()
+  @CreateDateColumn({ name: 'create' })
   create: Date
 
-  @UpdateDateColumn()
+  @UpdateDateColumn({ name: 'update' })
   update: Date
 
-  @Column()
+  @Column({ name: 'title' })
   title: string
 
-  @Column()
+  @Column({ name: 'description' })
   description: string
 
-  @Column({ type: 'text', array: true })
+  @Column({ name: 'image', type: 'text', array: true })
   image: string[]
 
   @OneToOne(() => Pet)
-  @JoinColumn()
+  @JoinColumn({ name: 'pet_id' })
   pet: Pet
 
   @OneToOne(() => City)
-  @JoinColumn()
+  @JoinColumn({ name: 'city_id' })
   city: City
 
   @ManyToOne(() => User, (user) => user.post)
+  @JoinColumn({ name: 'user_id' })
   user: User
 
-  @Column()
+  @Column({ name: 'publish' })
   publish: boolean
 }
