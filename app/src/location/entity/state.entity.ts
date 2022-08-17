@@ -4,6 +4,10 @@ import { Country } from './country.entity'
 
 @Entity()
 export class State {
+  constructor(state: Partial<State>) {
+    Object.assign(this, state)
+  }
+
   @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 
