@@ -10,6 +10,6 @@ export class CityRepository {
   constructor(@InjectRepository(City) private readonly repository: Repository<City>) {}
 
   search(term: string): Promise<City[]> {
-    return this.repository.find({ name: Like(`%${term}%`) })
+    return this.repository.findBy({ name: Like(`%${term}%`) })
   }
 }

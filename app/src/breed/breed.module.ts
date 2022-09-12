@@ -7,7 +7,6 @@ import { GetBreedCase } from './case/get.breed.case'
 
 import { BreedService } from './breed.service'
 import { BreedRepository } from './breed.repository'
-
 import { BreedController } from './breed.controller'
 
 @Module({
