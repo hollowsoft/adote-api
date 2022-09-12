@@ -9,7 +9,6 @@ import { SearchLocationCase } from './case/search.location.case'
 
 import { CityRepository } from './city.repository'
 import { LocationService } from './location.service'
-
 import { LocationController } from './location.controller'
 
 @Module({

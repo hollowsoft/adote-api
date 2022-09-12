@@ -4,31 +4,20 @@ import { NestFactory } from '@nestjs/core'
 import { ValidationPipe } from '@nestjs/common'
 import { NestFastifyApplication, FastifyAdapter } from '@nestjs/platform-fastify'
 
-import * as environment from 'dotenv'
-
-import cross from 'fastify-csrf'
-
-import { fastifyHelmet as helmet } from 'fastify-helmet'
-
-import { isDev } from './helper/environment'
+import helmet from '@fastify/helmet'
 
 import { AppModule } from './app.module'
 
 const load = async () => {
-  const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter())
+  const application = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter(), { cors: true })
 
-  if (isDev()) {
-    environment.config()
-  }
+  await application.register(helmet)
 
-  await app.register(cross)
-  await app.register(helmet)
+  application.useGlobalPipes(new ValidationPipe())
 
-  app.useGlobalPipes(new ValidationPipe())
+  application.setGlobalPrefix('/api')
 
-  app.setGlobalPrefix('/api')
-
-  await app.listen(process.env.PORT ?? 4000)
+  await application.listen(process.env.PORT ?? 4000)
 }
 
 load()
