@@ -18,8 +18,9 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "migration:run": "typeorm-ts-node-commonjs migration:run -d config/repository/migration.ts",
-    "migration:revert": "typeorm-ts-node-commonjs migration:revert -d config/repository/migration.ts"
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:run": "yarn typeorm migration:run -d config/repository/migration.ts",
+    "migration:revert": "yarn typeorm migration:revert -d config/repository/migration.ts"
   },
   "dependencies": {
     "@fastify/helmet": "^9.1.0",
