@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import { BreedModule } from './breed/breed.module'
-import { LocationModule } from './location/location.module'
+import { BreedModule } from './module/breed/breed.module'
+import { LocationModule } from './module/location/location.module'
 
 import { RepositoryConfigService } from './repository.config.service'
 
