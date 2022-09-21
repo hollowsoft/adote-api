@@ -1,9 +1,9 @@
 import { QueryRunner, MigrationInterface } from 'typeorm'
 
-import { State } from '../location/entity/state.entity'
-import { Country } from '../location/entity/country.entity'
+import { State } from '../../module/location/entity/state.entity'
+import { Country } from '../../module/location/entity/country.entity'
 
-export class CreateStateContent_1656380637233 implements MigrationInterface {
+export class State_1656380637233 implements MigrationInterface {
   public async up(query: QueryRunner) {
     const country = await query.manager.findOneBy(Country, { key: 'brazil' })
 
