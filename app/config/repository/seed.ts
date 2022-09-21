@@ -12,8 +12,8 @@ export default new DataSource({
   password: process.env.DATABASE_PASS,
   database: process.env.DATABASE_NAME,
   entities: ['**/*.entity.ts'],
-  migrations: ['**/repository/migration/*.ts'],
-  migrationsTableName: 'migration',
+  migrations: ['**/repository/seed/*.ts'],
+  migrationsTableName: 'seed',
   ssl: {
     rejectUnauthorized: false
   }

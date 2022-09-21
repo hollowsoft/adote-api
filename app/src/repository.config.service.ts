@@ -15,7 +15,7 @@ export class RepositoryConfigService implements TypeOrmOptionsFactory {
       password: this.service.get<string>("DATABASE_PASS"),
       database: this.service.get<string>("DATABASE_NAME"),
       ssl: {
-        rejectUnauthorized: false,
+        rejectUnauthorized: false
       }
     }
   }
