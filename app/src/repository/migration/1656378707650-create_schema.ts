@@ -1,7 +1,7 @@
 import { Table, TableForeignKey, QueryRunner, MigrationInterface } from 'typeorm'
 
 export class CreateSchema_1656378707650 implements MigrationInterface {
-  async up(query: QueryRunner): Promise<void> {
+  async up(query: QueryRunner) {
     await query.query('create extension if not exists "uuid-ossp"')
 
     await query.createTable(
@@ -257,7 +257,7 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
     }))
   }
 
-  public async down(query: QueryRunner): Promise<void> {
+  async down(query: QueryRunner) {
     // city
     await query.dropForeignKey('city', 'city_state')
 
