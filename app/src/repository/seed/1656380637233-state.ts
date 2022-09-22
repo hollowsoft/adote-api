@@ -4,7 +4,7 @@ import { State } from '../../module/location/entity/state.entity'
 import { Country } from '../../module/location/entity/country.entity'
 
 export class State_1656380637233 implements MigrationInterface {
-  public async up(query: QueryRunner) {
+  async up(query: QueryRunner) {
     const country = await query.manager.findOneBy(Country, { key: 'brazil' })
 
     await query.manager.save(State, [
@@ -38,7 +38,7 @@ export class State_1656380637233 implements MigrationInterface {
     ])
   }
 
-  public async down(query: QueryRunner) {
+  async down(query: QueryRunner) {
     await query.clearTable('state')
   }
 }

@@ -1,7 +1,7 @@
 import { Table, TableForeignKey, QueryRunner, MigrationInterface } from 'typeorm'
 
 export class CreateSchema_1656378707650 implements MigrationInterface {
-  async up(query: QueryRunner): Promise<void> {
+  async up(query: QueryRunner) {
     await query.query('create extension if not exists "uuid-ossp"')
 
     await query.createTable(
@@ -96,9 +96,9 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
           { name: 'create', type: 'timestamp', default: 'now()' },
           { name: 'update', type: 'timestamp', default: 'now()' },
           { name: 'key', type: 'text' },
-          { name: 'kind', type: 'enum', enum: ['cat', 'dog'] },
           { name: 'en', type: 'text' },
-          { name: 'pt', type: 'text' }
+          { name: 'pt', type: 'text' },
+          { name: 'kind', type: 'enum', enum: ['cat', 'dog'] }
         ],
         indices: [
           { name: 'breed_name_en', columnNames: ['en'] },
@@ -257,7 +257,7 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
     }))
   }
 
-  public async down(query: QueryRunner): Promise<void> {
+  async down(query: QueryRunner) {
     // city
     await query.dropForeignKey('city', 'city_state')
 
