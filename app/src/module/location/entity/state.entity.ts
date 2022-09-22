@@ -17,8 +17,14 @@ export class State {
   @UpdateDateColumn({ name: 'update' })
   update: Date
 
-  @Column({ name: 'name' })
-  name: string
+  @Column({ name: 'key' })
+  key: string
+
+  @Column({ name: 'en' })
+  en: string
+
+  @Column({ name: 'pt' })
+  pt: string
 
   @OneToOne(() => Country)
   @JoinColumn({ name: 'country_id' })
