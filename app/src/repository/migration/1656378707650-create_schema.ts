@@ -96,9 +96,9 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
           { name: 'create', type: 'timestamp', default: 'now()' },
           { name: 'update', type: 'timestamp', default: 'now()' },
           { name: 'key', type: 'text' },
-          { name: 'kind', type: 'enum', enum: ['cat', 'dog'] },
           { name: 'en', type: 'text' },
-          { name: 'pt', type: 'text' }
+          { name: 'pt', type: 'text' },
+          { name: 'kind', type: 'enum', enum: ['cat', 'dog'] }
         ],
         indices: [
           { name: 'breed_name_en', columnNames: ['en'] },
