@@ -17,6 +17,10 @@ import { Contact } from './contact.entity'
 
 @Entity()
 export class User {
+  constructor(user: Partial<User>) {
+    Object.assign(this, user)
+  }
+
   @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 
