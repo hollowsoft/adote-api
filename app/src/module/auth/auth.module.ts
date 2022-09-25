@@ -4,6 +4,7 @@ import { UserModule } from '../user/user.module'
 
 import { AuthService } from './auth.service'
 import { AuthMailCase } from './case/auth.mail.case'
+import { AuthTokenCase } from './case/auth.token.case'
 
 import { AuthController } from './auth.controller'
 
@@ -11,7 +12,8 @@ import { AuthController } from './auth.controller'
   imports: [UserModule],
   providers: [
     AuthService,
-    AuthMailCase
+    AuthMailCase,
+    AuthTokenCase
   ],
   controllers: [AuthController],
 })

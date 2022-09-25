@@ -1,15 +1,21 @@
-import { Controller, Get } from '@nestjs/common'
-
-import { User } from './entity/user.entity'
+import {
+  Get,
+  Param,
+  Controller
+} from '@nestjs/common'
 
 import { UserService } from './user.service'
+
+import { GetUserResponse } from './response/get.user.response'
 
 @Controller('user')
 export class UserController {
   constructor(private readonly service: UserService) {}
 
-  @Get()
-  get(): Promise<User[]> {
-    return this.service.find()
+  @Get(':id')
+  async get(@Param('id') id: string): Promise<GetUserResponse> {
+    const user = await this.service.get(id)
+
+    return new GetUserResponse(user)
   }
 }
