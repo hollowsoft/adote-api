@@ -9,6 +9,9 @@ import { AuthService } from './auth.service'
 import { AuthMailRequest } from './request/auth.mail.request'
 import { AuthMailResponse } from './response/auth.mail.response'
 
+import { AuthTokenRequest } from './request/auth.token.request'
+import { AuthTokenResponse } from './response/auth.token.response'
+
 @Controller('auth')
 export class AuthController {
   constructor(private readonly service: AuthService) {}
@@ -20,5 +23,14 @@ export class AuthController {
     const user = await this.service.mail(mail)
 
     return new AuthMailResponse(user)
+  }
+
+  @Post('token')
+  async token(@Body() request: AuthTokenRequest): Promise<AuthTokenResponse> {
+    const { mail, code } = request
+    
+    await this.service.token(mail, code)
+
+    return new AuthTokenResponse()
   }
 }
