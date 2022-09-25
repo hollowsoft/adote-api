@@ -20,8 +20,6 @@ export class GetUserCase {
       }
     })
 
-    console.log(user)
-
     if (isNil(user)) {
       throw new NotFoundException('user not found')
     }
