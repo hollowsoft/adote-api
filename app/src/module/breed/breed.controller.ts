@@ -1,20 +1,24 @@
-import { Controller, Get, Query } from '@nestjs/common'
+import {
+  Get,
+  Query,
+  Controller
+} from '@nestjs/common'
 
 import { BreedService } from './breed.service'
 
-import { GetBreedRequest } from './request/get.breed.request'
-import { GetBreedResponse } from './response/get.breed.response'
+import { ListBreedRequest } from './request/list.breed.request'
+import { ListBreedResponse } from './response/list.breed.response'
 
 @Controller('breed')
 export class BreedController {
   constructor(private readonly service: BreedService) {}
 
   @Get()
-  async get(@Query() request: GetBreedRequest): Promise<GetBreedResponse[]> {
+  async all(@Query() request: ListBreedRequest): Promise<ListBreedResponse[]> {
     const { kind } = request
 
-    const list = await this.service.get(kind)
+    const list = await this.service.all(kind)
 
-    return list.map((breed) => new GetBreedResponse(breed))
+    return list.map((breed) => new ListBreedResponse(breed))
   }
 }
