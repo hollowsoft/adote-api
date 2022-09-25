@@ -3,13 +3,13 @@ import { Injectable } from '@nestjs/common'
 import { Kind } from './entity/kind.entity'
 import { Breed } from './entity/breed.entity'
 
-import { GetBreedCase } from './case/get.breed.case'
+import { ListBreedCase } from './case/list.breed.case'
 
 @Injectable()
 export class BreedService {
-  constructor(private readonly GET: GetBreedCase) {}
+  constructor(private readonly LIST_BREED_CASE: ListBreedCase) {}
 
-  get(kind?: Kind): Promise<Breed[]> {
-    return this.GET.run(kind)
+  all(kind?: Kind): Promise<Breed[]> {
+    return this.LIST_BREED_CASE.run(kind)
   }
 }
