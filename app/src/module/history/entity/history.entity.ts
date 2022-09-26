@@ -1,4 +1,12 @@
-import { Entity, Column, JoinColumn, CreateDateColumn, UpdateDateColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  Entity,
+  Column,
+  JoinColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  OneToOne,
+  PrimaryGeneratedColumn
+} from 'typeorm'
 
 import { Size } from '../../post/entity/pet/size.entity'
 import { Gender } from '../../post/entity/pet/gender.entity'
@@ -7,6 +15,10 @@ import { Breed } from '../../breed/entity/breed.entity'
 
 @Entity()
 export class History {
+  constructor (history: Partial<History>) {
+    Object.assign(this, history)
+  }
+
   @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 
