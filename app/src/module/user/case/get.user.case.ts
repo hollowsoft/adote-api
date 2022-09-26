@@ -4,7 +4,6 @@ import {
 } from '@nestjs/common'
 
 import { User } from '../entity/user.entity'
-
 import { UserRepository } from '../user.repository'
 
 import { isNil } from 'lodash'

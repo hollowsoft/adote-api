@@ -1,7 +1,10 @@
 import { Injectable } from '@nestjs/common'
-
-import { Repository, Like } from 'typeorm'
 import { InjectRepository } from '@nestjs/typeorm'
+
+import {
+  Repository,
+  FindManyOptions
+} from 'typeorm'
 
 import { City } from './entity/city.entity'
 
@@ -9,7 +12,7 @@ import { City } from './entity/city.entity'
 export class CityRepository {
   constructor(@InjectRepository(City) private readonly repository: Repository<City>) {}
 
-  search(term: string): Promise<City[]> {
-    return this.repository.findBy({ name: Like(`%${term}%`) })
+  all(option?: FindManyOptions<City>): Promise<City[]> {
+    return this.repository.find(option)
   }
 }
