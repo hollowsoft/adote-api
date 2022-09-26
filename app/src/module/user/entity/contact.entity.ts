@@ -1,7 +1,17 @@
-import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  Entity,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+  PrimaryGeneratedColumn
+} from 'typeorm'
 
 @Entity()
 export class Contact {
+  constructor(contact: Partial<Contact>) {
+    Object.assign(this, contact)
+  }
+
   @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 
