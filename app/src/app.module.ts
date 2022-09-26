@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 
 import { AuthModule } from './module/auth/auth.module'
 import { BreedModule } from './module/breed/breed.module'
+import { HistoryModule } from './module/history/history.module'
 import { LocationModule } from './module/location/location.module'
 
 import { RepositoryConfigService } from './repository.config.service'
@@ -14,6 +15,7 @@ import { isProd } from './helper/environment'
   imports: [
     AuthModule,
     BreedModule,
+    HistoryModule,
     LocationModule,
     ConfigModule.forRoot({
       isGlobal: true,
