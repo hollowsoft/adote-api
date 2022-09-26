@@ -1,4 +1,12 @@
-import { Entity, Column, JoinColumn, CreateDateColumn, UpdateDateColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  Entity,
+  Column,
+  JoinColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  OneToOne,
+  PrimaryGeneratedColumn
+} from 'typeorm'
 
 import { Size } from './size.entity'
 import { Gender } from './gender.entity'
@@ -7,6 +15,10 @@ import { Breed } from '../../../breed/entity/breed.entity'
 
 @Entity()
 export class Pet {
+  constructor(pet: Partial<Pet>) {
+    Object.assign(this, pet)
+  }
+
   @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 

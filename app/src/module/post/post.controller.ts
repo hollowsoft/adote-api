@@ -1,15 +1,38 @@
-import { Controller, Get } from '@nestjs/common'
-
-import { Post } from './entity/post.entity'
+import {
+  Get,
+  Post,
+  Body,
+  Query,
+  Controller
+} from '@nestjs/common'
 
 import { PostService } from './post.service'
+
+import { ListPostRequest } from './request/list.post.request'
+import { ListPostResponse } from './response/list.post.response'
+
+import { CreatePostRequest } from './request/create.post.request'
+import { CreatePostResponse } from './response/create.post.response'
 
 @Controller('post')
 export class PostController {
   constructor(private readonly service: PostService) {}
 
   @Get()
-  get(): Promise<Post[]> {
-    return this.service.find()
+  async all(@Query() request: ListPostRequest): Promise<ListPostResponse> {
+    const { size } = request
+
+    const list = await this.service.all()
+
+    return list.map((post) => new ListPostResponse(post))
+  }
+
+  @Post()
+  async create(@Body() request: CreatePostRequest): Promise<CreatePostResponse> {
+    const { title } = request
+
+    const post = await this.service.create()
+
+    return new CreatePostResponse(post)
   }
 }

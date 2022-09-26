@@ -1,6 +1,6 @@
 import { Post } from '../entity/post.entity'
 
-export class CreatePostResponse {
+export class ListPostResponse {
   constructor(post: Post) {
 
   }
