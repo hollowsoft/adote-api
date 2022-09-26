@@ -14,6 +14,7 @@ export class RepositoryConfigService implements TypeOrmOptionsFactory {
       username: this.service.get<string>("DATABASE_USER"),
       password: this.service.get<string>("DATABASE_PASS"),
       database: this.service.get<string>("DATABASE_NAME"),
+      entities: ['**/*.entity.js'],
       ssl: {
         rejectUnauthorized: false
       }

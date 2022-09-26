@@ -6,10 +6,14 @@ import { Breed } from '../entity/breed.entity'
 import { BreedRepository } from '../breed.repository'
 
 @Injectable()
-export class GetBreedCase {
+export class ListBreedCase {
   constructor(private readonly repository: BreedRepository) {}
 
   run(kind?: Kind): Promise<Breed[]> {
-    return this.repository.find(kind)
+    return this.repository.all({
+      where: {
+        kind
+      }
+    })
   }
 }

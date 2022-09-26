@@ -1,4 +1,8 @@
-import { Controller, Get, Query } from '@nestjs/common'
+import {
+  Get,
+  Query,
+  Controller
+} from '@nestjs/common'
 
 import { LocationService } from './location.service'
 

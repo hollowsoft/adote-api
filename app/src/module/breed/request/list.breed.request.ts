@@ -1,5 +1,5 @@
 import { Kind } from '../entity/kind.entity'
 
-export class GetBreedRequest {
+export class ListBreedRequest {
   kind?: Kind
 }

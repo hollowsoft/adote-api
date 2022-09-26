@@ -1,4 +1,12 @@
-import { Entity, Column, JoinColumn, CreateDateColumn, UpdateDateColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  Entity,
+  Column,
+  JoinColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  OneToOne,
+  PrimaryGeneratedColumn
+} from 'typeorm'
 
 import { Country } from './country.entity'
 

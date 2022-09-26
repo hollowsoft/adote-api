@@ -1,9 +1,21 @@
-import { Entity, Column, JoinColumn, CreateDateColumn, UpdateDateColumn, OneToOne, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  Entity,
+  Column,
+  JoinColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  OneToOne,
+  PrimaryGeneratedColumn
+} from 'typeorm'
 
 import { State } from './state.entity'
 
 @Entity()
 export class City {
+  constructor(city: Partial<City>) {
+    Object.assign(this, city)
+  }
+
   @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 
