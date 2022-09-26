@@ -17,6 +17,6 @@ import { UserController } from './user.controller'
     UserRepository,
     GetUserCase
   ],
-  controllers: [UserController],
+  controllers: [UserController]
 })
 export class UserModule {}
