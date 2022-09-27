@@ -1,4 +1,13 @@
-import { Entity, Column, JoinColumn, CreateDateColumn, UpdateDateColumn, OneToOne, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  Entity,
+  Column,
+  JoinColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  OneToOne,
+  ManyToOne,
+  PrimaryGeneratedColumn
+} from 'typeorm'
 
 import { Pet } from './pet/pet.entity'
 import { City } from '../../location/entity/city.entity'
@@ -6,6 +15,10 @@ import { User } from '../../user/entity/user.entity'
 
 @Entity()
 export class Post {
+  constructor(post: Partial<Post>) {
+    Object.assign(this, post)
+  }
+
   @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 

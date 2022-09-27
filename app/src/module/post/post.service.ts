@@ -1,15 +1,22 @@
 import { Injectable } from '@nestjs/common'
 
-import { Repository } from 'typeorm'
-import { InjectRepository } from '@nestjs/typeorm'
-
 import { Post } from './entity/post.entity'
+
+import { ListPostCase } from './case/list.post.case'
+import { CreatePostCase } from './case/create.post.case'
 
 @Injectable()
 export class PostService {
-  constructor(@InjectRepository(Post) private readonly repository: Repository<Post>) {}
+  constructor(
+    private readonly LIST_POST_CASE: ListPostCase,
+    private readonly CREATE_POST_CASE: CreatePostCase
+  ) {}
 
-  find(): Promise<Post[]> {
-    return this.repository.find()
+  all(): Promise<Post[]> {
+    return this.LIST_POST_CASE.run()
+  }
+
+  create(): Promise<Post> {
+    return this.CREATE_POST_CASE.run()
   }
 }
