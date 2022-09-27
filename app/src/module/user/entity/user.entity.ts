@@ -47,8 +47,8 @@ export class User {
   post: Post[]
 
   @ManyToMany(() => Post)
-  @JoinTable({ name: 'wish' })
-  wish: Post[]
+  @JoinTable({ name: 'fav' })
+  fav: Post[]
 
   @OneToOne(() => City)
   @JoinColumn({ name: 'city_id' })
