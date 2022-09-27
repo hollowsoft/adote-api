@@ -6,6 +6,7 @@ import { UserRepository } from './user.repository'
 
 import { UserService } from './user.service'
 import { GetUserCase } from './case/get.user.case'
+import { ListUserCase } from './case/list.user.case'
 
 import { UserController } from './user.controller'
 
@@ -15,7 +16,8 @@ import { UserController } from './user.controller'
   providers: [
     UserService,
     UserRepository,
-    GetUserCase
+    GetUserCase,
+    ListUserCase
   ],
   controllers: [UserController]
 })
