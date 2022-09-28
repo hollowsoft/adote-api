@@ -1,9 +1,19 @@
-import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedColumn } from 'typeorm'
+import {
+  Entity,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+  PrimaryGeneratedColumn
+} from 'typeorm'
 
 import { Kind } from './kind.entity'
 
 @Entity()
 export class Breed {
+  constructor(breed: Partial<Breed>) {
+    Object.assign(this, breed)
+  }
+
   @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 
