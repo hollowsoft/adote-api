@@ -25,7 +25,7 @@ export class AuthController {
     return new AuthMailResponse(user)
   }
 
-  @Post('token')
+  @Post('mail/code')
   async token(@Body() request: AuthTokenRequest): Promise<AuthTokenResponse> {
     const { mail, code } = request
     

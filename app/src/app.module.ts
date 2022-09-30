@@ -19,7 +19,7 @@ import { isProd } from './helper/environment'
     LocationModule,
     ConfigModule.forRoot({
       isGlobal: true,
-      ignoreEnvFile: isProd(),
+      ignoreEnvFile: isProd()
     }),
     TypeOrmModule.forRootAsync({
       useClass: RepositoryConfigService
