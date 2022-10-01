@@ -4,12 +4,10 @@ import { Post } from '../entity/post.entity'
 import { PostRepository } from '../post.repository'
 
 @Injectable()
-export class CreatePostCase {
+export class ListPostService {
   constructor(private readonly repository: PostRepository) {}
 
-  run(): Promise<Post> {
-    return this.repository.save(new Post({
-      
-    }))
+  run(): Promise<Post[]> {
+    return this.repository.all()
   }
 }

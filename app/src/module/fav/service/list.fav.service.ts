@@ -1,16 +1,17 @@
-import {
-  Injectable,
-  NotFoundException
-} from '@nestjs/common'
+import { Injectable } from '@nestjs/common'
 
 import { Fav } from '../entity/fav.entity'
 import { FavRepository } from '../fav.repository'
 
 @Injectable()
-export class RemoveFavCase {
+export class ListFavService {
   constructor(private readonly repository: FavRepository) {}
 
-  run(id: string) {
-
+  run(): Promise<Fav[]> {
+    return this.repository.all({
+      where: {
+        
+      }
+    })
   }
 }

@@ -5,16 +5,16 @@ import { History } from './entity/history.entity'
 import { HistoryRepository } from './history.repository'
 
 import { HistoryService } from './history.service'
-import { ListHistoryCase } from './case/list.history.case'
+import { ListHistoryService } from './service/list.history.service'
 
 import { HistoryController } from './history.controller'
 
 @Module({
   imports: [TypeOrmModule.forFeature([History])],
   providers: [
-    HistoryService,
     HistoryRepository,
-    ListHistoryCase
+    HistoryService,
+    ListHistoryService
   ],
   controllers: [HistoryController],
 })

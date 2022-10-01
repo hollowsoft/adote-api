@@ -5,7 +5,7 @@ import {
   Controller
 } from '@nestjs/common'
 
-import { UserService } from './user.service'
+import { UserService } from './service/user.service'
 
 import { GetUserRequest } from './request/get.user.request'
 import { GetUserResponse } from './response/get.user.response'

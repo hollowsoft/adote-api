@@ -4,19 +4,19 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { Post } from './entity/post.entity'
 import { PostRepository } from './post.repository'
 
-import { PostService } from './post.service'
-import { ListPostCase } from './case/list.post.case'
-import { CreatePostCase } from './case/create.post.case'
+import { PostService } from './service/post.service'
+import { ListPostService } from './service/list.post.service'
+import { CreatePostService } from './service/create.post.service'
 
 import { PostController } from './post.controller'
 
 @Module({
   imports: [TypeOrmModule.forFeature([Post])],
   providers: [
-    PostService,
     PostRepository,
-    ListPostCase,
-    CreatePostCase
+    PostService,
+    ListPostService,
+    CreatePostService
   ],
   controllers: [PostController]
 })
