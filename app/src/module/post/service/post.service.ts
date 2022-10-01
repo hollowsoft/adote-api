@@ -1,9 +1,17 @@
 import { Injectable } from '@nestjs/common'
 
-import { Post } from '../entity/post.entity'
-
 import { ListPostService } from './list.post.service'
 import { CreatePostService } from './create.post.service'
+
+import {
+  ListPostRequest,
+  CreatePostRequest
+} from '../request'
+
+import {
+  ListPostResponse,
+  CreatePostResponse
+} from '../response'
 
 @Injectable()
 export class PostService {
@@ -12,11 +20,11 @@ export class PostService {
     private readonly CREATE_POST_SERVICE: CreatePostService
   ) {}
 
-  all(): Promise<Post[]> {
-    return this.LIST_POST_SERVICE.run()
+  all(request: ListPostRequest): Promise<ListPostResponse[]> {
+    return this.LIST_POST_SERVICE.run(request)
   }
 
-  create(): Promise<Post> {
-    return this.CREATE_POST_SERVICE.run()
+  create(request: CreatePostRequest): Promise<CreatePostResponse> {
+    return this.CREATE_POST_SERVICE.run(request)
   }
 }

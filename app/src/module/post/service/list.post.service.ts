@@ -1,13 +1,17 @@
 import { Injectable } from '@nestjs/common'
 
-import { Post } from '../entity/post.entity'
 import { PostRepository } from '../post.repository'
+
+import { ListPostRequest } from '../request'
+import { ListPostResponse } from '../response'
 
 @Injectable()
 export class ListPostService {
   constructor(private readonly repository: PostRepository) {}
 
-  run(): Promise<Post[]> {
-    return this.repository.all()
+  async run(request: ListPostRequest): Promise<ListPostResponse[]> {
+    const list = await this.repository.all()
+
+    return list.map((post) => new ListPostResponse(post))
   }
 }
