@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 
-import { Fav } from '../entity/fav.entity'
+import { Fav } from './entity/fav.entity'
 
 import { ListFavCase } from './case/list.fav.case'
 import { AddFavCase } from './case/add.fav.case'
