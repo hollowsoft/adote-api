@@ -6,19 +6,15 @@ import {
 
 import { LocationService } from './service/location.service'
 
-import { SearchLocationRequest } from './request/search.location.request'
-import { SearchLocationResponse } from './response/search.location.response'
+import { SearchLocationRequest } from './request'
+import { SearchLocationResponse } from './response'
 
 @Controller('location')
 export class LocationController {
   constructor(private readonly service: LocationService) {}
 
   @Get('search')
-  async search(@Query() request: SearchLocationRequest): Promise<SearchLocationResponse[]> {
-    const { term } = request
-
-    const list = await this.service.search(term)
-
-    return list.map((city) => new SearchLocationResponse(city))
+  search(@Query() request: SearchLocationRequest): Promise<SearchLocationResponse[]> {
+    return this.service.search(request)
   }
 }
