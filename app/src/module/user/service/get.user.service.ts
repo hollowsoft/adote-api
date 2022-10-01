@@ -3,8 +3,10 @@ import {
   NotFoundException
 } from '@nestjs/common'
 
-import { User } from '../entity/user.entity'
 import { UserRepository } from '../user.repository'
+
+import { GetUserRequest } from '../request'
+import { GetUserResponse } from '../response'
 
 import { isNil } from 'lodash'
 
@@ -12,7 +14,9 @@ import { isNil } from 'lodash'
 export class GetUserService {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(id: string): Promise<User> {
+  async run(request: GetUserRequest): Promise<GetUserResponse> {
+    const { id } = request
+
     const user = await this.repository.find({
       where: {
         id
@@ -23,6 +27,6 @@ export class GetUserService {
       throw new NotFoundException('user not found')
     }
 
-    return user
+    return new GetUserResponse(user)
   }
 }

@@ -1,9 +1,17 @@
 import { Injectable } from '@nestjs/common'
 
-import { User } from '../entity/user.entity'
-
 import { GetUserService } from './get.user.service'
 import { ListUserService } from './list.user.service'
+
+import {
+  GetUserRequest,
+  ListUserRequest
+} from '../request'
+
+import {
+  GetUserResponse,
+  ListUserResponse
+} from '../response'
 
 @Injectable()
 export class UserService {
@@ -12,11 +20,11 @@ export class UserService {
     private readonly LIST_USER_SERVICE: ListUserService
   ) {}
 
-  get(id: string): Promise<User> {
-    return this.GET_USER_SERVICE.run(id)
+  get(request: GetUserRequest): Promise<GetUserResponse> {
+    return this.GET_USER_SERVICE.run(request)
   }
 
-  all(enable?: boolean): Promise<User[]> {
-    return this.LIST_USER_SERVICE.run(enable)
+  all(request: ListUserRequest): Promise<ListUserResponse[]> {
+    return this.LIST_USER_SERVICE.run(request)
   }
 }
