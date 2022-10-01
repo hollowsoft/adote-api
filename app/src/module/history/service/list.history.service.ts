@@ -1,17 +1,21 @@
 import { Injectable } from '@nestjs/common'
 
-import { History } from '../entity/history.entity'
 import { HistoryRepository } from '../history.repository'
+
+import { ListHistoryRequest } from '../request'
+import { ListHistoryResponse } from '../response'
 
 @Injectable()
 export class ListHistoryService {
   constructor(private readonly repository: HistoryRepository) {}
 
-  run(): Promise<History[]> {
-    return this.repository.all({
+  async run(request: ListHistoryRequest): Promise<ListHistoryResponse[]> {
+    const list = await this.repository.all({
       order: {
         create: 'desc'
       }
     })
+
+    return list.map((history) => new ListHistoryResponse(history))
   }
 }
