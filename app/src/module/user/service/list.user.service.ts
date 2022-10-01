@@ -4,7 +4,7 @@ import { User } from '../entity/user.entity'
 import { UserRepository } from '../user.repository'
 
 @Injectable()
-export class ListUserCase {
+export class ListUserService {
   constructor(private readonly repository: UserRepository) {}
 
   run(enable?: boolean): Promise<User[]> {

@@ -4,18 +4,19 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { Fav } from './entity/fav.entity'
 import { FavRepository } from './fav.repository'
 
-import { FavService } from './fav.service'
-import { ListFavCase } from './case/list.fav.case'
-import { AddFavCase } from './case/add.fav.case'
-import { RemoveFavCase } from './case/remove.fav.case'
+import { FavService } from './service/fav.service'
+import { AddFavService } from './service/add.fav.service'
+import { ListFavService } from './service/list.fav.service'
+import { RemoveFavService } from './service/remove.fav.service'
 
 @Module({
   imports: [TypeOrmModule.forFeature([Fav])],
   providers: [
+    FavRepository,
     FavService,
-    ListFavCase,
-    AddFavCase,
-    RemoveFavCase
+    AddFavService,
+    ListFavService,
+    RemoveFavService
   ]
 })
 export class FavModule {}

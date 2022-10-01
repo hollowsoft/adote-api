@@ -4,7 +4,7 @@ import { History } from '../entity/history.entity'
 import { HistoryRepository } from '../history.repository'
 
 @Injectable()
-export class ListHistoryCase {
+export class ListHistoryService {
   constructor(private readonly repository: HistoryRepository) {}
 
   run(): Promise<History[]> {

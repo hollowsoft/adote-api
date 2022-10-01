@@ -4,7 +4,7 @@ import {
   Controller
 } from '@nestjs/common'
 
-import { AuthService } from './auth.service'
+import { AuthService } from './service/auth.service'
 
 import { AuthMailRequest } from './request/auth.mail.request'
 import { AuthMailResponse } from './response/auth.mail.response'

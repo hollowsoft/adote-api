@@ -9,9 +9,9 @@ import { UserModule } from '../user/user.module'
 import { AuthGuard as Guard } from './guard/auth.guard'
 import { AuthStrategy } from './strategy/auth.strategy'
 
-import { AuthService } from './auth.service'
-import { AuthMailCase } from './case/auth.mail.case'
-import { AuthTokenCase } from './case/auth.token.case'
+import { AuthService } from './service/auth.service'
+import { AuthMailService } from './service/auth.mail.service'
+import { AuthTokenService } from './service/auth.token.service'
 
 import { AuthController } from './auth.controller'
 
@@ -31,11 +31,11 @@ const AuthGuard = {
     })
   ],
   providers: [
-    AuthService,
-    AuthMailCase,
-    AuthTokenCase,
     AuthGuard,
-    AuthStrategy
+    AuthStrategy,
+    AuthService,
+    AuthMailService,
+    AuthTokenService
   ],
   controllers: [AuthController]
 })

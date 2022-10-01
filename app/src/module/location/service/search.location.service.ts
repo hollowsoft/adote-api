@@ -8,7 +8,7 @@ import { CityRepository } from '../city.repository'
 import { isEmpty } from 'lodash'
 
 @Injectable()
-export class SearchLocationCase {
+export class SearchLocationService {
   constructor(private readonly repository: CityRepository) {}
 
   async run(term?: string): Promise<City[]> {

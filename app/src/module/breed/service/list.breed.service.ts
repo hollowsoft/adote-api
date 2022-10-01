@@ -6,7 +6,7 @@ import { Breed } from '../entity/breed.entity'
 import { BreedRepository } from '../breed.repository'
 
 @Injectable()
-export class ListBreedCase {
+export class ListBreedService {
   constructor(private readonly repository: BreedRepository) {}
 
   run(kind?: Kind): Promise<Breed[]> {

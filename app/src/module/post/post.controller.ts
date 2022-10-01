@@ -6,7 +6,7 @@ import {
   Controller
 } from '@nestjs/common'
 
-import { PostService } from './post.service'
+import { PostService } from './service/post.service'
 
 import { ListPostRequest } from './request/list.post.request'
 import { ListPostResponse } from './response/list.post.response'

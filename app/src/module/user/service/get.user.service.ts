@@ -9,7 +9,7 @@ import { UserRepository } from '../user.repository'
 import { isNil } from 'lodash'
 
 @Injectable()
-export class GetUserCase {
+export class GetUserService {
   constructor(private readonly repository: UserRepository) {}
 
   async run(id: string): Promise<User> {

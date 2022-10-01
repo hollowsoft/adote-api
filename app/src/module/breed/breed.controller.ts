@@ -4,7 +4,7 @@ import {
   Controller
 } from '@nestjs/common'
 
-import { BreedService } from './breed.service'
+import { BreedService } from './service/breed.service'
 
 import { ListBreedRequest } from './request/list.breed.request'
 import { ListBreedResponse } from './response/list.breed.response'

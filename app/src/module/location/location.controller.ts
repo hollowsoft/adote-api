@@ -4,7 +4,7 @@ import {
   Controller
 } from '@nestjs/common'
 
-import { LocationService } from './location.service'
+import { LocationService } from './service/location.service'
 
 import { SearchLocationRequest } from './request/search.location.request'
 import { SearchLocationResponse } from './response/search.location.response'

@@ -10,7 +10,7 @@ import { UserRepository } from '../../user/user.repository'
 import { isNil } from 'lodash'
 
 @Injectable()
-export class AuthTokenCase {
+export class AuthTokenService {
   constructor(
     private readonly service: JwtService,
     private readonly repository: UserRepository
