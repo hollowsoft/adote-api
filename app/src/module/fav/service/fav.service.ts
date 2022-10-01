@@ -1,10 +1,20 @@
 import { Injectable } from '@nestjs/common'
 
-import { Fav } from '../entity/fav.entity'
-
 import { AddFavService } from './add.fav.service'
 import { ListFavService } from './list.fav.service'
 import { RemoveFavService } from './remove.fav.service'
+
+import {
+  AddFavRequest,
+  ListFavRequest,
+  RemoveFavRequest
+} from '../request'
+
+import {
+  AddFavResponse,
+  ListFavResponse,
+  RemoveFavResponse
+} from '../response'
 
 @Injectable()
 export class FavService {
@@ -14,15 +24,15 @@ export class FavService {
     private readonly REMOVE_FAV_SERVICE: RemoveFavService
   ) {}
 
-  all(): Promise<Fav[]> {
-    return this.LIST_FAV_SERVICE.run()
+  all(request: ListFavRequest): Promise<ListFavResponse[]> {
+    return this.LIST_FAV_SERVICE.run(request)
   }
 
-  add() {
-    return this.ADD_FAV_SERVICE.run('', '')
+  add(request: AddFavRequest): Promise<AddFavResponse> {
+    return this.ADD_FAV_SERVICE.run(request)
   }
 
-  remove(id: string) {
-    return this.REMOVE_FAV_SERVICE.run(id)
+  remove(request: RemoveFavRequest): Promise<RemoveFavResponse> {
+    return this.REMOVE_FAV_SERVICE.run(request)
   }
 }
