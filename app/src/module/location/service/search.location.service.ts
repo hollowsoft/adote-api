@@ -2,8 +2,10 @@ import { Injectable } from '@nestjs/common'
 
 import { Like } from 'typeorm'
 
-import { City } from '../entity/city.entity'
 import { CityRepository } from '../city.repository'
+
+import { SearchLocationRequest } from '../request'
+import { SearchLocationResponse } from '../response'
 
 import { isEmpty } from 'lodash'
 
@@ -11,15 +13,19 @@ import { isEmpty } from 'lodash'
 export class SearchLocationService {
   constructor(private readonly repository: CityRepository) {}
 
-  async run(term?: string): Promise<City[]> {
+  async run(request: SearchLocationRequest): Promise<SearchLocationResponse[]> {
+    const { term } = request
+
     if (isEmpty(term)) {
       return []
     }
 
-    return this.repository.all({
+    const list = await this.repository.all({
       where: {
         name: Like(`%${term}%`)
       }
     })
+
+    return list.map((city) => new SearchLocationResponse(city))
   }
 }
