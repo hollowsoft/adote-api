@@ -1,9 +1,17 @@
 import { Injectable } from '@nestjs/common'
 
-import { User } from '../../user/entity/user.entity'
-
 import { AuthMailService } from './auth.mail.service'
 import { AuthTokenService } from './auth.token.service'
+
+import {
+  AuthMailRequest,
+  AuthTokenRequest
+} from '../request'
+
+import {
+  AuthMailResponse,
+  AuthTokenResponse
+} from '../response'
 
 @Injectable()
 export class AuthService {
@@ -12,11 +20,11 @@ export class AuthService {
     private readonly AUTH_TOKEN_SERVICE: AuthTokenService
   ) {}
 
-  mail(mail: string): Promise<User> {
-    return this.AUTH_MAIL_SERVICE.run(mail)
+  mail(request: AuthMailRequest): Promise<AuthMailResponse> {
+    return this.AUTH_MAIL_SERVICE.run(request)
   }
 
-  token(mail: string, code: string) {
-    return this.AUTH_TOKEN_SERVICE.run(mail, code)
+  token(request: AuthTokenRequest): Promise<AuthTokenResponse> {
+    return this.AUTH_TOKEN_SERVICE.run(request)
   }
 }

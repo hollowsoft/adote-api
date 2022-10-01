@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common'
 
 import { User } from '../../user/entity/user.entity'
-
 import { UserRepository } from '../../user/user.repository'
+
+import { AuthMailRequest } from '../request'
+import { AuthMailResponse } from '../response'
 
 import { isNil } from 'lodash'
 
@@ -10,7 +12,9 @@ import { isNil } from 'lodash'
 export class AuthMailService {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(mail: string): Promise<User> {
+  async run(request: AuthMailRequest): Promise<AuthMailResponse> {
+    const { mail } = request
+
     const find = await this.repository.find({
       where: {
         mail
@@ -29,6 +33,6 @@ export class AuthMailService {
 
     // TODO: send mail with token
 
-    return find
+    return new AuthMailResponse(find)
   }
 }
