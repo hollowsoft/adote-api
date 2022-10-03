@@ -7,19 +7,19 @@ import { JwtService } from '@nestjs/jwt'
 
 import { UserRepository } from '../../user/user.repository'
 
-import { AuthTokenRequest } from '../request'
-import { AuthTokenResponse } from '../response'
+import { AuthMailCodeRequest } from '../request'
+import { AuthMailCodeResponse } from '../response'
 
 import { isNil } from 'lodash'
 
 @Injectable()
-export class AuthTokenService {
+export class AuthMailCodeService {
   constructor(
     private readonly service: JwtService,
     private readonly repository: UserRepository
   ) {}
 
-  async run(request: AuthTokenRequest): Promise<AuthTokenResponse> {
+  async run(request: AuthMailCodeRequest): Promise<AuthMailCodeResponse> {
     const { mail, code } = request
 
     const user = await this.repository.find({
@@ -34,11 +34,11 @@ export class AuthTokenService {
 
     // TODO: check code
 
-    this.service.sign({
+    const token = this.service.sign({
       sub: user.id,
       mail: user.mail
     })
 
-    return new AuthTokenResponse()
+    return new AuthMailCodeResponse(token)
   }
 }

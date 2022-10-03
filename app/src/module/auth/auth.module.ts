@@ -11,7 +11,7 @@ import { AuthStrategy } from './strategy/auth.strategy'
 
 import { AuthService } from './service/auth.service'
 import { AuthMailService } from './service/auth.mail.service'
-import { AuthTokenService } from './service/auth.token.service'
+import { AuthMailCodeService } from './service/auth.mail.code.service'
 
 import { AuthController } from './auth.controller'
 
@@ -35,7 +35,7 @@ const AuthGuard = {
     AuthStrategy,
     AuthService,
     AuthMailService,
-    AuthTokenService
+    AuthMailCodeService
   ],
   controllers: [AuthController]
 })

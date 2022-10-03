@@ -1,7 +1,7 @@
 import { AuthMailResponse } from './auth.mail.response'
-import { AuthTokenResponse } from './auth.token.response'
+import { AuthMailCodeResponse } from './auth.mail.code.response'
 
 export {
   AuthMailResponse,
-  AuthTokenResponse
+  AuthMailCodeResponse
 }

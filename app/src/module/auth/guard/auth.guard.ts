@@ -1,4 +1,4 @@
-import type { Reflector } from '@nestjs/core'
+import { Reflector } from '@nestjs/core'
 
 import {
   Injectable,
@@ -14,9 +14,10 @@ export class AuthGuard extends Guard('auth') {
   }
 
   canActivate(context: ExecutionContext) {
-    const { getClass, getHandler } = context
-
-    const isPublic = this.reflector.getAllAndOverride<boolean>('public', [getClass, getHandler])
+    const isPublic = this.reflector.getAllAndOverride<boolean>('public', [
+      context.getClass(),
+      context.getHandler()
+    ])
 
     if (isPublic) { return true }
 

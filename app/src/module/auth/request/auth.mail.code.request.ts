@@ -3,10 +3,10 @@ import {
   IsEmail
 } from 'class-validator'
 
-export class AuthTokenRequest {
+export class AuthMailCodeRequest {
   @IsEmail()
   mail: string
 
-  @Length(4, 4)
+  @Length(6, 6)
   code: string
 }
