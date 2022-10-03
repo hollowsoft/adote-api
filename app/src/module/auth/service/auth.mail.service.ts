@@ -15,24 +15,24 @@ export class AuthMailService {
   async run(request: AuthMailRequest): Promise<AuthMailResponse> {
     const { mail } = request
 
-    const find = await this.repository.find({
+    const user = await this.repository.find({
       where: {
         mail
       }
     })
 
-    if (isNil(find)) {
+    if (isNil(user)) {
       const create = await this.repository.save(new User({
         mail
       }))
 
       // TODO: send mail with token
 
-      return create
+      return new AuthMailResponse(create)
     }
 
     // TODO: send mail with token
 
-    return new AuthMailResponse(find)
+    return new AuthMailResponse(user)
   }
 }
