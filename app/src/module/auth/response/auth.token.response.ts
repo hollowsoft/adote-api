@@ -1,4 +1,4 @@
-export class AuthMailCodeResponse {
+export class AuthTokenResponse {
   token: string
   refresh: string
 

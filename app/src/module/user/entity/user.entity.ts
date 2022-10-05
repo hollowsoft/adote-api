@@ -43,18 +43,18 @@ export class User {
   @Column({ name: 'description', nullable: true })
   description?: string
 
-  @OneToMany(() => Post, (post) => post.user)
-  post: Post[]
-
   @ManyToMany(() => Post)
   @JoinTable({ name: 'fav' })
   fav: Post[]
+
+  @OneToMany(() => Post, (post) => post.user)
+  post: Post[]
 
   @OneToOne(() => City)
   @JoinColumn({ name: 'city_id' })
   city?: City
 
-  @OneToOne(() => Contact)
+  @OneToOne(() => Contact, { cascade: true })
   @JoinColumn({ name: 'contact_id' })
   contact?: Contact
 
