@@ -11,7 +11,9 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
           { name: 'id', type: 'uuid', isPrimary: true, default: 'uuid_generate_v1mc()' },
           { name: 'create', type: 'timestamp', default: 'now()' },
           { name: 'update', type: 'timestamp', default: 'now()' },
-          { name: 'name', type: 'text' },
+          { name: 'key', type: 'text' },
+          { name: 'en', type: 'text' },
+          { name: 'pt', type: 'text' },
           { name: 'state_id', type: 'uuid' }
         ],
         indices: [
@@ -27,7 +29,9 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
           { name: 'id', type: 'uuid', isPrimary: true, default: 'uuid_generate_v1mc()' },
           { name: 'create', type: 'timestamp', default: 'now()' },
           { name: 'update', type: 'timestamp', default: 'now()' },
-          { name: 'name', type: 'text' },
+          { name: 'key', type: 'text' },
+          { name: 'en', type: 'text' },
+          { name: 'pt', type: 'text' },
           { name: 'country_id', type: 'uuid' }
         ],
         indices: [
