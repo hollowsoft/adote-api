@@ -13,10 +13,15 @@ import {
 
 import { Post } from '../../post/entity/post.entity'
 import { City } from '../../location/entity/city.entity'
+
 import { Contact } from './contact.entity'
 
 @Entity()
 export class User {
+  constructor(user: Partial<User>) {
+    Object.assign(this, user)
+  }
+
   @PrimaryGeneratedColumn('uuid', { name: 'id' })
   id: string
 
@@ -38,18 +43,18 @@ export class User {
   @Column({ name: 'description', nullable: true })
   description?: string
 
+  @ManyToMany(() => Post)
+  @JoinTable({ name: 'fav' })
+  fav: Post[]
+
   @OneToMany(() => Post, (post) => post.user)
   post: Post[]
-
-  @ManyToMany(() => Post)
-  @JoinTable({ name: 'wish' })
-  wish: Post[]
 
   @OneToOne(() => City)
   @JoinColumn({ name: 'city_id' })
   city?: City
 
-  @OneToOne(() => Contact)
+  @OneToOne(() => Contact, { cascade: true })
   @JoinColumn({ name: 'contact_id' })
   contact?: Contact
 

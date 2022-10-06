@@ -1,15 +1,33 @@
-import { Controller, Get } from '@nestjs/common'
+import {
+  Get,
+  Param,
+  Query,
+  Controller
+} from '@nestjs/common'
 
-import { User } from './entity/user.entity'
+import { UserService } from './service/user.service'
 
-import { UserService } from './user.service'
+import {
+  GetUserRequest,
+  ListUserRequest
+} from './request'
+
+import {
+  GetUserResponse,
+  ListUserResponse
+} from './response'
 
 @Controller('user')
 export class UserController {
   constructor(private readonly service: UserService) {}
 
+  @Get(':id')
+  get(@Param() request: GetUserRequest): Promise<GetUserResponse> {
+    return this.service.get(request)
+  }
+
   @Get()
-  get(): Promise<User[]> {
-    return this.service.find()
+  all(@Query() request: ListUserRequest): Promise<ListUserResponse[]> {
+    return this.service.all(request)
   }
 }

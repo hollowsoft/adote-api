@@ -1,3 +1,3 @@
 export class SearchLocationRequest {
-  term: string
+  term?: string
 }
