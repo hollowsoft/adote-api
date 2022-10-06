@@ -1,9 +1,14 @@
 import {
   Post,
   Body,
+  UseGuards,
   Controller
 } from '@nestjs/common'
 
+import { Token } from '../../type/token.type'
+import { TokenGuard } from './guard/token.guard'
+
+import { Auth } from '../../decorator/auth.decorator'
 import { Public } from '../../decorator/public.decorator'
 
 import { AuthService } from './service/auth.service'
@@ -32,5 +37,14 @@ export class AuthController {
   @Post('mail/code')
   code(@Body() request: AuthMailCodeRequest): Promise<AuthMailCodeResponse> {
     return this.service.code(request)
+  }
+
+  @Public()
+  @UseGuards(TokenGuard)
+  @Post('token')
+  token(@Auth() token: Token) {
+    const { sub } = token
+
+    return this.service.token(sub)
   }
 }

@@ -224,14 +224,14 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
     await query.createForeignKey('user', new TableForeignKey({
       name: 'user_city',
       columnNames: ['city_id'],
-      referencedTableName: 'user',
+      referencedTableName: 'city',
       referencedColumnNames: ['id']
     }))
 
     await query.createForeignKey('user', new TableForeignKey({
       name: 'user_contact',
       columnNames: ['contact_id'],
-      referencedTableName: 'user',
+      referencedTableName: 'contact',
       referencedColumnNames: ['id']
     }))
 

@@ -7,15 +7,17 @@ import { PassportModule } from '@nestjs/passport'
 import { UserModule } from '../user/user.module'
 
 import { AuthGuard as Guard } from './guard/auth.guard'
+import { TokenGuard } from './guard/token.guard'
+
 import { AuthStrategy } from './strategy/auth.strategy'
+import { TokenStrategy } from './strategy/token.strategy'
 
 import { AuthService } from './service/auth.service'
 import { AuthMailService } from './service/auth.mail.service'
 import { AuthMailCodeService } from './service/auth.mail.code.service'
+import { AuthTokenService } from './service/auth.token.service'
 
 import { AuthController } from './auth.controller'
-
-import { AuthConfigService } from './auth.config.service'
 
 const AuthGuard = {
   provide: APP_GUARD,
@@ -24,18 +26,19 @@ const AuthGuard = {
 
 @Module({
   imports: [
-    UserModule,
+    JwtModule,
     PassportModule,
-    JwtModule.registerAsync({
-      useClass: AuthConfigService
-    })
+    UserModule
   ],
   providers: [
     AuthGuard,
+    TokenGuard,
     AuthStrategy,
+    TokenStrategy,
     AuthService,
     AuthMailService,
-    AuthMailCodeService
+    AuthMailCodeService,
+    AuthTokenService
   ],
   controllers: [AuthController]
 })
