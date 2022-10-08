@@ -23,7 +23,7 @@ export class PostController {
   constructor(private readonly service: PostService) {}
 
   @Get()
-  all(@Query() request: ListPostRequest): Promise<ListPostResponse> {
+  all(@Query() request: ListPostRequest): Promise<ListPostResponse[]> {
     return this.service.all(request)
   }
 
