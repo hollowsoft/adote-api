@@ -124,7 +124,7 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
           { name: 'description', type: 'text', isNullable: true },
           { name: 'city_id', type: 'uuid', isNullable: true },
           { name: 'contact_id', type: 'uuid', isNullable: true },
-          { name: 'admin', type: 'boolean', default: false },
+          { name: 'role', type: 'enum', enum: ['user', 'admin'], default: 'user' },
           { name: 'enable', type: 'boolean', default: true }
         ],
         indices: [
