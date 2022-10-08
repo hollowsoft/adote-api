@@ -1,12 +1,12 @@
 import { User } from '../entity/user.entity'
 
 export class ListUserResponse {
-  id: string
-  create: Date
-  mail: string
-  name: string
-  image: string
-  enable: boolean
+  readonly id: string
+  readonly create: Date
+  readonly mail: string
+  readonly name: string
+  readonly image: string
+  readonly enable: boolean
   
   constructor(user: User) {
     this.id = user.id

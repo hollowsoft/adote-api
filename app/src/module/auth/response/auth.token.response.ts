@@ -1,6 +1,6 @@
 export class AuthTokenResponse {
-  token: string
-  refresh: string
+  readonly token: string
+  readonly refresh: string
 
   constructor(token: string, refresh: string) {
     this.token = token
