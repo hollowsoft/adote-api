@@ -1,4 +1,4 @@
-import type {
+import {
   QueryRunner,
   MigrationInterface
 } from 'typeorm'
