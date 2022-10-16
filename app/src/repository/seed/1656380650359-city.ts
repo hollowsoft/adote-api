@@ -1,4 +1,7 @@
-import { QueryRunner, MigrationInterface } from 'typeorm'
+import type {
+  QueryRunner,
+  MigrationInterface
+} from 'typeorm'
 
 import { City } from '../../module/location/entity/city.entity'
 import { State } from '../../module/location/entity/state.entity'
