@@ -6,7 +6,7 @@ import {
   PrimaryGeneratedColumn
 } from 'typeorm'
 
-import { Kind } from './kind.entity'
+import { Kind } from './kind.enum'
 
 @Entity()
 export class Breed {
