@@ -8,12 +8,13 @@ import {
   OneToOne,
   OneToMany,
   ManyToMany,
-  PrimaryGeneratedColumn,
+  PrimaryGeneratedColumn
 } from 'typeorm'
 
 import { Post } from '../../post/entity/post.entity'
 import { City } from '../../location/entity/city.entity'
 
+import { Role } from './role.enum'
 import { Contact } from './contact.entity'
 
 @Entity()
@@ -58,8 +59,8 @@ export class User {
   @JoinColumn({ name: 'contact_id' })
   contact?: Contact
 
-  @Column({ name: 'admin', default: false })
-  admin: boolean
+  @Column({ name: 'role', type: 'enum', enum: Role, default: Role.USER })
+  role: Role
 
   @Column({ name: 'enable', default: true })
   enable: boolean
