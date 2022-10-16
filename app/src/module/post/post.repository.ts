@@ -24,4 +24,8 @@ export class PostRepository {
   save(post: Post): Promise<Post> {
     return this.repository.save(post)
   }
+
+  remove(post: Post): Promise<Post> {
+    return this.repository.remove(post)
+  }
 }
