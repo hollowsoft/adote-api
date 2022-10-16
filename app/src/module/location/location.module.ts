@@ -7,17 +7,17 @@ import { Country } from './entity/country.entity'
 
 import { CityRepository } from './city.repository'
 
-import { LocationService } from './location.service'
-import { SearchLocationCase } from './case/search.location.case'
+import { LocationService } from './service/location.service'
+import { SearchLocationService } from './service/search.location.service'
 
 import { LocationController } from './location.controller'
 
 @Module({
   imports: [TypeOrmModule.forFeature([City, State, Country])],
   providers: [
-    LocationService,
     CityRepository,
-    SearchLocationCase
+    LocationService,
+    SearchLocationService
   ],
   controllers: [LocationController]
 })

@@ -11,7 +11,9 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
           { name: 'id', type: 'uuid', isPrimary: true, default: 'uuid_generate_v1mc()' },
           { name: 'create', type: 'timestamp', default: 'now()' },
           { name: 'update', type: 'timestamp', default: 'now()' },
-          { name: 'name', type: 'text' },
+          { name: 'key', type: 'text' },
+          { name: 'en', type: 'text' },
+          { name: 'pt', type: 'text' },
           { name: 'state_id', type: 'uuid' }
         ],
         indices: [
@@ -27,7 +29,9 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
           { name: 'id', type: 'uuid', isPrimary: true, default: 'uuid_generate_v1mc()' },
           { name: 'create', type: 'timestamp', default: 'now()' },
           { name: 'update', type: 'timestamp', default: 'now()' },
-          { name: 'name', type: 'text' },
+          { name: 'key', type: 'text' },
+          { name: 'en', type: 'text' },
+          { name: 'pt', type: 'text' },
           { name: 'country_id', type: 'uuid' }
         ],
         indices: [
@@ -132,9 +136,11 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
 
     await query.createTable(
       new Table({
-        name: 'wish',
+        name: 'fav',
         columns: [
           { name: 'id', type: 'uuid', isPrimary: true, default: 'uuid_generate_v1mc()' },
+          { name: 'create', type: 'timestamp', default: 'now()' },
+          { name: 'update', type: 'timestamp', default: 'now()' },
           { name: 'post_id', type: 'uuid' },
           { name: 'user_id', type: 'uuid' }
         ]
@@ -222,27 +228,27 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
     await query.createForeignKey('user', new TableForeignKey({
       name: 'user_city',
       columnNames: ['city_id'],
-      referencedTableName: 'user',
+      referencedTableName: 'city',
       referencedColumnNames: ['id']
     }))
 
     await query.createForeignKey('user', new TableForeignKey({
       name: 'user_contact',
       columnNames: ['contact_id'],
-      referencedTableName: 'user',
+      referencedTableName: 'contact',
       referencedColumnNames: ['id']
     }))
 
-    // wish
-    await query.createForeignKey('wish', new TableForeignKey({
-      name: 'wish_post',
+    // fav
+    await query.createForeignKey('fav', new TableForeignKey({
+      name: 'fav_post',
       columnNames: ['post_id'],
       referencedTableName: 'post',
       referencedColumnNames: ['id']
     }))
 
-    await query.createForeignKey('wish', new TableForeignKey({
-      name: 'wish_user',
+    await query.createForeignKey('fav', new TableForeignKey({
+      name: 'fav_user',
       columnNames: ['user_id'],
       referencedTableName: 'user',
       referencedColumnNames: ['id']
@@ -276,9 +282,9 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
     await query.dropForeignKey('user', 'user_city')
     await query.dropForeignKey('user', 'user_contact')
 
-    // wish
-    await query.dropForeignKey('wish', 'wish_post')
-    await query.dropForeignKey('wish', 'wish_user')
+    // fav
+    await query.dropForeignKey('fav', 'fav_post')
+    await query.dropForeignKey('fav', 'fav_user')
 
     // history
     await query.dropForeignKey('history', 'history_breed')
@@ -292,7 +298,7 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
     await query.dropTable('breed')
 
     await query.dropTable('user')
-    await query.dropTable('wish')
+    await query.dropTable('fav')
     await query.dropTable('contact')
 
     await query.dropTable('history')

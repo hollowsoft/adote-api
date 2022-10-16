@@ -1,7 +1,11 @@
 import { Injectable } from '@nestjs/common'
-
-import { Repository } from 'typeorm'
 import { InjectRepository } from '@nestjs/typeorm'
+
+import {
+  Repository,
+  FindOneOptions,
+  FindManyOptions
+} from 'typeorm'
 
 import { Post } from './entity/post.entity'
 
@@ -9,11 +13,19 @@ import { Post } from './entity/post.entity'
 export class PostRepository {
   constructor(@InjectRepository(Post) private readonly repository: Repository<Post>) {}
 
-  find(): Promise<Post[]> {
-    return this.repository.find()
+  all(option?: FindManyOptions<Post>): Promise<Post[]> {
+    return this.repository.find(option)
   }
 
-  create(post: Post): Promise<Post> {
+  find(option: FindOneOptions<Post>): Promise<Post | null> {
+    return this.repository.findOne(option)
+  }
+
+  save(post: Post): Promise<Post> {
     return this.repository.save(post)
+  }
+
+  remove(post: Post): Promise<Post> {
+    return this.repository.remove(post)
   }
 }

@@ -1,36 +1,50 @@
 import {
   Post,
   Body,
+  UseGuards,
   Controller
 } from '@nestjs/common'
 
-import { AuthService } from './auth.service'
+import { Token } from '../../type/token.type'
+import { TokenGuard } from './guard/token.guard'
 
-import { AuthMailRequest } from './request/auth.mail.request'
-import { AuthMailResponse } from './response/auth.mail.response'
+import { Auth } from '../../decorator/auth.decorator'
+import { Public } from '../../decorator/public.decorator'
 
-import { AuthTokenRequest } from './request/auth.token.request'
-import { AuthTokenResponse } from './response/auth.token.response'
+import { AuthService } from './service/auth.service'
+
+import {
+  AuthMailRequest,
+  AuthMailCodeRequest
+} from './request'
+
+import {
+  AuthMailResponse,
+  AuthMailCodeResponse
+} from './response'
 
 @Controller('auth')
 export class AuthController {
   constructor(private readonly service: AuthService) {}
 
+  @Public()
   @Post('mail')
-  async mail(@Body() request: AuthMailRequest): Promise<AuthMailResponse> {
-    const { mail } = request
-
-    const user = await this.service.mail(mail)
-
-    return new AuthMailResponse(user)
+  mail(@Body() request: AuthMailRequest): Promise<AuthMailResponse> {
+    return this.service.mail(request)
   }
 
-  @Post('token')
-  async token(@Body() request: AuthTokenRequest): Promise<AuthTokenResponse> {
-    const { mail, code } = request
-    
-    await this.service.token(mail, code)
+  @Public()
+  @Post('mail/code')
+  code(@Body() request: AuthMailCodeRequest): Promise<AuthMailCodeResponse> {
+    return this.service.code(request)
+  }
 
-    return new AuthTokenResponse()
+  @Public()
+  @UseGuards(TokenGuard)
+  @Post('token')
+  token(@Auth() token: Token) {
+    const { sub } = token
+
+    return this.service.token(sub)
   }
 }

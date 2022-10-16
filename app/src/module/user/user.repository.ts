@@ -4,7 +4,7 @@ import { InjectRepository } from '@nestjs/typeorm'
 import {
   Repository,
   FindOneOptions,
-  FindManyOptions,
+  FindManyOptions
 } from 'typeorm'
 
 import { User } from './entity/user.entity'

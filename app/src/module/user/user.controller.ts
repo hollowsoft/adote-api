@@ -1,24 +1,33 @@
 import {
   Get,
   Param,
+  Query,
   Controller
 } from '@nestjs/common'
 
-import { UserService } from './user.service'
+import { UserService } from './service/user.service'
 
-import { GetUserRequest } from './request/get.user.request'
-import { GetUserResponse } from './response/get.user.response'
+import {
+  GetUserRequest,
+  ListUserRequest
+} from './request'
+
+import {
+  GetUserResponse,
+  ListUserResponse
+} from './response'
 
 @Controller('user')
 export class UserController {
   constructor(private readonly service: UserService) {}
 
   @Get(':id')
-  async get(@Param() request: GetUserRequest): Promise<GetUserResponse> {
-    const { id } = request
+  get(@Param() request: GetUserRequest): Promise<GetUserResponse> {
+    return this.service.get(request)
+  }
 
-    const user = await this.service.get(id)
-
-    return new GetUserResponse(user)
+  @Get()
+  all(@Query() request: ListUserRequest): Promise<ListUserResponse[]> {
+    return this.service.all(request)
   }
 }

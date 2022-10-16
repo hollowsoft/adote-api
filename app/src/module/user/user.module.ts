@@ -4,8 +4,9 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { User } from './entity/user.entity'
 import { UserRepository } from './user.repository'
 
-import { UserService } from './user.service'
-import { GetUserCase } from './case/get.user.case'
+import { UserService } from './service/user.service'
+import { GetUserService } from './service/get.user.service'
+import { ListUserService } from './service/list.user.service'
 
 import { UserController } from './user.controller'
 
@@ -13,9 +14,10 @@ import { UserController } from './user.controller'
   imports: [TypeOrmModule.forFeature([User])],
   exports: [UserRepository],
   providers: [
-    UserService,
     UserRepository,
-    GetUserCase
+    UserService,
+    GetUserService,
+    ListUserService
   ],
   controllers: [UserController]
 })

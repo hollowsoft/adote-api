@@ -1,11 +1,20 @@
-import { Controller, Get } from '@nestjs/common'
+import {
+  Get,
+  Query,
+  Controller
+} from '@nestjs/common'
 
-import { History } from './entity/history.entity'
+import { HistoryService } from './service/history.service'
+
+import { ListHistoryRequest } from './request'
+import { ListHistoryResponse } from './response'
 
 @Controller('history')
 export class HistoryController {
+  constructor(private readonly service: HistoryService) {}
+
   @Get()
-  get(): History {
-    return null
+  all(@Query() request: ListHistoryRequest): Promise<ListHistoryResponse[]> {
+    return this.service.all(request)
   }
 }
