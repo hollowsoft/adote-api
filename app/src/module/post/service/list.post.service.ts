@@ -10,7 +10,15 @@ export class ListPostService {
   constructor(private readonly repository: PostRepository) {}
 
   async run(request: ListPostRequest): Promise<ListPostResponse[]> {
-    const list = await this.repository.all()
+    const { size } = request
+
+    const list = await this.repository.all({
+      where: {
+        pet: {
+          size
+        }
+      }
+    })
 
     return list.map((post) => new ListPostResponse(post))
   }
