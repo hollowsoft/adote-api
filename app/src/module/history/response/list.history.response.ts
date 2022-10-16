@@ -6,14 +6,14 @@ import { Breed } from '../../breed/entity/breed.entity'
 import { History } from '../entity/history.entity'
 
 export class ListHistoryResponse {
-  id: string
-  create: Date
-  name: string
-  image: string
-  age: [number, number]
-  size: Size
-  gender: Gender
-  breed: Breed
+  readonly id: string
+  readonly create: Date
+  readonly name: string
+  readonly image: string
+  readonly age: [number, number]
+  readonly size: Size
+  readonly gender: Gender
+  readonly breed: Breed
 
   constructor(history: History) {
     this.id = history.id

@@ -1,9 +1,9 @@
 import { User } from '../../user/entity/user.entity'
 
 export class AuthMailResponse {
-  id: string
-  create: Date
-  mail: string
+  readonly id: string
+  readonly create: Date
+  readonly mail: string
 
   constructor(user: User) {
     this.id = user.id

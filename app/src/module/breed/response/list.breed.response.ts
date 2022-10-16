@@ -2,10 +2,10 @@ import { Kind } from '../entity/kind.entity'
 import { Breed } from '../entity/breed.entity'
 
 export class ListBreedResponse {
-  id: string
-  key: string
-  name: string
-  kind: Kind
+  readonly id: string
+  readonly key: string
+  readonly name: string
+  readonly kind: Kind
 
   constructor(breed: Breed) {
     this.id = breed.id
