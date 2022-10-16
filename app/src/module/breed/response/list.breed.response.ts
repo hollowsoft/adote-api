@@ -1,4 +1,4 @@
-import { Kind } from '../entity/kind.entity'
+import { Kind } from '../entity/kind.enum'
 import { Breed } from '../entity/breed.entity'
 
 export class ListBreedResponse {

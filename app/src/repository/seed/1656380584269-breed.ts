@@ -1,6 +1,6 @@
 import { QueryRunner, MigrationInterface } from 'typeorm'
 
-import { Kind } from '../../module/breed/entity/kind.entity'
+import { Kind } from '../../module/breed/entity/kind.enum'
 import { Breed } from '../../module/breed/entity/breed.entity'
 
 export class Breed_1656380584269 implements MigrationInterface {

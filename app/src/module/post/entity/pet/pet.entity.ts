@@ -8,8 +8,8 @@ import {
   PrimaryGeneratedColumn
 } from 'typeorm'
 
-import { Size } from './size.entity'
-import { Gender } from './gender.entity'
+import { Size } from './size.enum'
+import { Gender } from './gender.enum'
 
 import { Breed } from '../../../breed/entity/breed.entity'
 
