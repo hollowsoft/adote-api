@@ -28,8 +28,8 @@ export class PostService {
     return this.LIST_POST_SERVICE.run(request)
   }
 
-  create(request: CreatePostRequest): Promise<CreatePostResponse> {
-    return this.CREATE_POST_SERVICE.run(request)
+  create(request: CreatePostRequest, user: string): Promise<CreatePostResponse> {
+    return this.CREATE_POST_SERVICE.run(request, user)
   }
 
   remove(request: RemovePostRequest): Promise<RemovePostResponse> {

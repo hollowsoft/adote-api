@@ -8,6 +8,10 @@ import {
   Controller
 } from '@nestjs/common'
 
+import { Auth } from '../../decorator/auth.decorator'
+
+import { Token } from '../../type/token.type'
+
 import { PostService } from './service/post.service'
 
 import {
@@ -32,8 +36,10 @@ export class PostController {
   }
 
   @Post()
-  create(@Body() request: CreatePostRequest): Promise<CreatePostResponse> {
-    return this.service.create(request)
+  create(@Body() request: CreatePostRequest, @Auth() token: Token): Promise<CreatePostResponse> {
+    const { sub } = token
+
+    return this.service.create(request, sub)
   }
 
   @Delete(':id')
