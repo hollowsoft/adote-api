@@ -1,7 +1,9 @@
-import { Injectable, NotFoundException } from '@nestjs/common'
+import {
+  Injectable,
+  NotFoundException
+} from '@nestjs/common'
 
 import { Post } from '../entity/post.entity'
-
 import { Pet } from '../entity/pet/pet.entity'
 import { Breed } from '../../breed/entity/breed.entity'
 
@@ -40,8 +42,6 @@ export class UpdatePostService {
     if (isNil(find)) {
       throw new NotFoundException('post not found')
     }
-
-    console.log(find)
 
     const { pet: { id: pet } } = find
 

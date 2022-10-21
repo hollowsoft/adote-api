@@ -19,13 +19,16 @@ import {
   CreatePostRequest,
   UpdatePostParam,
   UpdatePostRequest,
+  PublishPostParam,
+  PublishPostRequest,
   RemovePostRequest
 } from './request'
 
 import {
   ListPostResponse,
   CreatePostResponse,
-  UpdatePostResponse
+  UpdatePostResponse,
+  PublishPostResponse
 } from './response'
 
 @Controller('post')
@@ -49,6 +52,13 @@ export class PostController {
     const { sub } = token
 
     return this.service.update(param, request, sub)
+  }
+
+  @Put(':id/publish')
+  publish(@Param() param: PublishPostParam, @Body() request: PublishPostRequest, @Auth() token: Token): Promise<PublishPostResponse> {
+    const { sub } = token
+
+    return this.service.publish(param, request, sub)
   }
 
   @Delete(':id')
