@@ -3,7 +3,10 @@ import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
 import { AuthModule } from './module/auth/auth.module'
+
+import { PostModule } from './module/post/post.module'
 import { BreedModule } from './module/breed/breed.module'
+
 import { HistoryModule } from './module/history/history.module'
 import { LocationModule } from './module/location/location.module'
 
@@ -14,6 +17,7 @@ import { isProd } from './helper/environment'
 @Module({
   imports: [
     AuthModule,
+    PostModule,
     BreedModule,
     HistoryModule,
     LocationModule,

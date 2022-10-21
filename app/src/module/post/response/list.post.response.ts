@@ -1,19 +1,7 @@
 import { Post } from '../entity/post.entity'
 
-import { Size } from '../entity/pet/size.entity'
-import { Gender } from '../entity/pet/gender.entity'
-
-export class PetResponse {
-  readonly name: string
-  readonly age: [number, number]
-  readonly size: Size
-  readonly gender: Gender
-}
-
-export class LocationResponse {
-  readonly city: string
-  readonly state: string
-}
+import { Size } from '../entity/pet/size.enum'
+import { Gender } from '../entity/pet/gender.enum'
 
 export class ListPostResponse {
   readonly id: string
@@ -41,4 +29,16 @@ export class ListPostResponse {
       state: state.pt
     }
   }
+}
+
+class PetResponse {
+  readonly name: string
+  readonly age: [number, number]
+  readonly size: Size
+  readonly gender: Gender
+}
+
+class LocationResponse {
+  readonly city: string
+  readonly state: string
 }

@@ -22,7 +22,7 @@ export class SearchLocationService {
 
     const list = await this.repository.all({
       where: {
-        name: Like(`%${term}%`)
+        pt: Like(`%${term}%`)
       }
     })
 
