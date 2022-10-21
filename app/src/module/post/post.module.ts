@@ -7,6 +7,7 @@ import { PostRepository } from './post.repository'
 import { PostService } from './service/post.service'
 import { ListPostService } from './service/list.post.service'
 import { CreatePostService } from './service/create.post.service'
+import { UpdatePostService } from './service/update.post.service'
 import { RemovePostService } from './service/remove.post.service'
 
 import { PostController } from './post.controller'
@@ -18,6 +19,7 @@ import { PostController } from './post.controller'
     PostService,
     ListPostService,
     CreatePostService,
+    UpdatePostService,
     RemovePostService
   ],
   controllers: [PostController]

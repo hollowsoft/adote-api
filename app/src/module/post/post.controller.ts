@@ -1,5 +1,6 @@
 import {
   Get,
+  Put,
   Post,
   Delete,
   Body,
@@ -17,12 +18,15 @@ import { PostService } from './service/post.service'
 import {
   ListPostRequest,
   CreatePostRequest,
+  UpdatePostParam,
+  UpdatePostRequest,
   RemovePostRequest
 } from './request'
 
 import {
   ListPostResponse,
   CreatePostResponse,
+  UpdatePostResponse,
   RemovePostResponse
 } from './response'
 
@@ -40,6 +44,13 @@ export class PostController {
     const { sub } = token
 
     return this.service.create(request, sub)
+  }
+
+  @Put(':id')
+  update(@Param() param: UpdatePostParam, @Body() request: UpdatePostRequest, @Auth() token: Token): Promise<UpdatePostResponse> {
+    const { sub } = token
+
+    return this.service.update(param, request, sub)
   }
 
   @Delete(':id')
