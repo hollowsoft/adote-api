@@ -16,7 +16,7 @@ export class RemovePostService {
   async run(request: RemovePostRequest, user: string): Promise<void> {
     const { id } = request
 
-    const find = await this.repository.find({
+    const post = await this.repository.find({
       where: {
         id,
         user: {
@@ -25,10 +25,10 @@ export class RemovePostService {
       }
     })
 
-    if (isNil(find)) {
+    if (isNil(post)) {
       throw new NotFoundException('post not found')
     }
     
-    await this.repository.remove(find)
+    await this.repository.remove(post)
   }
 }

@@ -1,6 +1,8 @@
 import {
   Post,
+  Delete,
   Body,
+  Param,
   Controller
 } from '@nestjs/common'
 
@@ -9,7 +11,10 @@ import { Token } from '../../type/token.type'
 
 import { FavService } from './service/fav.service'
 
-import { AddFavRequest } from './request'
+import {
+  AddFavRequest,
+  RemoveFavRequest
+} from './request'
 
 import { AddFavResponse } from './response'
 
@@ -22,5 +27,12 @@ export class FavController {
     const { sub } = token
 
     return this.service.add(request, sub)
+  }
+
+  @Delete(':id')
+  remove(@Param() request: RemoveFavRequest, @Auth() token: Token): Promise<void> {
+    const { sub } = token
+
+    return this.service.remove(request, sub)
   }
 }
