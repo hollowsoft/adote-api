@@ -16,8 +16,7 @@ import {
 import {
   ListPostResponse,
   CreatePostResponse,
-  UpdatePostResponse,
-  RemovePostResponse
+  UpdatePostResponse
 } from '../response'
 
 @Injectable()
@@ -41,7 +40,7 @@ export class PostService {
     return this.UPDATE_POST_SERVICE.run(param, request, user)
   }
 
-  remove(request: RemovePostRequest): Promise<RemovePostResponse> {
-    return this.REMOVE_POST_SERVICE.run(request)
+  remove(request: RemovePostRequest, user: string): Promise<void> {
+    return this.REMOVE_POST_SERVICE.run(request, user)
   }
 }

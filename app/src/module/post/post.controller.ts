@@ -26,8 +26,7 @@ import {
 import {
   ListPostResponse,
   CreatePostResponse,
-  UpdatePostResponse,
-  RemovePostResponse
+  UpdatePostResponse
 } from './response'
 
 @Controller('post')
@@ -54,7 +53,9 @@ export class PostController {
   }
 
   @Delete(':id')
-  remove(@Param() request: RemovePostRequest): Promise<RemovePostResponse> {
-    return this.service.remove(request)
+  remove(@Param() request: RemovePostRequest, @Auth() token: Token): Promise<void> {
+    const { sub } = token
+
+    return this.service.remove(request, sub)
   }
 }

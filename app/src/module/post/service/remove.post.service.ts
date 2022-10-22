@@ -3,11 +3,9 @@ import {
   NotFoundException
 } from '@nestjs/common'
 
-import { Post } from '../entity/post.entity'
 import { PostRepository } from '../post.repository'
 
 import { RemovePostRequest } from '../request'
-import { RemovePostResponse } from '../response'
 
 import { isNil } from 'lodash'
 
@@ -15,17 +13,22 @@ import { isNil } from 'lodash'
 export class RemovePostService {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(request: RemovePostRequest): Promise<RemovePostResponse> {
+  async run(request: RemovePostRequest, user: string): Promise<void> {
     const { id } = request
 
-    const post = await this.repository.remove(new Post({
-      id
-    }))
+    const find = await this.repository.find({
+      where: {
+        id,
+        user: {
+          id: user
+        }
+      }
+    })
 
-    if (isNil(post)) {
+    if (isNil(find)) {
       throw new NotFoundException('post not found')
     }
-
-    return new RemovePostResponse(post)
+    
+    await this.repository.remove(find)
   }
 }
