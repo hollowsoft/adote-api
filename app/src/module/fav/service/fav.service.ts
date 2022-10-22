@@ -32,7 +32,7 @@ export class FavService {
     return this.ADD_FAV_SERVICE.run(request, user)
   }
 
-  remove(request: RemoveFavRequest): Promise<RemoveFavResponse> {
-    return this.REMOVE_FAV_SERVICE.run(request, '')
+  remove(request: RemoveFavRequest, user: string): Promise<void> {
+    return this.REMOVE_FAV_SERVICE.run(request, user)
   }
 }
