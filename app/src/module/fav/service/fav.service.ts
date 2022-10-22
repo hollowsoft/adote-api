@@ -28,11 +28,11 @@ export class FavService {
     return this.LIST_FAV_SERVICE.run(request)
   }
 
-  add(request: AddFavRequest): Promise<AddFavResponse> {
-    return this.ADD_FAV_SERVICE.run(request)
+  add(request: AddFavRequest, user: string): Promise<AddFavResponse> {
+    return this.ADD_FAV_SERVICE.run(request, user)
   }
 
   remove(request: RemoveFavRequest): Promise<RemoveFavResponse> {
-    return this.REMOVE_FAV_SERVICE.run(request)
+    return this.REMOVE_FAV_SERVICE.run(request, '')
   }
 }

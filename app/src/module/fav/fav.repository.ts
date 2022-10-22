@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm'
 
 import {
   Repository,
+  FindOneOptions,
   FindManyOptions
 } from 'typeorm'
 
@@ -16,11 +17,15 @@ export class FavRepository {
     return this.repository.find(option)
   }
 
+  find(option: FindOneOptions<Fav>): Promise<Fav | null> {
+    return this.repository.findOne(option)
+  }
+
   save(fav: Fav): Promise<Fav> {
     return this.repository.save(fav)
   }
 
-  delete() {
-    
+  remove(fav: Fav): Promise<Fav> {
+    return this.repository.remove(fav)
   }
 }
