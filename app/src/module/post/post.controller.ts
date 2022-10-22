@@ -10,7 +10,6 @@ import {
 } from '@nestjs/common'
 
 import { Auth } from '../../decorator/auth.decorator'
-
 import { Token } from '../../type/token.type'
 
 import { PostService } from './service/post.service'

@@ -31,6 +31,6 @@ export class Fav {
   post: Post
 
   @OneToOne(() => User)
-  @JoinColumn({ name: 'user)id' })
+  @JoinColumn({ name: 'user_id' })
   user: User
 }

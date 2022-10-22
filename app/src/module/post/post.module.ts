@@ -14,6 +14,7 @@ import { PostController } from './post.controller'
 
 @Module({
   imports: [TypeOrmModule.forFeature([Post])],
+  exports: [PostRepository],
   providers: [
     PostRepository,
     PostService,
