@@ -6,6 +6,11 @@ import {
   UpdatePostRequest
 } from './update.post.request'
 
+import {
+  PublishPostParam,
+  PublishPostRequest
+} from './publish.post.request'
+
 import { RemovePostRequest } from './remove.post.request'
 
 export {
@@ -13,5 +18,7 @@ export {
   CreatePostRequest,
   UpdatePostParam,
   UpdatePostRequest,
+  PublishPostParam,
+  PublishPostRequest,
   RemovePostRequest
 }
