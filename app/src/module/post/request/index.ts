@@ -1,3 +1,4 @@
+import { GetPostRequest } from './get.post.request';
 import { ListPostRequest } from './list.post.request'
 import { CreatePostRequest } from './create.post.request'
 
@@ -14,6 +15,7 @@ import {
 import { RemovePostRequest } from './remove.post.request'
 
 export {
+  GetPostRequest,
   ListPostRequest,
   CreatePostRequest,
   UpdatePostParam,

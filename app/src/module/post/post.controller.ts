@@ -9,12 +9,15 @@ import {
   Controller
 } from '@nestjs/common'
 
-import { Auth } from '../../decorator/auth.decorator'
 import { Token } from '../../type/token.type'
+
+import { Auth } from '../../decorator/auth.decorator'
+import { Public } from '../../decorator/public.decorator'
 
 import { PostService } from './service/post.service'
 
 import {
+  GetPostRequest,
   ListPostRequest,
   CreatePostRequest,
   UpdatePostParam,
@@ -25,6 +28,7 @@ import {
 } from './request'
 
 import {
+  GetPostResponse,
   ListPostResponse,
   CreatePostResponse,
   UpdatePostResponse,
@@ -35,6 +39,13 @@ import {
 export class PostController {
   constructor(private readonly service: PostService) {}
 
+  @Public()
+  @Get(':id')
+  get(@Param() request: GetPostRequest): Promise<GetPostResponse> {
+    return this.service.get(request)
+  }
+
+  @Public()
   @Get()
   all(@Query() request: ListPostRequest): Promise<ListPostResponse[]> {
     return this.service.all(request)

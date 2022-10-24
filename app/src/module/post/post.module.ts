@@ -5,6 +5,7 @@ import { Post } from './entity/post.entity'
 import { PostRepository } from './post.repository'
 
 import { PostService } from './service/post.service'
+import { GetPostService } from './service/get.post.service'
 import { ListPostService } from './service/list.post.service'
 import { CreatePostService } from './service/create.post.service'
 import { UpdatePostService } from './service/update.post.service'
@@ -19,6 +20,7 @@ import { PostController } from './post.controller'
   providers: [
     PostRepository,
     PostService,
+    GetPostService,
     ListPostService,
     CreatePostService,
     UpdatePostService,
