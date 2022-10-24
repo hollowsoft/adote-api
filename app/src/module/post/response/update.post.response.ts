@@ -3,7 +3,7 @@ import { Post } from '../entity/post.entity'
 import { Size } from '../entity/pet/size.enum'
 import { Gender } from '../entity/pet/gender.enum'
 
-export class CreatePostResponse {
+export class UpdatePostResponse {
   readonly id: string
   readonly create: Date
   readonly title: string

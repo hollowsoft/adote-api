@@ -1,4 +1,4 @@
-import { Kind } from '../entity/kind.entity'
+import { Kind } from '../entity/kind.enum'
 
 export class ListBreedRequest {
   kind?: Kind

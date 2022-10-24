@@ -3,7 +3,7 @@ import { Post } from '../entity/post.entity'
 import { Size } from '../entity/pet/size.enum'
 import { Gender } from '../entity/pet/gender.enum'
 
-export class CreatePostResponse {
+export class GetPostResponse {
   readonly id: string
   readonly create: Date
   readonly title: string
@@ -11,9 +11,14 @@ export class CreatePostResponse {
   readonly image: string[]
   readonly pet: PetResponse
   readonly location: LocationResponse
+  readonly user: UserResponse
 
   constructor(post: Post) {
-    const { pet, pet: { breed }, city, city: { state } } = post
+    const { pet, city, user } = post
+
+    const { breed } = pet
+    const { state } = city
+    const { contact } = user
 
     this.id = post.id
     this.create = post.create
@@ -21,7 +26,6 @@ export class CreatePostResponse {
     this.description = post.description
     this.image = post.image
     this.pet = {
-      id: pet.id,
       name: pet.name,
       age: pet.age,
       size: pet.size,
@@ -36,11 +40,21 @@ export class CreatePostResponse {
       city: city.pt,
       state: state.pt
     }
+    this.user = {
+      create: user.create,
+      name: user.name,
+      image: user.image,
+      description: user.description,
+      contact: {
+        mail: contact?.mail,
+        phone: contact?.phone,
+        social: contact?.social
+      }
+    }
   }
 }
 
 class PetResponse {
-  readonly id: string
   readonly name: string
   readonly age: [number, number]
   readonly size: Size
@@ -57,4 +71,18 @@ class LocationResponse {
   readonly id: string
   readonly city: string
   readonly state: string
+}
+
+class UserResponse {
+  readonly create: Date
+  readonly name: string
+  readonly image: string
+  readonly description: string
+  readonly contact: ContactResponse
+}
+
+class ContactResponse {
+  readonly mail: string
+  readonly phone: string
+  readonly social: string
 }

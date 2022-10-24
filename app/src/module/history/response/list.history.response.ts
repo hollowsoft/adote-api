@@ -1,5 +1,5 @@
-import { Size } from '../../post/entity/pet/size.entity'
-import { Gender } from '../../post/entity/pet/gender.entity'
+import { Size } from '../../post/entity/pet/size.enum'
+import { Gender } from '../../post/entity/pet/gender.enum'
 
 import { Breed } from '../../breed/entity/breed.entity'
 

@@ -37,7 +37,7 @@ export class Post {
   @Column({ name: 'image', type: 'text', array: true })
   image: string[]
 
-  @OneToOne(() => Pet)
+  @OneToOne(() => Pet, { cascade: true })
   @JoinColumn({ name: 'pet_id' })
   pet: Pet
 

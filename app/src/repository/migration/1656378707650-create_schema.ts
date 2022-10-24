@@ -1,8 +1,13 @@
-import { Table, TableForeignKey, QueryRunner, MigrationInterface } from 'typeorm'
+import {
+  Table,
+  TableForeignKey,
+  QueryRunner,
+  MigrationInterface  
+} from 'typeorm'
 
 export class CreateSchema_1656378707650 implements MigrationInterface {
   async up(query: QueryRunner) {
-    await query.query('create extension if not exists "uuid-ossp"')
+    await query.query(`create extension if not exists "uuid-ossp"`)
 
     await query.createTable(
       new Table({
@@ -17,7 +22,8 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
           { name: 'state_id', type: 'uuid' }
         ],
         indices: [
-          { name: 'city_name', columnNames: ['name'] }
+          { name: 'city_name_en', columnNames: ['en'] },
+          { name: 'city_name_pt', columnNames: ['pt'] }
         ]
       })
     )
@@ -35,7 +41,8 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
           { name: 'country_id', type: 'uuid' }
         ],
         indices: [
-          { name: 'state_name', columnNames: ['name'] }
+          { name: 'state_name_en', columnNames: ['en'] },
+          { name: 'state_name_pt', columnNames: ['pt'] }
         ]
       })
     )
@@ -124,7 +131,7 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
           { name: 'description', type: 'text', isNullable: true },
           { name: 'city_id', type: 'uuid', isNullable: true },
           { name: 'contact_id', type: 'uuid', isNullable: true },
-          { name: 'admin', type: 'boolean', default: false },
+          { name: 'role', type: 'enum', enum: ['user', 'admin'], default: `'user'` },
           { name: 'enable', type: 'boolean', default: true }
         ],
         indices: [
@@ -172,7 +179,7 @@ export class CreateSchema_1656378707650 implements MigrationInterface {
           { name: 'image', type: 'text' },
           { name: 'age', type: 'integer[]' },
           { name: 'size', type: 'enum', enum: ['small', 'medium', 'large'] },
-          { name: 'gender', type: 'enum', enum: ['make', 'female'] },
+          { name: 'gender', type: 'enum', enum: ['male', 'female'] },
           { name: 'breed_id', type: 'uuid' }
         ]
       })

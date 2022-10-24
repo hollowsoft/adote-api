@@ -45,7 +45,12 @@ class PetRequest {
   breed: string
 }
 
-export class CreatePostRequest {
+export class UpdatePostParam {
+  @IsUUID()
+  id: string
+}
+
+export class UpdatePostRequest {
   @IsString()
   @IsNotEmpty()
   @Transform(({ value }: TransformFnParams) => value?.trim())
