@@ -7,6 +7,7 @@ import { UserRepository } from './user.repository'
 import { UserService } from './service/user.service'
 import { GetUserService } from './service/get.user.service'
 import { ListUserService } from './service/list.user.service'
+import { ImageUserService } from './service/image.user.service'
 
 import { UserController } from './user.controller'
 
@@ -17,7 +18,8 @@ import { UserController } from './user.controller'
     UserRepository,
     UserService,
     GetUserService,
-    ListUserService
+    ListUserService,
+    ImageUserService
   ],
   controllers: [UserController]
 })
