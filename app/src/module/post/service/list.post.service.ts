@@ -17,7 +17,12 @@ export class ListPostService {
         pet: {
           size
         }
-      }
+      },
+      relations: [
+        'pet.breed',
+        'city.state',
+        'user.contact'
+      ]
     })
 
     return list.map((post) => new ListPostResponse(post))

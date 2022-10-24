@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common'
 
+import { GetPostService } from './get.post.service'
 import { ListPostService } from './list.post.service'
 import { CreatePostService } from './create.post.service'
 import { UpdatePostService } from './update.post.service'
@@ -7,6 +8,7 @@ import { PublishPostService } from './publish.post.service'
 import { RemovePostService } from './remove.post.service'
 
 import {
+  GetPostRequest,
   ListPostRequest,
   CreatePostRequest,
   UpdatePostParam,
@@ -17,6 +19,7 @@ import {
 } from '../request'
 
 import {
+  GetPostResponse,
   ListPostResponse,
   CreatePostResponse,
   UpdatePostResponse,
@@ -26,12 +29,17 @@ import {
 @Injectable()
 export class PostService {
   constructor(
+    private readonly GET_POST_SERVICE: GetPostService,
     private readonly LIST_POST_SERVICE: ListPostService,
     private readonly CREATE_POST_SERVICE: CreatePostService,
     private readonly UPDATE_POST_SERVICE: UpdatePostService,
     private readonly PUBLISH_POST_SERVICE: PublishPostService,
     private readonly REMOVE_POST_SERVICE: RemovePostService
   ) {}
+
+  get(request: GetPostRequest): Promise<GetPostResponse> {
+    return this.GET_POST_SERVICE.run(request)
+  }
 
   all(request: ListPostRequest): Promise<ListPostResponse[]> {
     return this.LIST_POST_SERVICE.run(request)
