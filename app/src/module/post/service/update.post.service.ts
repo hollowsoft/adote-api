@@ -43,9 +43,9 @@ export class UpdatePostService {
       throw new NotFoundException('post not found')
     }
 
-    const { pet: { id: pet } } = find
+    const { pet } = find
 
-    await this.repository.save(this.build(id, pet, request))
+    await this.repository.save(this.build(id, pet.id, request))
 
     const post = await this.repository.find({
       where: {
@@ -60,7 +60,7 @@ export class UpdatePostService {
     return new UpdatePostResponse(post)
   }
 
-  toPet(id: string, request: UpdatePostRequest): Pet {
+  private toPet(id: string, request: UpdatePostRequest): Pet {
     const { pet } = request
 
     return new Pet({
@@ -75,7 +75,7 @@ export class UpdatePostService {
     })
   }
 
-  build(id: string, pet: string, request: UpdatePostRequest): Post {
+  private build(id: string, pet: string, request: UpdatePostRequest): Post {
     return new Post({
       id,
       title: request.title,

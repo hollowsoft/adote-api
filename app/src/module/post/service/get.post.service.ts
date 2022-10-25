@@ -6,7 +6,6 @@ import {
 import { PostRepository } from '../post.repository'
 
 import { GetPostRequest } from '../request'
-
 import { GetPostResponse } from '../response'
 
 import { isNil } from 'lodash'

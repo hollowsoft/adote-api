@@ -15,7 +15,11 @@ export class ListUserService {
     const list = await this.repository.all({
       where: {
         enable
-      }
+      },
+      relations: [
+        'city.state',
+        'contact'
+      ]
     })
 
     return list.map((user) => new ListUserResponse(user))

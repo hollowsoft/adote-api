@@ -6,7 +6,10 @@ import { UserRepository } from './user.repository'
 
 import { UserService } from './service/user.service'
 import { GetUserService } from './service/get.user.service'
+import { GetCurrentService } from './service/get.current.service'
 import { ListUserService } from './service/list.user.service'
+import { UpdateUserService } from './service/update.user.service'
+import { ImageUserService } from './service/image.user.service'
 
 import { UserController } from './user.controller'
 
@@ -17,7 +20,10 @@ import { UserController } from './user.controller'
     UserRepository,
     UserService,
     GetUserService,
-    ListUserService
+    GetCurrentService,
+    ListUserService,
+    UpdateUserService,
+    ImageUserService
   ],
   controllers: [UserController]
 })

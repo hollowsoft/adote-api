@@ -1,6 +1,6 @@
 import { User } from '../entity/user.entity'
 
-export class GetUserResponse {
+export class GetCurrentResponse {
   readonly create: Date
   readonly mail: string
   readonly name: string
