@@ -18,6 +18,7 @@ import {
 
 import {
   GetUserResponse,
+  GetCurrentResponse,
   ListUserResponse
 } from './response'
 
@@ -28,6 +29,13 @@ export class UserController {
   @Get(':id')
   get(@Param() request: GetUserRequest): Promise<GetUserResponse> {
     return this.service.get(request)
+  }
+
+  @Get('current')
+  current(@Auth() token: Token): Promise<GetCurrentResponse> {
+    const { sub } = token
+
+    return this.service.current(sub)
   }
 
   @Get()
