@@ -46,7 +46,7 @@ export class ListPostResponse {
       image: user.image,
       description: user.description,
       contact: {
-        mail: contact?.mail,
+        mail: contact?.mail ?? user.mail,
         phone: contact?.phone,
         social: contact?.social
       }
