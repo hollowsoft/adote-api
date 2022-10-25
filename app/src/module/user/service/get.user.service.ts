@@ -20,7 +20,11 @@ export class GetUserService {
     const user = await this.repository.find({
       where: {
         id
-      }
+      },
+      relations: [
+        'city.state',
+        'contact'
+      ]
     })
 
     if (isNil(user)) {
