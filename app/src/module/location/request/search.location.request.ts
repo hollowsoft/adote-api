@@ -1,3 +1,10 @@
+import {
+  IsString,
+  IsOptional
+} from 'class-validator'
+
 export class SearchLocationRequest {
-  term?: string
+  @IsString()
+  @IsOptional()
+  readonly term?: string
 }

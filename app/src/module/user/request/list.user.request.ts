@@ -6,5 +6,5 @@ import {
 export class ListUserRequest {
   @IsBoolean()
   @IsOptional()
-  enable?: boolean
+  readonly enable?: boolean
 }
