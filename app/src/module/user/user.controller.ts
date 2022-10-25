@@ -1,6 +1,8 @@
 import {
   Get,
+  Put,
   Post,
+  Body,
   Query,
   Param,
   Controller
@@ -13,13 +15,15 @@ import { UserService } from './service/user.service'
 
 import {
   GetUserRequest,
-  ListUserRequest
+  ListUserRequest,
+  UpdateUserRequest
 } from './request'
 
 import {
   GetUserResponse,
   GetCurrentResponse,
-  ListUserResponse
+  ListUserResponse,
+  UpdateUserResponse
 } from './response'
 
 @Controller('user')
@@ -41,6 +45,13 @@ export class UserController {
   @Get()
   all(@Query() request: ListUserRequest): Promise<ListUserResponse[]> {
     return this.service.all(request)
+  }
+
+  @Put()
+  update(@Body() request: UpdateUserRequest, @Auth() token: Token): Promise<UpdateUserResponse> {
+    const { sub } = token
+
+    return this.service.update(request, sub)
   }
 
   @Post('image')

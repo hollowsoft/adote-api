@@ -4,7 +4,7 @@ import {
 } from 'class-validator'
 
 export class ListUserRequest {
-  @IsOptional()
   @IsBoolean()
+  @IsOptional()
   enable?: boolean
 }

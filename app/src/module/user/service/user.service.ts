@@ -3,17 +3,20 @@ import { Injectable } from '@nestjs/common'
 import { GetUserService } from './get.user.service'
 import { GetCurrentService } from './get.current.service'
 import { ListUserService } from './list.user.service'
+import { UpdateUserService } from './update.user.service'
 import { ImageUserService } from './image.user.service'
 
 import {
   GetUserRequest,
-  ListUserRequest
+  ListUserRequest,
+  UpdateUserRequest
 } from '../request'
 
 import {
   GetUserResponse,
   GetCurrentResponse,
-  ListUserResponse
+  ListUserResponse,
+  UpdateUserResponse
 } from '../response'
 
 @Injectable()
@@ -22,6 +25,7 @@ export class UserService {
     private readonly GET_USER_SERVICE: GetUserService,
     private readonly GET_CURRENT_SERVICE: GetCurrentService,
     private readonly LIST_USER_SERVICE: ListUserService,
+    private readonly UPDATE_USER_SERVICE: UpdateUserService,
     private readonly IMAGE_USER_SERVICE: ImageUserService
   ) {}
 
@@ -35,6 +39,10 @@ export class UserService {
 
   all(request: ListUserRequest): Promise<ListUserResponse[]> {
     return this.LIST_USER_SERVICE.run(request)
+  }
+
+  update(request: UpdateUserRequest, user: string): Promise<UpdateUserResponse> {
+    return this.UPDATE_USER_SERVICE.run(request, user)
   }
 
   image(user: string): Promise<void> {
