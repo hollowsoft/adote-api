@@ -5,8 +5,8 @@ import {
 
 export class AuthMailCodeRequest {
   @IsEmail()
-  mail: string
+  readonly mail: string
 
   @Length(6, 6)
-  code: string
+  readonly code: string
 }

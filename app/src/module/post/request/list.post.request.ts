@@ -8,5 +8,5 @@ import { Size } from '../entity/pet/size.enum'
 export class ListPostRequest {
   @IsEnum(Size)
   @IsOptional()
-  size?: Size
+  readonly size?: Size
 }

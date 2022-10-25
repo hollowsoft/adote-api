@@ -25,7 +25,7 @@ class PetRequest {
   @IsString()
   @IsNotEmpty()
   @Transform(({ value }: TransformFnParams) => value?.trim())
-  name: string
+  readonly name: string
 
   @IsArray()
   @ArrayMinSize(2)
@@ -33,37 +33,37 @@ class PetRequest {
   @IsNumber({}, { each: true })
   @Min(1, { each: true })
   @Max(20, { each: true })
-  age: [number, number]
+  readonly age: [number, number]
 
   @IsEnum(Size)
-  size: Size
+  readonly size: Size
 
   @IsEnum(Gender)
-  gender: Gender
+  readonly gender: Gender
 
   @IsUUID()
-  breed: string
+  readonly breed: string
 }
 
 export class CreatePostRequest {
   @IsString()
   @IsNotEmpty()
   @Transform(({ value }: TransformFnParams) => value?.trim())
-  title: string
+  readonly title: string
 
   @IsString()
   @IsNotEmpty()
   @Transform(({ value }: TransformFnParams) => value?.trim())
-  description: string
+  readonly description: string
 
   @IsArray()
   @IsUUID(4, { each: true })
-  image: string[]
+  readonly image: string[]
 
   @Type(() => PetRequest)
   @ValidateNested()
-  pet: PetRequest
+  readonly pet: PetRequest
 
   @IsUUID()
-  location: string
+  readonly location: string
 }
