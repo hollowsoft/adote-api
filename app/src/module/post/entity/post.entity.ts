@@ -19,36 +19,58 @@ export class Post {
     Object.assign(this, post)
   }
 
-  @PrimaryGeneratedColumn('uuid', { name: 'id' })
+  @PrimaryGeneratedColumn('uuid', {
+    name: 'id'
+  })
   id: string
 
-  @CreateDateColumn({ name: 'create' })
+  @CreateDateColumn({
+    name: 'create'
+  })
   create: Date
 
-  @UpdateDateColumn({ name: 'update' })
+  @UpdateDateColumn({
+    name: 'update'
+  })
   update: Date
 
-  @Column({ name: 'title' })
+  @Column({
+    name: 'title'
+  })
   title: string
 
-  @Column({ name: 'description' })
+  @Column({
+    name: 'description'
+  })
   description: string
 
-  @Column({ name: 'image', type: 'text', array: true })
+  @Column({
+    name: 'image',
+    type: 'text',
+    array: true
+  })
   image: string[]
 
   @OneToOne(() => Pet, { cascade: true })
-  @JoinColumn({ name: 'pet_id' })
+  @JoinColumn({
+    name: 'pet_id'
+  })
   pet: Pet
 
   @OneToOne(() => City)
-  @JoinColumn({ name: 'city_id' })
+  @JoinColumn({
+    name: 'city_id'
+  })
   city: City
 
   @ManyToOne(() => User, (user) => user.post)
-  @JoinColumn({ name: 'user_id' })
+  @JoinColumn({
+    name: 'user_id'
+  })
   user: User
 
-  @Column({ name: 'publish' })
+  @Column({
+    name: 'publish'
+  })
   publish: boolean
 }

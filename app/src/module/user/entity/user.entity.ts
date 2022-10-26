@@ -23,45 +23,77 @@ export class User {
     Object.assign(this, user)
   }
 
-  @PrimaryGeneratedColumn('uuid', { name: 'id' })
+  @PrimaryGeneratedColumn('uuid', {
+    name: 'id'
+  })
   id: string
 
-  @CreateDateColumn({ name: 'create' })
+  @CreateDateColumn({
+    name: 'create'
+  })
   create: Date
 
-  @UpdateDateColumn({ name: 'update' })
+  @UpdateDateColumn({
+    name: 'update'
+  })
   update: Date
 
-  @Column({ name: 'mail', unique: true })
+  @Column({
+    name: 'mail',
+    unique: true
+  })
   mail: string
 
-  @Column({ name: 'name', nullable: true })
+  @Column({
+    name: 'name',
+    nullable: true
+  })
   name?: string
 
-  @Column({ name: 'image', nullable: true })
+  @Column({
+    name: 'image',
+    nullable: true
+  })
   image?: string
 
-  @Column({ name: 'description', nullable: true })
+  @Column({
+    name: 'description',
+    nullable: true
+  })
   description?: string
 
   @ManyToMany(() => Post)
-  @JoinTable({ name: 'fav' })
+  @JoinTable({
+    name: 'fav'
+  })
   fav: Post[]
 
   @OneToMany(() => Post, (post) => post.user)
   post: Post[]
 
   @OneToOne(() => City)
-  @JoinColumn({ name: 'city_id' })
+  @JoinColumn({
+    name: 'city_id'
+  })
   city?: City
 
   @OneToOne(() => Contact, { cascade: true })
-  @JoinColumn({ name: 'contact_id' })
+  @JoinColumn({
+    name: 'contact_id'
+  })
   contact?: Contact
 
-  @Column({ name: 'role', type: 'enum', enum: Role, default: Role.USER })
+  @Column({
+    name: 'role',
+    type: 'enum',
+    enum: Role,
+    default: Role.USER
+  })
   role: Role
 
-  @Column({ name: 'enable', default: true })
+  @Column({
+    name: 'enable',
+    default: true
+  })
   enable: boolean
 }
