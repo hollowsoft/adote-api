@@ -17,20 +17,30 @@ export class Fav {
     Object.assign(this, fav)
   }
 
-  @PrimaryGeneratedColumn('uuid', { name: 'id' })
+  @PrimaryGeneratedColumn('uuid', {
+    name: 'id'
+  })
   id: string
 
-  @CreateDateColumn({ name: 'create' })
+  @CreateDateColumn({
+    name: 'create'
+  })
   create: Date
 
-  @UpdateDateColumn({ name: 'update' })
+  @UpdateDateColumn({
+    name: 'update'
+  })
   update: Date
 
   @OneToOne(() => Post)
-  @JoinColumn({ name: 'post_id' })
+  @JoinColumn({
+    name: 'post_id'
+  })
   post: Post
 
   @OneToOne(() => User)
-  @JoinColumn({ name: 'user_id' })
+  @JoinColumn({
+    name: 'user_id'
+  })
   user: User
 }

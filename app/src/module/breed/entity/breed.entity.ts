@@ -14,24 +14,40 @@ export class Breed {
     Object.assign(this, breed)
   }
 
-  @PrimaryGeneratedColumn('uuid', { name: 'id' })
+  @PrimaryGeneratedColumn('uuid', {
+    name: 'id'
+  })
   id: string
 
-  @CreateDateColumn({ name: 'create' })
+  @CreateDateColumn({
+    name: 'create'
+  })
   create: Date
 
-  @UpdateDateColumn({ name: 'update' })
+  @UpdateDateColumn({
+    name: 'update'
+  })
   update: Date
 
-  @Column({ name: 'key' })
+  @Column({
+    name: 'key'
+  })
   key: string
 
-  @Column({ name: 'en' })
+  @Column({
+    name: 'en'
+  })
   en: string
 
-  @Column({ name: 'pt' })
+  @Column({
+    name: 'pt'
+  })
   pt: string
 
-  @Column({ name: 'kind', type: 'enum', enum: Kind })
+  @Column({
+    name: 'kind',
+    type: 'enum',
+    enum: Kind
+  })
   kind: Kind
 }
