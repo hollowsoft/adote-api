@@ -35,13 +35,17 @@ export class AuthMailCodeService {
     }
 
     // TODO: check code
+    const param = {
+      sub: user.id,
+      role: user.role
+    }
 
-    const token = this.service.sign({ sub: user.id }, {
+    const token = this.service.sign(param, {
       secret: this.config.get<string>('AUTH_SECRET'),
       expiresIn: this.config.get<number>('AUTH_EXPIRE')
     })
 
-    const refresh = this.service.sign({ sub: user.id }, {
+    const refresh = this.service.sign(param, {
       secret: this.config.get<string>('TOKEN_SECRET'),
       expiresIn: this.config.get<number>('TOKEN_EXPIRE')
     })
