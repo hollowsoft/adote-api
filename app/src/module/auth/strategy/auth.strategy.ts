@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common'
 
-import { Token } from '../../../type/token.type'
-
 import {
   Strategy,
   ExtractJwt
 } from 'passport-jwt'
 
 import { PassportStrategy } from '@nestjs/passport'
+
+import { Token } from '../../../type/token.type'
 
 @Injectable()
 export class AuthStrategy extends PassportStrategy(Strategy, 'auth') {
