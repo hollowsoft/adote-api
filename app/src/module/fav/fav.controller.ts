@@ -4,6 +4,7 @@ import {
   Delete,
   Body,
   Param,
+  HttpCode,
   Controller
 } from '@nestjs/common'
 
@@ -41,6 +42,7 @@ export class FavController {
   }
 
   @Delete(':id')
+  @HttpCode(204)
   remove(@Param() request: RemoveFavRequest, @Auth() token: Token): Promise<void> {
     const { sub } = token
 
