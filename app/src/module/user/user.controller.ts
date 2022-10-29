@@ -5,6 +5,7 @@ import {
   Body,
   Query,
   Param,
+  HttpCode,
   Controller
 } from '@nestjs/common'
 
@@ -60,6 +61,7 @@ export class UserController {
   }
 
   @Post('image')
+  @HttpCode(200)
   image(@Auth() token: Token): Promise<void> {
     const { sub } = token
 
