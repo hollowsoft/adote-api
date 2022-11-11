@@ -6,6 +6,7 @@ import {
   Body,
   Query,
   Param,
+  HttpCode,
   Controller
 } from '@nestjs/common'
 
@@ -73,6 +74,7 @@ export class PostController {
   }
 
   @Delete(':id')
+  @HttpCode(204)
   remove(@Param() request: RemovePostRequest, @Auth() token: Token): Promise<void> {
     const { sub } = token
 

@@ -9,7 +9,7 @@ import { ListHistoryResponse } from '../response'
 export class ListHistoryService {
   constructor(private readonly repository: HistoryRepository) {}
 
-  async run(request: ListHistoryRequest): Promise<ListHistoryResponse[]> {
+  async run(_: ListHistoryRequest): Promise<ListHistoryResponse[]> {
     const list = await this.repository.all({
       order: {
         create: 'desc'

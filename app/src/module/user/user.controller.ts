@@ -5,10 +5,14 @@ import {
   Body,
   Query,
   Param,
+  HttpCode,
   Controller
 } from '@nestjs/common'
 
 import { Auth } from '../../decorator/auth.decorator'
+import { Permission } from '../../decorator/permission.decorator'
+
+import { Role } from './entity/role.enum'
 import { Token } from '../../type/token.type'
 
 import { UserService } from './service/user.service'
@@ -31,6 +35,7 @@ export class UserController {
   constructor(private readonly service: UserService) {}
 
   @Get(':id')
+  @Permission(Role.ADMIN)
   get(@Param() request: GetUserRequest): Promise<GetUserResponse> {
     return this.service.get(request)
   }
@@ -43,6 +48,7 @@ export class UserController {
   }
 
   @Get()
+  @Permission(Role.ADMIN)
   all(@Query() request: ListUserRequest): Promise<ListUserResponse[]> {
     return this.service.all(request)
   }
@@ -55,6 +61,7 @@ export class UserController {
   }
 
   @Post('image')
+  @HttpCode(200)
   image(@Auth() token: Token): Promise<void> {
     const { sub } = token
 

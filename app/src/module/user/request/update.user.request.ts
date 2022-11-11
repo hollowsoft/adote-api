@@ -18,35 +18,35 @@ import {
 class ContactRequest {
   @IsEmail()
   @IsOptional()
-  mail?: string
+  readonly mail?: string
 
   @IsPhoneNumber('BR')
   @IsOptional()
-  phone?: string
+  readonly phone?: string
 
   @IsString()
   @MaxLength(20)
   @IsOptional()
-  social?: string
+  readonly social?: string
 }
 
 export class UpdateUserRequest {
   @IsString()
   @IsNotEmpty()
   @Transform(({ value }: TransformFnParams) => value?.trim())
-  name: string
+  readonly name: string
 
   @IsString()
   @MaxLength(400)
   @IsOptional()
   @Transform(({ value }: TransformFnParams) => value?.trim())
-  description?: string
+  readonly description?: string
 
   @IsUUID()
-  location: string
+  readonly location: string
 
   @Type(() => ContactRequest)
   @IsOptional()
   @ValidateNested()
-  contact?: ContactRequest
+  readonly contact?: ContactRequest
 }

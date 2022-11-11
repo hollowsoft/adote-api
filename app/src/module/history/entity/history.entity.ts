@@ -19,31 +19,55 @@ export class History {
     Object.assign(this, history)
   }
 
-  @PrimaryGeneratedColumn('uuid', { name: 'id' })
+  @PrimaryGeneratedColumn('uuid', {
+    name: 'id'
+  })
   id: string
 
-  @CreateDateColumn({ name: 'create' })
+  @CreateDateColumn({
+    name: 'create'
+  })
   create: Date
 
-  @UpdateDateColumn({ name: 'update' })
+  @UpdateDateColumn({
+    name: 'update'
+  })
   update: Date
 
-  @Column({ name: 'name' })
+  @Column({
+    name: 'name'
+  })
   name: string
 
-  @Column({ name: 'image' })
+  @Column({
+    name: 'image'
+  })
   image: string
 
-  @Column({ name: 'age', type: 'int', array: true })
+  @Column({
+    name: 'age',
+    type: 'int',
+    array: true
+  })
   age: [number, number]
 
-  @Column({ name: 'size', type: 'enum', enum: Size })
+  @Column({
+    name: 'size',
+    type: 'enum',
+    enum: Size
+  })
   size: Size
 
-  @Column({ name: 'gender', type: 'enum', enum: Gender })
+  @Column({
+    name: 'gender',
+    type: 'enum',
+    enum: Gender
+  })
   gender: Gender
 
   @OneToOne(() => Breed)
-  @JoinColumn({ name: 'breed_id' })
+  @JoinColumn({
+    name: 'breed_id'
+  })
   breed: Breed
 }

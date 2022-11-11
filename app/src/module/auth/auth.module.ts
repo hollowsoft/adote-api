@@ -6,8 +6,9 @@ import { PassportModule } from '@nestjs/passport'
 
 import { UserModule } from '../user/user.module'
 
-import { AuthGuard as Guard } from './guard/auth.guard'
+import { AuthGuard as Auth } from './guard/auth.guard'
 import { TokenGuard } from './guard/token.guard'
+import { PermissionGuard as Permission } from './guard/permission.guard'
 
 import { AuthStrategy } from './strategy/auth.strategy'
 import { TokenStrategy } from './strategy/token.strategy'
@@ -21,7 +22,12 @@ import { AuthController } from './auth.controller'
 
 const AuthGuard = {
   provide: APP_GUARD,
-  useClass: Guard
+  useClass: Auth
+}
+
+const PermissionGuard = {
+  provide: APP_GUARD,
+  useClass: Permission
 }
 
 @Module({
@@ -32,6 +38,7 @@ const AuthGuard = {
   ],
   providers: [
     AuthGuard,
+    PermissionGuard,
     TokenGuard,
     AuthStrategy,
     TokenStrategy,
