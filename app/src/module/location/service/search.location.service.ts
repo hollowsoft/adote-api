@@ -23,7 +23,10 @@ export class SearchLocationService {
     const list = await this.repository.all({
       where: {
         pt: Like(`%${term}%`)
-      }
+      },
+      relations: [
+        'state'
+      ]
     })
 
     return list.map((city) => new SearchLocationResponse(city))
