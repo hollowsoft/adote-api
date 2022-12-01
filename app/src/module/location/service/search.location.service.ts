@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 
-import { Like } from 'typeorm'
+import { ILike } from 'typeorm'
 
 import { CityRepository } from '../city.repository'
 
@@ -23,7 +23,7 @@ export class SearchLocationService {
 
     const list = await this.repository.all({
       where: {
-        pt: Like(`%${term}%`)
+        pt: ILike(`${term}%`)
       },
       relations: [
         'state'
