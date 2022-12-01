@@ -41,15 +41,15 @@ export class PostController {
   constructor(private readonly service: PostService) {}
 
   @Public()
-  @Get(':id')
-  get(@Param() request: GetPostRequest): Promise<GetPostResponse> {
-    return this.service.get(request)
-  }
-
-  @Public()
   @Get()
   all(@Query() request: ListPostRequest): Promise<ListPostResponse[]> {
     return this.service.all(request)
+  }
+
+  @Public()
+  @Get(':id')
+  get(@Param() request: GetPostRequest): Promise<GetPostResponse> {
+    return this.service.get(request)
   }
 
   @Post()
