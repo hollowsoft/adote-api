@@ -9,7 +9,8 @@ import { Public } from '../../decorator/public.decorator'
 import { LocationService } from './service/location.service'
 
 import { SearchLocationRequest } from './request'
-import { SearchLocationResponse } from './response'
+
+import { LocationResponse } from './response'
 
 @Controller('location')
 export class LocationController {
@@ -17,7 +18,7 @@ export class LocationController {
 
   @Public()
   @Get('search')
-  search(@Query() request: SearchLocationRequest): Promise<SearchLocationResponse[]> {
+  search(@Query() request: SearchLocationRequest): Promise<LocationResponse[]> {
     return this.service.search(request)
   }
 }
