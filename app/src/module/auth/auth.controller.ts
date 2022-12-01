@@ -21,7 +21,6 @@ import {
 
 import {
   AuthMailResponse,
-  AuthMailCodeResponse,
   AuthTokenResponse
 } from './response'
 
@@ -39,7 +38,7 @@ export class AuthController {
   @Public()
   @Post('mail/code')
   @HttpCode(200)
-  code(@Body() request: AuthMailCodeRequest): Promise<AuthMailCodeResponse> {
+  code(@Body() request: AuthMailCodeRequest): Promise<AuthTokenResponse> {
     return this.service.code(request)
   }
 
