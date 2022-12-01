@@ -1,7 +1,7 @@
 import { Kind } from '../entity/kind.enum'
 import { Breed } from '../entity/breed.entity'
 
-export class ListBreedResponse {
+export class BreedResponse {
   readonly id: string
   readonly name: string
   readonly kind: Kind
