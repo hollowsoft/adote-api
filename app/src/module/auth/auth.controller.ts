@@ -1,6 +1,7 @@
 import {
   Post,
   Body,
+  HttpCode,
   UseGuards,
   Controller
 } from '@nestjs/common'
@@ -30,12 +31,14 @@ export class AuthController {
 
   @Public()
   @Post('mail')
+  @HttpCode(200)
   mail(@Body() request: AuthMailRequest): Promise<AuthMailResponse> {
     return this.service.mail(request)
   }
 
   @Public()
   @Post('mail/code')
+  @HttpCode(200)
   code(@Body() request: AuthMailCodeRequest): Promise<AuthMailCodeResponse> {
     return this.service.code(request)
   }
@@ -43,6 +46,7 @@ export class AuthController {
   @Public()
   @UseGuards(TokenGuard)
   @Post('token')
+  @HttpCode(200)
   token(@Auth() token: Token): Promise<AuthTokenResponse> {
     const { sub } = token
 

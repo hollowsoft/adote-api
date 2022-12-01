@@ -6,6 +6,7 @@ import {
   Body,
   Query,
   Param,
+  HttpCode,
   Controller
 } from '@nestjs/common'
 
@@ -40,15 +41,15 @@ export class PostController {
   constructor(private readonly service: PostService) {}
 
   @Public()
-  @Get(':id')
-  get(@Param() request: GetPostRequest): Promise<GetPostResponse> {
-    return this.service.get(request)
-  }
-
-  @Public()
   @Get()
   all(@Query() request: ListPostRequest): Promise<ListPostResponse[]> {
     return this.service.all(request)
+  }
+
+  @Public()
+  @Get(':id')
+  get(@Param() request: GetPostRequest): Promise<GetPostResponse> {
+    return this.service.get(request)
   }
 
   @Post()
@@ -73,6 +74,7 @@ export class PostController {
   }
 
   @Delete(':id')
+  @HttpCode(204)
   remove(@Param() request: RemovePostRequest, @Auth() token: Token): Promise<void> {
     const { sub } = token
 

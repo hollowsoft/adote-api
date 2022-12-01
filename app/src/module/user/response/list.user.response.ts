@@ -19,27 +19,27 @@ export class ListUserResponse {
     this.name = user.name
     this.image = user.image
     this.description = user.description
-    this.location = city && {
-      id: city.id,
-      city: city.pt,
-      state: state.pt
-    }
     this.contact = contact && {
       mail: contact.mail,
       phone: contact.phone,
       social: contact.social
     }
+    this.location = city && {
+      id: city.id,
+      city: city.pt,
+      state: state.pt
+    }
   }
-}
-
-class LocationResponse {
-  readonly id: string
-  readonly city: string
-  readonly state: string
 }
 
 class ContactResponse {
   readonly mail: string
   readonly phone: string
   readonly social: string
+}
+
+class LocationResponse {
+  readonly id: string
+  readonly city: string
+  readonly state: string
 }
