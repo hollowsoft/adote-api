@@ -3,7 +3,7 @@ import { Post } from '../../post/entity/post.entity'
 import { Size } from '../../post/entity/pet/size.enum'
 import { Gender } from '../../post/entity/pet/gender.enum'
 
-export class ListFavResponse {
+export class FavResponse {
   readonly id: string
   readonly create: Date
   readonly title: string
