@@ -2,13 +2,13 @@ import { Injectable } from '@nestjs/common'
 
 import { FavRepository } from '../fav.repository'
 
-import { ListFavResponse } from '../response'
+import { FavResponse } from '../response'
 
 @Injectable()
 export class ListFavService {
   constructor(private readonly repository: FavRepository) {}
 
-  async run(user: string): Promise<ListFavResponse[]> {
+  async run(user: string): Promise<FavResponse[]> {
     const list = await this.repository.all({
       where: {
         user: {
@@ -21,6 +21,6 @@ export class ListFavService {
       ]
     })
 
-    return list.map(({ post }) => new ListFavResponse(post))
+    return list.map(({ post }) => new FavResponse(post))
   }
 }

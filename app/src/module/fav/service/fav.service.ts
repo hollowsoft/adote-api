@@ -10,8 +10,8 @@ import {
 } from '../request'
 
 import {
-  AddFavResponse,
-  ListFavResponse
+  FavResponse,
+  AddFavResponse
 } from '../response'
 
 @Injectable()
@@ -22,7 +22,7 @@ export class FavService {
     private readonly REMOVE_FAV_SERVICE: RemoveFavService
   ) {}
 
-  all(user: string): Promise<ListFavResponse[]> {
+  all(user: string): Promise<FavResponse[]> {
     return this.LIST_FAV_SERVICE.run(user)
   }
 

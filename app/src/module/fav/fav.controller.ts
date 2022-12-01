@@ -19,8 +19,8 @@ import {
 } from './request'
 
 import {
-  AddFavResponse,
-  ListFavResponse
+  FavResponse,
+  AddFavResponse
 } from './response'
 
 @Controller('fav')
@@ -28,7 +28,7 @@ export class FavController {
   constructor(private readonly service: FavService) {}
 
   @Get()
-  all(@Auth() token: Token): Promise<ListFavResponse[]> {
+  all(@Auth() token: Token): Promise<FavResponse[]> {
     const { sub } = token
 
     return this.service.all(sub)

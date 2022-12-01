@@ -12,12 +12,7 @@ import {
   UpdateUserRequest
 } from '../request'
 
-import {
-  GetUserResponse,
-  GetCurrentResponse,
-  ListUserResponse,
-  UpdateUserResponse
-} from '../response'
+import { UserResponse } from '../response'
 
 @Injectable()
 export class UserService {
@@ -29,19 +24,19 @@ export class UserService {
     private readonly IMAGE_USER_SERVICE: ImageUserService
   ) {}
 
-  get(request: GetUserRequest): Promise<GetUserResponse> {
+  get(request: GetUserRequest): Promise<UserResponse> {
     return this.GET_USER_SERVICE.run(request)
   }
 
-  current(user: string): Promise<GetCurrentResponse> {
+  current(user: string): Promise<UserResponse> {
     return this.GET_CURRENT_SERVICE.run(user)
   }
 
-  all(request: ListUserRequest): Promise<ListUserResponse[]> {
+  all(request: ListUserRequest): Promise<UserResponse[]> {
     return this.LIST_USER_SERVICE.run(request)
   }
 
-  update(request: UpdateUserRequest, user: string): Promise<UpdateUserResponse> {
+  update(request: UpdateUserRequest, user: string): Promise<UserResponse> {
     return this.UPDATE_USER_SERVICE.run(request, user)
   }
 

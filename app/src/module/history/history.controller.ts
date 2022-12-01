@@ -10,7 +10,8 @@ import { Permission } from '../../decorator/permission.decorator'
 import { HistoryService } from './service/history.service'
 
 import { ListHistoryRequest } from './request'
-import { ListHistoryResponse } from './response'
+
+import { HistoryResponse } from './response'
 
 @Controller('history')
 export class HistoryController {
@@ -18,7 +19,7 @@ export class HistoryController {
 
   @Get()
   @Permission(Role.ADMIN)
-  all(@Query() request: ListHistoryRequest): Promise<ListHistoryResponse[]> {
+  all(@Query() request: ListHistoryRequest): Promise<HistoryResponse[]> {
     return this.service.all(request)
   }
 }

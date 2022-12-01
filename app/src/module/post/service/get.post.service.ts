@@ -6,7 +6,8 @@ import {
 import { PostRepository } from '../post.repository'
 
 import { GetPostRequest } from '../request'
-import { GetPostResponse } from '../response'
+
+import { PostResponse } from '../response'
 
 import { isNil } from 'lodash'
 
@@ -14,7 +15,7 @@ import { isNil } from 'lodash'
 export class GetPostService {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(request: GetPostRequest): Promise<GetPostResponse> {
+  async run(request: GetPostRequest): Promise<PostResponse> {
     const { id } = request
 
     const post = await this.repository.find({
@@ -32,6 +33,6 @@ export class GetPostService {
       throw new NotFoundException('post not found')
     }
 
-    return new GetPostResponse(post)
+    return new PostResponse(post)
   }
 }

@@ -3,13 +3,14 @@ import { Injectable } from '@nestjs/common'
 import { PostRepository } from '../post.repository'
 
 import { ListPostRequest } from '../request'
-import { ListPostResponse } from '../response'
+
+import { PostResponse } from '../response'
 
 @Injectable()
 export class ListPostService {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(request: ListPostRequest): Promise<ListPostResponse[]> {
+  async run(request: ListPostRequest): Promise<PostResponse[]> {
     const { size } = request
 
     const list = await this.repository.all({
@@ -25,6 +26,6 @@ export class ListPostService {
       ]
     })
 
-    return list.map((post) => new ListPostResponse(post))
+    return list.map((post) => new PostResponse(post))
   }
 }

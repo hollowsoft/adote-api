@@ -19,10 +19,7 @@ import {
 } from '../request'
 
 import {
-  GetPostResponse,
-  ListPostResponse,
-  CreatePostResponse,
-  UpdatePostResponse,
+  PostResponse,
   PublishPostResponse
 } from '../response'
 
@@ -37,19 +34,19 @@ export class PostService {
     private readonly REMOVE_POST_SERVICE: RemovePostService
   ) {}
 
-  get(request: GetPostRequest): Promise<GetPostResponse> {
+  get(request: GetPostRequest): Promise<PostResponse> {
     return this.GET_POST_SERVICE.run(request)
   }
 
-  all(request: ListPostRequest): Promise<ListPostResponse[]> {
+  all(request: ListPostRequest): Promise<PostResponse[]> {
     return this.LIST_POST_SERVICE.run(request)
   }
 
-  create(request: CreatePostRequest, user: string): Promise<CreatePostResponse> {
+  create(request: CreatePostRequest, user: string): Promise<PostResponse> {
     return this.CREATE_POST_SERVICE.run(request, user)
   }
 
-  update(param: UpdatePostParam, request: UpdatePostRequest, user: string): Promise<UpdatePostResponse> {
+  update(param: UpdatePostParam, request: UpdatePostRequest, user: string): Promise<PostResponse> {
     return this.UPDATE_POST_SERVICE.run(param, request, user)
   }
 

@@ -29,10 +29,7 @@ import {
 } from './request'
 
 import {
-  GetPostResponse,
-  ListPostResponse,
-  CreatePostResponse,
-  UpdatePostResponse,
+  PostResponse,
   PublishPostResponse
 } from './response'
 
@@ -41,26 +38,26 @@ export class PostController {
   constructor(private readonly service: PostService) {}
 
   @Public()
-  @Get(':id')
-  get(@Param() request: GetPostRequest): Promise<GetPostResponse> {
-    return this.service.get(request)
-  }
-
-  @Public()
   @Get()
-  all(@Query() request: ListPostRequest): Promise<ListPostResponse[]> {
+  all(@Query() request: ListPostRequest): Promise<PostResponse[]> {
     return this.service.all(request)
   }
 
+  @Public()
+  @Get(':id')
+  get(@Param() request: GetPostRequest): Promise<PostResponse> {
+    return this.service.get(request)
+  }
+
   @Post()
-  create(@Body() request: CreatePostRequest, @Auth() token: Token): Promise<CreatePostResponse> {
+  create(@Body() request: CreatePostRequest, @Auth() token: Token): Promise<PostResponse> {
     const { sub } = token
 
     return this.service.create(request, sub)
   }
 
   @Put(':id')
-  update(@Param() param: UpdatePostParam, @Body() request: UpdatePostRequest, @Auth() token: Token): Promise<UpdatePostResponse> {
+  update(@Param() param: UpdatePostParam, @Body() request: UpdatePostRequest, @Auth() token: Token): Promise<PostResponse> {
     const { sub } = token
 
     return this.service.update(param, request, sub)

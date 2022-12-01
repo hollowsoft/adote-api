@@ -23,12 +23,7 @@ import {
   UpdateUserRequest
 } from './request'
 
-import {
-  GetUserResponse,
-  GetCurrentResponse,
-  ListUserResponse,
-  UpdateUserResponse
-} from './response'
+import { UserResponse } from './response'
 
 @Controller('user')
 export class UserController {
@@ -36,12 +31,12 @@ export class UserController {
 
   @Get(':id')
   @Permission(Role.ADMIN)
-  get(@Param() request: GetUserRequest): Promise<GetUserResponse> {
+  get(@Param() request: GetUserRequest): Promise<UserResponse> {
     return this.service.get(request)
   }
 
   @Get('current')
-  current(@Auth() token: Token): Promise<GetCurrentResponse> {
+  current(@Auth() token: Token): Promise<UserResponse> {
     const { sub } = token
 
     return this.service.current(sub)
@@ -49,12 +44,12 @@ export class UserController {
 
   @Get()
   @Permission(Role.ADMIN)
-  all(@Query() request: ListUserRequest): Promise<ListUserResponse[]> {
+  all(@Query() request: ListUserRequest): Promise<UserResponse[]> {
     return this.service.all(request)
   }
 
   @Put()
-  update(@Body() request: UpdateUserRequest, @Auth() token: Token): Promise<UpdateUserResponse> {
+  update(@Body() request: UpdateUserRequest, @Auth() token: Token): Promise<UserResponse> {
     const { sub } = token
 
     return this.service.update(request, sub)

@@ -4,13 +4,14 @@ import { Breed } from '../entity/breed.entity'
 import { BreedRepository } from '../breed.repository'
 
 import { ListBreedRequest } from '../request'
-import { ListBreedResponse } from '../response'
+
+import { BreedResponse } from '../response'
 
 @Injectable()
 export class ListBreedService {
   constructor(private readonly repository: BreedRepository) {}
 
-  async run(request: ListBreedRequest): Promise<ListBreedResponse[]> {
+  async run(request: ListBreedRequest): Promise<BreedResponse[]> {
     const { kind } = request
 
     const list = await this.repository.all({
@@ -19,6 +20,6 @@ export class ListBreedService {
       }
     })
 
-    return list.map((breed: Breed) => new ListBreedResponse(breed))
+    return list.map((breed: Breed) => new BreedResponse(breed))
   }
 }
