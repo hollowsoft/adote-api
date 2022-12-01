@@ -2,13 +2,13 @@ import { Injectable } from '@nestjs/common'
 
 import { UserRepository } from '../user.repository'
 
-import { GetCurrentResponse } from '../response'
+import { UserResponse } from '../response'
 
 @Injectable()
 export class GetCurrentService {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(id: string): Promise<GetCurrentResponse> {
+  async run(id: string): Promise<UserResponse> {
     const user = await this.repository.find({
       where: {
         id
@@ -19,6 +19,6 @@ export class GetCurrentService {
       ]
     })
 
-    return new GetCurrentResponse(user)
+    return new UserResponse(user)
   }
 }
