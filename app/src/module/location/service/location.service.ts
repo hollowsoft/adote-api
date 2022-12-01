@@ -3,7 +3,8 @@ import { Injectable } from '@nestjs/common'
 import { SearchLocationService } from './search.location.service'
 
 import { SearchLocationRequest } from '../request'
-import { SearchLocationResponse } from '../response'
+
+import { LocationResponse } from '../response'
 
 @Injectable()
 export class LocationService {
@@ -11,7 +12,7 @@ export class LocationService {
     private readonly SEARCH_LOCATION_SERVICE: SearchLocationService
   ) {}
 
-  search(request: SearchLocationRequest): Promise<SearchLocationResponse[]> {
+  search(request: SearchLocationRequest): Promise<LocationResponse[]> {
     return this.SEARCH_LOCATION_SERVICE.run(request)
   }
 }

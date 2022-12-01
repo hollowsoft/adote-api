@@ -1,19 +1,21 @@
 import { User } from '../entity/user.entity'
 
-export class UpdateUserResponse {
+export class UserResponse {
+  readonly id: string
   readonly create: Date
   readonly mail: string
   readonly name: string
   readonly image: string
   readonly description: string
-  readonly location: LocationResponse
   readonly contact: ContactResponse
+  readonly location: LocationResponse
 
   constructor(user: User) {
     const { city, contact } = user
 
     const { state } = city ?? {}
 
+    this.id = user.id
     this.create = user.create
     this.mail = user.mail
     this.name = user.name

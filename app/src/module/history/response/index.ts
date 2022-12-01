@@ -1,5 +1,5 @@
-import { ListHistoryResponse } from './list.history.response'
+import { HistoryResponse } from './history.response'
 
 export {
-  ListHistoryResponse
+  HistoryResponse
 }

@@ -7,13 +7,14 @@ import { Contact } from '../entity/contact.entity'
 import { UserRepository } from '../user.repository'
 
 import { UpdateUserRequest } from '../request'
-import { UpdateUserResponse } from '../response'
+
+import { UserResponse } from '../response'
 
 @Injectable()
 export class UpdateUserService {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(request: UpdateUserRequest, id: string): Promise<UpdateUserResponse> {
+  async run(request: UpdateUserRequest, id: string): Promise<UserResponse> {
     const find = await this.repository.find({
       where: {
         id
@@ -37,7 +38,7 @@ export class UpdateUserService {
       ]
     })
 
-    return new UpdateUserResponse(user)
+    return new UserResponse(user)
   }
 
   private toContact(id: string, request: UpdateUserRequest): Contact {

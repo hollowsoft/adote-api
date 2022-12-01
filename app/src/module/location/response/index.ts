@@ -1,5 +1,5 @@
-import { SearchLocationResponse } from './search.location.response'
+import { LocationResponse } from './location.response'
 
 export {
-  SearchLocationResponse
+  LocationResponse
 }

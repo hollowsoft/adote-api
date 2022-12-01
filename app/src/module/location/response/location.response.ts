@@ -1,6 +1,6 @@
 import { City } from '../entity/city.entity'
 
-export class SearchLocationResponse {
+export class LocationResponse {
   readonly id: string
   readonly city: string
   readonly state: string

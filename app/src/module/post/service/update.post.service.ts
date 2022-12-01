@@ -16,7 +16,7 @@ import {
   UpdatePostRequest
 } from '../request'
 
-import { UpdatePostResponse } from '../response'
+import { PostResponse } from '../response'
 
 import { isNil } from 'lodash'
 
@@ -24,7 +24,7 @@ import { isNil } from 'lodash'
 export class UpdatePostService {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(param: UpdatePostParam, request: UpdatePostRequest, user: string): Promise<UpdatePostResponse> {
+  async run(param: UpdatePostParam, request: UpdatePostRequest, user: string): Promise<PostResponse> {
     const { id } = param
 
     const find = await this.repository.find({
@@ -53,11 +53,12 @@ export class UpdatePostService {
       },
       relations: [
         'pet.breed',
-        'city.state'
+        'city.state',
+        'user.contact'
       ]
     })
 
-    return new UpdatePostResponse(post)
+    return new PostResponse(post)
   }
 
   private toPet(id: string, request: UpdatePostRequest): Pet {

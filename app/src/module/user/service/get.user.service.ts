@@ -6,7 +6,8 @@ import {
 import { UserRepository } from '../user.repository'
 
 import { GetUserRequest } from '../request'
-import { GetUserResponse } from '../response'
+
+import { UserResponse } from '../response'
 
 import { isNil } from 'lodash'
 
@@ -14,7 +15,7 @@ import { isNil } from 'lodash'
 export class GetUserService {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(request: GetUserRequest): Promise<GetUserResponse> {
+  async run(request: GetUserRequest): Promise<UserResponse> {
     const { id } = request
 
     const user = await this.repository.find({
@@ -31,6 +32,6 @@ export class GetUserService {
       throw new NotFoundException('user not found')
     }
 
-    return new GetUserResponse(user)
+    return new UserResponse(user)
   }
 }

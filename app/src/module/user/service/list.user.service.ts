@@ -3,13 +3,14 @@ import { Injectable } from '@nestjs/common'
 import { UserRepository } from '../user.repository'
 
 import { ListUserRequest } from '../request'
-import { ListUserResponse } from '../response'
+
+import { UserResponse } from '../response'
 
 @Injectable()
 export class ListUserService {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(request: ListUserRequest): Promise<ListUserResponse[]> {
+  async run(request: ListUserRequest): Promise<UserResponse[]> {
     const { enable } = request
 
     const list = await this.repository.all({
@@ -22,6 +23,6 @@ export class ListUserService {
       ]
     })
 
-    return list.map((user) => new ListUserResponse(user))
+    return list.map((user) => new UserResponse(user))
   }
 }

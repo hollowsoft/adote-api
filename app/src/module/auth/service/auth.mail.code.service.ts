@@ -9,7 +9,8 @@ import { ConfigService } from '@nestjs/config'
 import { UserRepository } from '../../user/user.repository'
 
 import { AuthMailCodeRequest } from '../request'
-import { AuthMailCodeResponse } from '../response'
+
+import { AuthResponse } from '../response'
 
 import { isNil } from 'lodash'
 
@@ -21,7 +22,7 @@ export class AuthMailCodeService {
     private readonly repository: UserRepository
   ) {}
 
-  async run(request: AuthMailCodeRequest): Promise<AuthMailCodeResponse> {
+  async run(request: AuthMailCodeRequest): Promise<AuthResponse> {
     const { mail, code } = request
 
     const user = await this.repository.find({
@@ -50,6 +51,6 @@ export class AuthMailCodeService {
       expiresIn: this.config.get<number>('TOKEN_EXPIRE')
     })
 
-    return new AuthMailCodeResponse(token, refresh)
+    return new AuthResponse(token, refresh)
   }
 }

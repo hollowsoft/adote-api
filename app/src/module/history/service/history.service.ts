@@ -3,7 +3,8 @@ import { Injectable } from '@nestjs/common'
 import { ListHistoryService } from './list.history.service'
 
 import { ListHistoryRequest } from '../request'
-import { ListHistoryResponse } from '../response'
+
+import { HistoryResponse } from '../response'
 
 @Injectable()
 export class HistoryService {
@@ -11,7 +12,7 @@ export class HistoryService {
     private readonly LIST_HISTORY_SERVICE: ListHistoryService,
   ) {}
 
-  all(request: ListHistoryRequest): Promise<ListHistoryResponse[]> {
+  all(request: ListHistoryRequest): Promise<HistoryResponse[]> {
     return this.LIST_HISTORY_SERVICE.run(request)
   }
 }

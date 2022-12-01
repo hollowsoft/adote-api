@@ -8,7 +8,7 @@ import { ConfigService } from '@nestjs/config'
 
 import { UserRepository } from '../../user/user.repository'
 
-import { AuthTokenResponse } from '../response'
+import { AuthResponse } from '../response'
 
 import { isNil } from 'lodash'
 
@@ -20,7 +20,7 @@ export class AuthTokenService {
     private readonly repository: UserRepository
   ) {}
 
-  async run(id: string): Promise<AuthTokenResponse> {
+  async run(id: string): Promise<AuthResponse> {
     const user = await this.repository.find({
       where: {
         id
@@ -45,6 +45,6 @@ export class AuthTokenService {
       expiresIn: this.config.get<number>('TOKEN_EXPIRE')
     })
 
-    return new AuthTokenResponse(token, refresh)
+    return new AuthResponse(token, refresh)
   }
 }
