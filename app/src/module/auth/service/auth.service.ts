@@ -10,9 +10,8 @@ import {
 } from '../request'
 
 import {
-  AuthMailResponse,
-  AuthMailCodeResponse,
-  AuthTokenResponse
+  AuthResponse,
+  AuthMailResponse
 } from '../response'
 
 @Injectable()
@@ -27,11 +26,11 @@ export class AuthService {
     return this.AUTH_MAIL_SERVICE.run(request)
   }
 
-  code(request: AuthMailCodeRequest): Promise<AuthMailCodeResponse> {
+  code(request: AuthMailCodeRequest): Promise<AuthResponse> {
     return this.AUTH_MAIL_CODE_SERVICE.run(request)
   }
 
-  token(id: string): Promise<AuthTokenResponse> {
+  token(id: string): Promise<AuthResponse> {
     return this.AUTH_TOKEN_SERVICE.run(id)
   }
 }

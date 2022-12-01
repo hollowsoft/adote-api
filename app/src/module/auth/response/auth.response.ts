@@ -1,4 +1,4 @@
-export class AuthTokenResponse {
+export class AuthResponse {
   readonly token: string
   readonly refresh: string
 

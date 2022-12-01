@@ -10,7 +10,7 @@ import { UserRepository } from '../../user/user.repository'
 
 import { AuthMailCodeRequest } from '../request'
 
-import { AuthTokenResponse } from '../response'
+import { AuthResponse } from '../response'
 
 import { isNil } from 'lodash'
 
@@ -22,7 +22,7 @@ export class AuthMailCodeService {
     private readonly repository: UserRepository
   ) {}
 
-  async run(request: AuthMailCodeRequest): Promise<AuthTokenResponse> {
+  async run(request: AuthMailCodeRequest): Promise<AuthResponse> {
     const { mail, code } = request
 
     const user = await this.repository.find({
@@ -51,6 +51,6 @@ export class AuthMailCodeService {
       expiresIn: this.config.get<number>('TOKEN_EXPIRE')
     })
 
-    return new AuthTokenResponse(token, refresh)
+    return new AuthResponse(token, refresh)
   }
 }
