@@ -10,13 +10,14 @@ import { User } from '../../user/entity/user.entity'
 import { PostRepository } from '../post.repository'
 
 import { CreatePostRequest } from '../request'
-import { CreatePostResponse } from '../response'
+
+import { PostResponse } from '../response'
 
 @Injectable()
 export class CreatePostService {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(request: CreatePostRequest, user: string): Promise<CreatePostResponse> {
+  async run(request: CreatePostRequest, user: string): Promise<PostResponse> {
     const { id } = await this.repository.save(this.build(request, user))
 
     const post = await this.repository.find({
@@ -25,11 +26,12 @@ export class CreatePostService {
       },
       relations: [
         'pet.breed',
-        'city.state'
+        'city.state',
+        'user.contact'
       ]
     })
 
-    return new CreatePostResponse(post)
+    return new PostResponse(post)
   }
 
   build(request: CreatePostRequest, user: string): Post {
