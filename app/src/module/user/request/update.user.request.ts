@@ -42,11 +42,11 @@ export class UpdateUserRequest {
   @Transform(({ value }: TransformFnParams) => value?.trim())
   readonly description?: string
 
-  @IsUUID()
-  readonly location: string
-
   @Type(() => ContactRequest)
   @IsOptional()
   @ValidateNested()
   readonly contact?: ContactRequest
+
+  @IsUUID()
+  readonly location: string
 }
