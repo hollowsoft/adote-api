@@ -20,7 +20,8 @@ import {
 
 import {
   AuthMailResponse,
-  AuthMailCodeResponse
+  AuthMailCodeResponse,
+  AuthTokenResponse
 } from './response'
 
 @Controller('auth')
@@ -42,7 +43,7 @@ export class AuthController {
   @Public()
   @UseGuards(TokenGuard)
   @Post('token')
-  token(@Auth() token: Token) {
+  token(@Auth() token: Token): Promise<AuthTokenResponse> {
     const { sub } = token
 
     return this.service.token(sub)
