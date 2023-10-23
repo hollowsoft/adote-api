@@ -9,8 +9,10 @@ import {
 
 import { User } from './entity/user.entity'
 
+import { IUserRepository } from './user.repository.interface'
+
 @Injectable()
-export class UserRepository {
+export class UserRepository implements IUserRepository {
   constructor(@InjectRepository(User) private readonly repository: Repository<User>) {}
 
   all(option?: FindManyOptions<User>): Promise<User[]> {
