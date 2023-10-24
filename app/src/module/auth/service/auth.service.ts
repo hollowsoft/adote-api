@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common'
 
 import { AuthMailService } from './auth.mail.service'
+
 import { AuthMailCodeService } from './auth.mail.code.service'
+
 import { AuthTokenService } from './auth.token.service'
 
 import { AuthMailRequest, AuthMailCodeRequest } from '../request'
