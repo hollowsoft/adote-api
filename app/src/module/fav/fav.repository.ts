@@ -9,8 +9,10 @@ import {
 
 import { Fav } from './entity/fav.entity'
 
+import { IFavRepository } from './fav.repository.interface'
+
 @Injectable()
-export class FavRepository {
+export class FavRepository implements IFavRepository {
   constructor(@InjectRepository(Fav) private readonly repository: Repository<Fav>) {}
 
   all(option?: FindManyOptions<Fav>): Promise<Fav[]> {
