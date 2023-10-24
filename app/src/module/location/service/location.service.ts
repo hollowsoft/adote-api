@@ -6,10 +6,12 @@ import { SearchLocationRequest } from '../request'
 
 import { LocationResponse } from '../response'
 
+import { ILocationService } from './location.service.interface'
+
 @Injectable()
-export class LocationService {
+export class LocationService implements ILocationService {
   constructor(
-    private readonly SEARCH_LOCATION_SERVICE: SearchLocationService
+    private readonly SEARCH_LOCATION_SERVICE: SearchLocationService,
   ) {}
 
   search(request: SearchLocationRequest): Promise<LocationResponse[]> {
