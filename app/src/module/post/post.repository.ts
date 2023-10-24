@@ -1,16 +1,15 @@
 import { Injectable } from '@nestjs/common'
+
 import { InjectRepository } from '@nestjs/typeorm'
 
-import {
-  Repository,
-  FindOneOptions,
-  FindManyOptions
-} from 'typeorm'
+import { Repository, FindOneOptions, FindManyOptions } from 'typeorm'
 
 import { Post } from './entity/post.entity'
 
+import { IPostRepository } from './post.repository.interface'
+
 @Injectable()
-export class PostRepository {
+export class PostRepository implements IPostRepository {
   constructor(@InjectRepository(Post) private readonly repository: Repository<Post>) {}
 
   all(option?: FindManyOptions<Post>): Promise<Post[]> {
