@@ -6,8 +6,10 @@ import { ListBreedRequest } from '../request'
 
 import { BreedResponse } from '../response'
 
+import { IBreedService } from './breed.service.interface'
+
 @Injectable()
-export class BreedService {
+export class BreedService implements IBreedService {
   constructor(private readonly LIST_BREED_SERVICE: ListBreedService) {}
 
   all(request: ListBreedRequest): Promise<BreedResponse[]> {
