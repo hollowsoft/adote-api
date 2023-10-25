@@ -10,8 +10,10 @@ import { LocationResponse } from '../response'
 
 import { isEmpty } from 'lodash'
 
+import { ISearchLocationService } from './search.location.service.interface'
+
 @Injectable()
-export class SearchLocationService {
+export class SearchLocationService implements ISearchLocationService {
   constructor(private readonly repository: CityRepository) {}
 
   async run(request: SearchLocationRequest): Promise<LocationResponse[]> {
@@ -23,11 +25,9 @@ export class SearchLocationService {
 
     const list = await this.repository.all({
       where: {
-        pt: ILike(`${term}%`)
+        pt: ILike(`${term}%`),
       },
-      relations: [
-        'state'
-      ]
+      relations: ['state'],
     })
 
     return list.map((city) => new LocationResponse(city))
