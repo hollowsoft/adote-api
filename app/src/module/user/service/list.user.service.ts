@@ -6,8 +6,10 @@ import { ListUserRequest } from '../request'
 
 import { UserResponse } from '../response'
 
+import { IListUserService } from './list.user.service.interface'
+
 @Injectable()
-export class ListUserService {
+export class ListUserService implements IListUserService {
   constructor(private readonly repository: UserRepository) {}
 
   async run(request: ListUserRequest): Promise<UserResponse[]> {
@@ -15,12 +17,9 @@ export class ListUserService {
 
     const list = await this.repository.all({
       where: {
-        enable
+        enable,
       },
-      relations: [
-        'city.state',
-        'contact'
-      ]
+      relations: ['city.state', 'contact'],
     })
 
     return list.map((user) => new UserResponse(user))
