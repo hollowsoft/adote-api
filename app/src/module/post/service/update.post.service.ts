@@ -1,42 +1,42 @@
-import {
-  Injectable,
-  NotFoundException
-} from '@nestjs/common'
+import { Injectable, NotFoundException } from '@nestjs/common'
 
 import { Post } from '../entity/post.entity'
+
 import { Pet } from '../entity/pet/pet.entity'
+
 import { Breed } from '../../breed/entity/breed.entity'
 
 import { City } from '../../location/entity/city.entity'
 
 import { PostRepository } from '../post.repository'
 
-import {
-  UpdatePostParam,
-  UpdatePostRequest
-} from '../request'
+import { UpdatePostParam, UpdatePostRequest } from '../request'
 
 import { PostResponse } from '../response'
 
 import { isNil } from 'lodash'
 
+import { IUpdatePostService } from './update.post.service.interface'
+
 @Injectable()
-export class UpdatePostService {
+export class UpdatePostService implements IUpdatePostService {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(param: UpdatePostParam, request: UpdatePostRequest, user: string): Promise<PostResponse> {
+  async run(
+    param: UpdatePostParam,
+    request: UpdatePostRequest,
+    user: string,
+  ): Promise<PostResponse> {
     const { id } = param
 
     const find = await this.repository.find({
       where: {
         id,
         user: {
-          id: user
-        }
+          id: user,
+        },
       },
-      relations: [
-        'pet'
-      ]
+      relations: ['pet'],
     })
 
     if (isNil(find)) {
@@ -49,13 +49,9 @@ export class UpdatePostService {
 
     const post = await this.repository.find({
       where: {
-        id
+        id,
       },
-      relations: [
-        'pet.breed',
-        'city.state',
-        'user.contact'
-      ]
+      relations: ['pet.breed', 'city.state', 'user.contact'],
     })
 
     return new PostResponse(post)
@@ -71,12 +67,16 @@ export class UpdatePostService {
       size: pet.size,
       gender: pet.gender,
       breed: new Breed({
-        id: pet.breed
-      })
+        id: pet.breed,
+      }),
     })
   }
 
-  private build(id: string, pet: string, request: UpdatePostRequest): Post {
+  private build(
+    id: string,
+    pet: string,
+    request: UpdatePostRequest,
+  ): Post {
     return new Post({
       id,
       title: request.title,
@@ -84,8 +84,8 @@ export class UpdatePostService {
       image: request.image,
       pet: this.toPet(pet, request),
       city: new City({
-        id: request.location
-      })
+        id: request.location,
+      }),
     })
   }
 }

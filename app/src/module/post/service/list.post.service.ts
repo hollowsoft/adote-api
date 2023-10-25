@@ -6,8 +6,10 @@ import { ListPostRequest } from '../request'
 
 import { PostResponse } from '../response'
 
+import { IListPostService } from './list.post.service.interface'
+
 @Injectable()
-export class ListPostService {
+export class ListPostService implements IListPostService {
   constructor(private readonly repository: PostRepository) {}
 
   async run(request: ListPostRequest): Promise<PostResponse[]> {
@@ -16,14 +18,10 @@ export class ListPostService {
     const list = await this.repository.all({
       where: {
         pet: {
-          size
-        }
+          size,
+        },
       },
-      relations: [
-        'pet.breed',
-        'city.state',
-        'user.contact'
-      ]
+      relations: ['pet.breed', 'city.state', 'user.contact'],
     })
 
     return list.map((post) => new PostResponse(post))
