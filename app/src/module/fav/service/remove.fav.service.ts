@@ -1,7 +1,4 @@
-import {
-  Injectable,
-  NotFoundException
-} from '@nestjs/common'
+import { Injectable, NotFoundException } from '@nestjs/common'
 
 import { FavRepository } from '../fav.repository'
 
@@ -9,8 +6,10 @@ import { RemoveFavRequest } from '../request'
 
 import { isNil } from 'lodash'
 
+import { IRemoveFavService } from './remove.fav.service.interface'
+
 @Injectable()
-export class RemoveFavService {
+export class RemoveFavService implements IRemoveFavService {
   constructor(private readonly repository: FavRepository) {}
 
   async run(request: RemoveFavRequest, user: string): Promise<void> {
@@ -20,9 +19,9 @@ export class RemoveFavService {
       where: {
         id,
         user: {
-          id: user
-        }
-      }
+          id: user,
+        },
+      },
     })
 
     if (isNil(fav)) {

@@ -1,34 +1,40 @@
-import {
-  Injectable,
-  NotFoundException
-} from '@nestjs/common'
+import { Injectable, NotFoundException } from '@nestjs/common'
 
 import { Fav } from '../entity/fav.entity'
+
 import { Post } from '../../post/entity/post.entity'
+
 import { User } from '../../user/entity/user.entity'
 
 import { FavRepository } from '../fav.repository'
+
 import { PostRepository } from '../../post/post.repository'
 
 import { AddFavRequest } from '../request'
+
 import { AddFavResponse } from '../response'
 
 import { isNil } from 'lodash'
 
+import { IAddFavService } from './add.fav.service.interface'
+
 @Injectable()
-export class AddFavService {
+export class AddFavService implements IAddFavService {
   constructor(
     private readonly FAV_REPOSITORY: FavRepository,
-    private readonly POST_REPOSITORY: PostRepository
+    private readonly POST_REPOSITORY: PostRepository,
   ) {}
 
-  async run(request: AddFavRequest, user: string): Promise<AddFavResponse> {
+  async run(
+    request: AddFavRequest,
+    user: string,
+  ): Promise<AddFavResponse> {
     const { id } = request
 
     const post = await this.POST_REPOSITORY.find({
       where: {
-        id
-      }
+        id,
+      },
     })
 
     if (isNil(post)) {
@@ -38,23 +44,25 @@ export class AddFavService {
     const find = await this.FAV_REPOSITORY.find({
       where: {
         post: {
-          id
+          id,
         },
         user: {
-          id: user
-        }
-      }
+          id: user,
+        },
+      },
     })
 
     if (isNil(find)) {
-      const save = await this.FAV_REPOSITORY.save(new Fav({
-        post: new Post({
-          id
+      const save = await this.FAV_REPOSITORY.save(
+        new Fav({
+          post: new Post({
+            id,
+          }),
+          user: new User({
+            id: user,
+          }),
         }),
-        user: new User({
-          id: user
-        })
-      }))
+      )
 
       return new AddFavResponse(save)
     }
