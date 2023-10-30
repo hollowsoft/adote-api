@@ -1,25 +1,26 @@
-import {
-  Injectable,
-  NotFoundException
-} from '@nestjs/common'
+import { Injectable, NotFoundException } from '@nestjs/common'
 
 import { Post } from '../entity/post.entity'
+
 import { PostRepository } from '../post.repository'
 
-import {
-  PublishPostParam,
-  PublishPostRequest
-} from '../request'
+import { PublishPostParam, PublishPostRequest } from '../request'
 
 import { PublishPostResponse } from '../response'
 
 import { isNil } from 'lodash'
 
+import { IPublishPostService } from './publish.post.service.interface'
+
 @Injectable()
-export class PublishPostService {
+export class PublishPostService implements IPublishPostService {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(param: PublishPostParam, request: PublishPostRequest, user: string): Promise<PublishPostResponse> {
+  async run(
+    param: PublishPostParam,
+    request: PublishPostRequest,
+    user: string,
+  ): Promise<PublishPostResponse> {
     const { id } = param
     const { publish } = request
 
@@ -27,19 +28,21 @@ export class PublishPostService {
       where: {
         id,
         user: {
-          id: user
-        }
-      }
+          id: user,
+        },
+      },
     })
 
     if (isNil(find)) {
       throw new NotFoundException('post not found')
     }
 
-    const post = await this.repository.save(new Post({
-      id,
-      publish
-    }))
+    const post = await this.repository.save(
+      new Post({
+        id,
+        publish,
+      }),
+    )
 
     return new PublishPostResponse(post)
   }

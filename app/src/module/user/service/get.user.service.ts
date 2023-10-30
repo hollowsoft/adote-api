@@ -1,7 +1,4 @@
-import {
-  Injectable,
-  NotFoundException
-} from '@nestjs/common'
+import { Injectable, NotFoundException } from '@nestjs/common'
 
 import { UserRepository } from '../user.repository'
 
@@ -11,8 +8,10 @@ import { UserResponse } from '../response'
 
 import { isNil } from 'lodash'
 
+import { IGetUserService } from './get.user.service.interface'
+
 @Injectable()
-export class GetUserService {
+export class GetUserService implements IGetUserService {
   constructor(private readonly repository: UserRepository) {}
 
   async run(request: GetUserRequest): Promise<UserResponse> {
@@ -20,12 +19,9 @@ export class GetUserService {
 
     const user = await this.repository.find({
       where: {
-        id
+        id,
       },
-      relations: [
-        'city.state',
-        'contact'
-      ]
+      relations: ['city.state', 'contact'],
     })
 
     if (isNil(user)) {

@@ -4,22 +4,18 @@ import { AddFavService } from './add.fav.service'
 import { ListFavService } from './list.fav.service'
 import { RemoveFavService } from './remove.fav.service'
 
-import {
-  AddFavRequest,
-  RemoveFavRequest
-} from '../request'
+import { AddFavRequest, RemoveFavRequest } from '../request'
 
-import {
-  FavResponse,
-  AddFavResponse
-} from '../response'
+import { FavResponse, AddFavResponse } from '../response'
+
+import { IFavService } from './fav.service.interface'
 
 @Injectable()
-export class FavService {
+export class FavService implements IFavService {
   constructor(
     private readonly ADD_FAV_SERVICE: AddFavService,
     private readonly LIST_FAV_SERVICE: ListFavService,
-    private readonly REMOVE_FAV_SERVICE: RemoveFavService
+    private readonly REMOVE_FAV_SERVICE: RemoveFavService,
   ) {}
 
   all(user: string): Promise<FavResponse[]> {

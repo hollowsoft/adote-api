@@ -9,19 +9,21 @@ import { ImageUserService } from './image.user.service'
 import {
   GetUserRequest,
   ListUserRequest,
-  UpdateUserRequest
+  UpdateUserRequest,
 } from '../request'
 
 import { UserResponse } from '../response'
 
+import { IUserService } from './user.service.interface'
+
 @Injectable()
-export class UserService {
+export class UserService implements IUserService {
   constructor(
     private readonly GET_USER_SERVICE: GetUserService,
     private readonly GET_CURRENT_SERVICE: GetCurrentService,
     private readonly LIST_USER_SERVICE: ListUserService,
     private readonly UPDATE_USER_SERVICE: UpdateUserService,
-    private readonly IMAGE_USER_SERVICE: ImageUserService
+    private readonly IMAGE_USER_SERVICE: ImageUserService,
   ) {}
 
   get(request: GetUserRequest): Promise<UserResponse> {

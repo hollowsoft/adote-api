@@ -1,10 +1,13 @@
 import { Injectable } from '@nestjs/common'
 
 import { Post } from '../entity/post.entity'
+
 import { Pet } from '../entity/pet/pet.entity'
+
 import { Breed } from '../../breed/entity/breed.entity'
 
 import { City } from '../../location/entity/city.entity'
+
 import { User } from '../../user/entity/user.entity'
 
 import { PostRepository } from '../post.repository'
@@ -13,22 +16,23 @@ import { CreatePostRequest } from '../request'
 
 import { PostResponse } from '../response'
 
+import { ICreatePostService } from './create.post.service.interface'
+
 @Injectable()
-export class CreatePostService {
+export class CreatePostService implements ICreatePostService {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(request: CreatePostRequest, user: string): Promise<PostResponse> {
+  async run(
+    request: CreatePostRequest,
+    user: string,
+  ): Promise<PostResponse> {
     const { id } = await this.repository.save(this.build(request, user))
 
     const post = await this.repository.find({
       where: {
-        id
+        id,
       },
-      relations: [
-        'pet.breed',
-        'city.state',
-        'user.contact'
-      ]
+      relations: ['pet.breed', 'city.state', 'user.contact'],
     })
 
     return new PostResponse(post)
@@ -47,15 +51,15 @@ export class CreatePostService {
         size: pet.size,
         gender: pet.gender,
         breed: new Breed({
-          id: pet.breed
-        })
+          id: pet.breed,
+        }),
       }),
       city: new City({
-        id: request.location
+        id: request.location,
       }),
       user: new User({
-        id: user
-      })
+        id: user,
+      }),
     })
   }
 }

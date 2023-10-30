@@ -15,23 +15,22 @@ import {
   UpdatePostRequest,
   PublishPostParam,
   PublishPostRequest,
-  RemovePostRequest
+  RemovePostRequest,
 } from '../request'
 
-import {
-  PostResponse,
-  PublishPostResponse
-} from '../response'
+import { PostResponse, PublishPostResponse } from '../response'
+
+import { IPostService } from './post.service.interface'
 
 @Injectable()
-export class PostService {
+export class PostService implements IPostService {
   constructor(
     private readonly GET_POST_SERVICE: GetPostService,
     private readonly LIST_POST_SERVICE: ListPostService,
     private readonly CREATE_POST_SERVICE: CreatePostService,
     private readonly UPDATE_POST_SERVICE: UpdatePostService,
     private readonly PUBLISH_POST_SERVICE: PublishPostService,
-    private readonly REMOVE_POST_SERVICE: RemovePostService
+    private readonly REMOVE_POST_SERVICE: RemovePostService,
   ) {}
 
   get(request: GetPostRequest): Promise<PostResponse> {
@@ -46,11 +45,19 @@ export class PostService {
     return this.CREATE_POST_SERVICE.run(request, user)
   }
 
-  update(param: UpdatePostParam, request: UpdatePostRequest, user: string): Promise<PostResponse> {
+  update(
+    param: UpdatePostParam,
+    request: UpdatePostRequest,
+    user: string,
+  ): Promise<PostResponse> {
     return this.UPDATE_POST_SERVICE.run(param, request, user)
   }
 
-  publish(param: PublishPostParam, request: PublishPostRequest, user: string): Promise<PublishPostResponse> {
+  publish(
+    param: PublishPostParam,
+    request: PublishPostRequest,
+    user: string,
+  ): Promise<PublishPostResponse> {
     return this.PUBLISH_POST_SERVICE.run(param, request, user)
   }
 
