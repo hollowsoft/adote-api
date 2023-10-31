@@ -15,6 +15,6 @@ export default new DataSource({
   migrations: ['**/repository/seed/*.ts'],
   migrationsTableName: 'seed',
   ssl: {
-    rejectUnauthorized: false
-  }
+    rejectUnauthorized: false,
+  },
 })

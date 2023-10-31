@@ -4,7 +4,7 @@ import { ConfigService } from '@nestjs/config'
 
 import {
   TypeOrmModuleOptions,
-  TypeOrmOptionsFactory
+  TypeOrmOptionsFactory,
 } from '@nestjs/typeorm'
 
 @Injectable()
@@ -21,8 +21,8 @@ export class RepositoryConfigService implements TypeOrmOptionsFactory {
       database: this.service.get<string>('DATABASE_NAME'),
       entities: ['**/*.entity.js'],
       ssl: {
-        rejectUnauthorized: false
-      }
+        rejectUnauthorized: false,
+      },
     }
   }
 }
