@@ -878,10 +878,10 @@
   dependencies:
     tslib "2.6.2"
 
-"@nestjs/throttler@^3.1.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/throttler/-/throttler-3.1.0.tgz#767b5fd8225be9e026576161d834b08bd7629e61"
-  integrity sha512-u9a5+rci6ybYtJ2is6gZWxE2dMZEpnK0qJ0C1OnchuNCvM21Bg6qym1TB6Uihhci+JfTv6E15WuASLXcIclsbA==
+"@nestjs/throttler@^5.0.1":
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/throttler/-/throttler-5.0.1.tgz#54e49009f8d8d355cac7fda7e0da3178b55d8c56"
+  integrity sha512-6gHmKmus7LDgzK/wRh7W9cT3gtZw1rY4mLVymvx6pYyRA46A9fMvjmZNQKJbo02jGg2R7gNo+3pyfvNnjDqg4A==
   dependencies:
     md5 "^2.2.1"
 
@@ -1685,10 +1685,10 @@ avvio@^8.2.1:
     debug "^4.0.0"
     fastq "^1.6.1"
 
-aws-sdk@^2.1484.0:
-  version "2.1484.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1484.0.tgz#efa32f6752b25d888a86383d0ce43130f6410fd0"
-  integrity sha512-emfCmb5j/UtaB7U8tvLpGdVNAlZMg4xZOhoFvL8jBQwIVJyCRyaqcshe31JXTwJdafThn2pNPtQOeYbZJCE0Ow==
+aws-sdk@^2.1485.0:
+  version "2.1485.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.1485.0.tgz#18b5f8bbe2d5d17778e50203dac853a017ada0a1"
+  integrity sha512-Lm+eLtZEOuVuLu9fWztAFhVFOiVpWprgVwauoS7Dd/IeXt4WafUWe+AnWQ46F8HuHZG+CuD+iUUNa/HDZWWP1g==
   dependencies:
     buffer "4.9.2"
     events "1.1.1"
@@ -2381,9 +2381,9 @@ ecdsa-sig-formatter@1.0.11:
     safe-buffer "^5.0.1"
 
 electron-to-chromium@^1.4.535:
-  version "1.4.571"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.571.tgz#8aa71539eb82db98740c3ec861256cc34e0356fd"
-  integrity sha512-Sc+VtKwKCDj3f/kLBjdyjMpNzoZsU6WuL/wFb6EH8USmHEcebxRXcRrVpOpayxd52tuey4RUDpUsw5OS5LhJqg==
+  version "1.4.572"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.4.572.tgz#ed9876658998138fe9e3aa47ecfa0bf914192a86"
+  integrity sha512-RlFobl4D3ieetbnR+2EpxdzFl9h0RAJkPK3pfiwMug2nhBin2ZCsGIAJWdpNniLz43sgXam/CgipOmvTA+rUiA==
 
 emittery@^0.13.1:
   version "0.13.1"
@@ -5905,7 +5905,6 @@ windows-release@^4.0.0:
     execa "^4.0.2"
 
 "wrap-ansi-cjs@npm:wrap-ansi@^7.0.0", wrap-ansi@^7.0.0:
-  name wrap-ansi-cjs
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-7.0.0.tgz#67e145cff510a6a6984bdf1152911d69d2eb9e43"
   integrity sha512-YVGIj2kamLSTxw6NsZjoBxfSwsn0ycdesmc4p+Q21c5zPuZ1pl+NfxVdxPtdHvmNVOQ6XSYG4AUtyt/Fi7D16Q==
