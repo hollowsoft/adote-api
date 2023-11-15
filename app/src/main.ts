@@ -13,18 +13,17 @@ import compress from '@fastify/compress'
 
 import { AppModule } from './app.module'
 
-const load = async () => {
+(async () => {
   const application = await NestFactory.create<NestFastifyApplication>(
     AppModule, new FastifyAdapter({ logger: false }), { cors: true })
 
   await application.register(helmet)
   await application.register(compress)
 
+  application.useGlobalPipes(new ValidationPipe({ transform: true }))
+
   application.setGlobalPrefix('/api')
 
-  application.useGlobalPipes(new ValidationPipe())
+  await application.listen(process.env.PORT ?? 8000, '0.0.0.0')
+})()
 
-  await application.listen(process.env.PORT ?? 4000)
-}
-
-load()
