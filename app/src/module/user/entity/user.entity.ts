@@ -1,14 +1,9 @@
 import {
   Entity,
   Column,
-  JoinTable,
-  JoinColumn,
+  ObjectIdColumn,
   CreateDateColumn,
-  UpdateDateColumn,
-  OneToOne,
-  OneToMany,
-  ManyToMany,
-  PrimaryGeneratedColumn
+  UpdateDateColumn
 } from 'typeorm'
 
 import { Post } from '../../post/entity/post.entity'
@@ -23,77 +18,42 @@ export class User {
     Object.assign(this, user)
   }
 
-  @PrimaryGeneratedColumn('uuid', {
-    name: 'id'
-  })
+  @ObjectIdColumn()
   id: string
 
-  @CreateDateColumn({
-    name: 'create'
-  })
+  @CreateDateColumn()
   create: Date
 
-  @UpdateDateColumn({
-    name: 'update'
-  })
+  @UpdateDateColumn()
   update: Date
 
-  @Column({
-    name: 'mail',
-    unique: true
-  })
+  @Column()
   mail: string
 
-  @Column({
-    name: 'name',
-    nullable: true
-  })
+  @Column()
   name?: string
 
-  @Column({
-    name: 'image',
-    nullable: true
-  })
+  @Column()
   image?: string
 
-  @Column({
-    name: 'description',
-    nullable: true
-  })
+  @Column()
   description?: string
 
-  @ManyToMany(() => Post)
-  @JoinTable({
-    name: 'fav'
-  })
+  @Column(() => Post)
   fav: Post[]
 
-  @OneToMany(() => Post, (post) => post.user)
+  @Column(() => Post)
   post: Post[]
 
-  @OneToOne(() => City)
-  @JoinColumn({
-    name: 'city_id'
-  })
+  @Column(() => City)
   city?: City
 
-  @OneToOne(() => Contact, { cascade: true })
-  @JoinColumn({
-    name: 'contact_id'
-  })
+  @Column(() => Contact)
   contact?: Contact
 
-  @Column({
-    name: 'role',
-    type: 'enum',
-    enum: Role,
-    default: Role.USER
-  })
+  @Column()
   role: Role
 
-  @Column({
-    name: 'enable',
-    default: true
-  })
+  @Column()
   enable: boolean
 }

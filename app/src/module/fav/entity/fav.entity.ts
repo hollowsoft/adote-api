@@ -1,10 +1,11 @@
 import {
   Entity,
   JoinColumn,
+  ObjectIdColumn,
   CreateDateColumn,
   UpdateDateColumn,
   OneToOne,
-  PrimaryGeneratedColumn,
+  Column
 } from 'typeorm'
 
 import { Post } from '../../post/entity/post.entity'
@@ -17,30 +18,18 @@ export class Fav {
     Object.assign(this, fav)
   }
 
-  @PrimaryGeneratedColumn('uuid', {
-    name: 'id'
-  })
+  @ObjectIdColumn()
   id: string
 
-  @CreateDateColumn({
-    name: 'create'
-  })
+  @CreateDateColumn()
   create: Date
 
-  @UpdateDateColumn({
-    name: 'update'
-  })
+  @UpdateDateColumn()
   update: Date
 
-  @OneToOne(() => Post)
-  @JoinColumn({
-    name: 'post_id'
-  })
+  @Column(() => Post)
   post: Post
 
-  @OneToOne(() => User)
-  @JoinColumn({
-    name: 'user_id'
-  })
+  @Column(() => User)
   user: User
 }

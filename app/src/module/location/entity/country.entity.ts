@@ -1,9 +1,9 @@
 import {
   Entity,
   Column,
+  ObjectIdColumn,
   CreateDateColumn,
-  UpdateDateColumn,
-  PrimaryGeneratedColumn
+  UpdateDateColumn
 } from 'typeorm'
 
 @Entity()
@@ -12,33 +12,21 @@ export class Country {
     Object.assign(this, country)
   }
 
-  @PrimaryGeneratedColumn('uuid', {
-    name: 'id'
-  })
+  @ObjectIdColumn()
   id: string
 
-  @CreateDateColumn({
-    name: 'create'
-  })
+  @CreateDateColumn()
   create: Date
 
-  @UpdateDateColumn({
-    name: 'update'
-  })
+  @UpdateDateColumn()
   update: Date
 
-  @Column({
-    name: 'key'
-  })
+  @Column()
   key: string
 
-  @Column({
-    name: 'en'
-  })
+  @Column()
   en: string
 
-  @Column({
-    name: 'pt'
-  })
+  @Column()
   pt: string
 }
