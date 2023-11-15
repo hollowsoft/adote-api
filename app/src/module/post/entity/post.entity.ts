@@ -1,12 +1,9 @@
 import {
   Entity,
   Column,
-  JoinColumn,
+  ObjectIdColumn,
   CreateDateColumn,
-  UpdateDateColumn,
-  OneToOne,
-  ManyToOne,
-  PrimaryGeneratedColumn
+  UpdateDateColumn
 } from 'typeorm'
 
 import { Pet } from './pet/pet.entity'
@@ -19,58 +16,33 @@ export class Post {
     Object.assign(this, post)
   }
 
-  @PrimaryGeneratedColumn('uuid', {
-    name: 'id'
-  })
+  @ObjectIdColumn()
   id: string
 
-  @CreateDateColumn({
-    name: 'create'
-  })
+  @CreateDateColumn()
   create: Date
 
-  @UpdateDateColumn({
-    name: 'update'
-  })
+  @UpdateDateColumn()
   update: Date
 
-  @Column({
-    name: 'title'
-  })
+  @Column()
   title: string
 
-  @Column({
-    name: 'description'
-  })
+  @Column()
   description: string
 
-  @Column({
-    name: 'image',
-    type: 'text',
-    array: true
-  })
+  @Column()
   image: string[]
 
-  @OneToOne(() => Pet, { cascade: true })
-  @JoinColumn({
-    name: 'pet_id'
-  })
+  @Column(() => Pet)
   pet: Pet
 
-  @OneToOne(() => City)
-  @JoinColumn({
-    name: 'city_id'
-  })
+  @Column(() => City)
   city: City
 
-  @ManyToOne(() => User, (user) => user.post)
-  @JoinColumn({
-    name: 'user_id'
-  })
+  @Column(() => User)
   user: User
 
-  @Column({
-    name: 'publish'
-  })
+  @Column()
   publish: boolean
 }

@@ -1,9 +1,9 @@
 import {
   Entity,
   Column,
+  ObjectIdColumn,
   CreateDateColumn,
-  UpdateDateColumn,
-  PrimaryGeneratedColumn
+  UpdateDateColumn
 } from 'typeorm'
 
 @Entity()
@@ -12,36 +12,21 @@ export class Contact {
     Object.assign(this, contact)
   }
 
-  @PrimaryGeneratedColumn('uuid', {
-    name: 'id'
-  })
+  @ObjectIdColumn()
   id: string
 
-  @CreateDateColumn({
-    name: 'create'
-  })
+  @CreateDateColumn()
   create: Date
 
-  @UpdateDateColumn({
-    name: 'update'
-  })
+  @UpdateDateColumn()
   update: Date
 
-  @Column({
-    name: 'mail',
-    unique: true
-  })
+  @Column()
   mail?: string
 
-  @Column({
-    name: 'phone',
-    nullable: true
-  })
+  @Column()
   phone?: string
 
-  @Column({
-    name: 'social',
-    nullable: true
-  })
+  @Column()
   social?: string
 }

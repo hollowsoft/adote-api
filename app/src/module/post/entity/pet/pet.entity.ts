@@ -5,7 +5,8 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   OneToOne,
-  PrimaryGeneratedColumn
+  PrimaryGeneratedColumn,
+  ObjectIdColumn
 } from 'typeorm'
 
 import { Size } from './size.enum'
@@ -19,50 +20,27 @@ export class Pet {
     Object.assign(this, pet)
   }
 
-  @PrimaryGeneratedColumn('uuid', {
-    name: 'id'
-  })
+  @ObjectIdColumn()
   id: string
 
-  @CreateDateColumn({
-    name: 'create'
-  })
+  @CreateDateColumn()
   create: Date
 
-  @UpdateDateColumn({
-    name: 'update'
-  })
+  @UpdateDateColumn()
   update: Date
 
-  @Column({
-    name: 'name'
-  })
+  @Column()
   name: string
 
-  @Column({
-    name: 'age',
-    type: 'int',
-    array: true
-  })
+  @Column()
   age: [number, number]
 
-  @Column({
-    name: 'size',
-    type: 'enum',
-    enum: Size
-  })
+  @Column()
   size: Size
 
-  @Column({
-    name: 'gender',
-    type: 'enum',
-    enum: Gender
-  })
+  @Column()
   gender: Gender
 
-  @OneToOne(() => Breed)
-  @JoinColumn({
-    name: 'breed_id'
-  })
+  @Column(() => Breed)
   breed: Breed
 }
