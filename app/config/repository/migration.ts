@@ -15,6 +15,6 @@ export default new DataSource({
   migrations: ['**/repository/migration/*.ts'],
   migrationsTableName: 'migration',
   ssl: {
-    rejectUnauthorized: false
-  }
+    rejectUnauthorized: false,
+  },
 })
