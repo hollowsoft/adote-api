@@ -1,9 +1,6 @@
 import { Reflector } from '@nestjs/core'
 
-import {
-  Injectable,
-  ExecutionContext
-} from '@nestjs/common'
+import { Injectable, ExecutionContext } from '@nestjs/common'
 
 import { AuthGuard as Guard } from '@nestjs/passport'
 
@@ -19,7 +16,9 @@ export class AuthGuard extends Guard('auth') {
       context.getHandler()
     ])
 
-    if (isPublic) { return true }
+    if (isPublic) {
+      return true
+    }
 
     return super.canActivate(context)
   }

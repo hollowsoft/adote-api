@@ -1,7 +1,4 @@
-import {
-  Length,
-  IsEmail
-} from 'class-validator'
+import { Length, IsEmail } from 'class-validator'
 
 export class AuthMailCodeRequest {
   @IsEmail()
