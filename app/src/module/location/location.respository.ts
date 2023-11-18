@@ -11,7 +11,7 @@ import {
 
 import { Location } from './location.entity'
 
-import EntityRepository from 'src/repository.interface'
+import { EntityRepository } from 'src/repository.interface'
 
 @Injectable()
 export class LocationRepository implements EntityRepository<Location> {

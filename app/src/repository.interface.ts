@@ -5,7 +5,7 @@ import {
   FindManyOptions
 } from 'typeorm'
 
-export default interface EntityRepository<Entity> {
+export interface EntityRepository<Entity> {
   all(option?: FindManyOptions<Entity>): Promise<Entity[]>
 
   find(option: FindOneOptions<Entity>): Promise<Entity | null>

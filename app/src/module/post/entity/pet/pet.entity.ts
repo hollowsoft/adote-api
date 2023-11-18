@@ -12,7 +12,7 @@ import {
 import { Size } from './size.enum'
 import { Gender } from './gender.enum'
 
-import { Breed } from '../../../breed/entity/breed.entity'
+import { Breed } from '../../../breed/breed.entity'
 
 @Entity()
 export class Pet {
