@@ -1,7 +1,7 @@
 import { Size } from '../../post/entity/pet/size.enum'
 import { Gender } from '../../post/entity/pet/gender.enum'
 
-import { Breed } from '../../breed/entity/breed.entity'
+import { Breed } from '../../breed/breed.entity'
 import { History } from '../entity/history.entity'
 
 export class HistoryResponse {

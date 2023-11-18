@@ -1,4 +1,4 @@
-import { Inject, Get, Query, Controller } from '@nestjs/common'
+import { Get, Query, Controller } from '@nestjs/common'
 
 import { Public } from 'src/decorator/public.decorator'
 
@@ -9,7 +9,7 @@ import { Provider, LocationProvider } from './provider'
 
 @Controller('location')
 export class LocationController {
-  constructor(@Inject() private readonly provider: LocationProvider) {}
+  constructor(private readonly provider: LocationProvider) {}
 
   @Public()
   @Get('search')

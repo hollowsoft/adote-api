@@ -1,24 +1,19 @@
-import {
-  Get,
-  Query,
-  Controller
-} from '@nestjs/common'
+import { Get, Query, Controller } from '@nestjs/common'
 
 import { Public } from '../../decorator/public.decorator'
 
-import { BreedService } from './service/breed.service'
+import { BreedResponse } from './breed.response'
+import { ListBreedRequest } from './list.breed.request'
 
-import { ListBreedRequest } from './request'
-
-import { BreedResponse } from './response'
+import { Provider, BreedProvider } from './provider'
 
 @Controller('breed')
 export class BreedController {
-  constructor(private readonly service: BreedService) {}
+  constructor(private readonly provider: BreedProvider) {}
 
   @Public()
   @Get()
   all(@Query() request: ListBreedRequest): Promise<BreedResponse[]> {
-    return this.service.all(request)
+    return this.provider[Provider.ListBreed].run(request)
   }
 }

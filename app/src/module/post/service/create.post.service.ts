@@ -4,7 +4,7 @@ import { Post } from '../entity/post.entity'
 
 import { Pet } from '../entity/pet/pet.entity'
 
-import { Breed } from '../../breed/entity/breed.entity'
+import { Breed } from '../../breed/breed.entity'
 
 import { City } from '../../location/entity/city.entity'
 
@@ -22,17 +22,14 @@ import { ICreatePostService } from './create.post.service.interface'
 export class CreatePostService implements ICreatePostService {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(
-    request: CreatePostRequest,
-    user: string,
-  ): Promise<PostResponse> {
+  async run(request: CreatePostRequest, user: string): Promise<PostResponse> {
     const { id } = await this.repository.save(this.build(request, user))
 
     const post = await this.repository.find({
       where: {
-        id,
+        id
       },
-      relations: ['pet.breed', 'city.state', 'user.contact'],
+      relations: ['pet.breed', 'city.state', 'user.contact']
     })
 
     return new PostResponse(post)
@@ -51,15 +48,15 @@ export class CreatePostService implements ICreatePostService {
         size: pet.size,
         gender: pet.gender,
         breed: new Breed({
-          id: pet.breed,
-        }),
+          id: pet.breed
+        })
       }),
       city: new City({
-        id: request.location,
+        id: request.location
       }),
       user: new User({
-        id: user,
-      }),
+        id: user
+      })
     })
   }
 }
