@@ -1,54 +1,41 @@
-import {
-  Post,
-  Body,
-  HttpCode,
-  UseGuards,
-  Controller
-} from '@nestjs/common'
-
-import { Token } from '../../type/token.type'
-import { TokenGuard } from './guard/token.guard'
+import { Post, Body, HttpCode, UseGuards, Controller } from '@nestjs/common'
 
 import { Auth } from '../../decorator/auth.decorator'
 import { Public } from '../../decorator/public.decorator'
 
-import { AuthService } from './service/auth.service'
+import { Token } from '../../type/token.type'
+import { TokenRenewGuard } from './guard/token.renew.guard'
 
-import {
-  AuthMailRequest,
-  AuthMailCodeRequest
-} from './request'
+import { AuthRequest, VerifyRequest } from './auth.request'
+import { AuthResponse, TokenResponse } from './auth.response'
 
-import {
-  AuthResponse,
-  AuthMailResponse
-} from './response'
+import { Provider, AuthProvider } from './provider'
 
 @Controller('auth')
 export class AuthController {
-  constructor(private readonly service: AuthService) {}
+  constructor(private readonly provider: AuthProvider) {}
 
   @Public()
-  @Post('mail')
+  @Post()
   @HttpCode(200)
-  mail(@Body() request: AuthMailRequest): Promise<AuthMailResponse> {
-    return this.service.mail(request)
+  mail(@Body() request: AuthRequest): Promise<AuthResponse> {
+    return this.provider[Provider.MailAuth].run(request)
   }
 
   @Public()
-  @Post('mail/code')
+  @Post('verify')
   @HttpCode(200)
-  code(@Body() request: AuthMailCodeRequest): Promise<AuthResponse> {
-    return this.service.code(request)
+  code(@Body() request: VerifyRequest): Promise<TokenResponse> {
+    return this.provider[Provider.VerifyAuth].run(request)
   }
 
   @Public()
-  @UseGuards(TokenGuard)
+  @UseGuards(TokenRenewGuard)
   @Post('token')
   @HttpCode(200)
-  token(@Auth() token: Token): Promise<AuthResponse> {
+  token(@Auth() token: Token): Promise<TokenResponse> {
     const { sub } = token
 
-    return this.service.token(sub)
+    return this.provider[Provider.RenewAuth].run(sub)
   }
 }

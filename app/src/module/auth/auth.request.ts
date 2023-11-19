@@ -1,6 +1,11 @@
 import { Length, IsEmail } from 'class-validator'
 
-export class AuthMailCodeRequest {
+export class AuthRequest {
+  @IsEmail()
+  readonly mail: string
+}
+
+export class VerifyRequest {
   @IsEmail()
   readonly mail: string
 
