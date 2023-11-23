@@ -1,21 +1,16 @@
 import { Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import { History } from './entity/history.entity'
+import { History } from './history.entity'
 import { HistoryRepository } from './history.repository'
 
-import { HistoryService } from './service/history.service'
-import { ListHistoryService } from './service/list.history.service'
+import { HistoryProvider } from './provider/history.provider'
 
 import { HistoryController } from './history.controller'
 
 @Module({
   imports: [TypeOrmModule.forFeature([History])],
-  providers: [
-    HistoryRepository,
-    HistoryService,
-    ListHistoryService
-  ],
-  controllers: [HistoryController],
+  providers: [HistoryProvider, HistoryRepository],
+  controllers: [HistoryController]
 })
 export class HistoryModule {}
