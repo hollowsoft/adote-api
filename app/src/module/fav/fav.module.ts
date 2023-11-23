@@ -1,26 +1,26 @@
 import { Module } from '@nestjs/common'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import { PostModule } from '../post/post.module'
-
-import { Fav } from './entity/fav.entity'
+import { Fav } from './fav.entity'
 import { FavRepository } from './fav.repository'
 
-import { FavService } from './service/fav.service'
-import { AddFavService } from './service/add.fav.service'
-import { ListFavService } from './service/list.fav.service'
-import { RemoveFavService } from './service/remove.fav.service'
+import { FavProvider, AddFav, ListFav, RemoveFav } from './provider'
 
 import { FavController } from './fav.controller'
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Fav]), PostModule],
+  imports: [TypeOrmModule.forFeature([Fav])],
   providers: [
     FavRepository,
-    FavService,
-    AddFavService,
-    ListFavService,
-    RemoveFavService
+    {
+      inject: [FavRepository],
+      provide: FavProvider,
+      useFactory: (repository: FavRepository): FavProvider => [
+        new AddFav(repository),
+        new ListFav(repository),
+        new RemoveFav(repository)
+      ]
+    }
   ],
   controllers: [FavController]
 })
