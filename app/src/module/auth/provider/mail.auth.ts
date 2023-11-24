@@ -1,6 +1,6 @@
 import { Injectable, BadRequestException } from '@nestjs/common'
 
-import { User } from 'src/module/user/entity/user.entity'
+import { User } from 'src/module/user/user.entity'
 import { UserRepository } from 'src/module/user/user.repository'
 
 import { AuthRequest } from '../auth.request'

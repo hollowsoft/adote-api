@@ -8,7 +8,7 @@ import { Breed } from '../../breed/breed.entity'
 
 import { City } from '../../location/entity/city.entity'
 
-import { User } from '../../user/entity/user.entity'
+import { User } from '../../user/user.entity'
 
 import { PostRepository } from '../post.repository'
 

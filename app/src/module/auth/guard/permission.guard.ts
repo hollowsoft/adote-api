@@ -2,7 +2,7 @@ import { Reflector } from '@nestjs/core'
 
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common'
 
-import { Role } from '../../user/entity/role.enum'
+import { Role } from '../../user/role.enum'
 
 import { isNil } from 'lodash'
 
