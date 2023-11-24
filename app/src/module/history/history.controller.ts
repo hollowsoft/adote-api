@@ -1,6 +1,6 @@
 import { Get, Query, Controller } from '@nestjs/common'
 
-import { Role } from '../user/entity/role.enum'
+import { Role } from '../user/role.enum'
 import { Permission } from '../../decorator/permission.decorator'
 
 import { HistoryResponse } from './history.response'

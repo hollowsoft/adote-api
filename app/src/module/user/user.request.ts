@@ -1,33 +1,25 @@
 import {
-  IsUUID,
   IsString,
   MaxLength,
   IsNotEmpty,
+  IsBoolean,
   IsEmail,
-  IsPhoneNumber,
   IsOptional,
+  IsPhoneNumber,
   ValidateNested
 } from 'class-validator'
 
-import {
-  Type,
-  Transform,
-  TransformFnParams
-} from 'class-transformer'
+import { Type, Transform, TransformFnParams } from 'class-transformer'
 
-class ContactRequest {
-  @IsEmail()
-  @IsOptional()
-  readonly mail?: string
-
-  @IsPhoneNumber('BR')
-  @IsOptional()
-  readonly phone?: string
-
+export class GetUserRequest {
   @IsString()
-  @MaxLength(20)
+  readonly id: string
+}
+
+export class ListUserRequest {
+  @IsBoolean()
   @IsOptional()
-  readonly social?: string
+  readonly enable?: boolean
 }
 
 export class UpdateUserRequest {
@@ -47,6 +39,21 @@ export class UpdateUserRequest {
   @ValidateNested()
   readonly contact?: ContactRequest
 
-  @IsUUID()
+  @IsString()
   readonly location: string
+}
+
+class ContactRequest {
+  @IsEmail()
+  @IsOptional()
+  readonly mail?: string
+
+  @IsPhoneNumber('BR')
+  @IsOptional()
+  readonly phone?: string
+
+  @IsString()
+  @MaxLength(20)
+  @IsOptional()
+  readonly social?: string
 }

@@ -1,4 +1,4 @@
-import {
+xwimport {
   Entity,
   Column,
   ObjectIdColumn,
@@ -8,7 +8,7 @@ import {
 
 import { Pet } from './pet/pet.entity'
 import { City } from '../../location/entity/city.entity'
-import { User } from '../../user/entity/user.entity'
+import { User } from '../../user/user.entity'
 
 @Entity()
 export class Post {

@@ -1,58 +1,47 @@
-import {
-  Get,
-  Put,
-  Post,
-  Body,
-  Query,
-  Param,
-  HttpCode,
-  Controller
-} from '@nestjs/common'
+import { Get, Put, Post, Body, Query, Param, HttpCode, Controller } from '@nestjs/common'
 
 import { Auth } from '../../decorator/auth.decorator'
 import { Permission } from '../../decorator/permission.decorator'
 
-import { Role } from './entity/role.enum'
+import { Role } from './role.enum'
 import { Token } from '../../type/token.type'
 
-import { UserService } from './service/user.service'
+import { GetUserRequest, ListUserRequest, UpdateUserRequest } from './user.request'
 
-import {
-  GetUserRequest,
-  ListUserRequest,
-  UpdateUserRequest
-} from './request'
-
-import { UserResponse } from './response'
+import { UserResponse } from './user.response'
+import { Action, UserProvider } from './user.provider'
 
 @Controller('user')
 export class UserController {
-  constructor(private readonly service: UserService) {}
+  constructor(private readonly provider: UserProvider) {}
 
   @Get(':id')
-  @Permission(Role.ADMIN)
+  @Permission(Role.Admin)
   get(@Param() request: GetUserRequest): Promise<UserResponse> {
-    return this.service.get(request)
+    return this.provider.action[Action.GetUser].run(request)
   }
 
   @Get('current')
   current(@Auth() token: Token): Promise<UserResponse> {
     const { sub } = token
 
-    return this.service.current(sub)
+    return this.provider.action[Action.GetCurrent].run(sub)
   }
 
   @Get()
-  @Permission(Role.ADMIN)
+  @Permission(Role.Admin)
   all(@Query() request: ListUserRequest): Promise<UserResponse[]> {
-    return this.service.all(request)
+    return this.provider.action[Action.ListUser].run(request)
   }
 
   @Put()
-  update(@Body() request: UpdateUserRequest, @Auth() token: Token): Promise<UserResponse> {
+  update(
+    @Body() request: UpdateUserRequest,
+    @Auth() token: Token
+  ): Promise<UserResponse> {
     const { sub } = token
 
-    return this.service.update(request, sub)
+    return this.provider.action[Action.UpdateUser].run(request, sub)
   }
 
   @Post('image')
@@ -60,6 +49,6 @@ export class UserController {
   image(@Auth() token: Token): Promise<void> {
     const { sub } = token
 
-    return this.service.image(sub)
+    return this.provider.action[Action.SetImageUser].run(sub)
   }
 }
