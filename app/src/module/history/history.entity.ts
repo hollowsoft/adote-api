@@ -1,7 +1,7 @@
 import { Entity, Column, ObjectIdColumn } from 'typeorm'
 
-import { Size } from '../post/entity/pet/size.enum'
-import { Gender } from '../post/entity/pet/gender.enum'
+import { Size } from '../post/size.enum'
+import { Gender } from '../post/gender.enum'
 
 @Entity()
 export class History {

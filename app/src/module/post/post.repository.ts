@@ -1,30 +1,35 @@
 import { Injectable } from '@nestjs/common'
-
 import { InjectRepository } from '@nestjs/typeorm'
 
-import { Repository, FindOneOptions, FindManyOptions } from 'typeorm'
+import {
+  Repository,
+  FindOneOptions,
+  FindManyOptions,
+  SaveOptions,
+  RemoveOptions
+} from 'typeorm'
 
-import { Post } from './entity/post.entity'
+import { Post } from './post.entity'
 
-import { IPostRepository } from './post.repository.interface'
+import { EntityRepository } from 'src/repository.interface'
 
 @Injectable()
-export class PostRepository implements IPostRepository {
+export class PostRepository implements EntityRepository<Post> {
   constructor(@InjectRepository(Post) private readonly repository: Repository<Post>) {}
 
   all(option?: FindManyOptions<Post>): Promise<Post[]> {
     return this.repository.find(option)
   }
 
-  find(option: FindOneOptions<Post>): Promise<Post | null> {
+  find(option: FindOneOptions<Post>): Promise<Post> {
     return this.repository.findOne(option)
   }
 
-  save(post: Post): Promise<Post> {
-    return this.repository.save(post)
+  save(post: Post, option?: SaveOptions): Promise<Post> {
+    return this.repository.save(post, option)
   }
 
-  remove(post: Post): Promise<Post> {
-    return this.repository.remove(post)
+  remove(post: Post, option?: RemoveOptions): Promise<Post> {
+    return this.repository.remove(post, option)
   }
 }
