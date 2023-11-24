@@ -1,25 +1,20 @@
-import {
-  Get,
-  Query,
-  Controller
-} from '@nestjs/common'
+import { Get, Query, Controller } from '@nestjs/common'
 
 import { Role } from '../user/entity/role.enum'
 import { Permission } from '../../decorator/permission.decorator'
 
-import { HistoryService } from './service/history.service'
+import { HistoryResponse } from './history.response'
+import { ListHistoryRequest } from './history.request'
 
-import { ListHistoryRequest } from './request'
-
-import { HistoryResponse } from './response'
+import { Action, HistoryProvider } from './provider/history.provider'
 
 @Controller('history')
 export class HistoryController {
-  constructor(private readonly service: HistoryService) {}
+  constructor(private readonly provider: HistoryProvider) {}
 
   @Get()
-  @Permission(Role.ADMIN)
+  @Permission(Role.Admin)
   all(@Query() request: ListHistoryRequest): Promise<HistoryResponse[]> {
-    return this.service.all(request)
+    return this.provider.action[Action.ListHistory].run(request)
   }
 }
