@@ -1,15 +1,11 @@
-FROM node:18-alpine
+FROM node:21-alpine
 
-RUN apk add g++ make python3
-
-WORKDIR /oreo/app
-
-COPY package.json yarn.lock ./
-
-RUN yarn
+WORKDIR /app
 
 COPY . .
 
+RUN yarn
+
 RUN yarn build
 
-CMD ["node", "dist/src/main.js"]
+CMD ["yarn", "start:prod"]
