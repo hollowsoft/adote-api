@@ -40,10 +40,6 @@ export class MailAuth {
       return user
     }
 
-    return this.repository.save(
-      new User({
-        mail
-      })
-    )
+    return this.repository.save(new User())
   }
 }
