@@ -15,8 +15,6 @@ import { Token } from '../../type/token.type'
 import { Auth } from '../../decorator/auth.decorator'
 import { Public } from '../../decorator/public.decorator'
 
-import { PostService } from './service/post.service'
-
 import {
   GetPostRequest,
   ListPostRequest,
@@ -26,48 +24,58 @@ import {
   PublishPostParam,
   PublishPostRequest,
   RemovePostRequest
-} from './request'
+} from './post.request'
 
-import {
-  PostResponse,
-  PublishPostResponse
-} from './response'
+import { PostResponse, PublishPostResponse } from './post.response'
+
+import { Action, PostProvider } from './post.provider'
 
 @Controller('post')
 export class PostController {
-  constructor(private readonly service: PostService) {}
+  constructor(private readonly provider: PostProvider) {}
 
   @Public()
   @Get()
   all(@Query() request: ListPostRequest): Promise<PostResponse[]> {
-    return this.service.all(request)
+    return this.provider.action[Action.ListPost].run(request)
   }
 
   @Public()
   @Get(':id')
   get(@Param() request: GetPostRequest): Promise<PostResponse> {
-    return this.service.get(request)
+    return this.provider.action[Action.GetPost].run(request)
   }
 
   @Post()
-  create(@Body() request: CreatePostRequest, @Auth() token: Token): Promise<PostResponse> {
+  create(
+    @Body() request: CreatePostRequest,
+    @Auth() token: Token
+  ): Promise<PostResponse> {
     const { sub } = token
 
-    return this.service.create(request, sub)
+    return this.provider.action[Action.CreatePost].run(request, sub)
   }
 
   @Put(':id')
-  update(@Param() param: UpdatePostParam, @Body() request: UpdatePostRequest, @Auth() token: Token): Promise<PostResponse> {
+  update(
+    @Param() param: UpdatePostParam,
+    @Body() request: UpdatePostRequest,
+    @Auth() token: Token
+  ): Promise<PostResponse> {
     const { sub } = token
 
-    return this.service.update(param, request, sub)
+    return this.provider.action[Action.UpdatePost].run(param.id, request, sub)
   }
 
   @Put(':id/publish')
-  publish(@Param() param: PublishPostParam, @Body() request: PublishPostRequest, @Auth() token: Token): Promise<PublishPostResponse> {
+  publish(
+    @Param() param: PublishPostParam,
+    @Body() request: PublishPostRequest,
+    @Auth() token: Token
+  ): Promise<PublishPostResponse> {
     const { sub } = token
 
-    return this.service.publish(param, request, sub)
+    return this.provider.action[Action.PublishPost].run(sub, request)
   }
 
   @Delete(':id')
@@ -75,6 +83,6 @@ export class PostController {
   remove(@Param() request: RemovePostRequest, @Auth() token: Token): Promise<void> {
     const { sub } = token
 
-    return this.service.remove(request, sub)
+    return this.provider.action[Action.RemovePost].run(request, sub)
   }
 }

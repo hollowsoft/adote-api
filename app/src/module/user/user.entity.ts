@@ -2,7 +2,7 @@ import { Entity, Column, ObjectIdColumn } from 'typeorm'
 
 import { Role } from './role.enum'
 
-import { Post } from '../post/entity/post.entity'
+import { Post } from '../post/post.entity'
 import { Location } from '../location/location.entity'
 
 @Entity()

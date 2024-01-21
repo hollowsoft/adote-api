@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 
-import { Size } from 'src/module/post/entity/pet/size.enum'
-import { Gender } from 'src/module/post/entity/pet/gender.enum'
+import { Size } from 'src/module/post/size.enum'
+import { Gender } from 'src/module/post/gender.enum'
 
 import { FavResponse } from '../fav.response'
 

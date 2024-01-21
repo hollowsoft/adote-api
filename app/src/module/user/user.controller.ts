@@ -1,14 +1,14 @@
 import { Get, Put, Post, Body, Query, Param, HttpCode, Controller } from '@nestjs/common'
 
-import { Auth } from '../../decorator/auth.decorator'
-import { Permission } from '../../decorator/permission.decorator'
-
 import { Role } from './role.enum'
 import { Token } from '../../type/token.type'
 
-import { GetUserRequest, ListUserRequest, UpdateUserRequest } from './user.request'
+import { Auth } from '../../decorator/auth.decorator'
+import { Permission } from '../../decorator/permission.decorator'
 
 import { UserResponse } from './user.response'
+import { GetUserRequest, ListUserRequest, UpdateUserRequest } from './user.request'
+
 import { Action, UserProvider } from './user.provider'
 
 @Controller('user')
