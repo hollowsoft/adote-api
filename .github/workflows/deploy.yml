@@ -17,6 +17,7 @@ jobs:
       - name: publish
         uses: docker://ghcr.io/kciter/aws-ecr-action:latest
         with:
+          account_id: ${{ secrets.AWS_ACCOUNT_ID }}
           access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: ${{ vars.AWS_DEFAULT_REGION }}
