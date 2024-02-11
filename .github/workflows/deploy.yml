@@ -21,4 +21,7 @@ jobs:
           access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: ${{ vars.AWS_DEFAULT_REGION }}
+<<<<<<< HEAD
           repo: ${{ vars.AWS_ECR_REPOSITORY }}
+=======
+>>>>>>> b101d60 (update deploy action)
