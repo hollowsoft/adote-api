@@ -28,8 +28,8 @@ export class ListFav {
       pet: {
         name: '',
         age: [1, 1],
-        size: Size.LARGE,
-        gender: Gender.FEMALE
+        size: Size.Large,
+        gender: Gender.Female
       },
       location: {
         city: '',
