@@ -23,3 +23,4 @@ jobs:
           region: ${{ vars.AWS_DEFAULT_REGION }}
           repo: ${{ vars.AWS_ECR_REPOSITORY }}
           path: ./app
+          dockerfile: ./app/Dockerfile
