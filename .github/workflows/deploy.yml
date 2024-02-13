@@ -20,7 +20,7 @@ jobs:
           account_id: ${{ secrets.AWS_ACCOUNT_ID }}
           access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          region: ${{ secrets.AWS_DEFAULT_REGION }}
+          region: ${{ vars.AWS_DEFAULT_REGION }}
 
         #   repo: ${{ vars.AWS_ECR_REPOSITORY }}
         #   path: ./app
