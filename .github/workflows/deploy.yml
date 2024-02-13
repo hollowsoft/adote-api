@@ -22,4 +22,3 @@ jobs:
           secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           region: ${{ vars.AWS_DEFAULT_REGION }}
           repo: ${{ vars.AWS_ECR_REPOSITORY }}
-          path: ./app
