@@ -4,10 +4,7 @@ import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
 import { TypeOrmModule } from '@nestjs/typeorm'
 
-import {
-  ThrottlerGuard,
-  ThrottlerModule
-} from '@nestjs/throttler'
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler'
 
 import { AuthModule } from './module/auth/auth.module'
 
@@ -49,8 +46,6 @@ const RequestGuard = {
       useClass: RequestConfigService
     })
   ],
-  providers: [
-    RequestGuard
-  ]
+  providers: [RequestGuard]
 })
 export class AppModule {}

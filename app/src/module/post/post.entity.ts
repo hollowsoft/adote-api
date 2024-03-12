@@ -7,6 +7,26 @@ import { User } from '../user/user.entity'
 import { Breed } from '../breed/breed.entity'
 import { Location } from '../location/location.entity'
 
+export class Pet {
+  @ObjectIdColumn()
+  id: string
+
+  @Column()
+  name: string
+
+  @Column()
+  age: [number, number]
+
+  @Column()
+  size: Size
+
+  @Column()
+  gender: Gender
+
+  @Column(() => Breed)
+  breed: Breed
+}
+
 @Entity()
 export class Post {
   @ObjectIdColumn()
@@ -32,24 +52,4 @@ export class Post {
 
   @Column()
   publish: boolean
-}
-
-export class Pet {
-  @ObjectIdColumn()
-  id: string
-
-  @Column()
-  name: string
-
-  @Column()
-  age: [number, number]
-
-  @Column()
-  size: Size
-
-  @Column()
-  gender: Gender
-
-  @Column(() => Breed)
-  breed: Breed
 }

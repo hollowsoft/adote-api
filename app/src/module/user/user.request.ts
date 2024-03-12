@@ -11,6 +11,21 @@ import {
 
 import { Type, Transform, TransformFnParams } from 'class-transformer'
 
+class ContactRequest {
+  @IsEmail()
+  @IsOptional()
+  readonly mail?: string
+
+  @IsPhoneNumber('BR')
+  @IsOptional()
+  readonly phone?: string
+
+  @IsString()
+  @MaxLength(20)
+  @IsOptional()
+  readonly social?: string
+}
+
 export class GetUserRequest {
   @IsString()
   readonly id: string
@@ -41,19 +56,4 @@ export class UpdateUserRequest {
 
   @IsString()
   readonly location: string
-}
-
-class ContactRequest {
-  @IsEmail()
-  @IsOptional()
-  readonly mail?: string
-
-  @IsPhoneNumber('BR')
-  @IsOptional()
-  readonly phone?: string
-
-  @IsString()
-  @MaxLength(20)
-  @IsOptional()
-  readonly social?: string
 }

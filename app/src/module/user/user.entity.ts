@@ -5,6 +5,17 @@ import { Role } from './role.enum'
 import { Post } from '../post/post.entity'
 import { Location } from '../location/location.entity'
 
+export class Contact {
+  @Column()
+  mail?: string
+
+  @Column()
+  phone?: string
+
+  @Column()
+  social?: string
+}
+
 @Entity()
 export class User {
   @ObjectIdColumn()
@@ -39,15 +50,4 @@ export class User {
 
   @Column()
   enable: boolean
-}
-
-export class Contact {
-  @Column()
-  mail?: string
-
-  @Column()
-  phone?: string
-
-  @Column()
-  social?: string
 }

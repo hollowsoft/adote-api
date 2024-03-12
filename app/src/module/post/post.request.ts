@@ -18,6 +18,30 @@ import { Type, Transform, TransformFnParams } from 'class-transformer'
 import { Size } from './size.enum'
 import { Gender } from './gender.enum'
 
+class PetRequest {
+  @IsString()
+  @IsNotEmpty()
+  @Transform(({ value }: TransformFnParams) => value?.trim())
+  readonly name: string
+
+  @IsArray()
+  @ArrayMinSize(2)
+  @ArrayMaxSize(2)
+  @IsNumber({}, { each: true })
+  @Min(1, { each: true })
+  @Max(20, { each: true })
+  readonly age: [number, number]
+
+  @IsEnum(Size)
+  readonly size: Size
+
+  @IsEnum(Gender)
+  readonly gender: Gender
+
+  @IsString()
+  readonly breed: string
+}
+
 export class CreatePostRequest {
   @IsString()
   @IsNotEmpty()
@@ -65,30 +89,6 @@ export class PublishPostRequest {
 export class RemovePostRequest {
   @IsString()
   readonly id: string
-}
-
-class PetRequest {
-  @IsString()
-  @IsNotEmpty()
-  @Transform(({ value }: TransformFnParams) => value?.trim())
-  readonly name: string
-
-  @IsArray()
-  @ArrayMinSize(2)
-  @ArrayMaxSize(2)
-  @IsNumber({}, { each: true })
-  @Min(1, { each: true })
-  @Max(20, { each: true })
-  readonly age: [number, number]
-
-  @IsEnum(Size)
-  readonly size: Size
-
-  @IsEnum(Gender)
-  readonly gender: Gender
-
-  @IsString()
-  readonly breed: string
 }
 
 export class UpdatePostParam {
