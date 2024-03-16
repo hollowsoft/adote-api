@@ -9,7 +9,7 @@ import { TokenRenewGuard } from './guard/token.renew.guard'
 import { AuthRequest, VerifyRequest } from './auth.request'
 import { AuthResponse, TokenResponse } from './auth.response'
 
-import { Provider, AuthProvider } from './provider'
+import { Action, AuthProvider } from './auth.provider'
 
 @Controller('auth')
 export class AuthController {
@@ -19,14 +19,14 @@ export class AuthController {
   @Post()
   @HttpCode(200)
   mail(@Body() request: AuthRequest): Promise<AuthResponse> {
-    return this.provider[Provider.MailAuth].run(request)
+    return this.provider[Action.MailAuth].run(request)
   }
 
   @Public()
   @Post('verify')
   @HttpCode(200)
   code(@Body() request: VerifyRequest): Promise<TokenResponse> {
-    return this.provider[Provider.VerifyAuth].run(request)
+    return this.provider[Action.VerifyAuth].run(request)
   }
 
   @Public()
@@ -36,6 +36,6 @@ export class AuthController {
   token(@Auth() token: Token): Promise<TokenResponse> {
     const { sub } = token
 
-    return this.provider[Provider.RenewAuth].run(sub)
+    return this.provider[Action.RenewAuth].run(sub)
   }
 }

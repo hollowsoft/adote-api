@@ -14,7 +14,7 @@ import { PermissionGuard } from './guard/permission.guard'
 import { TokenStrategy } from './strategy/token.strategy'
 import { TokenRenewStrategy } from './strategy/token.renew.strategy'
 
-import { MailAuth, RenewAuth, VerifyAuth, AuthProvider } from './provider'
+import { AuthProvider } from './auth.provider'
 
 import { UserRepository } from '../user/user.repository'
 
@@ -27,19 +27,8 @@ import { AuthController } from './auth.controller'
     TokenRenewStrategy,
     { provide: APP_GUARD, useClass: TokenGuard },
     { provide: APP_GUARD, useClass: PermissionGuard },
-    {
-      inject: [ConfigService, JwtService, UserRepository],
-      provide: AuthProvider,
-      useFactory: (
-        config: ConfigService,
-        service: JwtService,
-        repository: UserRepository
-      ) => [
-        new MailAuth(repository),
-        new RenewAuth(config, service),
-        new VerifyAuth(config, service)
-      ]
-    }
+    AuthProvider,
+    UserRepository
   ],
   controllers: [AuthController]
 })

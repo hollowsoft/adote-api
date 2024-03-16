@@ -1,7 +1,4 @@
-import {
-  ExecutionContext,
-  createParamDecorator
-} from '@nestjs/common'
+import { ExecutionContext, createParamDecorator } from '@nestjs/common'
 
 import { Token } from '../type/token.type'
 
