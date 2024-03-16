@@ -1,11 +1,8 @@
+import { Injectable } from '@nestjs/common'
+
 import { PostRepository } from './post.repository'
 
-import { GetPost } from './provider/get.post'
-import { ListPost } from './provider/list.post'
-import { CreatePost } from './provider/create.post'
-import { UpdatePost } from './provider/update.post'
-import { PublishPost } from './provider/publish.post'
-import { RemovePost } from './provider/remove.post'
+import { CreatePost, GetPost, ListPost, PublishPost, RemovePost, UpdatePost } from './provider'
 
 export enum Action {
   GetPost,
@@ -16,6 +13,7 @@ export enum Action {
   RemovePost
 }
 
+@Injectable()
 export class PostProvider {
   action: [GetPost, ListPost, CreatePost, PublishPost, UpdatePost, RemovePost]
 

@@ -1,10 +1,6 @@
 import { Injectable } from '@nestjs/common'
 
-import { GetUser } from './provider/get.user'
-import { GetCurrent } from './provider/get.current'
-import { ListUser } from './provider/list.user.service'
-import { UpdateUser } from './provider/update.user.service'
-import { SetImageUser } from './provider/set.image.user'
+import { GetCurrent, GetUser, ListUser, SetImageUser, UpdateUser } from './provider'
 
 import { UserRepository } from './user.repository'
 
