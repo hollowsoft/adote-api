@@ -4,21 +4,13 @@ import { TypeOrmModule } from '@nestjs/typeorm'
 import { Location } from './location.entity'
 import { LocationRepository } from './location.respository'
 
-import { SearchLocation, LocationProvider } from './provider'
+import { LocationProvider } from './location.provider'
 
 import { LocationController } from './location.controller'
 
 @Module({
   imports: [TypeOrmModule.forFeature([Location])],
-  providers: [
-    {
-      inject: [LocationRepository],
-      provide: LocationProvider,
-      useFactory: (repository: LocationRepository): LocationProvider => [
-        new SearchLocation(repository)
-      ]
-    }
-  ],
+  providers: [LocationProvider, LocationRepository],
   controllers: [LocationController]
 })
 export class LocationModule {}

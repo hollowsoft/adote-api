@@ -1,13 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 
-import {
-  Repository,
-  FindOneOptions,
-  FindManyOptions,
-  SaveOptions,
-  RemoveOptions
-} from 'typeorm'
+import { Repository, FindOneOptions, FindManyOptions, SaveOptions, RemoveOptions } from 'typeorm'
 
 import { Location } from './location.entity'
 
