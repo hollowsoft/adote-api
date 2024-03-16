@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common'
 
-import { ListHistory } from './list.history'
+import { ListHistory } from './provider'
 
-import { HistoryRepository } from '../history.repository'
+import { HistoryRepository } from './history.repository'
 
 export enum Action {
   ListHistory

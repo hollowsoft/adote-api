@@ -6,7 +6,7 @@ import { Permission } from '../../decorator/permission.decorator'
 import { HistoryResponse } from './history.response'
 import { ListHistoryRequest } from './history.request'
 
-import { Action, HistoryProvider } from './provider/history.provider'
+import { Action, HistoryProvider } from './history.provider'
 
 @Controller('history')
 export class HistoryController {
