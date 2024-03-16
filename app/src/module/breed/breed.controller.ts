@@ -5,7 +5,7 @@ import { Public } from '../../decorator/public.decorator'
 import { BreedResponse } from './breed.response'
 import { ListBreedRequest } from './list.breed.request'
 
-import { Provider, BreedProvider } from './provider'
+import { Action, BreedProvider } from './breed.provider'
 
 @Controller('breed')
 export class BreedController {
@@ -14,6 +14,6 @@ export class BreedController {
   @Public()
   @Get()
   all(@Query() request: ListBreedRequest): Promise<BreedResponse[]> {
-    return this.provider[Provider.ListBreed].run(request)
+    return this.provider[Action.ListBreed].run(request)
   }
 }
