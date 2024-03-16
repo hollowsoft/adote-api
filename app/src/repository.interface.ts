@@ -1,9 +1,4 @@
-import {
-  SaveOptions,
-  RemoveOptions,
-  FindOneOptions,
-  FindManyOptions
-} from 'typeorm'
+import { SaveOptions, RemoveOptions, FindOneOptions, FindManyOptions } from 'typeorm'
 
 export interface EntityRepository<Entity> {
   all(option?: FindManyOptions<Entity>): Promise<Entity[]>

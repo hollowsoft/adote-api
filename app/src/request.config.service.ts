@@ -2,10 +2,7 @@ import { Injectable } from '@nestjs/common'
 
 import { ConfigService } from '@nestjs/config'
 
-import {
-  ThrottlerModuleOptions,
-  ThrottlerOptionsFactory
-} from '@nestjs/throttler'
+import { ThrottlerModuleOptions, ThrottlerOptionsFactory } from '@nestjs/throttler'
 
 @Injectable()
 export class RequestConfigService implements ThrottlerOptionsFactory {
@@ -15,7 +12,7 @@ export class RequestConfigService implements ThrottlerOptionsFactory {
     return [
       {
         ttl: this.service.get<number>('REQUEST_TIME'),
-        limit: this.service.get<number>('REQUEST_LIMIT'),
+        limit: this.service.get<number>('REQUEST_LIMIT')
       }
     ]
   }
