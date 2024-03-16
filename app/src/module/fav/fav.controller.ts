@@ -6,7 +6,7 @@ import { Token } from '../../type/token.type'
 import { FavResponse, AddFavResponse } from './fav.response'
 import { AddFavRequest, RemoveFavRequest } from './fav.request'
 
-import { Provider, FavProvider } from './provider'
+import { Action, FavProvider } from './fav.provider'
 
 @Controller('fav')
 export class FavController {
@@ -16,14 +16,14 @@ export class FavController {
   all(@Auth() token: Token): Promise<FavResponse[]> {
     const { sub } = token
 
-    return this.provider[Provider.ListFav].run(sub)
+    return this.provider[Action.ListFav].run(sub)
   }
 
   @Post()
   add(@Body() request: AddFavRequest, @Auth() token: Token): Promise<AddFavResponse> {
     const { sub } = token
 
-    return this.provider[Provider.AddFav].run(request, sub)
+    return this.provider[Action.AddFav].run(request, sub)
   }
 
   @Delete(':id')
@@ -31,6 +31,6 @@ export class FavController {
   remove(@Param() request: RemoveFavRequest, @Auth() token: Token): Promise<void> {
     const { sub } = token
 
-    return this.provider[Provider.RemoveFav].run(request, sub)
+    return this.provider[Action.RemoveFav].run(request, sub)
   }
 }
