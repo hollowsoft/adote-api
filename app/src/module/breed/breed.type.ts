@@ -7,10 +7,10 @@ export enum Kind {
 
 @Schema()
 export class Breed {
-  @Prop()
+  @Prop(String)
   name: string
 
-  @Prop()
+  @Prop(Kind)
   kind: Kind
 }
 
