@@ -1,9 +1,9 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
-
 import { Types } from 'mongoose'
 
-import { Post } from '@/module/post/post.entity'
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
+
 import { User } from '@/module/user/user.entity'
+import { Post } from '@/module/post/post.entity'
 
 @Schema()
 export class Fav {
