@@ -2,29 +2,29 @@ import { Injectable } from '@nestjs/common'
 
 import { GetUser } from './get.user'
 import { GetCurrent } from './get.current'
-import { ListUser } from './list.user.service'
-import { UpdateUser } from './update.user.service'
-import { SetImageUser } from './set.image.user'
+import { ListUser } from './list.user'
+import { AddImage } from './add.image'
+import { PatchUser } from './patch.user'
 
 export enum Action {
   Get,
   Current,
   List,
-  Update,
-  Image
+  Image,
+  Patch
 }
 
 @Injectable()
 export class UserProvider {
-  action: [GetUser, GetCurrent, ListUser, UpdateUser, SetImageUser]
+  action: [GetUser, GetCurrent, ListUser, AddImage, PatchUser]
 
   constructor(
     private readonly get: GetUser,
     private readonly current: GetCurrent,
     private readonly list: ListUser,
-    private readonly update: UpdateUser,
-    private readonly image: SetImageUser
+    private readonly image: AddImage,
+    private readonly patch: PatchUser
   ) {
-    this.action = [this.get, this.current, this.list, this.update, this.image]
+    this.action = [this.get, this.current, this.list, this.image, this.patch]
   }
 }
