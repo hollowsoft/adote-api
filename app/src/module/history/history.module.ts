@@ -1,15 +1,15 @@
 import { Module } from '@nestjs/common'
-import { TypeOrmModule } from '@nestjs/typeorm'
+import { MongooseModule } from '@nestjs/mongoose'
 
-import { History } from './history.entity'
+import { HistorySchema } from './history.type'
 import { HistoryRepository } from './history.repository'
 
-import { HistoryProvider } from './history.provider'
+import { HistoryProvider } from './provider'
 
 import { HistoryController } from './history.controller'
 
 @Module({
-  imports: [TypeOrmModule.forFeature([History])],
+  imports: [MongooseModule.forFeature([HistorySchema])],
   providers: [HistoryProvider, HistoryRepository],
   controllers: [HistoryController]
 })

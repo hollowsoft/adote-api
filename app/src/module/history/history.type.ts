@@ -23,4 +23,6 @@ export class History {
   breed: string
 }
 
-export const HistorySchema = SchemaFactory.createForClass(History)
+const schema = SchemaFactory.createForClass(History)
+
+export const HistorySchema = { name: History.name, schema }
