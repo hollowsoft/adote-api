@@ -56,4 +56,6 @@ export class Post {
   publish: boolean
 }
 
-export const PostSchema = SchemaFactory.createForClass(Post)
+const schema = SchemaFactory.createForClass(Post)
+
+export const PostSchema = { name: Post.name, schema }

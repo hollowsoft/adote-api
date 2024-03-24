@@ -1,88 +1,62 @@
-import {
-  Get,
-  Put,
-  Post,
-  Delete,
-  Body,
-  Query,
-  Param,
-  HttpCode,
-  Controller
-} from '@nestjs/common'
+import { Get, Put, Post, Delete, Body, Param, Query, HttpCode, Controller } from '@nestjs/common'
 
-import { Token } from '../../type/token.type'
+import { Auth } from '@/decorator/auth.decorator'
+import { Public } from '@/decorator/public.decorator'
 
-import { Auth } from '../../decorator/auth.decorator'
-import { Public } from '../../decorator/public.decorator'
+import { Token } from '@/type/token.type'
 
-import {
-  GetPostRequest,
-  ListPostRequest,
-  CreatePostRequest,
-  UpdatePostParam,
-  UpdatePostRequest,
-  PublishPostParam,
-  PublishPostRequest,
-  RemovePostRequest
-} from './post.request'
+import { Action, PostProvider } from './provider'
+
+import { ListPostRequest, CreatePostRequest, PatchPostRequest, PublishPostRequest } from './post.request'
 
 import { PostResponse, PublishPostResponse } from './post.response'
-
-import { Action, PostProvider } from './post.provider'
 
 @Controller('post')
 export class PostController {
   constructor(private readonly provider: PostProvider) {}
 
-  @Public()
   @Get()
-  all(@Query() request: ListPostRequest): Promise<PostResponse[]> {
-    return this.provider.action[Action.ListPost].run(request)
+  @Public()
+  list(@Query() request: ListPostRequest): Promise<PostResponse[]> {
+    return this.provider.action[Action.List].run(request)
   }
 
-  @Public()
   @Get(':id')
-  get(@Param() request: GetPostRequest): Promise<PostResponse> {
-    return this.provider.action[Action.GetPost].run(request)
+  @Public()
+  get(@Param('id') id: string): Promise<PostResponse> {
+    return this.provider.action[Action.Get].run(id)
   }
 
   @Post()
-  create(
-    @Body() request: CreatePostRequest,
-    @Auth() token: Token
-  ): Promise<PostResponse> {
-    const { sub } = token
+  create(@Auth() token: Token, @Body() request: CreatePostRequest): Promise<PostResponse> {
+    const { sub: id } = token
 
-    return this.provider.action[Action.CreatePost].run(request, sub)
+    return this.provider.action[Action.Create].run(request, id)
   }
 
   @Put(':id')
-  update(
-    @Param() param: UpdatePostParam,
-    @Body() request: UpdatePostRequest,
-    @Auth() token: Token
-  ): Promise<PostResponse> {
+  patch(@Param('id') id: string, @Auth() token: Token, @Body() request: PatchPostRequest): Promise<PostResponse> {
     const { sub } = token
 
-    return this.provider.action[Action.UpdatePost].run(param.id, request, sub)
+    return this.provider.action[Action.Patch].run(id, request, sub)
   }
 
   @Put(':id/publish')
   publish(
-    @Param() param: PublishPostParam,
-    @Body() request: PublishPostRequest,
-    @Auth() token: Token
+    @Param('id') id: string,
+    @Auth() token: Token,
+    @Body() request: PublishPostRequest
   ): Promise<PublishPostResponse> {
     const { sub } = token
 
-    return this.provider.action[Action.PublishPost].run(sub, request)
+    return this.provider.action[Action.Publish].run(id, request)
   }
 
   @Delete(':id')
   @HttpCode(204)
-  remove(@Param() request: RemovePostRequest, @Auth() token: Token): Promise<void> {
+  remove(@Param('id') id: string, @Auth() token: Token): Promise<void> {
     const { sub } = token
 
-    return this.provider.action[Action.RemovePost].run(request, sub)
+    return this.provider.action[Action.Remove].run(id, { id: sub })
   }
 }
