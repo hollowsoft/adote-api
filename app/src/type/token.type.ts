@@ -1,5 +1,9 @@
 export type Token = {
-  sub: string
-  iat: number
-  exp: number
+  readonly sub: string
+  readonly iat: number
+  readonly exp: number
+}
+
+export type User = {
+  readonly id: string
 }
