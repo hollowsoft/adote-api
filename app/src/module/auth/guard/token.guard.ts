@@ -11,10 +11,7 @@ export class TokenGuard extends AuthGuard('Token') {
   }
 
   canActivate(context: ExecutionContext) {
-    const isPublic = this.reflector.getAllAndOverride<boolean>('public', [
-      context.getClass(),
-      context.getHandler()
-    ])
+    const isPublic = this.reflector.getAllAndOverride<boolean>('public', [context.getClass(), context.getHandler()])
 
     if (isPublic) {
       return true
