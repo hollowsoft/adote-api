@@ -26,18 +26,13 @@ class ContactRequest {
   readonly social?: string
 }
 
-export class GetUserRequest {
-  @IsString()
-  readonly id: string
-}
-
 export class ListUserRequest {
   @IsBoolean()
   @IsOptional()
   readonly enable?: boolean
 }
 
-export class UpdateUserRequest {
+export class PatchUserRequest {
   @IsString()
   @IsNotEmpty()
   @Transform(({ value }: TransformFnParams) => value?.trim())
