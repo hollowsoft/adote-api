@@ -1,15 +1,15 @@
-import { Get, Put, Post, Body, Query, Param, HttpCode, Controller } from '@nestjs/common'
+import { Get, Put, Post, Body, Param, Query, HttpCode, Controller } from '@nestjs/common'
 
-import { Role } from './role.enum'
-import { Token } from '../../type/token.type'
+import { Auth } from '@/decorator/auth.decorator'
+import { Permission } from '@/decorator/permission.decorator'
 
-import { Auth } from '../../decorator/auth.decorator'
-import { Permission } from '../../decorator/permission.decorator'
+import { Role } from './user.type'
+import { Token } from '@/type/token.type'
 
+import { Action, UserProvider } from './provider'
+
+import { ListUserRequest, PatchUserRequest } from './user.request'
 import { UserResponse } from './user.response'
-import { GetUserRequest, ListUserRequest, UpdateUserRequest } from './user.request'
-
-import { Action, UserProvider } from './user.provider'
 
 @Controller('user')
 export class UserController {
@@ -17,38 +17,35 @@ export class UserController {
 
   @Get(':id')
   @Permission(Role.Admin)
-  get(@Param() request: GetUserRequest): Promise<UserResponse> {
-    return this.provider.action[Action.GetUser].run(request)
+  get(@Param('id') id: string): Promise<UserResponse> {
+    return this.provider.action[Action.Get].run(id)
   }
 
   @Get('current')
   current(@Auth() token: Token): Promise<UserResponse> {
-    const { sub } = token
+    const { sub: id } = token
 
-    return this.provider.action[Action.GetCurrent].run(sub)
+    return this.provider.action[Action.Current].run(id)
   }
 
   @Get()
   @Permission(Role.Admin)
-  all(@Query() request: ListUserRequest): Promise<UserResponse[]> {
-    return this.provider.action[Action.ListUser].run(request)
-  }
-
-  @Put()
-  update(
-    @Body() request: UpdateUserRequest,
-    @Auth() token: Token
-  ): Promise<UserResponse> {
-    const { sub } = token
-
-    return this.provider.action[Action.UpdateUser].run(request, sub)
+  list(@Query() request: ListUserRequest): Promise<UserResponse[]> {
+    return this.provider.action[Action.List].run(request)
   }
 
   @Post('image')
   @HttpCode(200)
   image(@Auth() token: Token): Promise<void> {
-    const { sub } = token
+    const { sub: id } = token
 
-    return this.provider.action[Action.SetImageUser].run(sub)
+    return this.provider.action[Action.Image].run(id)
+  }
+
+  @Put()
+  patch(@Body() request: PatchUserRequest, @Auth() token: Token): Promise<UserResponse> {
+    const { sub: id } = token
+
+    return this.provider.action[Action.Patch].run(request, id)
   }
 }
