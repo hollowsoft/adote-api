@@ -1,15 +1,14 @@
 import { Module } from '@nestjs/common'
-import { TypeOrmModule } from '@nestjs/typeorm'
+import { MongooseModule } from '@nestjs/mongoose'
 
-import { Fav } from './fav.entity'
+import { UserSchema } from '@/module/user/user.type'
 import { FavRepository } from './fav.repository'
 
-import { FavProvider } from './fav.provider'
-
+import { FavProvider } from './provider'
 import { FavController } from './fav.controller'
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Fav])],
+  imports: [MongooseModule.forFeature([UserSchema])],
   providers: [FavProvider, FavRepository],
   controllers: [FavController]
 })

@@ -1,36 +1,36 @@
 import { Get, Post, Delete, Body, Param, HttpCode, Controller } from '@nestjs/common'
 
-import { Auth } from '../../decorator/auth.decorator'
-import { Token } from '../../type/token.type'
+import { Auth } from '@/decorator/auth.decorator'
+import { Token } from '@/type/token.type'
 
-import { FavResponse, AddFavResponse } from './fav.response'
+import { Action, FavProvider } from './provider'
+
 import { AddFavRequest, RemoveFavRequest } from './fav.request'
-
-import { Action, FavProvider } from './fav.provider'
+import { FavResponse, AddFavResponse } from './fav.response'
 
 @Controller('fav')
 export class FavController {
   constructor(private readonly provider: FavProvider) {}
 
   @Get()
-  all(@Auth() token: Token): Promise<FavResponse[]> {
-    const { sub } = token
+  list(@Auth() token: Token): Promise<FavResponse[]> {
+    const { sub: id } = token
 
-    return this.provider[Action.ListFav].run(sub)
+    return this.provider[Action.List].run(id)
   }
 
   @Post()
-  add(@Body() request: AddFavRequest, @Auth() token: Token): Promise<AddFavResponse> {
-    const { sub } = token
+  add(@Auth() token: Token, @Body() request: AddFavRequest): Promise<AddFavResponse> {
+    const { sub: id } = token
 
-    return this.provider[Action.AddFav].run(request, sub)
+    return this.provider[Action.Add].run(request, id)
   }
 
   @Delete(':id')
   @HttpCode(204)
-  remove(@Param() request: RemoveFavRequest, @Auth() token: Token): Promise<void> {
-    const { sub } = token
+  remove(@Auth() token: Token, @Param() request: RemoveFavRequest): Promise<void> {
+    const { sub: id } = token
 
-    return this.provider[Action.RemoveFav].run(request, sub)
+    return this.provider[Action.Remove].run(request, id)
   }
 }
