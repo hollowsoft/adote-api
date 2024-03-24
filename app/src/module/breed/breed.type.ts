@@ -14,4 +14,6 @@ export class Breed {
   kind: Kind
 }
 
-export const BreedSchema = SchemaFactory.createForClass(Breed)
+const schema = SchemaFactory.createForClass(Breed)
+
+export const BreedSchema = { name: Breed.name, schema }

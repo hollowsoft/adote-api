@@ -1,15 +1,15 @@
 import { Module } from '@nestjs/common'
-import { TypeOrmModule } from '@nestjs/typeorm'
+import { MongooseModule } from '@nestjs/mongoose'
 
-import { Breed } from './breed.entity'
+import { BreedSchema } from './breed.type'
 import { BreedRepository } from './breed.repository'
 
-import { BreedProvider } from './breed.provider'
+import { BreedProvider } from './provider'
 
 import { BreedController } from './breed.controller'
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Breed])],
+  imports: [MongooseModule.forFeature([BreedSchema])],
   providers: [BreedProvider, BreedRepository],
   controllers: [BreedController]
 })
