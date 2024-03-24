@@ -2,7 +2,7 @@ import { Reflector } from '@nestjs/core'
 
 import { Injectable, CanActivate, ExecutionContext } from '@nestjs/common'
 
-import { Role } from '../../user/role.enum'
+import { Role } from '@/module/user/user.type'
 
 import { isNil } from 'lodash'
 
@@ -11,10 +11,7 @@ export class PermissionGuard implements CanActivate {
   constructor(private readonly reflector: Reflector) {}
 
   canActivate(context: ExecutionContext) {
-    const list = this.reflector.getAllAndOverride<Role[]>('permission', [
-      context.getClass(),
-      context.getHandler()
-    ])
+    const list = this.reflector.getAllAndOverride<Role[]>('permission', [context.getClass(), context.getHandler()])
 
     if (isNil(list)) {
       return true
