@@ -1,15 +1,15 @@
 import { Module } from '@nestjs/common'
-import { TypeOrmModule } from '@nestjs/typeorm'
+import { MongooseModule } from '@nestjs/mongoose'
 
-import { Location } from './location.entity'
+import { LocationSchema } from './location.type'
 import { LocationRepository } from './location.respository'
 
-import { LocationProvider } from './location.provider'
+import { LocationProvider } from './provider'
 
 import { LocationController } from './location.controller'
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Location])],
+  imports: [MongooseModule.forFeature([LocationSchema])],
   providers: [LocationProvider, LocationRepository],
   controllers: [LocationController]
 })

@@ -9,4 +9,6 @@ export class Location {
   state: string
 }
 
-export const LocationSchema = SchemaFactory.createForClass(Location)
+export const schema = SchemaFactory.createForClass(Location)
+
+export const LocationSchema = { name: Location.name, schema }
