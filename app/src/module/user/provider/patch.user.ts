@@ -6,7 +6,7 @@ import { UpdateUserRequest } from '../user.request'
 import { UserRepository } from '../user.repository'
 
 @Injectable()
-export class UpdateUser {
+export class PatchUser {
   constructor(private readonly repository: UserRepository) {}
 
   async run(request: UpdateUserRequest, id: string): Promise<UserResponse> {
