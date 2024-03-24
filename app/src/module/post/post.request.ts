@@ -65,20 +65,10 @@ export class CreatePostRequest {
   readonly location: string
 }
 
-export class GetPostRequest {
-  @IsString()
-  readonly id: string
-}
-
 export class ListPostRequest {
   @IsEnum(Size)
   @IsOptional()
   readonly size?: Size
-}
-
-export class PublishPostParam {
-  @IsString()
-  readonly id: string
 }
 
 export class PublishPostRequest {
@@ -86,17 +76,7 @@ export class PublishPostRequest {
   readonly publish: boolean
 }
 
-export class RemovePostRequest {
-  @IsString()
-  readonly id: string
-}
-
-export class UpdatePostParam {
-  @IsString()
-  readonly id: string
-}
-
-export class UpdatePostRequest {
+export class PatchPostRequest {
   @IsString()
   @IsNotEmpty()
   @Transform(({ value }: TransformFnParams) => value?.trim())
