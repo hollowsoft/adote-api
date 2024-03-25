@@ -14,6 +14,8 @@ export enum Action {
   Patch
 }
 
+export { GetUser, GetCurrent, ListUser, AddImage, PatchUser }
+
 @Injectable()
 export class UserProvider {
   action: [GetUser, GetCurrent, ListUser, AddImage, PatchUser]
