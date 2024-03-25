@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common'
 
+import { User } from '@/type/token.type'
+
 import { PostResponse } from '../post.response'
 import { CreatePostRequest } from '../post.request'
 
@@ -9,16 +11,12 @@ import { PostRepository } from '../post.repository'
 export class CreatePost {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(request: CreatePostRequest, user: string): Promise<PostResponse> {
-    const { id } = await this.repository.save(request as any)
-
-    const post = await this.repository.find({
-      where: { id }
-    })
+  async run(request: CreatePostRequest, user: User): Promise<PostResponse> {
+    const post = await this.repository.find()
 
     return {
-      id: post.id,
-      title: post.title,
+      id: '',
+      title: post.name,
       description: post.description,
       image: post.image,
       pet: {
@@ -27,14 +25,14 @@ export class CreatePost {
         size: post.pet.size,
         gender: post.pet.gender,
         breed: {
-          id: post.pet.breed.id,
+          id: '',
           name: post.pet.breed.name
         }
       },
       location: {
-        id: post.location.id,
-        city: post.location.city,
-        state: post.location.state
+        id: '',
+        city: '',
+        state: ''
       },
       user: {
         name: post.user.name,

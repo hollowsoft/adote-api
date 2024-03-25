@@ -12,12 +12,10 @@ export class ListUser {
   async run(request: ListUserRequest): Promise<UserResponse[]> {
     const { enable } = request
 
-    const list = await this.repository.all({
-      where: { enable }
-    })
+    const list = await this.repository.list()
 
     return list.map((user) => ({
-      id: user.id,
+      id: 'user.id',
       mail: user.mail,
       name: user.name,
       image: user.image,
@@ -28,7 +26,7 @@ export class ListUser {
         social: user.contact.social
       },
       location: {
-        id: user.location.id,
+        id: '',
         city: user.location.city,
         state: user.location.state
       }

@@ -3,6 +3,8 @@ import { Injectable, NotFoundException } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { ConfigService } from '@nestjs/config'
 
+import { User } from '@/type/token.type'
+
 import { TokenResponse } from '../auth.response'
 
 @Injectable()
@@ -12,7 +14,7 @@ export class RenewAuth {
     private readonly service: JwtService
   ) {}
 
-  async run(id: string): Promise<TokenResponse> {
+  async run(user: User): Promise<TokenResponse> {
     const param = {}
 
     const token = this.service.sign(param, {

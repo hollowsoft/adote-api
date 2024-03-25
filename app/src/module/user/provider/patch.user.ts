@@ -1,7 +1,9 @@
 import { Injectable } from '@nestjs/common'
 
+import { User } from '@/type/token.type'
+
 import { UserResponse } from '../user.response'
-import { UpdateUserRequest } from '../user.request'
+import { PatchUserRequest } from '../user.request'
 
 import { UserRepository } from '../user.repository'
 
@@ -9,11 +11,11 @@ import { UserRepository } from '../user.repository'
 export class PatchUser {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(request: UpdateUserRequest, id: string): Promise<UserResponse> {
-    const user = await this.repository.save({} as any)
+  async run(request: PatchUserRequest, auth: User): Promise<UserResponse> {
+    const user = await this.repository.save()
 
     return {
-      id: user.id,
+      id: '',
       mail: user.mail,
       name: user.name,
       image: user.image,
@@ -24,7 +26,7 @@ export class PatchUser {
         social: user.contact.social
       },
       location: {
-        id: user.location.id,
+        id: '',
         city: user.location.city,
         state: user.location.state
       }

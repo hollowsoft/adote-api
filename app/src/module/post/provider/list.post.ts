@@ -12,17 +12,11 @@ export class ListPost {
   async run(request: ListPostRequest): Promise<PostResponse[]> {
     const { size } = request
 
-    const list = await this.repository.all({
-      where: {
-        pet: {
-          size
-        }
-      }
-    })
+    const list = await this.repository.list()
 
     return list.map((post) => ({
-      id: post.id,
-      title: post.title,
+      id: '',
+      title: post.name,
       description: post.description,
       image: post.image,
       pet: {
@@ -31,14 +25,14 @@ export class ListPost {
         size: post.pet.size,
         gender: post.pet.gender,
         breed: {
-          id: post.pet.breed.id,
+          id: '',
           name: post.pet.breed.name
         }
       },
       location: {
-        id: post.location.id,
-        city: post.location.city,
-        state: post.location.state
+        id: '',
+        city: '',
+        state: ''
       },
       user: {
         name: post.user.name,

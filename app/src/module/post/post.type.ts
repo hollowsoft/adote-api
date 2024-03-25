@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
-import { User } from '@/module/user/user.entity'
+import { User } from '@/module/user/user.type'
 import { Breed } from '@/module/breed/breed.type'
 
 export enum Size {

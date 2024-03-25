@@ -2,30 +2,20 @@ import { Injectable, NotFoundException } from '@nestjs/common'
 
 import { PostRepository } from '../post.repository'
 
-import { RemovePostRequest } from '../post.request'
-
 import { isNil } from 'lodash'
+import { User } from '@/type/token.type'
 
 @Injectable()
 export class RemovePost {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(request: RemovePostRequest, user: string): Promise<void> {
-    const { id } = request
-
-    const post = await this.repository.find({
-      where: {
-        id,
-        user: {
-          id: user
-        }
-      }
-    })
+  async run(id: string, user: User): Promise<void> {
+    const post = await this.repository.find()
 
     if (isNil(post)) {
       throw new NotFoundException('post not found')
     }
 
-    await this.repository.remove(post)
+    await this.repository.remove()
   }
 }

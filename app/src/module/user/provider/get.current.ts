@@ -1,5 +1,7 @@
 import { Injectable } from '@nestjs/common'
 
+import { User } from '@/type/token.type'
+
 import { UserResponse } from '../user.response'
 
 import { UserRepository } from '../user.repository'
@@ -8,13 +10,11 @@ import { UserRepository } from '../user.repository'
 export class GetCurrent {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(id: string): Promise<UserResponse> {
-    const user = await this.repository.find({
-      where: { id }
-    })
+  async run(auth: User): Promise<UserResponse> {
+    const user = await this.repository.find()
 
     return {
-      id: user.id,
+      id: '',
       mail: user.mail,
       name: user.name,
       image: user.image,
@@ -25,7 +25,7 @@ export class GetCurrent {
         social: user.contact.social
       },
       location: {
-        id: user.location.id,
+        id: '',
         city: user.location.city,
         state: user.location.state
       }

@@ -1,5 +1,4 @@
-import { Size } from '../post/size.enum'
-import { Gender } from '../post/gender.enum'
+import { Size, Gender } from '@/module/post/post.type'
 
 export class HistoryResponse {
   constructor(

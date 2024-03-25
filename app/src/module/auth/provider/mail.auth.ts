@@ -1,7 +1,7 @@
 import { Injectable, BadRequestException } from '@nestjs/common'
 
-import { User } from 'src/module/user/user.entity'
-import { UserRepository } from 'src/module/user/user.repository'
+import { User } from '@/module/user/user.type'
+import { UserRepository } from '@/module/user/user.repository'
 
 import { AuthRequest } from '../auth.request'
 import { AuthResponse } from '../auth.response'
@@ -22,7 +22,7 @@ export class MailAuth {
     // TODO: send mail with token
 
     return {
-      id: user.id,
+      id: '',
       mail: user.mail
     }
   }
@@ -30,16 +30,12 @@ export class MailAuth {
   private async save(request: AuthRequest): Promise<User> {
     const { mail } = request
 
-    const user = await this.repository.find({
-      where: {
-        mail
-      }
-    })
+    const user = await this.repository.find()
 
     if (user) {
       return user
     }
 
-    return this.repository.save(new User())
+    return this.repository.save()
   }
 }

@@ -1,7 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
 
 import { UserResponse } from '../user.response'
-import { GetUserRequest } from '../user.request'
 
 import { UserRepository } from '../user.repository'
 
@@ -11,19 +10,15 @@ import { isNil } from 'lodash'
 export class GetUser {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(request: GetUserRequest): Promise<UserResponse> {
-    const { id } = request
-
-    const user = await this.repository.find({
-      where: { id }
-    })
+  async run(id: string): Promise<UserResponse> {
+    const user = await this.repository.find()
 
     if (isNil(user)) {
       throw new NotFoundException('user not found')
     }
 
     return {
-      id: user.id,
+      id: '',
       mail: user.mail,
       name: user.name,
       image: user.image,
@@ -34,7 +29,7 @@ export class GetUser {
         social: user.contact.social
       },
       location: {
-        id: user.location.id,
+        id: '',
         city: user.location.city,
         state: user.location.state
       }

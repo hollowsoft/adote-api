@@ -10,10 +10,10 @@ export class ListHistory {
   constructor(private readonly repository: HistoryRepository) {}
 
   async run(request: ListHistoryRequest): Promise<HistoryResponse[]> {
-    const list = await this.repository.all()
+    const list = await this.repository.list()
 
     return list.map((history) => ({
-      id: history.id,
+      id: '',
       name: history.name,
       image: history.image,
       age: history.age,

@@ -1,21 +1,22 @@
 import { Injectable } from '@nestjs/common'
 
-import { Post } from '../post.entity'
+import { User } from '@/type/token.type'
+
 import { PostRepository } from '../post.repository'
 
+import { PatchPostRequest } from '../post.request'
 import { PostResponse } from '../post.response'
-import { UpdatePostRequest } from '../post.request'
 
 @Injectable()
 export class PatchPost {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(id: string, request: UpdatePostRequest, user: string): Promise<PostResponse> {
-    const post = await this.repository.save(request as any)
+  async run(id: string, request: PatchPostRequest, user: User): Promise<PostResponse> {
+    const post = await this.repository.save()
 
     return {
-      id: post.id,
-      title: post.title,
+      id: '',
+      title: '',
       description: post.description,
       image: post.image,
       pet: {
@@ -24,14 +25,14 @@ export class PatchPost {
         size: post.pet.size,
         gender: post.pet.gender,
         breed: {
-          id: post.pet.breed.id,
+          id: '',
           name: post.pet.breed.name
         }
       },
       location: {
-        id: post.location.id,
-        city: post.location.city,
-        state: post.location.state
+        id: '',
+        city: '',
+        state: ''
       },
       user: {
         name: post.user.name,

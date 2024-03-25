@@ -15,8 +15,7 @@ import {
 
 import { Type, Transform, TransformFnParams } from 'class-transformer'
 
-import { Size } from './size.enum'
-import { Gender } from './gender.enum'
+import { Size, Gender } from './post.type'
 
 class PetRequest {
   @IsString()
