@@ -1,35 +1,23 @@
 import { Injectable } from '@nestjs/common'
-import { InjectRepository } from '@nestjs/typeorm'
+import { InjectModel } from '@nestjs/mongoose'
 
-import {
-  Repository,
-  FindOneOptions,
-  FindManyOptions,
-  SaveOptions,
-  RemoveOptions
-} from 'typeorm'
+import { Model } from 'mongoose'
 
-import { User } from './user.entity'
-
-import { EntityRepository } from 'src/repository.interface'
+import { User } from './user.type'
 
 @Injectable()
-export class UserRepository implements EntityRepository<User> {
-  constructor(@InjectRepository(User) private readonly repository: Repository<User>) {}
+export class UserRepository {
+  constructor(@InjectModel(User.name) private model: Model<User>) {}
 
-  all(option?: FindManyOptions<User>): Promise<User[]> {
-    return this.repository.find(option)
+  list(): Promise<User[]> {
+    return this.model.find().exec()
   }
 
-  find(option: FindOneOptions<User>): Promise<User> {
-    return this.repository.findOne(option)
+  find(): Promise<User> {
+    return this.model.findById('').exec()
   }
 
-  save(user: User, option?: SaveOptions): Promise<User> {
-    return this.repository.save(user)
-  }
-
-  remove(user: User, option?: RemoveOptions): Promise<User> {
-    throw new Error('Method not implemented.')
+  save(): Promise<User> {
+    return new this.model({}).save()
   }
 }

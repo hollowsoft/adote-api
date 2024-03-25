@@ -1,32 +1,15 @@
 import { Injectable } from '@nestjs/common'
-import { InjectRepository } from '@nestjs/typeorm'
+import { InjectModel } from '@nestjs/mongoose'
 
-import { Repository, FindOneOptions, FindManyOptions, SaveOptions, RemoveOptions } from 'typeorm'
+import { Model } from 'mongoose'
 
-import { Location } from './location.entity'
-
-import { EntityRepository } from 'src/repository.interface'
+import { Location } from './location.type'
 
 @Injectable()
-export class LocationRepository implements EntityRepository<Location> {
-  constructor(
-    @InjectRepository(Location)
-    private readonly repository: Repository<Location>
-  ) {}
+export class LocationRepository {
+  constructor(@InjectModel(Location.name) private model: Model<Location>) {}
 
-  all(option?: FindManyOptions<Location>): Promise<Location[]> {
-    return this.repository.find(option)
-  }
-
-  find(option: FindOneOptions<Location>): Promise<Location | null> {
-    throw new Error()
-  }
-
-  save(location: Location, option?: SaveOptions): Promise<Location> {
-    throw new Error()
-  }
-
-  remove(location: Location, option?: RemoveOptions): Promise<Location> {
-    throw new Error()
+  list(): Promise<Location[]> {
+    return this.model.find().exec()
   }
 }

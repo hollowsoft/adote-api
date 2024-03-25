@@ -1,35 +1,27 @@
 import { Injectable } from '@nestjs/common'
-import { InjectRepository } from '@nestjs/typeorm'
+import { InjectModel } from '@nestjs/mongoose'
 
-import {
-  Repository,
-  FindOneOptions,
-  FindManyOptions,
-  SaveOptions,
-  RemoveOptions
-} from 'typeorm'
+import { Model } from 'mongoose'
 
-import { Post } from './post.entity'
-
-import { EntityRepository } from 'src/repository.interface'
+import { Post } from './post.type'
 
 @Injectable()
-export class PostRepository implements EntityRepository<Post> {
-  constructor(@InjectRepository(Post) private readonly repository: Repository<Post>) {}
+export class PostRepository {
+  constructor(@InjectModel(Post.name) private model: Model<Post>) {}
 
-  all(option?: FindManyOptions<Post>): Promise<Post[]> {
-    return this.repository.find(option)
+  list(): Promise<Post[]> {
+    return this.model.find().exec()
   }
 
-  find(option: FindOneOptions<Post>): Promise<Post> {
-    return this.repository.findOne(option)
+  find(): Promise<Post> {
+    return this.model.findById('').exec()
   }
 
-  save(post: Post, option?: SaveOptions): Promise<Post> {
-    return this.repository.save(post, option)
+  save(): Promise<Post> {
+    return new this.model({}).save()
   }
 
-  remove(post: Post, option?: RemoveOptions): Promise<Post> {
-    return this.repository.remove(post, option)
+  remove(): Promise<Post> {
+    return this.model.findByIdAndDelete('').exec()
   }
 }

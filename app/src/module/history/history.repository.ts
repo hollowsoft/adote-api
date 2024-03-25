@@ -1,37 +1,19 @@
 import { Injectable } from '@nestjs/common'
-import { InjectRepository } from '@nestjs/typeorm'
+import { InjectModel } from '@nestjs/mongoose'
 
-import {
-  Repository,
-  FindOneOptions,
-  FindManyOptions,
-  SaveOptions,
-  RemoveOptions
-} from 'typeorm'
+import { Model } from 'mongoose'
 
-import { History } from './history.entity'
-
-import { EntityRepository } from 'src/repository.interface'
+import { History } from './history.type'
 
 @Injectable()
-export class HistoryRepository implements EntityRepository<History> {
-  constructor(
-    @InjectRepository(History) private readonly repository: Repository<History>
-  ) {}
+export class HistoryRepository {
+  constructor(@InjectModel(History.name) private model: Model<History>) {}
 
-  all(option?: FindManyOptions<History>): Promise<History[]> {
-    return this.repository.find(option)
+  list(): Promise<History[]> {
+    return this.model.find().exec()
   }
 
-  find(option: FindOneOptions<History>): Promise<History> {
-    throw new Error()
-  }
-
-  save(history: History, option?: SaveOptions): Promise<History> {
-    return this.repository.save(history)
-  }
-
-  remove(history: History, option?: RemoveOptions): Promise<History> {
-    throw new Error()
+  save(history: History): Promise<History> {
+    return new this.model({}).save()
   }
 }

@@ -1,35 +1,23 @@
 import { Injectable } from '@nestjs/common'
-import { InjectRepository } from '@nestjs/typeorm'
+import { InjectModel } from '@nestjs/mongoose'
 
-import {
-  Repository,
-  SaveOptions,
-  RemoveOptions,
-  FindOneOptions,
-  FindManyOptions
-} from 'typeorm'
+import { Model } from 'mongoose'
 
-import { Fav } from './fav.entity'
-
-import { EntityRepository } from 'src/repository.interface'
+import { Post } from '@/module/post/post.type'
 
 @Injectable()
-export class FavRepository implements EntityRepository<Fav> {
-  constructor(@InjectRepository(Fav) private readonly repository: Repository<Fav>) {}
+export class FavRepository {
+  constructor(@InjectModel(Post.name) private model: Model<Post>) {}
 
-  all(option?: FindManyOptions<Fav>): Promise<Fav[]> {
-    return this.repository.find(option)
+  list(): Promise<Post[]> {
+    return this.model.find().exec()
   }
 
-  find(option: FindOneOptions<Fav>): Promise<Fav | null> {
-    return this.repository.findOne(option)
+  save(post: Post): Promise<Post> {
+    return new this.model({}).save()
   }
 
-  save(fav: Fav, option?: SaveOptions): Promise<Fav> {
-    return this.repository.save(fav, option)
-  }
-
-  remove(fav: Fav, option?: RemoveOptions): Promise<Fav> {
-    return this.repository.remove(fav, option)
+  remove(id: string): Promise<Post> {
+    return this.model.findByIdAndDelete('').exec()
   }
 }
