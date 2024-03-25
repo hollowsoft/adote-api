@@ -1,5 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
+import { Types } from 'mongoose'
+
 import { Post } from '@/module/post/post.type'
 import { Location } from '@/module/location/location.type'
 
@@ -34,16 +36,16 @@ export class User {
   @Prop(String)
   description?: string
 
-  @Prop([Post])
+  @Prop({ type: [{ type: Types.ObjectId, ref: 'Post' }] })
   fav: Post[]
 
-  @Prop([Post])
+  @Prop({ type: [{ type: Types.ObjectId, ref: 'Post' }] })
   post: Post[]
 
-  @Prop(Contact)
+  @Prop({ type: Types.ObjectId, ref: 'Contact' })
   contact?: Contact
 
-  @Prop(Location)
+  @Prop({ type: Types.ObjectId, ref: 'Location' })
   location?: Location
 
   @Prop(Role)
