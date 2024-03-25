@@ -6,6 +6,8 @@ export enum Action {
   List
 }
 
+export { ListHistory }
+
 @Injectable()
 export class HistoryProvider {
   action: [ListHistory]
