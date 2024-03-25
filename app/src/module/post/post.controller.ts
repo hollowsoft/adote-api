@@ -28,28 +28,28 @@ export class PostController {
   }
 
   @Post()
-  create(@Auth() token: Token, @Body() request: CreatePostRequest): Promise<PostResponse> {
-    const { sub: id } = token
+  create(@Body() request: CreatePostRequest, @Auth() token: Token): Promise<PostResponse> {
+    const { sub } = token
 
-    return this.provider.action[Action.Create].run(request, id)
+    return this.provider.action[Action.Create].run(request, { id: sub })
   }
 
   @Put(':id')
-  patch(@Param('id') id: string, @Auth() token: Token, @Body() request: PatchPostRequest): Promise<PostResponse> {
+  patch(@Param('id') id: string, @Body() request: PatchPostRequest, @Auth() token: Token): Promise<PostResponse> {
     const { sub } = token
 
-    return this.provider.action[Action.Patch].run(id, request, sub)
+    return this.provider.action[Action.Patch].run(id, request, { id: sub })
   }
 
   @Put(':id/publish')
   publish(
     @Param('id') id: string,
-    @Auth() token: Token,
-    @Body() request: PublishPostRequest
+    @Body() request: PublishPostRequest,
+    @Auth() token: Token
   ): Promise<PublishPostResponse> {
     const { sub } = token
 
-    return this.provider.action[Action.Publish].run(id, request)
+    return this.provider.action[Action.Publish].run(id, request, { id: sub })
   }
 
   @Delete(':id')

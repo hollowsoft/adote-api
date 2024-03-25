@@ -23,9 +23,9 @@ export class UserController {
 
   @Get('current')
   current(@Auth() token: Token): Promise<UserResponse> {
-    const { sub: id } = token
+    const { sub } = token
 
-    return this.provider.action[Action.Current].run(id)
+    return this.provider.action[Action.Current].run({ id: sub })
   }
 
   @Get()
@@ -37,15 +37,15 @@ export class UserController {
   @Post('image')
   @HttpCode(HttpStatus.OK)
   image(@Auth() token: Token): Promise<void> {
-    const { sub: id } = token
+    const { sub } = token
 
-    return this.provider.action[Action.Image].run(id)
+    return this.provider.action[Action.Image].run({ id: sub })
   }
 
   @Put()
   patch(@Body() request: PatchUserRequest, @Auth() token: Token): Promise<UserResponse> {
-    const { sub: id } = token
+    const { sub } = token
 
-    return this.provider.action[Action.Patch].run(request, id)
+    return this.provider.action[Action.Patch].run(request, { id: sub })
   }
 }

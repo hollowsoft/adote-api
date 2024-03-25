@@ -1,8 +1,5 @@
 import { Get, Query, Controller } from '@nestjs/common'
 
-import { Role } from '@/module/user/user.type'
-import { Permission } from '@/decorator/permission.decorator'
-
 import { Action, HistoryProvider } from './provider'
 
 import { ListHistoryRequest } from './history.request'

@@ -14,23 +14,23 @@ export class FavController {
 
   @Get()
   list(@Auth() token: Token): Promise<FavResponse[]> {
-    const { sub: id } = token
+    const { sub } = token
 
-    return this.provider[Action.List].run(id)
+    return this.provider[Action.List].run({ id: sub })
   }
 
   @Post()
-  add(@Auth() token: Token, @Body() request: AddFavRequest): Promise<AddFavResponse> {
-    const { sub: id } = token
+  add(@Body() request: AddFavRequest, @Auth() token: Token): Promise<AddFavResponse> {
+    const { sub } = token
 
-    return this.provider[Action.Add].run(request, id)
+    return this.provider[Action.Add].run(request, { id: sub })
   }
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Auth() token: Token, @Param() request: RemoveFavRequest): Promise<void> {
-    const { sub: id } = token
+  remove(@Param() request: RemoveFavRequest, @Auth() token: Token): Promise<void> {
+    const { sub } = token
 
-    return this.provider[Action.Remove].run(request, id)
+    return this.provider[Action.Remove].run(request, { id: sub })
   }
 }

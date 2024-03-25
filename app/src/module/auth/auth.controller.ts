@@ -34,8 +34,8 @@ export class AuthController {
   @HttpCode(HttpStatus.OK)
   @UseGuards(TokenRenewGuard)
   token(@Auth() token: Token): Promise<TokenResponse> {
-    const { sub: id } = token
+    const { sub } = token
 
-    return this.provider[Action.Renew].run(id)
+    return this.provider[Action.Renew].run({ id: sub })
   }
 }
