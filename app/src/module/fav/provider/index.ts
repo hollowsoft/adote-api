@@ -10,6 +10,8 @@ export enum Action {
   Remove
 }
 
+export { AddFav, ListFav, RemoveFav }
+
 @Injectable()
 export class FavProvider {
   action: [AddFav, ListFav, RemoveFav]

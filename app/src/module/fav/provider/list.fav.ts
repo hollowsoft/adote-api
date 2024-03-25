@@ -5,11 +5,11 @@ import { Size, Gender } from '@/module/post/post.type'
 
 import { FavResponse } from '../fav.response'
 
-import { FavRepository } from '../fav.repository'
+// import { FavRepository } from '../fav.repository'
 
 @Injectable()
 export class ListFav {
-  constructor(private readonly repository: FavRepository) {}
+  // constructor(private readonly repository: FavRepository) {}
 
   async run(user: User): Promise<FavResponse[]> {
     // const list = await this.repository.list({
@@ -18,9 +18,9 @@ export class ListFav {
     //   }
     // })
 
-    const list = await this.repository.list()
+    // const list = await this.repository.list()
 
-    return list.map((fav) => ({
+    return [].map((fav) => ({
       id: '1',
       create: '',
       title: '',
