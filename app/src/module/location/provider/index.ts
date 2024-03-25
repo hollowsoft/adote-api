@@ -6,6 +6,8 @@ export enum Action {
   Search
 }
 
+export { SearchLocation }
+
 @Injectable()
 export class LocationProvider {
   action: [SearchLocation]
