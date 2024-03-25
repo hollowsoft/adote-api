@@ -1,4 +1,4 @@
-import { Get, Post, Delete, Body, Param, HttpCode, Controller } from '@nestjs/common'
+import { Get, Post, Delete, Body, Param, HttpCode, HttpStatus, Controller } from '@nestjs/common'
 
 import { Auth } from '@/decorator/auth.decorator'
 import { Token } from '@/type/token.type'
@@ -27,7 +27,7 @@ export class FavController {
   }
 
   @Delete(':id')
-  @HttpCode(204)
+  @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Auth() token: Token, @Param() request: RemoveFavRequest): Promise<void> {
     const { sub: id } = token
 

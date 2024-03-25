@@ -1,4 +1,4 @@
-import { Get, Put, Post, Delete, Body, Param, Query, HttpCode, Controller } from '@nestjs/common'
+import { Get, Put, Post, Delete, Body, Param, Query, HttpCode, HttpStatus, Controller } from '@nestjs/common'
 
 import { Auth } from '@/decorator/auth.decorator'
 import { Public } from '@/decorator/public.decorator'
@@ -53,7 +53,7 @@ export class PostController {
   }
 
   @Delete(':id')
-  @HttpCode(204)
+  @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id') id: string, @Auth() token: Token): Promise<void> {
     const { sub } = token
 

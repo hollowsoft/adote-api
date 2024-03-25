@@ -1,4 +1,4 @@
-import { Get, Put, Post, Body, Param, Query, HttpCode, Controller } from '@nestjs/common'
+import { Get, Put, Post, Body, Param, Query, HttpCode, HttpStatus, Controller } from '@nestjs/common'
 
 import { Auth } from '@/decorator/auth.decorator'
 import { Permission } from '@/decorator/permission.decorator'
@@ -35,7 +35,7 @@ export class UserController {
   }
 
   @Post('image')
-  @HttpCode(200)
+  @HttpCode(HttpStatus.OK)
   image(@Auth() token: Token): Promise<void> {
     const { sub: id } = token
 

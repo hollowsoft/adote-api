@@ -1,4 +1,4 @@
-import { Post, Body, HttpCode, UseGuards, Controller } from '@nestjs/common'
+import { Post, Body, HttpCode, UseGuards, HttpStatus, Controller } from '@nestjs/common'
 
 import { Auth } from '@/decorator/auth.decorator'
 import { Public } from '@/decorator/public.decorator'
@@ -17,22 +17,22 @@ export class AuthController {
 
   @Post()
   @Public()
-  @HttpCode(200)
+  @HttpCode(HttpStatus.OK)
   mail(@Body() request: AuthRequest): Promise<AuthResponse> {
     return this.provider[Action.Mail].run(request)
   }
 
   @Post('verify')
   @Public()
-  @HttpCode(200)
+  @HttpCode(HttpStatus.OK)
   code(@Body() request: VerifyRequest): Promise<TokenResponse> {
     return this.provider[Action.Verify].run(request)
   }
 
   @Post('token')
   @Public()
+  @HttpCode(HttpStatus.OK)
   @UseGuards(TokenRenewGuard)
-  @HttpCode(200)
   token(@Auth() token: Token): Promise<TokenResponse> {
     const { sub: id } = token
 
