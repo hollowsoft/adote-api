@@ -10,6 +10,8 @@ export enum Action {
   Verify
 }
 
+export { MailAuth, RenewAuth, VerifyAuth }
+
 @Injectable()
 export class AuthProvider {
   action: [MailAuth, RenewAuth, VerifyAuth]
