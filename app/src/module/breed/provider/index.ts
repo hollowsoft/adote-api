@@ -6,6 +6,8 @@ export enum Action {
   List
 }
 
+export { ListBreed }
+
 @Injectable()
 export class BreedProvider {
   action: [ListBreed]
