@@ -4,13 +4,13 @@ import { MongooseModule } from '@nestjs/mongoose'
 import { PostSchema } from './post.type'
 import { PostRepository } from './post.repository'
 
-import { PostProvider } from './provider'
+import { GetPost, ListPost, CreatePost, PatchPost, PublishPost, RemovePost, PostProvider } from './provider'
 
 import { PostController } from './post.controller'
 
 @Module({
   imports: [MongooseModule.forFeature([PostSchema])],
-  providers: [PostProvider, PostRepository],
+  providers: [GetPost, ListPost, CreatePost, PatchPost, PublishPost, RemovePost, PostProvider, PostRepository],
   controllers: [PostController]
 })
 export class PostModule {}

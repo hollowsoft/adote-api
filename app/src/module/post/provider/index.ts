@@ -16,6 +16,8 @@ export enum Action {
   Remove
 }
 
+export { GetPost, ListPost, CreatePost, PatchPost, PublishPost, RemovePost }
+
 @Injectable()
 export class PostProvider {
   action: [GetPost, ListPost, CreatePost, PatchPost, PublishPost, RemovePost]
