@@ -8,6 +8,9 @@ export enum Kind {
 @Schema({ id: true, collection: 'Breed' })
 export class Breed {
   @Prop(String)
+  id: string
+
+  @Prop(String)
   name: string
 
   @Prop(Kind)

@@ -20,6 +20,9 @@ export enum Gender {
 @Schema({ id: true, collection: 'Pet' })
 export class Pet {
   @Prop(String)
+  id: string
+
+  @Prop(String)
   name: string
 
   @Prop([Number, Number])
@@ -37,6 +40,9 @@ export class Pet {
 
 @Schema({ id: true, collection: 'Post' })
 export class Post {
+  @Prop(String)
+  id: string
+
   @Prop(String)
   name: string
 

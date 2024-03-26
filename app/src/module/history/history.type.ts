@@ -5,6 +5,9 @@ import { Size, Gender } from '@/module/post/post.type'
 @Schema({ id: true, collection: 'History' })
 export class History {
   @Prop(String)
+  id: string
+
+  @Prop(String)
   name: string
 
   @Prop(String)

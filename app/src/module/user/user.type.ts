@@ -13,6 +13,9 @@ export enum Role {
 @Schema({ id: true, collection: 'Contact' })
 export class Contact {
   @Prop(String)
+  id: string
+
+  @Prop(String)
   mail?: string
 
   @Prop(String)
@@ -24,6 +27,9 @@ export class Contact {
 
 @Schema({ id: true, collection: 'User' })
 export class User {
+  @Prop(String)
+  id: string
+
   @Prop(String)
   mail: string
 
