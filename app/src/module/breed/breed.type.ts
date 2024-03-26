@@ -5,7 +5,7 @@ export enum Kind {
   Dog = 'dog'
 }
 
-@Schema()
+@Schema({ id: true, collection: 'Breed' })
 export class Breed {
   @Prop(String)
   name: string

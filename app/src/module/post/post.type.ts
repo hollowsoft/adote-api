@@ -17,7 +17,7 @@ export enum Gender {
   Female = 'female'
 }
 
-@Schema()
+@Schema({ id: true, collection: 'Pet' })
 export class Pet {
   @Prop(String)
   name: string
@@ -35,7 +35,7 @@ export class Pet {
   breed: Breed
 }
 
-@Schema()
+@Schema({ id: true, collection: 'Post' })
 export class Post {
   @Prop(String)
   name: string

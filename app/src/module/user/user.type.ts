@@ -10,7 +10,7 @@ export enum Role {
   Member = 'member'
 }
 
-@Schema()
+@Schema({ id: true, collection: 'Contact' })
 export class Contact {
   @Prop(String)
   mail?: string
@@ -22,7 +22,7 @@ export class Contact {
   social?: string
 }
 
-@Schema()
+@Schema({ id: true, collection: 'User' })
 export class User {
   @Prop(String)
   mail: string

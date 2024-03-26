@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
 import { Size, Gender } from '@/module/post/post.type'
 
-@Schema()
+@Schema({ id: true, collection: 'History' })
 export class History {
   @Prop(String)
   name: string
