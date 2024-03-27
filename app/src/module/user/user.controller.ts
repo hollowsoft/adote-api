@@ -1,8 +1,8 @@
 import { Get, Put, Post, Body, Param, Query, HttpCode, HttpStatus, Controller } from '@nestjs/common'
 
-import { Permission } from '@/decorator/permission.decorator'
-
 import { Role } from './user.type'
+
+import { Permission } from '@/decorator/permission.decorator'
 
 import { Action, UserProvider } from './provider'
 
