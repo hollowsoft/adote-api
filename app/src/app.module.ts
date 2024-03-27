@@ -5,8 +5,9 @@ import { ConfigModule } from '@nestjs/config'
 import { MongooseModule } from '@nestjs/mongoose'
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler'
 
-import { AuthModule } from '@/module/auth/auth.module'
+import { HealthModule } from '@/module/health/health.module'
 
+import { AuthModule } from '@/module/auth/auth.module'
 import { UserModule } from '@/module/user/user.module'
 import { LocationModule } from '@/module/location/location.module'
 
@@ -27,6 +28,7 @@ const RequestGuardProvider = {
 
 @Module({
   imports: [
+    HealthModule,
     AuthModule,
     UserModule,
     LocationModule,
