@@ -1,9 +1,7 @@
 import { Post, Body, HttpCode, UseGuards, HttpStatus, Controller } from '@nestjs/common'
 
-import { Auth } from '@/decorator/auth.decorator'
 import { Public } from '@/decorator/public.decorator'
 
-import { Token } from '@/type/token.type'
 import { TokenRenewGuard } from './guard/token.renew.guard'
 
 import { Action, AuthProvider } from './provider'
@@ -33,9 +31,7 @@ export class AuthController {
   @Public()
   @HttpCode(HttpStatus.OK)
   @UseGuards(TokenRenewGuard)
-  renew(@Auth() token: Token): Promise<TokenResponse> {
-    const { sub } = token
-
-    return this.provider[Action.Renew].run({ id: sub })
+  renew(): Promise<TokenResponse> {
+    return this.provider[Action.Renew].run()
   }
 }

@@ -1,10 +1,8 @@
 import { Get, Put, Post, Body, Param, Query, HttpCode, HttpStatus, Controller } from '@nestjs/common'
 
-import { Auth } from '@/decorator/auth.decorator'
 import { Permission } from '@/decorator/permission.decorator'
 
 import { Role } from './user.type'
-import { Token } from '@/type/token.type'
 
 import { Action, UserProvider } from './provider'
 
@@ -22,10 +20,8 @@ export class UserController {
   }
 
   @Get('current')
-  current(@Auth() token: Token): Promise<UserResponse> {
-    const { sub } = token
-
-    return this.provider.action[Action.Current].run({ id: sub })
+  current(): Promise<UserResponse> {
+    return this.provider.action[Action.Current].run()
   }
 
   @Get()
@@ -36,16 +32,12 @@ export class UserController {
 
   @Post('image')
   @HttpCode(HttpStatus.OK)
-  image(@Auth() token: Token): Promise<void> {
-    const { sub } = token
-
-    return this.provider.action[Action.Image].run({ id: sub })
+  image(): Promise<void> {
+    return this.provider.action[Action.Image].run()
   }
 
   @Put()
-  patch(@Body() request: PatchUserRequest, @Auth() token: Token): Promise<UserResponse> {
-    const { sub } = token
-
-    return this.provider.action[Action.Patch].run(request, { id: sub })
+  patch(@Body() request: PatchUserRequest): Promise<UserResponse> {
+    return this.provider.action[Action.Patch].run(request)
   }
 }

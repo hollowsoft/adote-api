@@ -4,8 +4,8 @@ import { Public } from '@/decorator/public.decorator'
 
 import { Action, LocationProvider } from './provider'
 
-import { LocationResponse } from './location.response'
 import { SearchLocationRequest } from './location.request'
+import { LocationResponse } from './location.response'
 
 @Controller('location')
 export class LocationController {
