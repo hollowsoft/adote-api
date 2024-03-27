@@ -2,26 +2,25 @@ import { APP_GUARD } from '@nestjs/core'
 
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
-import { TypeOrmModule } from '@nestjs/typeorm'
-
+import { MongooseModule } from '@nestjs/mongoose'
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler'
 
-import { AuthModule } from './module/auth/auth.module'
+import { AuthModule } from '@/module/auth/auth.module'
 
-import { FavModule } from './module/fav/fav.module'
-import { UserModule } from './module/user/user.module'
+import { UserModule } from '@/module/user/user.module'
+import { LocationModule } from '@/module/location/location.module'
 
-import { PostModule } from './module/post/post.module'
-import { BreedModule } from './module/breed/breed.module'
-import { HistoryModule } from './module/history/history.module'
-import { LocationModule } from './module/location/location.module'
+import { FavModule } from '@/module/fav/fav.module'
+import { PostModule } from '@/module/post/post.module'
+import { BreedModule } from '@/module/breed/breed.module'
+import { HistoryModule } from '@/module/history/history.module'
 
-import { RequestConfigService } from './request.config.service'
-import { RepositoryConfigService } from './repository.config.service'
+import { RequestConfigProvider } from './request.config.provider'
+import { RepositoryConfigProvider } from './repository.config.provider'
 
-import { isProd } from './helper/environment'
+import { isProduction } from './helper/environment'
 
-const RequestGuard = {
+const RequestGuardProvider = {
   provide: APP_GUARD,
   useClass: ThrottlerGuard
 }
@@ -29,23 +28,23 @@ const RequestGuard = {
 @Module({
   imports: [
     AuthModule,
-    FavModule,
     UserModule,
+    LocationModule,
+    FavModule,
     PostModule,
     BreedModule,
     HistoryModule,
-    LocationModule,
     ConfigModule.forRoot({
       isGlobal: true,
-      ignoreEnvFile: isProd()
+      ignoreEnvFile: isProduction
     }),
-    TypeOrmModule.forRootAsync({
-      useClass: RepositoryConfigService
+    MongooseModule.forRootAsync({
+      useClass: RepositoryConfigProvider
     }),
     ThrottlerModule.forRootAsync({
-      useClass: RequestConfigService
+      useClass: RequestConfigProvider
     })
   ],
-  providers: [RequestGuard]
+  providers: [RequestGuardProvider]
 })
 export class AppModule {}
