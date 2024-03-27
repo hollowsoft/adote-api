@@ -1,14 +1,19 @@
-import { Injectable } from '@nestjs/common'
+import { REQUEST } from '@nestjs/core'
 
-import { User } from '@/type/token.type'
+import { Scope, Inject, Injectable } from '@nestjs/common'
+
+import { FastifyRequest } from 'fastify'
 
 import { UserRepository } from '../user.repository'
 
-@Injectable()
+@Injectable({ scope: Scope.REQUEST })
 export class AddImage {
-  constructor(private readonly repository: UserRepository) {}
+  constructor(
+    private readonly repository: UserRepository,
+    @Inject(REQUEST) private request: FastifyRequest
+  ) {}
 
-  run(user: User): Promise<void> {
+  run(): Promise<void> {
     return Promise.resolve()
   }
 }

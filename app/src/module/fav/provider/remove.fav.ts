@@ -1,16 +1,16 @@
-import { Injectable, NotFoundException } from '@nestjs/common'
+import { REQUEST } from '@nestjs/core'
 
-import { User } from '@/type/token.type'
+import { Scope, Inject, Injectable } from '@nestjs/common'
 
-// import { FavRepository } from '../fav.repository'
+import { FastifyRequest } from 'fastify'
 
 import { RemoveFavRequest } from '../fav.request'
 
-@Injectable()
+@Injectable({ scope: Scope.REQUEST })
 export class RemoveFav {
-  // constructor(private readonly repository: FavRepository) {}
+  constructor(@Inject(REQUEST) private readonly request: FastifyRequest) {}
 
-  async run(request: RemoveFavRequest, user: User): Promise<void> {
+  async run(request: RemoveFavRequest): Promise<void> {
     const { id } = request
   }
 }

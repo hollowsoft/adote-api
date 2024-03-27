@@ -1,16 +1,21 @@
-import { Injectable } from '@nestjs/common'
+import { REQUEST } from '@nestjs/core'
 
-import { User } from '@/type/token.type'
+import { Scope, Inject, Injectable } from '@nestjs/common'
 
-import { UserResponse } from '../user.response'
+import { FastifyRequest } from 'fastify'
 
 import { UserRepository } from '../user.repository'
 
-@Injectable()
-export class GetCurrent {
-  constructor(private readonly repository: UserRepository) {}
+import { UserResponse } from '../user.response'
 
-  async run(auth: User): Promise<UserResponse> {
+@Injectable({ scope: Scope.REQUEST })
+export class GetCurrent {
+  constructor(
+    private readonly repository: UserRepository,
+    @Inject(REQUEST) private request: FastifyRequest
+  ) {}
+
+  async run(): Promise<UserResponse> {
     const user = await this.repository.find()
 
     return {

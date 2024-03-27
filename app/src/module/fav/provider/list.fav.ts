@@ -1,17 +1,20 @@
-import { Injectable } from '@nestjs/common'
+import { REQUEST } from '@nestjs/core'
 
-import { User } from '@/type/token.type'
+import { Scope, Inject, Injectable } from '@nestjs/common'
+
+import { FastifyRequest } from 'fastify'
+
 import { Size, Gender } from '@/module/post/post.type'
 
 import { FavResponse } from '../fav.response'
 
 // import { FavRepository } from '../fav.repository'
 
-@Injectable()
+@Injectable({ scope: Scope.REQUEST })
 export class ListFav {
-  // constructor(private readonly repository: FavRepository) {}
+  constructor(@Inject(REQUEST) private readonly request: FastifyRequest) {}
 
-  async run(user: User): Promise<FavResponse[]> {
+  async run(): Promise<FavResponse[]> {
     // const list = await this.repository.list({
     //   where: {
     //     user

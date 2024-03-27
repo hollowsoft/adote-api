@@ -1,28 +1,30 @@
-import { Injectable, NotFoundException } from '@nestjs/common'
+import { REQUEST } from '@nestjs/core'
+
+import { Scope, Inject, Injectable } from '@nestjs/common'
 
 import { JwtService } from '@nestjs/jwt'
 import { ConfigService } from '@nestjs/config'
-
-import { User } from '@/type/token.type'
+import { FastifyRequest } from 'fastify'
 
 import { TokenResponse } from '../auth.response'
 
-@Injectable()
+@Injectable({ scope: Scope.REQUEST })
 export class RenewAuth {
   constructor(
     private readonly config: ConfigService,
-    private readonly service: JwtService
+    private readonly provider: JwtService,
+    @Inject(REQUEST) private readonly request: FastifyRequest
   ) {}
 
-  async run(user: User): Promise<TokenResponse> {
+  async run(): Promise<TokenResponse> {
     const param = {}
 
-    const token = this.service.sign(param, {
+    const token = this.provider.sign(param, {
       secret: this.config.get<string>('TOKEN_SECRET'),
       expiresIn: this.config.get<number>('TOKEN_EXPIRE')
     })
 
-    const renew = this.service.sign(param, {
+    const renew = this.provider.sign(param, {
       secret: this.config.get<string>('TOKEN_RENEW_SECRET'),
       expiresIn: this.config.get<number>('TOKEN_RENEW_EXPIRE')
     })
