@@ -10,8 +10,8 @@ export class RequestConfigProvider implements ThrottlerOptionsFactory {
   createThrottlerOptions(): ThrottlerModuleOptions {
     return [
       {
-        ttl: this.config.get<number>('REQUEST_TIME'),
-        limit: this.config.get<number>('REQUEST_LIMIT')
+        ttl: this.config.get<number>('REQUEST_TIME', 3600),
+        limit: this.config.get<number>('REQUEST_LIMIT', 4000)
       }
     ]
   }
