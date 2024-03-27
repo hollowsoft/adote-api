@@ -33,7 +33,7 @@ export class AuthController {
   @Public()
   @HttpCode(HttpStatus.OK)
   @UseGuards(TokenRenewGuard)
-  token(@Auth() token: Token): Promise<TokenResponse> {
+  renew(@Auth() token: Token): Promise<TokenResponse> {
     const { sub } = token
 
     return this.provider[Action.Renew].run({ id: sub })
