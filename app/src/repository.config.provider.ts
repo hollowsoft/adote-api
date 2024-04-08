@@ -9,10 +9,10 @@ export class RepositoryConfigProvider implements MongooseOptionsFactory {
 
   createMongooseOptions(): MongooseModuleOptions {
     return {
-      uri: this.config.get<string>('DATABASE_URI'),
-      user: this.config.get<string>('DATABASE_USER'),
-      pass: this.config.get<string>('DATABASE_PASS'),
-      dbName: this.config.get<string>('DATABASE_NAME')
+      uri: this.config.get<string>('REPOSITORY_URI'),
+      user: this.config.get<string>('REPOSITORY_USER'),
+      pass: this.config.get<string>('REPOSITORY_PASS'),
+      dbName: this.config.get<string>('REPOSITORY_NAME')
     }
   }
 }
