@@ -17,11 +17,7 @@ export enum Gender {
   Female = 'female'
 }
 
-@Schema({ id: true, collection: 'Pet' })
 export class Pet {
-  @Prop(String)
-  id: string
-
   @Prop(String)
   name: string
 
