@@ -5,8 +5,6 @@ import { ConfigModule } from '@nestjs/config'
 import { MongooseModule } from '@nestjs/mongoose'
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler'
 
-import { HealthModule } from '@/module/health/health.module'
-
 import { AuthModule } from '@/module/auth/auth.module'
 import { UserModule } from '@/module/user/user.module'
 import { LocationModule } from '@/module/location/location.module'
@@ -15,6 +13,11 @@ import { FavModule } from '@/module/fav/fav.module'
 import { PostModule } from '@/module/post/post.module'
 import { BreedModule } from '@/module/breed/breed.module'
 import { HistoryModule } from '@/module/history/history.module'
+
+import { MailModule } from '@/module/mail/mail.module'
+import { ImageModule } from '@/module/image/image.module'
+
+import { HealthModule } from '@/module/health/health.module'
 
 import { RequestConfigProvider } from './request.config.provider'
 import { RepositoryConfigProvider } from './repository.config.provider'
@@ -28,7 +31,6 @@ const RequestGuardProvider = {
 
 @Module({
   imports: [
-    HealthModule,
     AuthModule,
     UserModule,
     LocationModule,
@@ -36,6 +38,9 @@ const RequestGuardProvider = {
     PostModule,
     BreedModule,
     HistoryModule,
+    MailModule,
+    ImageModule,
+    HealthModule,
     ConfigModule.forRoot({
       isGlobal: true,
       ignoreEnvFile: isProduction
