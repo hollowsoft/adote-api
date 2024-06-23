@@ -6,5 +6,7 @@ import { Public } from '@/decorator/public.decorator'
 export class HealthController {
   @Get()
   @Public()
-  health() {}
+  health() {
+    return 'a'
+  }
 }
