@@ -7,6 +7,6 @@ export class HealthController {
   @Get()
   @Public()
   health() {
-    return 'aa'
+    return 'a'
   }
 }
