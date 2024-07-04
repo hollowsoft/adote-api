@@ -1,19 +1,11 @@
-import { REQUEST } from '@nestjs/core'
-
-import { Scope, Inject, Injectable, NotFoundException } from '@nestjs/common'
-
-import { FastifyRequest } from 'fastify'
+import { NotFoundException } from '@nestjs/common'
 
 import { PostRepository } from '../post.repository'
 
 import { isNil } from 'lodash'
 
-@Injectable({ scope: Scope.REQUEST })
 export class RemovePost {
-  constructor(
-    private readonly repository: PostRepository,
-    @Inject(REQUEST) private request: FastifyRequest
-  ) {}
+  constructor(private readonly repository: PostRepository) {}
 
   async run(id: string): Promise<void> {
     const post = await this.repository.find()

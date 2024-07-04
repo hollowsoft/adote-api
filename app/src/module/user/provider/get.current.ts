@@ -1,19 +1,9 @@
-import { REQUEST } from '@nestjs/core'
-
-import { Scope, Inject, Injectable } from '@nestjs/common'
-
-import { FastifyRequest } from 'fastify'
-
 import { UserRepository } from '../user.repository'
 
 import { UserResponse } from '../user.response'
 
-@Injectable({ scope: Scope.REQUEST })
 export class GetCurrent {
-  constructor(
-    private readonly repository: UserRepository,
-    @Inject(REQUEST) private request: FastifyRequest
-  ) {}
+  constructor(private readonly repository: UserRepository) {}
 
   async run(): Promise<UserResponse> {
     const user = await this.repository.find()

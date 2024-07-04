@@ -1,20 +1,10 @@
-import { REQUEST } from '@nestjs/core'
-
-import { Scope, Inject, Injectable } from '@nestjs/common'
-
-import { FastifyRequest } from 'fastify'
-
 import { PostRepository } from '../post.repository'
 
 import { PatchPostRequest } from '../post.request'
 import { PostResponse } from '../post.response'
 
-@Injectable({ scope: Scope.REQUEST })
 export class PatchPost {
-  constructor(
-    private readonly repository: PostRepository,
-    @Inject(REQUEST) private request: FastifyRequest
-  ) {}
+  constructor(private readonly repository: PostRepository) {}
 
   async run(id: string, request: PatchPostRequest): Promise<PostResponse> {
     const post = await this.repository.save()

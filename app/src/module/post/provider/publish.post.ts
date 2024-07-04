@@ -1,15 +1,8 @@
-import { REQUEST } from '@nestjs/core'
-
-import { Scope, Inject, Injectable } from '@nestjs/common'
-
-import { FastifyRequest } from 'fastify'
-
 import { PostRepository } from '../post.repository'
 
 import { PublishPostRequest } from '../post.request'
 import { PublishPostResponse } from '../post.response'
 
-@Injectable({ scope: Scope.REQUEST })
 export class PublishPost {
   constructor(private readonly repository: PostRepository) {}
 
