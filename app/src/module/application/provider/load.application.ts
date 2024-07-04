@@ -17,8 +17,6 @@ export class LoadLocation {
 
     await this.REPOSITORY.deleteAll()
 
-    for (const location of locations) {
-      await this.REPOSITORY.save(location)
-    }
+    await this.REPOSITORY.saveMany(locations)
   }
 }

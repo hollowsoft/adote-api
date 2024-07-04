@@ -20,4 +20,10 @@ export class ApplicationRepository {
   async deleteAll(): Promise<void> {
     await this.model.deleteMany({})
   }
+
+  async saveMany(
+    locations: { city: string; state: string }[]
+  ): Promise<Location[]> {
+    return await this.model.insertMany(locations)
+  }
 }
