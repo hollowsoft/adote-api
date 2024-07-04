@@ -23,6 +23,7 @@ import { RequestConfigProvider } from './request.config.provider'
 import { RepositoryConfigProvider } from './repository.config.provider'
 
 import { isProduction } from './helper/environment'
+import { ApplicationModule } from './module/application/application.module';
 
 const RequestGuardProvider = {
   provide: APP_GUARD,
@@ -50,7 +51,8 @@ const RequestGuardProvider = {
     }),
     ThrottlerModule.forRootAsync({
       useClass: RequestConfigProvider
-    })
+    }),
+    ApplicationModule
   ],
   providers: [RequestGuardProvider]
 })
