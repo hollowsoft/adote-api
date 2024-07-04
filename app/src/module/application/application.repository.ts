@@ -10,14 +10,6 @@ export class ApplicationRepository {
     @InjectModel(Location.name) private model: Model<Location>
   ) {}
 
-  async save(locationData: {
-    city: string
-    state: string
-  }): Promise<LocationResponse> {
-    const location = new this.model(locationData)
-    return await location.save()
-  }
-
   async deleteAll(): Promise<void> {
     await this.model.deleteMany({})
   }
