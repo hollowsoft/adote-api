@@ -8,10 +8,7 @@ export class LoadLocation {
   constructor(private REPOSITORY: ApplicationRepository) {}
 
   async run() {
-    const filePath = path.join(
-      __dirname,
-      '../../../../resourses/city.json'
-    )
+    const filePath = path.join(__dirname, '../../../../city.json')
     const jsonData = fs.readFileSync(filePath, 'utf-8')
     const locations = JSON.parse(jsonData)
 
