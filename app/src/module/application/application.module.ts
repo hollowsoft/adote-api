@@ -11,4 +11,4 @@ import { LoadLocation } from './provider/load.application'
   controllers: [ApplicationController],
   providers: [LoadLocation, ApplicationProvider, ApplicationRepository]
 })
-export class ApplicationModule {}
+export class ConfigurationModule {}
