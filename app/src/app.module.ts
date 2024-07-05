@@ -23,7 +23,7 @@ import { RequestConfigProvider } from './request.config.provider'
 import { RepositoryConfigProvider } from './repository.config.provider'
 
 import { isProduction } from './helper/environment'
-import { ConfigurationModule } from './module/application/application.module'
+import { ConfigurationModule } from './module/configuration/configuration.module'
 
 const RequestGuardProvider = {
   provide: APP_GUARD,
