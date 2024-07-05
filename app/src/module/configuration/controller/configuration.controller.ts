@@ -9,7 +9,7 @@ import { LocationResponse } from '@/module/location/location.response'
 export class ConfigurationController {
   constructor(private readonly provider: ConfigurationProvider) {}
 
-  //@Permission(Role.Admin)
+  @Permission(Role.Admin)
   @Public()
   @Get()
   @HttpCode(HttpStatus.OK)
@@ -17,6 +17,8 @@ export class ConfigurationController {
     const list_slice: LocationResponse[] =
       await this.provider.action[Action.LoadLocation].run()
 
-    return list_slice.slice(0, 5)
+    if (list_slice != null) {
+      return HttpStatus.OK
+    }
   }
 }
