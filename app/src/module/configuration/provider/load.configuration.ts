@@ -6,15 +6,15 @@ import { LocationResponse } from '@/module/location/location.response'
 
 @Injectable()
 export class LoadLocation {
-  constructor(private REPOSITORY: LocationRepository) {}
+  constructor(private repository: LocationRepository) {}
 
   async run(): Promise<LocationResponse[]> {
     const filePath = path.join(__dirname, '../../../../city.json')
     const jsonData = fs.readFileSync(filePath, 'utf-8')
     const locations = JSON.parse(jsonData)
 
-    await this.REPOSITORY.deleteAll()
+    await this.repository.deleteAll()
 
-    return await this.REPOSITORY.saveMany(locations)
+    return await this.repository.saveMany(locations)
   }
 }
