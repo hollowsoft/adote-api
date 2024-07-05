@@ -3,7 +3,6 @@ import { Action, ConfigurationProvider } from '../configuration.provider'
 import { Role } from '@/module/user/user.type'
 import { Permission } from '@/decorator/permission.decorator'
 import { Public } from '@/decorator/public.decorator'
-import { LocationResponse } from '@/module/location/location.response'
 
 @Controller('load')
 export class ConfigurationController {
@@ -14,10 +13,7 @@ export class ConfigurationController {
   @Get()
   @HttpCode(HttpStatus.OK)
   async loadLocation(): Promise<HttpStatus> {
-    const list_slice: LocationResponse[] =
-      await this.provider.action[Action.LoadLocation].run()
-
-    if (list_slice != null) {
+    if ((await this.provider.action[Action.LoadLocation].run()) != null) {
       return HttpStatus.OK
     }
   }
