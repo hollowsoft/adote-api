@@ -13,7 +13,7 @@ export class ConfigurationController {
   @Public()
   @Get()
   @HttpCode(HttpStatus.OK)
-  async loadLocation() {
+  async loadLocation(): Promise<HttpStatus> {
     const list_slice: LocationResponse[] =
       await this.provider.action[Action.LoadLocation].run()
 
