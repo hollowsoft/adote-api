@@ -4,7 +4,6 @@ import { InjectModel } from '@nestjs/mongoose'
 import { Model } from 'mongoose'
 
 import { Location } from './location.type'
-import { LocationResponse } from './location.response'
 
 @Injectable()
 export class LocationRepository {
@@ -16,13 +15,15 @@ export class LocationRepository {
     return this.model.find().exec()
   }
 
-  async deleteAll(): Promise<void> {
-    await this.model.deleteMany({})
+  async delete(criteria: {}, deleteMany: boolean = true): Promise<void> {
+    if (deleteMany) {
+      await this.model.deleteMany(criteria)
+    } else {
+      await this.model.deleteOne(criteria)
+    }
   }
 
-  async saveMany(
-    locations: { city: string; state: string }[]
-  ): Promise<LocationResponse[]> {
+  async saveMany(locations: Location[]): Promise<Location[]> {
     return await this.model.insertMany(locations)
   }
 }
