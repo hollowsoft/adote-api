@@ -1,19 +1,16 @@
 import { Injectable } from '@nestjs/common'
 import { LocationRepository } from '@/module/location/location.respository'
-import { LocationResponse } from '@/module/location/location.response'
+import { Location } from '@/module/location/location.type'
 
 @Injectable()
 export class LoadLocation {
   constructor(private repository: LocationRepository) {}
 
-  async run(): Promise<LocationResponse[]> {
-    const locations: {
-      city: string
-      state: string
-    }[] = require('../../../../city.json')
+  async run(): Promise<void> {
+    const location: Location[] = require('../../../../location.json')
 
-    await this.repository.deleteAll()
+    await this.repository.delete({})
 
-    return await this.repository.saveMany(locations)
+    await this.repository.saveMany(location)
   }
 }
