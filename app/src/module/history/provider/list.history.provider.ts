@@ -6,7 +6,7 @@ import { ListHistoryRequest } from '../history.request'
 import { HistoryRepository } from '../history.repository'
 
 @Injectable()
-export class ListHistory {
+export class ListHistoryProvider {
   constructor(private readonly repository: HistoryRepository) {}
 
   async run(request: ListHistoryRequest): Promise<HistoryResponse[]> {
