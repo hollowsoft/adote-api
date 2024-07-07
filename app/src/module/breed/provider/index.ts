@@ -1,18 +1,11 @@
 import { Injectable } from '@nestjs/common'
 
 import { ListBreed } from './list.breed'
-
-export enum Action {
-  List
-}
-
-export { ListBreed }
+import { BreedRepository } from '../breed.repository'
 
 @Injectable()
 export class BreedProvider {
-  action: [ListBreed]
+  readonly list: ListBreed = new ListBreed(this.repository)
 
-  constructor(private readonly list: ListBreed) {
-    this.action = [this.list]
-  }
+  constructor(private readonly repository: BreedRepository) {}
 }

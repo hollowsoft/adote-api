@@ -2,7 +2,7 @@ import { Get, Query, Controller } from '@nestjs/common'
 
 import { Public } from '@/decorator/public.decorator'
 
-import { Action, BreedProvider } from './provider'
+import { BreedProvider } from './provider'
 
 import { ListBreedRequest } from './breed.request'
 import { BreedResponse } from './breed.response'
@@ -14,6 +14,6 @@ export class BreedController {
   @Get()
   @Public()
   list(@Query() request: ListBreedRequest): Promise<BreedResponse[]> {
-    return this.provider[Action.List].run(request)
+    return this.provider.list.run(request)
   }
 }

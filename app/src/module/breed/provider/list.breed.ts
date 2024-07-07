@@ -5,7 +5,6 @@ import { ListBreedRequest } from '../breed.request'
 
 import { BreedRepository } from '../breed.repository'
 
-@Injectable()
 export class ListBreed {
   constructor(private readonly repository: BreedRepository) {}
 
