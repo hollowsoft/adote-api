@@ -4,7 +4,7 @@ import { Public } from '@/decorator/public.decorator'
 
 import { TokenRenewGuard } from './guard/token.renew.guard'
 
-import { Action, AuthProvider } from './provider'
+import { AuthProvider } from './provider'
 
 import { AuthRequest, VerifyRequest } from './auth.request'
 import { AuthResponse, TokenResponse } from './auth.response'
@@ -17,14 +17,14 @@ export class AuthController {
   @Public()
   @HttpCode(HttpStatus.OK)
   mail(@Body() request: AuthRequest): Promise<AuthResponse> {
-    return this.provider[Action.Mail].run(request)
+    return this.provider.mail.run(request)
   }
 
   @Post('verify')
   @Public()
   @HttpCode(HttpStatus.OK)
   code(@Body() request: VerifyRequest): Promise<TokenResponse> {
-    return this.provider[Action.Verify].run(request)
+    return this.provider.verify.run(request)
   }
 
   @Post('token')
@@ -32,6 +32,6 @@ export class AuthController {
   @HttpCode(HttpStatus.OK)
   @UseGuards(TokenRenewGuard)
   renew(): Promise<TokenResponse> {
-    return this.provider[Action.Renew].run()
+    return this.provider.renew.run()
   }
 }

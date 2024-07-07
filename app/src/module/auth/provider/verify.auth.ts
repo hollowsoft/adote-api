@@ -11,8 +11,8 @@ import { isNil } from 'lodash'
 @Injectable()
 export class VerifyAuth {
   constructor(
-    private readonly config: ConfigService,
-    private readonly service: JwtService
+    private readonly jwt: JwtService,
+    private readonly configuration: ConfigService
   ) {}
 
   async run(request: VerifyRequest): Promise<TokenResponse> {
@@ -29,14 +29,14 @@ export class VerifyAuth {
       // role: user.role
     }
 
-    const token = this.service.sign(param, {
-      secret: this.config.get<string>('TOKEN_SECRET'),
-      expiresIn: this.config.get<number>('TOKEN_EXPIRE')
+    const token = this.jwt.sign(param, {
+      secret: this.configuration.get<string>('TOKEN_SECRET'),
+      expiresIn: this.configuration.get<number>('TOKEN_EXPIRE')
     })
 
-    const renew = this.service.sign(param, {
-      secret: this.config.get<string>('TOKEN_RENEW_SECRET'),
-      expiresIn: this.config.get<number>('TOKEN_RENEW_EXPIRE')
+    const renew = this.jwt.sign(param, {
+      secret: this.configuration.get<string>('TOKEN_RENEW_SECRET'),
+      expiresIn: this.configuration.get<number>('TOKEN_RENEW_EXPIRE')
     })
 
     return { token, renew }

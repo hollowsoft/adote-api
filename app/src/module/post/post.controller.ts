@@ -20,7 +20,7 @@ export class PostController {
   @Get(':id')
   @Public()
   get(@Param('id') id: string): Promise<PostResponse> {
-    return this.provider.GetPost.run(id)
+    return this.provider.get.run(id)
   }
 
   @Post()

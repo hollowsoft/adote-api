@@ -12,7 +12,7 @@ import { PermissionGuard } from './guard/permission.guard'
 import { TokenStrategy } from './strategy/token.strategy'
 import { TokenRenewStrategy } from './strategy/token.renew.strategy'
 
-import { MailAuth, RenewAuth, VerifyAuth, AuthProvider } from './provider'
+import { AuthProvider } from './provider'
 
 import { AuthController } from './auth.controller'
 
@@ -28,16 +28,7 @@ const PermissionGuardProvider = {
 
 @Module({
   imports: [JwtModule, PassportModule, UserModule],
-  providers: [
-    MailAuth,
-    RenewAuth,
-    VerifyAuth,
-    AuthProvider,
-    TokenGuardProvider,
-    PermissionGuardProvider,
-    TokenStrategy,
-    TokenRenewStrategy
-  ],
+  providers: [AuthProvider, TokenGuardProvider, PermissionGuardProvider, TokenStrategy, TokenRenewStrategy],
   controllers: [AuthController]
 })
 export class AuthModule {}
