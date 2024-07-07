@@ -5,7 +5,7 @@ import { ListBreedRequest } from '../breed.request'
 
 import { BreedRepository } from '../breed.repository'
 
-export class ListBreed {
+export class ListBreedProvider {
   constructor(private readonly repository: BreedRepository) {}
 
   async run(request: ListBreedRequest): Promise<BreedResponse[]> {
