@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common'
 
-import { AddImage, RemoveImage } from './provider'
+import { ImageProvider } from './provider'
 
 @Module({
-  providers: [AddImage, RemoveImage]
+  providers: [ImageProvider]
 })
 export class ImageModule {}
