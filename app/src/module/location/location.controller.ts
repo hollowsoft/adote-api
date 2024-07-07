@@ -2,7 +2,7 @@ import { Get, Query, Controller } from '@nestjs/common'
 
 import { Public } from '@/decorator/public.decorator'
 
-import { Action, LocationProvider } from './provider'
+import { LocationProvider } from './provider'
 
 import { SearchLocationRequest } from './location.request'
 import { LocationResponse } from './location.response'
@@ -14,6 +14,6 @@ export class LocationController {
   @Get('search')
   @Public()
   search(@Query() request: SearchLocationRequest): Promise<LocationResponse[]> {
-    return this.provider[Action.Search].run(request)
+    return this.provider.search.run(request)
   }
 }

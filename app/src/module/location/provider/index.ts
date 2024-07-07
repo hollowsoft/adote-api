@@ -1,18 +1,11 @@
 import { Injectable } from '@nestjs/common'
 
 import { SearchLocation } from './search.location'
-
-export enum Action {
-  Search
-}
-
-export { SearchLocation }
+import { LocationRepository } from '../location.respository'
 
 @Injectable()
 export class LocationProvider {
-  action: [SearchLocation]
+  readonly search: SearchLocation = new SearchLocation(this.repository)
 
-  constructor(private readonly search: SearchLocation) {
-    this.action = [this.search]
-  }
+  constructor(private readonly repository: LocationRepository) {}
 }
