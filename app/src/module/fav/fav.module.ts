@@ -3,13 +3,14 @@ import { MongooseModule } from '@nestjs/mongoose'
 
 import { UserSchema } from '@/module/user/user.type'
 
-import { AddFav, ListFav, RemoveFav, FavProvider } from './provider'
+import { FavProvider } from './provider'
+import { FavRepository } from './fav.repository'
 
 import { FavController } from './fav.controller'
 
 @Module({
   imports: [MongooseModule.forFeature([UserSchema])],
-  providers: [AddFav, ListFav, RemoveFav, FavProvider],
+  providers: [FavProvider, FavRepository],
   controllers: [FavController]
 })
 export class FavModule {}

@@ -1,6 +1,6 @@
 import { Get, Post, Delete, Body, Param, HttpCode, HttpStatus, Controller } from '@nestjs/common'
 
-import { Action, FavProvider } from './provider'
+import { FavProvider } from './provider'
 
 import { AddFavRequest, RemoveFavRequest } from './fav.request'
 import { FavResponse, AddFavResponse } from './fav.response'
@@ -11,17 +11,17 @@ export class FavController {
 
   @Get()
   list(): Promise<FavResponse[]> {
-    return this.provider[Action.List].run()
+    return this.provider.list.run()
   }
 
   @Post()
   add(@Body() request: AddFavRequest): Promise<AddFavResponse> {
-    return this.provider[Action.Add].run(request)
+    return this.provider.add.run(request)
   }
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param() request: RemoveFavRequest): Promise<void> {
-    return this.provider[Action.Remove].run(request)
+    return this.provider.remove.run(request)
   }
 }

@@ -4,23 +4,13 @@ import { AddFav } from './add.fav'
 import { ListFav } from './list.fav'
 import { RemoveFav } from './remove.fav'
 
-export enum Action {
-  Add,
-  List,
-  Remove
-}
-
-export { AddFav, ListFav, RemoveFav }
+import { FavRepository } from '../fav.repository'
 
 @Injectable()
 export class FavProvider {
-  action: [AddFav, ListFav, RemoveFav]
+  readonly add: AddFav = new AddFav(this.repository)
+  readonly list: ListFav = new ListFav()
+  readonly remove: RemoveFav = new RemoveFav()
 
-  constructor(
-    private readonly add: AddFav,
-    private readonly list: ListFav,
-    private readonly remove: RemoveFav
-  ) {
-    this.action = [this.add, this.list, this.remove]
-  }
+  constructor(private readonly repository: FavRepository) {}
 }
