@@ -6,27 +6,15 @@ import { ListUser } from './list.user'
 import { AddImage } from './add.image'
 import { PatchUser } from './patch.user'
 
-export enum Action {
-  Get,
-  Current,
-  List,
-  Image,
-  Patch
-}
-
-export { GetUser, GetCurrent, ListUser, AddImage, PatchUser }
+import { UserRepository } from '../user.repository'
 
 @Injectable()
 export class UserProvider {
-  action: [GetUser, GetCurrent, ListUser, AddImage, PatchUser]
+  readonly get: GetUser = new GetUser(this.repository)
+  readonly current: GetCurrent = new GetCurrent(this.repository)
+  readonly list: ListUser = new ListUser(this.repository)
+  readonly image: AddImage = new AddImage(this.repository)
+  readonly patch: PatchUser = new PatchUser(this.repository)
 
-  constructor(
-    private readonly get: GetUser,
-    private readonly current: GetCurrent,
-    private readonly list: ListUser,
-    private readonly image: AddImage,
-    private readonly patch: PatchUser
-  ) {
-    this.action = [this.get, this.current, this.list, this.image, this.patch]
-  }
+  constructor(private readonly repository: UserRepository) {}
 }

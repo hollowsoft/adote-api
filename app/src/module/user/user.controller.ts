@@ -4,7 +4,7 @@ import { Role } from './user.type'
 
 import { Permission } from '@/decorator/permission.decorator'
 
-import { Action, UserProvider } from './provider'
+import { UserProvider } from './provider'
 
 import { ListUserRequest, PatchUserRequest } from './user.request'
 import { UserResponse } from './user.response'
@@ -16,28 +16,28 @@ export class UserController {
   @Get(':id')
   @Permission(Role.Admin)
   get(@Param('id') id: string): Promise<UserResponse> {
-    return this.provider.action[Action.Get].run(id)
+    return this.provider.get.run(id)
   }
 
   @Get('current')
   current(): Promise<UserResponse> {
-    return this.provider.action[Action.Current].run()
+    return this.provider.current.run()
   }
 
   @Get()
   @Permission(Role.Admin)
   list(@Query() request: ListUserRequest): Promise<UserResponse[]> {
-    return this.provider.action[Action.List].run(request)
+    return this.provider.list.run(request)
   }
 
   @Post('image')
   @HttpCode(HttpStatus.OK)
   image(): Promise<void> {
-    return this.provider.action[Action.Image].run()
+    return this.provider.image.run()
   }
 
   @Put()
   patch(@Body() request: PatchUserRequest): Promise<UserResponse> {
-    return this.provider.action[Action.Patch].run(request)
+    return this.provider.patch.run(request)
   }
 }
