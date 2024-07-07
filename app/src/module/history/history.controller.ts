@@ -1,6 +1,6 @@
 import { Get, Query, Controller } from '@nestjs/common'
 
-import { Action, HistoryProvider } from './provider'
+import { HistoryProvider } from './provider'
 
 import { ListHistoryRequest } from './history.request'
 import { HistoryResponse } from './history.response'
@@ -11,6 +11,6 @@ export class HistoryController {
 
   @Get()
   list(@Query() request: ListHistoryRequest): Promise<HistoryResponse[]> {
-    return this.provider.action[Action.List].run(request)
+    return this.provider.list.run(request)
   }
 }

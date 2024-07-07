@@ -2,17 +2,11 @@ import { Injectable } from '@nestjs/common'
 
 import { ListHistory } from './list.history'
 
-export enum Action {
-  List
-}
-
-export { ListHistory }
+import { HistoryRepository } from '../history.repository'
 
 @Injectable()
 export class HistoryProvider {
-  action: [ListHistory]
+  readonly list: ListHistory = new ListHistory(this.repository)
 
-  constructor(private readonly list: ListHistory) {
-    this.action = [this.list]
-  }
+  constructor(private readonly repository: HistoryRepository) {}
 }
