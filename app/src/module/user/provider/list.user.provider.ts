@@ -6,7 +6,7 @@ import { ListUserRequest } from '../user.request'
 import { UserRepository } from '../user.repository'
 
 @Injectable()
-export class ListUser {
+export class ListUserProvider {
   constructor(private readonly repository: UserRepository) {}
 
   async run(request: ListUserRequest): Promise<UserResponse[]> {

@@ -1,6 +1,6 @@
 import { UserRepository } from '../user.repository'
 
-export class AddImage {
+export class AddImageProvider {
   constructor(private readonly repository: UserRepository) {}
 
   run(): Promise<void> {

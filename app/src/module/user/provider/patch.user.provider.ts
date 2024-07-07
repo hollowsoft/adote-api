@@ -1,21 +1,13 @@
-import { Injectable, NotFoundException } from '@nestjs/common'
-
-import { UserResponse } from '../user.response'
-
 import { UserRepository } from '../user.repository'
 
-import { isNil } from 'lodash'
+import { UserResponse } from '../user.response'
+import { PatchUserRequest } from '../user.request'
 
-@Injectable()
-export class GetUser {
+export class PatchUserProvider {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(id: string): Promise<UserResponse> {
-    const user = await this.repository.find()
-
-    if (isNil(user)) {
-      throw new NotFoundException('user not found')
-    }
+  async run(request: PatchUserRequest): Promise<UserResponse> {
+    const user = await this.repository.save()
 
     return {
       id: '',

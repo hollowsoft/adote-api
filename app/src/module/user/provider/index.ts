@@ -1,20 +1,20 @@
 import { Injectable } from '@nestjs/common'
 
-import { GetUser } from './get.user'
-import { GetCurrent } from './get.current'
-import { ListUser } from './list.user'
-import { AddImage } from './add.image'
-import { PatchUser } from './patch.user'
+import { GetUserProvider } from './get.user.provider'
+import { GetCurrentProvider } from './get.current.provider'
+import { ListUserProvider } from './list.user.provider'
+import { AddImageProvider } from './add.image.provider'
+import { PatchUserProvider } from './patch.user.provider'
 
 import { UserRepository } from '../user.repository'
 
 @Injectable()
 export class UserProvider {
-  readonly get: GetUser = new GetUser(this.repository)
-  readonly current: GetCurrent = new GetCurrent(this.repository)
-  readonly list: ListUser = new ListUser(this.repository)
-  readonly image: AddImage = new AddImage(this.repository)
-  readonly patch: PatchUser = new PatchUser(this.repository)
+  readonly get: GetUserProvider = new GetUserProvider(this.repository)
+  readonly current: GetCurrentProvider = new GetCurrentProvider(this.repository)
+  readonly list: ListUserProvider = new ListUserProvider(this.repository)
+  readonly image: AddImageProvider = new AddImageProvider(this.repository)
+  readonly patch: PatchUserProvider = new PatchUserProvider(this.repository)
 
   constructor(private readonly repository: UserRepository) {}
 }

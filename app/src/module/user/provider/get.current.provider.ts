@@ -2,7 +2,7 @@ import { UserRepository } from '../user.repository'
 
 import { UserResponse } from '../user.response'
 
-export class GetCurrent {
+export class GetCurrentProvider {
   constructor(private readonly repository: UserRepository) {}
 
   async run(): Promise<UserResponse> {
