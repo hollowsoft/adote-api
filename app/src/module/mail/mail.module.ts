@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common'
 
-import { SendMail, MailProvider } from './provider'
+import { MailProvider } from './provider'
 
 @Module({
-  providers: [SendMail, MailProvider]
+  providers: [MailProvider]
 })
 export class MailModule {}
