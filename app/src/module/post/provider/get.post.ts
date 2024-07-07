@@ -6,7 +6,6 @@ import { PostRepository } from '../post.repository'
 
 import { isNil } from 'lodash'
 
-@Injectable()
 export class GetPost {
   constructor(private readonly repository: PostRepository) {}
 

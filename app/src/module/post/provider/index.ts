@@ -7,29 +7,16 @@ import { PatchPost } from './patch.post'
 import { PublishPost } from './publish.post'
 import { RemovePost } from './remove.post'
 
-export enum Action {
-  Get,
-  List,
-  Create,
-  Patch,
-  Publish,
-  Remove
-}
-
-export { GetPost, ListPost, CreatePost, PatchPost, PublishPost, RemovePost }
+import { PostRepository } from '../post.repository'
 
 @Injectable()
 export class PostProvider {
-  action: [GetPost, ListPost, CreatePost, PatchPost, PublishPost, RemovePost]
+  readonly get: GetPost = new GetPost(this.repository)
+  readonly list: ListPost = new ListPost(this.repository)
+  readonly create: CreatePost = new CreatePost(this.repository)
+  readonly patch: PatchPost = new PatchPost(this.repository)
+  readonly publish: PublishPost = new PublishPost(this.repository)
+  readonly remove: RemovePost = new RemovePost(this.repository)
 
-  constructor(
-    private readonly get: GetPost,
-    private readonly list: ListPost,
-    private readonly create: CreatePost,
-    private readonly patch: PatchPost,
-    private readonly publish: PublishPost,
-    private readonly remove: RemovePost
-  ) {
-    this.action = [this.get, this.list, this.create, this.patch, this.publish, this.remove]
-  }
+  constructor(private readonly repository: PostRepository) {}
 }
