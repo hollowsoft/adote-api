@@ -6,7 +6,7 @@ import { LocationResponse } from '../location.response'
 import { LocationRepository } from '../location.respository'
 
 @Injectable()
-export class SearchLocation {
+export class SearchLocationProvider {
   constructor(private readonly repository: LocationRepository) {}
 
   async run(request: SearchLocationRequest): Promise<LocationResponse[]> {
