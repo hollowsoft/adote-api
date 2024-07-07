@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common'
 
-import { SendMail } from './send.mail'
+import { SendMailProvider } from './send.mail.provider'
 
 @Injectable()
 export class MailProvider {
-  readonly send: SendMail = new SendMail()
+  readonly send: SendMailProvider = new SendMailProvider()
 
   constructor() {}
 }
