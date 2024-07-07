@@ -6,7 +6,7 @@ import { ListPostRequest } from '../post.request'
 import { PostRepository } from '../post.repository'
 
 @Injectable()
-export class ListPost {
+export class ListPostProvider {
   constructor(private readonly repository: PostRepository) {}
 
   async run(request: ListPostRequest): Promise<PostResponse[]> {

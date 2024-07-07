@@ -3,7 +3,7 @@ import { PostRepository } from '../post.repository'
 import { PatchPostRequest } from '../post.request'
 import { PostResponse } from '../post.response'
 
-export class PatchPost {
+export class PatchPostProvider {
   constructor(private readonly repository: PostRepository) {}
 
   async run(id: string, request: PatchPostRequest): Promise<PostResponse> {

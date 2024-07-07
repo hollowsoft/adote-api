@@ -1,23 +1,16 @@
-import { Injectable, NotFoundException } from '@nestjs/common'
-
-import { PostResponse } from '../post.response'
-
 import { PostRepository } from '../post.repository'
 
-import { isNil } from 'lodash'
+import { PostResponse } from '../post.response'
+import { CreatePostRequest } from '../post.request'
 
-export class GetPost {
+export class CreatePostProvider {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(id: string): Promise<PostResponse> {
+  async run(request: CreatePostRequest): Promise<PostResponse> {
     const post = await this.repository.find()
 
-    if (isNil(post)) {
-      throw new NotFoundException('post not found')
-    }
-
     return {
-      id: post.name,
+      id: '',
       title: post.name,
       description: post.description,
       image: post.image,
@@ -27,7 +20,7 @@ export class GetPost {
         size: post.pet.size,
         gender: post.pet.gender,
         breed: {
-          id: post.pet.breed.name,
+          id: '',
           name: post.pet.breed.name
         }
       },

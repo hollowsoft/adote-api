@@ -4,7 +4,7 @@ import { PostRepository } from '../post.repository'
 
 import { isNil } from 'lodash'
 
-export class RemovePost {
+export class RemovePostProvider {
   constructor(private readonly repository: PostRepository) {}
 
   async run(id: string): Promise<void> {
