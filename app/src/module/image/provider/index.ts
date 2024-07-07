@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common'
 
-import { AddImage } from './add.image'
-import { RemoveImage } from './remove.image'
+import { AddImageProvider } from './add.image.provider'
+import { RemoveImageProvider } from './remove.image.provider'
 
 @Injectable()
 export class ImageProvider {
-  readonly add: AddImage = new AddImage()
-  readonly remove: RemoveImage = new RemoveImage()
+  readonly add: AddImageProvider = new AddImageProvider()
+  readonly remove: RemoveImageProvider = new RemoveImageProvider()
 
   constructor() {}
 }
