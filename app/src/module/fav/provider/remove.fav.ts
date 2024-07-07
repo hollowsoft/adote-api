@@ -1,6 +1,6 @@
 import { RemoveFavRequest } from '../fav.request'
 
-export class RemoveFav {
+export class RemoveFavProvider {
   async run(request: RemoveFavRequest): Promise<void> {
     const { id } = request
   }

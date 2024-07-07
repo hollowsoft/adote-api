@@ -4,7 +4,7 @@ import { FavResponse } from '../fav.response'
 
 // import { FavRepository } from '../fav.repository'
 
-export class ListFav {
+export class ListFavProvider {
   constructor() {}
 
   async run(): Promise<FavResponse[]> {

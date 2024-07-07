@@ -3,7 +3,7 @@ import { AddFavResponse } from '../fav.response'
 
 import { FavRepository } from '../fav.repository'
 
-export class AddFav {
+export class AddFavProvider {
   constructor(private readonly repository: FavRepository) {}
 
   async run(request: AddFavRequest): Promise<AddFavResponse> {
