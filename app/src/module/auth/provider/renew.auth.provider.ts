@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config'
 
 import { TokenResponse } from '../auth.response'
 
-export class RenewAuth {
+export class RenewAuthProvider {
   constructor(
     private readonly jwt: JwtService,
     private readonly configuration: ConfigService

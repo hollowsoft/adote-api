@@ -9,7 +9,7 @@ import { AuthResponse } from '../auth.response'
 import { isNil } from 'lodash'
 
 @Injectable()
-export class MailAuth {
+export class MailAuthProvider {
   constructor(private readonly repository: UserRepository) {}
 
   async run(request: AuthRequest): Promise<AuthResponse> {

@@ -16,19 +16,15 @@ import { AuthProvider } from './provider'
 
 import { AuthController } from './auth.controller'
 
-const TokenGuardProvider = {
-  provide: APP_GUARD,
-  useClass: TokenGuard
-}
-
-const PermissionGuardProvider = {
-  provide: APP_GUARD,
-  useClass: PermissionGuard
-}
-
 @Module({
   imports: [JwtModule, PassportModule, UserModule],
-  providers: [AuthProvider, TokenGuardProvider, PermissionGuardProvider, TokenStrategy, TokenRenewStrategy],
+  providers: [
+    AuthProvider,
+    TokenStrategy,
+    TokenRenewStrategy,
+    { provide: APP_GUARD, useClass: TokenGuard },
+    { provide: APP_GUARD, useClass: PermissionGuard }
+  ],
   controllers: [AuthController]
 })
 export class AuthModule {}

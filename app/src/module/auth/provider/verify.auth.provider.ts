@@ -9,7 +9,7 @@ import { TokenResponse } from '../auth.response'
 import { isNil } from 'lodash'
 
 @Injectable()
-export class VerifyAuth {
+export class VerifyAuthProvider {
   constructor(
     private readonly jwt: JwtService,
     private readonly configuration: ConfigService

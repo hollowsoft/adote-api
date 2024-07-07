@@ -3,17 +3,17 @@ import { Injectable } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { ConfigService } from '@nestjs/config'
 
-import { MailAuth } from './mail.auth'
-import { RenewAuth } from './renew.auth'
-import { VerifyAuth } from './verify.auth'
+import { MailAuthProvider } from './mail.auth.provider'
+import { RenewAuthProvider } from './renew.auth.provider'
+import { VerifyAuthProvider } from './verify.auth.provider'
 
 import { UserRepository } from '@/module/user/user.repository'
 
 @Injectable()
 export class AuthProvider {
-  readonly mail: MailAuth = new MailAuth(this.repository)
-  readonly renew: RenewAuth = new RenewAuth(this.jwt, this.configuration)
-  readonly verify: VerifyAuth = new VerifyAuth(this.jwt, this.configuration)
+  readonly mail: MailAuthProvider = new MailAuthProvider(this.repository)
+  readonly renew: RenewAuthProvider = new RenewAuthProvider(this.jwt, this.configuration)
+  readonly verify: VerifyAuthProvider = new VerifyAuthProvider(this.jwt, this.configuration)
 
   constructor(
     private readonly jwt: JwtService,
