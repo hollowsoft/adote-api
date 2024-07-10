@@ -4,7 +4,6 @@ import { Role } from '@/module/user/user.type'
 import { Permission } from '@/decorator/permission.decorator'
 
 import { ConfigurationProvider } from './provider'
-import { Public } from '@/decorator/public.decorator'
 
 @Controller('/configuration')
 export class ConfigurationController {
@@ -19,8 +18,7 @@ export class ConfigurationController {
 
   @Post('/user')
   @HttpCode(HttpStatus.OK)
-  //@Permission(Role.Admin)
-  @Public()
+  @Permission(Role.Admin)
   user(): Promise<void> {
     return this.provider.user.run()
   }
