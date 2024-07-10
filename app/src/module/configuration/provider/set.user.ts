@@ -7,7 +7,7 @@ import { Role } from '@/module/user/user.type'
 export class SetUser {
   constructor(private repository: UserRepository) {}
 
-  async run() {
+  async run(): Promise<void> {
     const usersArray = user.map((user) => ({
       ...user,
       role: Role[user.role as keyof typeof Role]
