@@ -58,6 +58,6 @@ export class User {
   enable: boolean
 }
 
-const schema = SchemaFactory.createForClass(User)
+export const schema = SchemaFactory.createForClass(User)
 
 export const UserSchema = { name: User.name, schema }
