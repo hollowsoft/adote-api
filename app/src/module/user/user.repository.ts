@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { Model } from 'mongoose'
+import { FilterQuery, Model, mongo } from 'mongoose'
 
 import { User } from './user.type'
 
@@ -19,5 +19,13 @@ export class UserRepository {
 
   save(): Promise<User> {
     return new this.model({}).save()
+  }
+
+  remove(query?: FilterQuery<User>): Promise<mongo.DeleteResult> {
+    return this.model.deleteMany(query)
+  }
+
+  saveMany(user: User[]): Promise<User[]> {
+    return this.model.insertMany(user)
   }
 }

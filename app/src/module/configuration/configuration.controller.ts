@@ -15,4 +15,11 @@ export class ConfigurationController {
   location(): Promise<void> {
     return this.provider.location.run()
   }
+
+  @Post('/user')
+  @HttpCode(HttpStatus.OK)
+  @Permission(Role.Admin)
+  user(): Promise<void> {
+    return this.provider
+  }
 }
