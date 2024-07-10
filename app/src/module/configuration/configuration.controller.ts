@@ -20,6 +20,6 @@ export class ConfigurationController {
   @HttpCode(HttpStatus.OK)
   @Permission(Role.Admin)
   user(): Promise<void> {
-    return this.provider
+    return this.provider.user.run()
   }
 }
