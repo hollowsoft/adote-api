@@ -10,7 +10,7 @@ export class SetUser {
   async run() {
     const usersArray = user.map((user) => ({
       ...user,
-      role: user.role as Role
+      role: Role[user.role as keyof typeof Role]
     }))
 
     await this.repository.remove()
