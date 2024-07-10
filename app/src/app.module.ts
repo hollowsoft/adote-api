@@ -18,17 +18,12 @@ import { MailModule } from '@/module/mail/mail.module'
 import { ImageModule } from '@/module/image/image.module'
 
 import { HealthModule } from '@/module/health/health.module'
+import { ConfigurationModule } from '@/module/configuration/configuration.module'
 
 import { RequestConfigProvider } from './request.config.provider'
 import { RepositoryConfigProvider } from './repository.config.provider'
 
 import { isProduction } from './helper/environment'
-import { ConfigurationModule } from './module/configuration/configuration.module'
-
-const RequestGuardProvider = {
-  provide: APP_GUARD,
-  useClass: ThrottlerGuard
-}
 
 @Module({
   imports: [
@@ -42,6 +37,7 @@ const RequestGuardProvider = {
     MailModule,
     ImageModule,
     HealthModule,
+    ConfigurationModule,
     ConfigModule.forRoot({
       isGlobal: true,
       ignoreEnvFile: isProduction
@@ -51,9 +47,8 @@ const RequestGuardProvider = {
     }),
     ThrottlerModule.forRootAsync({
       useClass: RequestConfigProvider
-    }),
-    ConfigurationModule
+    })
   ],
-  providers: [RequestGuardProvider]
+  providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }]
 })
 export class AppModule {}

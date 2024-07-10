@@ -1,29 +1,23 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { Model } from 'mongoose'
+import { mongo, Model, FilterQuery } from 'mongoose'
 
 import { Location } from './location.type'
 
 @Injectable()
 export class LocationRepository {
-  constructor(
-    @InjectModel(Location.name) private model: Model<Location>
-  ) {}
+  constructor(@InjectModel(Location.name) private model: Model<Location>) {}
 
-  list(): Promise<Location[]> {
-    return this.model.find().exec()
+  list(query?: FilterQuery<Location>): Promise<Location[]> {
+    return this.model.find(query)
   }
 
-  async delete(criteria: {}, deleteMany: boolean = true): Promise<void> {
-    if (deleteMany) {
-      await this.model.deleteMany(criteria)
-    } else {
-      await this.model.deleteOne(criteria)
-    }
+  save(location: Location[]): Promise<Location[]> {
+    return this.model.insertMany(location)
   }
 
-  async saveMany(locations: Location[]): Promise<Location[]> {
-    return await this.model.insertMany(locations)
+  remove(query?: FilterQuery<Location>): Promise<mongo.DeleteResult> {
+    return this.model.deleteMany(query)
   }
 }

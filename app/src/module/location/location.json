@@ -2824,211 +2824,280 @@
     "state": "Mato Grosso"
   },
   {
-    "city": "Água Clara"
+    "city": "Água Clara",
+    "state": ""
   },
   {
-    "city": "Alcinópolis"
+    "city": "Alcinópolis",
+    "state": ""
   },
   {
-    "city": "Amambaí"
+    "city": "Amambaí",
+    "state": ""
   },
   {
-    "city": "Anastácio"
+    "city": "Anastácio",
+    "state": ""
   },
   {
-    "city": "Anaurilândia"
+    "city": "Anaurilândia",
+    "state": ""
   },
   {
-    "city": "Angélica"
+    "city": "Angélica",
+    "state": ""
   },
   {
-    "city": "Antônio João"
+    "city": "Antônio João",
+    "state": ""
   },
   {
-    "city": "Aparecida Do Taboado"
+    "city": "Aparecida Do Taboado",
+    "state": ""
   },
   {
-    "city": "Aquidauana"
+    "city": "Aquidauana",
+    "state": ""
   },
   {
-    "city": "Aral Moreira"
+    "city": "Aral Moreira",
+    "state": ""
   },
   {
-    "city": "Bandeirantes"
+    "city": "Bandeirantes",
+    "state": ""
   },
   {
-    "city": "Bataguassu"
+    "city": "Bataguassu",
+    "state": ""
   },
   {
-    "city": "Bataiporã"
+    "city": "Bataiporã",
+    "state": ""
   },
   {
-    "city": "Bela Vista"
+    "city": "Bela Vista",
+    "state": ""
   },
   {
-    "city": "Bodoquena"
+    "city": "Bodoquena",
+    "state": ""
   },
   {
-    "city": "Bonito"
+    "city": "Bonito",
+    "state": ""
   },
   {
-    "city": "Caarapó"
+    "city": "Caarapó",
+    "state": ""
   },
   {
-    "city": "Camapuã"
+    "city": "Camapuã",
+    "state": ""
   },
   {
-    "city": "Campo Grande"
+    "city": "Campo Grande",
+    "state": ""
   },
   {
-    "city": "Caracol"
+    "city": "Caracol",
+    "state": ""
   },
   {
-    "city": "Cassilândia"
+    "city": "Cassilândia",
+    "state": ""
   },
   {
-    "city": "Chapadão Do Sul"
+    "city": "Chapadão Do Sul",
+    "state": ""
   },
   {
-    "city": "Corguinho"
+    "city": "Corguinho",
+    "state": ""
   },
   {
-    "city": "Coronel Sapucaia"
+    "city": "Coronel Sapucaia",
+    "state": ""
   },
   {
-    "city": "Corumbá"
+    "city": "Corumbá",
+    "state": ""
   },
   {
-    "city": "Costa Rica"
+    "city": "Costa Rica",
+    "state": ""
   },
   {
-    "city": "Coxim"
+    "city": "Coxim",
+    "state": ""
   },
   {
-    "city": "Dois Irmãos Do Buriti"
+    "city": "Dois Irmãos Do Buriti",
+    "state": ""
   },
   {
-    "city": "Douradina"
+    "city": "Douradina",
+    "state": ""
   },
   {
-    "city": "Dourados"
+    "city": "Dourados",
+    "state": ""
   },
   {
-    "city": "Eldorado"
+    "city": "Eldorado",
+    "state": ""
   },
   {
-    "city": "Fátima Do Sul"
+    "city": "Fátima Do Sul",
+    "state": ""
   },
   {
-    "city": "Glória De Dourados"
+    "city": "Glória De Dourados",
+    "state": ""
   },
   {
-    "city": "Guia Lopes Da Laguna"
+    "city": "Guia Lopes Da Laguna",
+    "state": ""
   },
   {
-    "city": "Iguatemi"
+    "city": "Iguatemi",
+    "state": ""
   },
   {
-    "city": "Inocência"
+    "city": "Inocência",
+    "state": ""
   },
   {
-    "city": "Itaporã"
+    "city": "Itaporã",
+    "state": ""
   },
   {
-    "city": "Itaquiraí"
+    "city": "Itaquiraí",
+    "state": ""
   },
   {
-    "city": "Ivinhema"
+    "city": "Ivinhema",
+    "state": ""
   },
   {
-    "city": "Japorã"
+    "city": "Japorã",
+    "state": ""
   },
   {
-    "city": "Jardim"
+    "city": "Jardim",
+    "state": ""
   },
   {
-    "city": "Laguna Carapã"
+    "city": "Laguna Carapã",
+    "state": ""
   },
   {
-    "city": "Maracaju"
+    "city": "Maracaju",
+    "state": ""
   },
   {
-    "city": "Miranda"
+    "city": "Miranda",
+    "state": ""
   },
   {
-    "city": "Mundo Novo"
+    "city": "Mundo Novo",
+    "state": ""
   },
   {
-    "city": "Naviraí"
+    "city": "Naviraí",
+    "state": ""
   },
   {
-    "city": "Nioaque"
+    "city": "Nioaque",
+    "state": ""
   },
   {
-    "city": "Nova Alvorada Do Sul"
+    "city": "Nova Alvorada Do Sul",
+    "state": ""
   },
   {
-    "city": "Nova Andradina"
+    "city": "Nova Andradina",
+    "state": ""
   },
   {
-    "city": "Novo Horizonte Do Sul"
+    "city": "Novo Horizonte Do Sul",
+    "state": ""
   },
   {
-    "city": "Paranaíba"
+    "city": "Paranaíba",
+    "state": ""
   },
   {
-    "city": "Paranhos"
+    "city": "Paranhos",
+    "state": ""
   },
   {
-    "city": "Pedro Gomes"
+    "city": "Pedro Gomes",
+    "state": ""
   },
   {
-    "city": "Ponta Porã"
+    "city": "Ponta Porã",
+    "state": ""
   },
   {
-    "city": "Porto Murtinho"
+    "city": "Porto Murtinho",
+    "state": ""
   },
   {
-    "city": "Ribas Do Rio Pardo"
+    "city": "Ribas Do Rio Pardo",
+    "state": ""
   },
   {
-    "city": "Rio Brilhante"
+    "city": "Rio Brilhante",
+    "state": ""
   },
   {
-    "city": "Rio Negro"
+    "city": "Rio Negro",
+    "state": ""
   },
   {
-    "city": "Rio Verde De Mato Grosso"
+    "city": "Rio Verde De Mato Grosso",
+    "state": ""
   },
   {
-    "city": "Rochedo"
+    "city": "Rochedo",
+    "state": ""
   },
   {
-    "city": "Santa Rita Do Pardo"
+    "city": "Santa Rita Do Pardo",
+    "state": ""
   },
   {
-    "city": "São Gabriel Do Oeste"
+    "city": "São Gabriel Do Oeste",
+    "state": ""
   },
   {
-    "city": "Selvíria"
+    "city": "Selvíria",
+    "state": ""
   },
   {
-    "city": "Sete Quedas"
+    "city": "Sete Quedas",
+    "state": ""
   },
   {
-    "city": "Sidrolândia"
+    "city": "Sidrolândia",
+    "state": ""
   },
   {
-    "city": "Sonora"
+    "city": "Sonora",
+    "state": ""
   },
   {
-    "city": "Terenos"
+    "city": "Terenos",
+    "state": ""
   },
   {
-    "city": "Três Lagoas"
+    "city": "Três Lagoas",
+    "state": ""
   },
   {
-    "city": "Vicentina"
+    "city": "Vicentina",
+    "state": ""
   },
   {
     "city": "Abadia Dos Dourados",
@@ -8159,1960 +8228,2612 @@
     "state": "Piauí"
   },
   {
-    "city": "Aperibé"
+    "city": "Aperibé",
+    "state": ""
   },
   {
-    "city": "Arraial Do Cabo"
+    "city": "Arraial Do Cabo",
+    "state": ""
   },
   {
-    "city": "Barra Do Piraí"
+    "city": "Barra Do Piraí",
+    "state": ""
   },
   {
-    "city": "Barra Mansa"
+    "city": "Barra Mansa",
+    "state": ""
   },
   {
-    "city": "Belford Roxo"
+    "city": "Belford Roxo",
+    "state": ""
   },
   {
-    "city": "Bom Jardim"
+    "city": "Bom Jardim",
+    "state": ""
   },
   {
-    "city": "Bom Jesus Do Itabapoana"
+    "city": "Bom Jesus Do Itabapoana",
+    "state": ""
   },
   {
-    "city": "Cabo Frio"
+    "city": "Cabo Frio",
+    "state": ""
   },
   {
-    "city": "Cachoeiras De Macacu"
+    "city": "Cachoeiras De Macacu",
+    "state": ""
   },
   {
-    "city": "Cambuci"
+    "city": "Cambuci",
+    "state": ""
   },
   {
-    "city": "Cantagalo"
+    "city": "Cantagalo",
+    "state": ""
   },
   {
-    "city": "Carapebus"
+    "city": "Carapebus",
+    "state": ""
   },
   {
-    "city": "Cardoso Moreira"
+    "city": "Cardoso Moreira",
+    "state": ""
   },
   {
-    "city": "Carmo"
+    "city": "Carmo",
+    "state": ""
   },
   {
-    "city": "Comendador Levy Gasparian"
+    "city": "Comendador Levy Gasparian",
+    "state": ""
   },
   {
-    "city": "Conceição De Macabu"
+    "city": "Conceição De Macabu",
+    "state": ""
   },
   {
-    "city": "Cordeiro"
+    "city": "Cordeiro",
+    "state": ""
   },
   {
-    "city": "Duque De Caxias"
+    "city": "Duque De Caxias",
+    "state": ""
   },
   {
-    "city": "Engenheiro Paulo De Frontin"
+    "city": "Engenheiro Paulo De Frontin",
+    "state": ""
   },
   {
-    "city": "Guapimirim"
+    "city": "Guapimirim",
+    "state": ""
   },
   {
-    "city": "Iguaba Grande"
+    "city": "Iguaba Grande",
+    "state": ""
   },
   {
-    "city": "Itaboraí"
+    "city": "Itaboraí",
+    "state": ""
   },
   {
-    "city": "Itatiaia"
+    "city": "Itatiaia",
+    "state": ""
   },
   {
-    "city": "Macaé"
+    "city": "Macaé",
+    "state": ""
   },
   {
-    "city": "Maricá"
+    "city": "Maricá",
+    "state": ""
   },
   {
-    "city": "Miracema"
+    "city": "Miracema",
+    "state": ""
   },
   {
-    "city": "Nilópolis"
+    "city": "Nilópolis",
+    "state": ""
   },
   {
-    "city": "Niterói"
+    "city": "Niterói",
+    "state": ""
   },
   {
-    "city": "Nova Iguaçu"
+    "city": "Nova Iguaçu",
+    "state": ""
   },
   {
-    "city": "Paracambi"
+    "city": "Paracambi",
+    "state": ""
   },
   {
-    "city": "Paraíba Do Sul"
+    "city": "Paraíba Do Sul",
+    "state": ""
   },
   {
-    "city": "Parati"
+    "city": "Parati",
+    "state": ""
   },
   {
-    "city": "Petrópolis"
+    "city": "Petrópolis",
+    "state": ""
   },
   {
-    "city": "Pinheiral"
+    "city": "Pinheiral",
+    "state": ""
   },
   {
-    "city": "Piraí"
+    "city": "Piraí",
+    "state": ""
   },
   {
-    "city": "Porto Real"
+    "city": "Porto Real",
+    "state": ""
   },
   {
-    "city": "Quatis"
+    "city": "Quatis",
+    "state": ""
   },
   {
-    "city": "Quissamã"
+    "city": "Quissamã",
+    "state": ""
   },
   {
-    "city": "Rio Claro"
+    "city": "Rio Claro",
+    "state": ""
   },
   {
-    "city": "Rio Das Flores"
+    "city": "Rio Das Flores",
+    "state": ""
   },
   {
-    "city": "Rio Das Ostras"
+    "city": "Rio Das Ostras",
+    "state": ""
   },
   {
-    "city": "Rio De Janeiro"
+    "city": "Rio De Janeiro",
+    "state": ""
   },
   {
-    "city": "Santa Maria Madalena"
+    "city": "Santa Maria Madalena",
+    "state": ""
   },
   {
-    "city": "Santo Antônio De Pádua"
+    "city": "Santo Antônio De Pádua",
+    "state": ""
   },
   {
-    "city": "São Fidélis"
+    "city": "São Fidélis",
+    "state": ""
   },
   {
-    "city": "São Francisco De Itabapoana"
+    "city": "São Francisco De Itabapoana",
+    "state": ""
   },
   {
-    "city": "São Gonçalo"
+    "city": "São Gonçalo",
+    "state": ""
   },
   {
-    "city": "São João Da Barra"
+    "city": "São João Da Barra",
+    "state": ""
   },
   {
-    "city": "São João De Meriti"
+    "city": "São João De Meriti",
+    "state": ""
   },
   {
-    "city": "São José De Ubá"
+    "city": "São José De Ubá",
+    "state": ""
   },
   {
-    "city": "São José Do Vale Do Rio Preto"
+    "city": "São José Do Vale Do Rio Preto",
+    "state": ""
   },
   {
-    "city": "São Pedro Da Aldeia"
+    "city": "São Pedro Da Aldeia",
+    "state": ""
   },
   {
-    "city": "São Sebastião Do Alto"
+    "city": "São Sebastião Do Alto",
+    "state": ""
   },
   {
-    "city": "Sapucaia"
+    "city": "Sapucaia",
+    "state": ""
   },
   {
-    "city": "Seropédica"
+    "city": "Seropédica",
+    "state": ""
   },
   {
-    "city": "Silva Jardim"
+    "city": "Silva Jardim",
+    "state": ""
   },
   {
-    "city": "Sumidouro"
+    "city": "Sumidouro",
+    "state": ""
   },
   {
-    "city": "Tanguá"
+    "city": "Tanguá",
+    "state": ""
   },
   {
-    "city": "Trajano De Morais"
+    "city": "Trajano De Morais",
+    "state": ""
   },
   {
-    "city": "Três Rios"
+    "city": "Três Rios",
+    "state": ""
   },
   {
-    "city": "Valença"
+    "city": "Valença",
+    "state": ""
   },
   {
-    "city": "Vassouras"
+    "city": "Vassouras",
+    "state": ""
   },
   {
-    "city": "Volta Redonda"
+    "city": "Volta Redonda",
+    "state": ""
   },
   {
-    "city": "Acari"
+    "city": "Acari",
+    "state": ""
   },
   {
-    "city": "Água Nova"
+    "city": "Água Nova",
+    "state": ""
   },
   {
-    "city": "Alexandria"
+    "city": "Alexandria",
+    "state": ""
   },
   {
-    "city": "Almino Afonso"
+    "city": "Almino Afonso",
+    "state": ""
   },
   {
-    "city": "Alto Do Rodrigues"
+    "city": "Alto Do Rodrigues",
+    "state": ""
   },
   {
-    "city": "Angicos"
+    "city": "Angicos",
+    "state": ""
   },
   {
-    "city": "Antônio Martins"
+    "city": "Antônio Martins",
+    "state": ""
   },
   {
-    "city": "Apodi"
+    "city": "Apodi",
+    "state": ""
   },
   {
-    "city": "Arês"
+    "city": "Arês",
+    "state": ""
   },
   {
-    "city": "Baía Formosa"
+    "city": "Baía Formosa",
+    "state": ""
   },
   {
-    "city": "Baraúna"
+    "city": "Baraúna",
+    "state": ""
   },
   {
-    "city": "Barcelona"
+    "city": "Barcelona",
+    "state": ""
   },
   {
-    "city": "Bento Fernandes"
+    "city": "Bento Fernandes",
+    "state": ""
   },
   {
-    "city": "Bodó"
+    "city": "Bodó",
+    "state": ""
   },
   {
-    "city": "Brejinho"
+    "city": "Brejinho",
+    "state": ""
   },
   {
-    "city": "Caiçara Do Norte"
+    "city": "Caiçara Do Norte",
+    "state": ""
   },
   {
-    "city": "Caiçara Do Rio Do Vento"
+    "city": "Caiçara Do Rio Do Vento",
+    "state": ""
   },
   {
-    "city": "Caicó"
+    "city": "Caicó",
+    "state": ""
   },
   {
-    "city": "Canguaretama"
+    "city": "Canguaretama",
+    "state": ""
   },
   {
-    "city": "Caraúbas"
+    "city": "Caraúbas",
+    "state": ""
   },
   {
-    "city": "Carnaúba Dos Dantas"
+    "city": "Carnaúba Dos Dantas",
+    "state": ""
   },
   {
-    "city": "Carnaubais"
+    "city": "Carnaubais",
+    "state": ""
   },
   {
-    "city": "Ceará Mirim"
+    "city": "Ceará Mirim",
+    "state": ""
   },
   {
-    "city": "Cerro Corá"
+    "city": "Cerro Corá",
+    "state": ""
   },
   {
-    "city": "Coronel Ezequiel"
+    "city": "Coronel Ezequiel",
+    "state": ""
   },
   {
-    "city": "Coronel João Pessoa"
+    "city": "Coronel João Pessoa",
+    "state": ""
   },
   {
-    "city": "Cruzeta"
+    "city": "Cruzeta",
+    "state": ""
   },
   {
-    "city": "Currais Novos"
+    "city": "Currais Novos",
+    "state": ""
   },
   {
-    "city": "Doutor Severiano"
+    "city": "Doutor Severiano",
+    "state": ""
   },
   {
-    "city": "Encanto"
+    "city": "Encanto",
+    "state": ""
   },
   {
-    "city": "Equador"
+    "city": "Equador",
+    "state": ""
   },
   {
-    "city": "Espírito Santo"
+    "city": "Espírito Santo",
+    "state": ""
   },
   {
-    "city": "Extremoz"
+    "city": "Extremoz",
+    "state": ""
   },
   {
-    "city": "Felipe Guerra"
+    "city": "Felipe Guerra",
+    "state": ""
   },
   {
-    "city": "Fernando Pedroza"
+    "city": "Fernando Pedroza",
+    "state": ""
   },
   {
-    "city": "Florânia"
+    "city": "Florânia",
+    "state": ""
   },
   {
-    "city": "Francisco Dantas"
+    "city": "Francisco Dantas",
+    "state": ""
   },
   {
-    "city": "Frutuoso Gomes"
+    "city": "Frutuoso Gomes",
+    "state": ""
   },
   {
-    "city": "Galinhos"
+    "city": "Galinhos",
+    "state": ""
   },
   {
-    "city": "Goianinha"
+    "city": "Goianinha",
+    "state": ""
   },
   {
-    "city": "Governador Dix Sept Rosado"
+    "city": "Governador Dix Sept Rosado",
+    "state": ""
   },
   {
-    "city": "Grossos"
+    "city": "Grossos",
+    "state": ""
   },
   {
-    "city": "Guamaré"
+    "city": "Guamaré",
+    "state": ""
   },
   {
-    "city": "Ielmo Marinho"
+    "city": "Ielmo Marinho",
+    "state": ""
   },
   {
-    "city": "Ipanguaçu"
+    "city": "Ipanguaçu",
+    "state": ""
   },
   {
-    "city": "Ipueira"
+    "city": "Ipueira",
+    "state": ""
   },
   {
-    "city": "Itajá"
+    "city": "Itajá",
+    "state": ""
   },
   {
-    "city": "Jandaíra"
+    "city": "Jandaíra",
+    "state": ""
   },
   {
-    "city": "Janduís"
+    "city": "Janduís",
+    "state": ""
   },
   {
-    "city": "Januário Cicco"
+    "city": "Januário Cicco",
+    "state": ""
   },
   {
-    "city": "Japi"
+    "city": "Japi",
+    "state": ""
   },
   {
-    "city": "Jardim De Piranhas"
+    "city": "Jardim De Piranhas",
+    "state": ""
   },
   {
-    "city": "Jardim Do Seridó"
+    "city": "Jardim Do Seridó",
+    "state": ""
   },
   {
-    "city": "João Câmara"
+    "city": "João Câmara",
+    "state": ""
   },
   {
-    "city": "João Dias"
+    "city": "João Dias",
+    "state": ""
   },
   {
-    "city": "José Da Penha"
+    "city": "José Da Penha",
+    "state": ""
   },
   {
-    "city": "Jucurutu"
+    "city": "Jucurutu",
+    "state": ""
   },
   {
-    "city": "Jundiá"
+    "city": "Jundiá",
+    "state": ""
   },
   {
-    "city": "Lagoa Danta"
+    "city": "Lagoa Danta",
+    "state": ""
   },
   {
-    "city": "Lagoa De Pedras"
+    "city": "Lagoa De Pedras",
+    "state": ""
   },
   {
-    "city": "Lagoa De Velhos"
+    "city": "Lagoa De Velhos",
+    "state": ""
   },
   {
-    "city": "Lagoa Nova"
+    "city": "Lagoa Nova",
+    "state": ""
   },
   {
-    "city": "Lagoa Salgada"
+    "city": "Lagoa Salgada",
+    "state": ""
   },
   {
-    "city": "Lajes"
+    "city": "Lajes",
+    "state": ""
   },
   {
-    "city": "Lucrécia"
+    "city": "Lucrécia",
+    "state": ""
   },
   {
-    "city": "Luís Gomes"
+    "city": "Luís Gomes",
+    "state": ""
   },
   {
-    "city": "Macaíba"
+    "city": "Macaíba",
+    "state": ""
   },
   {
-    "city": "Macau"
+    "city": "Macau",
+    "state": ""
   },
   {
-    "city": "Marcelino Vieira"
+    "city": "Marcelino Vieira",
+    "state": ""
   },
   {
-    "city": "Martins"
+    "city": "Martins",
+    "state": ""
   },
   {
-    "city": "Maxaranguape"
+    "city": "Maxaranguape",
+    "state": ""
   },
   {
-    "city": "Messias Targino"
+    "city": "Messias Targino",
+    "state": ""
   },
   {
-    "city": "Montanhas"
+    "city": "Montanhas",
+    "state": ""
   },
   {
-    "city": "Monte Alegre"
+    "city": "Monte Alegre",
+    "state": ""
   },
   {
-    "city": "Monte Das Gameleiras"
+    "city": "Monte Das Gameleiras",
+    "state": ""
   },
   {
-    "city": "Mossoró"
+    "city": "Mossoró",
+    "state": ""
   },
   {
-    "city": "Natal"
+    "city": "Natal",
+    "state": ""
   },
   {
-    "city": "Nova Cruz"
+    "city": "Nova Cruz",
+    "state": ""
   },
   {
-    "city": "Olho Dágua Do Borges"
+    "city": "Olho Dágua Do Borges",
+    "state": ""
   },
   {
-    "city": "Ouro Branco"
+    "city": "Ouro Branco",
+    "state": ""
   },
   {
-    "city": "Paraná"
+    "city": "Paraná",
+    "state": ""
   },
   {
-    "city": "Paraú"
+    "city": "Paraú",
+    "state": ""
   },
   {
-    "city": "Parelhas"
+    "city": "Parelhas",
+    "state": ""
   },
   {
-    "city": "Parnamirim"
+    "city": "Parnamirim",
+    "state": ""
   },
   {
-    "city": "Passa E Fica"
+    "city": "Passa E Fica",
+    "state": ""
   },
   {
-    "city": "Passagem"
+    "city": "Passagem",
+    "state": ""
   },
   {
-    "city": "Patu"
+    "city": "Patu",
+    "state": ""
   },
   {
-    "city": "Pedra Grande"
+    "city": "Pedra Grande",
+    "state": ""
   },
   {
-    "city": "Pedra Preta"
+    "city": "Pedra Preta",
+    "state": ""
   },
   {
-    "city": "Pedro Avelino"
+    "city": "Pedro Avelino",
+    "state": ""
   },
   {
-    "city": "Pedro Velho"
+    "city": "Pedro Velho",
+    "state": ""
   },
   {
-    "city": "Pendências"
+    "city": "Pendências",
+    "state": ""
   },
   {
-    "city": "Pilões"
+    "city": "Pilões",
+    "state": ""
   },
   {
-    "city": "Poço Branco"
+    "city": "Poço Branco",
+    "state": ""
   },
   {
-    "city": "Portalegre"
+    "city": "Portalegre",
+    "state": ""
   },
   {
-    "city": "Porto Do Mangue"
+    "city": "Porto Do Mangue",
+    "state": ""
   },
   {
-    "city": "Presidente Juscelino"
+    "city": "Presidente Juscelino",
+    "state": ""
   },
   {
-    "city": "Pureza"
+    "city": "Pureza",
+    "state": ""
   },
   {
-    "city": "Rafael Fernandes"
+    "city": "Rafael Fernandes",
+    "state": ""
   },
   {
-    "city": "Rafael Godeiro"
+    "city": "Rafael Godeiro",
+    "state": ""
   },
   {
-    "city": "Riacho Da Cruz"
+    "city": "Riacho Da Cruz",
+    "state": ""
   },
   {
-    "city": "Riacho De Santana"
+    "city": "Riacho De Santana",
+    "state": ""
   },
   {
-    "city": "Riachuelo"
+    "city": "Riachuelo",
+    "state": ""
   },
   {
-    "city": "Rio Do Fogo"
+    "city": "Rio Do Fogo",
+    "state": ""
   },
   {
-    "city": "Rodolfo Fernandes"
+    "city": "Rodolfo Fernandes",
+    "state": ""
   },
   {
-    "city": "Ruy Barbosa"
+    "city": "Ruy Barbosa",
+    "state": ""
   },
   {
-    "city": "Santa Cruz"
+    "city": "Santa Cruz",
+    "state": ""
   },
   {
-    "city": "Santa Maria"
+    "city": "Santa Maria",
+    "state": ""
   },
   {
-    "city": "Santana Do Matos"
+    "city": "Santana Do Matos",
+    "state": ""
   },
   {
-    "city": "Santana Do Seridó"
+    "city": "Santana Do Seridó",
+    "state": ""
   },
   {
-    "city": "Santo Antônio"
+    "city": "Santo Antônio",
+    "state": ""
   },
   {
-    "city": "São Bento Do Norte"
+    "city": "São Bento Do Norte",
+    "state": ""
   },
   {
-    "city": "São Bento Do Trairí"
+    "city": "São Bento Do Trairí",
+    "state": ""
   },
   {
-    "city": "São Fernando"
+    "city": "São Fernando",
+    "state": ""
   },
   {
-    "city": "São Francisco Do Oeste"
+    "city": "São Francisco Do Oeste",
+    "state": ""
   },
   {
-    "city": "São Gonçalo Do Amarante"
+    "city": "São Gonçalo Do Amarante",
+    "state": ""
   },
   {
-    "city": "São João Do Sabugi"
+    "city": "São João Do Sabugi",
+    "state": ""
   },
   {
-    "city": "São José De Mipibu"
+    "city": "São José De Mipibu",
+    "state": ""
   },
   {
-    "city": "São José Do Campestre"
+    "city": "São José Do Campestre",
+    "state": ""
   },
   {
-    "city": "São José Do Seridó"
+    "city": "São José Do Seridó",
+    "state": ""
   },
   {
-    "city": "São Miguel"
+    "city": "São Miguel",
+    "state": ""
   },
   {
-    "city": "São Miguel De Touros"
+    "city": "São Miguel De Touros",
+    "state": ""
   },
   {
-    "city": "São Paulo Do Potengi"
+    "city": "São Paulo Do Potengi",
+    "state": ""
   },
   {
-    "city": "São Pedro"
+    "city": "São Pedro",
+    "state": ""
   },
   {
-    "city": "São Rafael"
+    "city": "São Rafael",
+    "state": ""
   },
   {
-    "city": "São Tomé"
+    "city": "São Tomé",
+    "state": ""
   },
   {
-    "city": "São Vicente"
+    "city": "São Vicente",
+    "state": ""
   },
   {
-    "city": "Senador Elói De Souza"
+    "city": "Senador Elói De Souza",
+    "state": ""
   },
   {
-    "city": "Senador Georgino Avelino"
+    "city": "Senador Georgino Avelino",
+    "state": ""
   },
   {
-    "city": "Serra De São Bento"
+    "city": "Serra De São Bento",
+    "state": ""
   },
   {
-    "city": "Serra Do Mel"
+    "city": "Serra Do Mel",
+    "state": ""
   },
   {
-    "city": "Serra Negra Do Norte"
+    "city": "Serra Negra Do Norte",
+    "state": ""
   },
   {
-    "city": "Serrinha"
+    "city": "Serrinha",
+    "state": ""
   },
   {
-    "city": "Serrinha Dos Pintos"
+    "city": "Serrinha Dos Pintos",
+    "state": ""
   },
   {
-    "city": "Severiano Melo"
+    "city": "Severiano Melo",
+    "state": ""
   },
   {
-    "city": "Sítio Novo"
+    "city": "Sítio Novo",
+    "state": ""
   },
   {
-    "city": "Taboleiro Grande"
+    "city": "Taboleiro Grande",
+    "state": ""
   },
   {
-    "city": "Taipu"
+    "city": "Taipu",
+    "state": ""
   },
   {
-    "city": "Tenente Ananias"
+    "city": "Tenente Ananias",
+    "state": ""
   },
   {
-    "city": "Tenente Laurentino Cruz"
+    "city": "Tenente Laurentino Cruz",
+    "state": ""
   },
   {
-    "city": "Tibau"
+    "city": "Tibau",
+    "state": ""
   },
   {
-    "city": "Timbaúba Dos Batistas"
+    "city": "Timbaúba Dos Batistas",
+    "state": ""
   },
   {
-    "city": "Touros"
+    "city": "Touros",
+    "state": ""
   },
   {
-    "city": "Triunfo Potiguar"
+    "city": "Triunfo Potiguar",
+    "state": ""
   },
   {
-    "city": "Umarizal"
+    "city": "Umarizal",
+    "state": ""
   },
   {
-    "city": "Upanema"
+    "city": "Upanema",
+    "state": ""
   },
   {
-    "city": "Várzea"
+    "city": "Várzea",
+    "state": ""
   },
   {
-    "city": "Venha Ver"
+    "city": "Venha Ver",
+    "state": ""
   },
   {
-    "city": "Vera Cruz"
+    "city": "Vera Cruz",
+    "state": ""
   },
   {
-    "city": "Viçosa"
+    "city": "Viçosa",
+    "state": ""
   },
   {
-    "city": "Vila Flor"
+    "city": "Vila Flor",
+    "state": ""
   },
   {
-    "city": "Aceguá"
+    "city": "Aceguá",
+    "state": ""
   },
   {
-    "city": "Agudo"
+    "city": "Agudo",
+    "state": ""
   },
   {
-    "city": "Alecrim"
+    "city": "Alecrim",
+    "state": ""
   },
   {
-    "city": "Alegrete"
+    "city": "Alegrete",
+    "state": ""
   },
   {
-    "city": "Alegria"
+    "city": "Alegria",
+    "state": ""
   },
   {
-    "city": "Almirante Tamandaré Do Sul"
+    "city": "Almirante Tamandaré Do Sul",
+    "state": ""
   },
   {
-    "city": "Alpestre"
+    "city": "Alpestre",
+    "state": ""
   },
   {
-    "city": "Alto Alegre"
+    "city": "Alto Alegre",
+    "state": ""
   },
   {
-    "city": "Alto Feliz"
+    "city": "Alto Feliz",
+    "state": ""
   },
   {
-    "city": "Alvorada"
+    "city": "Alvorada",
+    "state": ""
   },
   {
-    "city": "Amaral Ferrador"
+    "city": "Amaral Ferrador",
+    "state": ""
   },
   {
-    "city": "Ametista Do Sul"
+    "city": "Ametista Do Sul",
+    "state": ""
   },
   {
-    "city": "André Da Rocha"
+    "city": "André Da Rocha",
+    "state": ""
   },
   {
-    "city": "Anta Gorda"
+    "city": "Anta Gorda",
+    "state": ""
   },
   {
-    "city": "Antônio Prado"
+    "city": "Antônio Prado",
+    "state": ""
   },
   {
-    "city": "Arambaré"
+    "city": "Arambaré",
+    "state": ""
   },
   {
-    "city": "Araricá"
+    "city": "Araricá",
+    "state": ""
   },
   {
-    "city": "Aratiba"
+    "city": "Aratiba",
+    "state": ""
   },
   {
-    "city": "Arroio Do Meio"
+    "city": "Arroio Do Meio",
+    "state": ""
   },
   {
-    "city": "Arroio Do Padre"
+    "city": "Arroio Do Padre",
+    "state": ""
   },
   {
-    "city": "Arroio Do Sal"
+    "city": "Arroio Do Sal",
+    "state": ""
   },
   {
-    "city": "Arroio Do Tigre"
+    "city": "Arroio Do Tigre",
+    "state": ""
   },
   {
-    "city": "Arroio Dos Ratos"
+    "city": "Arroio Dos Ratos",
+    "state": ""
   },
   {
-    "city": "Arroio Grande"
+    "city": "Arroio Grande",
+    "state": ""
   },
   {
-    "city": "Arvorezinha"
+    "city": "Arvorezinha",
+    "state": ""
   },
   {
-    "city": "Augusto Pestana"
+    "city": "Augusto Pestana",
+    "state": ""
   },
   {
-    "city": "Áurea"
+    "city": "Áurea",
+    "state": ""
   },
   {
-    "city": "Barão"
+    "city": "Barão",
+    "state": ""
   },
   {
-    "city": "Barão Do Triunfo"
+    "city": "Barão Do Triunfo",
+    "state": ""
   },
   {
-    "city": "Barra Do Guarita"
+    "city": "Barra Do Guarita",
+    "state": ""
   },
   {
-    "city": "Barra Do Quaraí"
+    "city": "Barra Do Quaraí",
+    "state": ""
   },
   {
-    "city": "Barra Do Ribeiro"
+    "city": "Barra Do Ribeiro",
+    "state": ""
   },
   {
-    "city": "Barra Do Rio Azul"
+    "city": "Barra Do Rio Azul",
+    "state": ""
   },
   {
-    "city": "Barra Funda"
+    "city": "Barra Funda",
+    "state": ""
   },
   {
-    "city": "Barracão"
+    "city": "Barracão",
+    "state": ""
   },
   {
-    "city": "Barros Cassal"
+    "city": "Barros Cassal",
+    "state": ""
   },
   {
-    "city": "Benjamin Constan Do Sul"
+    "city": "Benjamin Constan Do Sul",
+    "state": ""
   },
   {
-    "city": "Bento Gonçalves"
+    "city": "Bento Gonçalves",
+    "state": ""
   },
   {
-    "city": "Boa Vista Das Missões"
+    "city": "Boa Vista Das Missões",
+    "state": ""
   },
   {
-    "city": "Boa Vista Do Buricá"
+    "city": "Boa Vista Do Buricá",
+    "state": ""
   },
   {
-    "city": "Boa Vista Do Cadeado"
+    "city": "Boa Vista Do Cadeado",
+    "state": ""
   },
   {
-    "city": "Boa Vista Do Incra"
+    "city": "Boa Vista Do Incra",
+    "state": ""
   },
   {
-    "city": "Boa Vista Do Sul"
+    "city": "Boa Vista Do Sul",
+    "state": ""
   },
   {
-    "city": "Bom Jesus"
+    "city": "Bom Jesus",
+    "state": ""
   },
   {
-    "city": "Bom Princípio"
+    "city": "Bom Princípio",
+    "state": ""
   },
   {
-    "city": "Bom Progresso"
+    "city": "Bom Progresso",
+    "state": ""
   },
   {
-    "city": "Bom Retiro Do Sul"
+    "city": "Bom Retiro Do Sul",
+    "state": ""
   },
   {
-    "city": "Boqueirão Do Leão"
+    "city": "Boqueirão Do Leão",
+    "state": ""
   },
   {
-    "city": "Bossoroca"
+    "city": "Bossoroca",
+    "state": ""
   },
   {
-    "city": "Bozano"
+    "city": "Bozano",
+    "state": ""
   },
   {
-    "city": "Butiá"
+    "city": "Butiá",
+    "state": ""
   },
   {
-    "city": "Cacequi"
+    "city": "Cacequi",
+    "state": ""
   },
   {
-    "city": "Cachoeira Do Sul"
+    "city": "Cachoeira Do Sul",
+    "state": ""
   },
   {
-    "city": "Cachoeirinha"
+    "city": "Cachoeirinha",
+    "state": ""
   },
   {
-    "city": "Cacique Doble"
+    "city": "Cacique Doble",
+    "state": ""
   },
   {
-    "city": "Caibaté"
+    "city": "Caibaté",
+    "state": ""
   },
   {
-    "city": "Caiçara"
+    "city": "Caiçara",
+    "state": ""
   },
   {
-    "city": "Camaquã"
+    "city": "Camaquã",
+    "state": ""
   },
   {
-    "city": "Camargo"
+    "city": "Camargo",
+    "state": ""
   },
   {
-    "city": "Cambará Do Sul"
+    "city": "Cambará Do Sul",
+    "state": ""
   },
   {
-    "city": "Campestre Da Serra"
+    "city": "Campestre Da Serra",
+    "state": ""
   },
   {
-    "city": "Campina Das Missões"
+    "city": "Campina Das Missões",
+    "state": ""
   },
   {
-    "city": "Campinas Do Sul"
+    "city": "Campinas Do Sul",
+    "state": ""
   },
   {
-    "city": "Campo Bom"
+    "city": "Campo Bom",
+    "state": ""
   },
   {
-    "city": "Campo Novo"
+    "city": "Campo Novo",
+    "state": ""
   },
   {
-    "city": "Campos Borges"
+    "city": "Campos Borges",
+    "state": ""
   },
   {
-    "city": "Candelária"
+    "city": "Candelária",
+    "state": ""
   },
   {
-    "city": "Cândido Godói"
+    "city": "Cândido Godói",
+    "state": ""
   },
   {
-    "city": "Candiota"
+    "city": "Candiota",
+    "state": ""
   },
   {
-    "city": "Canela"
+    "city": "Canela",
+    "state": ""
   },
   {
-    "city": "Canoas"
+    "city": "Canoas",
+    "state": ""
   },
   {
-    "city": "Capão Bonito Do Sul"
+    "city": "Capão Bonito Do Sul",
+    "state": ""
   },
   {
-    "city": "Capão Da Canoa"
+    "city": "Capão Da Canoa",
+    "state": ""
   },
   {
-    "city": "Capão Do Cipó"
+    "city": "Capão Do Cipó",
+    "state": ""
   },
   {
-    "city": "Capão Do Leão"
+    "city": "Capão Do Leão",
+    "state": ""
   },
   {
-    "city": "Capela De Santana"
+    "city": "Capela De Santana",
+    "state": ""
   },
   {
-    "city": "Capitão"
+    "city": "Capitão",
+    "state": ""
   },
   {
-    "city": "Capivari Do Sul"
+    "city": "Capivari Do Sul",
+    "state": ""
   },
   {
-    "city": "Caraá"
+    "city": "Caraá",
+    "state": ""
   },
   {
-    "city": "Carlos Barbosa"
+    "city": "Carlos Barbosa",
+    "state": ""
   },
   {
-    "city": "Carlos Gomes"
+    "city": "Carlos Gomes",
+    "state": ""
   },
   {
-    "city": "Casca"
+    "city": "Casca",
+    "state": ""
   },
   {
-    "city": "Catuípe"
+    "city": "Catuípe",
+    "state": ""
   },
   {
-    "city": "Caxias Do Sul"
+    "city": "Caxias Do Sul",
+    "state": ""
   },
   {
-    "city": "Centenário"
+    "city": "Centenário",
+    "state": ""
   },
   {
-    "city": "Cerrito"
+    "city": "Cerrito",
+    "state": ""
   },
   {
-    "city": "Cerro Branco"
+    "city": "Cerro Branco",
+    "state": ""
   },
   {
-    "city": "Cerro Grande"
+    "city": "Cerro Grande",
+    "state": ""
   },
   {
-    "city": "Cerro Grande Do Sul"
+    "city": "Cerro Grande Do Sul",
+    "state": ""
   },
   {
-    "city": "Cerro Largo"
+    "city": "Cerro Largo",
+    "state": ""
   },
   {
-    "city": "Chapada"
+    "city": "Chapada",
+    "state": ""
   },
   {
-    "city": "Charqueadas"
+    "city": "Charqueadas",
+    "state": ""
   },
   {
-    "city": "Charrua"
+    "city": "Charrua",
+    "state": ""
   },
   {
-    "city": "Chiapeta"
+    "city": "Chiapeta",
+    "state": ""
   },
   {
-    "city": "Chuí"
+    "city": "Chuí",
+    "state": ""
   },
   {
-    "city": "Cidreira"
+    "city": "Cidreira",
+    "state": ""
   },
   {
-    "city": "Ciríaco"
+    "city": "Ciríaco",
+    "state": ""
   },
   {
-    "city": "Colinas"
+    "city": "Colinas",
+    "state": ""
   },
   {
-    "city": "Colorado"
+    "city": "Colorado",
+    "state": ""
   },
   {
-    "city": "Condor"
+    "city": "Condor",
+    "state": ""
   },
   {
-    "city": "Coqueiro Baixo"
+    "city": "Coqueiro Baixo",
+    "state": ""
   },
   {
-    "city": "Coqueiros Do Sul"
+    "city": "Coqueiros Do Sul",
+    "state": ""
   },
   {
-    "city": "Coronel Barros"
+    "city": "Coronel Barros",
+    "state": ""
   },
   {
-    "city": "Coronel Bicaco"
+    "city": "Coronel Bicaco",
+    "state": ""
   },
   {
-    "city": "Coronel Pilar"
+    "city": "Coronel Pilar",
+    "state": ""
   },
   {
-    "city": "Cotiporã"
+    "city": "Cotiporã",
+    "state": ""
   },
   {
-    "city": "Coxilha"
+    "city": "Coxilha",
+    "state": ""
   },
   {
-    "city": "Crissiumal"
+    "city": "Crissiumal",
+    "state": ""
   },
   {
-    "city": "Cristal"
+    "city": "Cristal",
+    "state": ""
   },
   {
-    "city": "Cristal Do Sul"
+    "city": "Cristal Do Sul",
+    "state": ""
   },
   {
-    "city": "Cruz Alta"
+    "city": "Cruz Alta",
+    "state": ""
   },
   {
-    "city": "Cruzaltense"
+    "city": "Cruzaltense",
+    "state": ""
   },
   {
-    "city": "Cruzeiro Do Sul"
+    "city": "Cruzeiro Do Sul",
+    "state": ""
   },
   {
-    "city": "David Canabarro"
+    "city": "David Canabarro",
+    "state": ""
   },
   {
-    "city": "Derrubadas"
+    "city": "Derrubadas",
+    "state": ""
   },
   {
-    "city": "Dezesseis De Novembro"
+    "city": "Dezesseis De Novembro",
+    "state": ""
   },
   {
-    "city": "Dilermando De Aguiar"
+    "city": "Dilermando De Aguiar",
+    "state": ""
   },
   {
-    "city": "Dois Irmãos"
+    "city": "Dois Irmãos",
+    "state": ""
   },
   {
-    "city": "Dois Irmãos Das Missões"
+    "city": "Dois Irmãos Das Missões",
+    "state": ""
   },
   {
-    "city": "Dois Lajeados"
+    "city": "Dois Lajeados",
+    "state": ""
   },
   {
-    "city": "Dom Feliciano"
+    "city": "Dom Feliciano",
+    "state": ""
   },
   {
-    "city": "Dom Pedrito"
+    "city": "Dom Pedrito",
+    "state": ""
   },
   {
-    "city": "Dom Pedro De Alcântara"
+    "city": "Dom Pedro De Alcântara",
+    "state": ""
   },
   {
-    "city": "Dona Francisca"
+    "city": "Dona Francisca",
+    "state": ""
   },
   {
-    "city": "Doutor Maurício Cardoso"
+    "city": "Doutor Maurício Cardoso",
+    "state": ""
   },
   {
-    "city": "Doutor Ricardo"
+    "city": "Doutor Ricardo",
+    "state": ""
   },
   {
-    "city": "Eldorado Do Sul"
+    "city": "Eldorado Do Sul",
+    "state": ""
   },
   {
-    "city": "Encantado"
+    "city": "Encantado",
+    "state": ""
   },
   {
-    "city": "Encruzilhada Do Sul"
+    "city": "Encruzilhada Do Sul",
+    "state": ""
   },
   {
-    "city": "Engenho Velho"
+    "city": "Engenho Velho",
+    "state": ""
   },
   {
-    "city": "Entre Rios Do Sul"
+    "city": "Entre Rios Do Sul",
+    "state": ""
   },
   {
-    "city": "Entre Ijuís"
+    "city": "Entre Ijuís",
+    "state": ""
   },
   {
-    "city": "Erebango"
+    "city": "Erebango",
+    "state": ""
   },
   {
-    "city": "Erechim"
+    "city": "Erechim",
+    "state": ""
   },
   {
-    "city": "Ernestina"
+    "city": "Ernestina",
+    "state": ""
   },
   {
-    "city": "Erval Grande"
+    "city": "Erval Grande",
+    "state": ""
   },
   {
-    "city": "Erval Seco"
+    "city": "Erval Seco",
+    "state": ""
   },
   {
-    "city": "Esmeralda"
+    "city": "Esmeralda",
+    "state": ""
   },
   {
-    "city": "Esperança Do Sul"
+    "city": "Esperança Do Sul",
+    "state": ""
   },
   {
-    "city": "Espumoso"
+    "city": "Espumoso",
+    "state": ""
   },
   {
-    "city": "Estação"
+    "city": "Estação",
+    "state": ""
   },
   {
-    "city": "Estância Velha"
+    "city": "Estância Velha",
+    "state": ""
   },
   {
-    "city": "Esteio"
+    "city": "Esteio",
+    "state": ""
   },
   {
-    "city": "Estrela Velha"
+    "city": "Estrela Velha",
+    "state": ""
   },
   {
-    "city": "Eugênio De Castro"
+    "city": "Eugênio De Castro",
+    "state": ""
   },
   {
-    "city": "Fagundes Varela"
+    "city": "Fagundes Varela",
+    "state": ""
   },
   {
-    "city": "Farroupilha"
+    "city": "Farroupilha",
+    "state": ""
   },
   {
-    "city": "Faxinal Do Soturno"
+    "city": "Faxinal Do Soturno",
+    "state": ""
   },
   {
-    "city": "Faxinalzinho"
+    "city": "Faxinalzinho",
+    "state": ""
   },
   {
-    "city": "Fazenda Vilanova"
+    "city": "Fazenda Vilanova",
+    "state": ""
   },
   {
-    "city": "Feliz"
+    "city": "Feliz",
+    "state": ""
   },
   {
-    "city": "Floriano Peixoto"
+    "city": "Floriano Peixoto",
+    "state": ""
   },
   {
-    "city": "Fontoura Xavier"
+    "city": "Fontoura Xavier",
+    "state": ""
   },
   {
-    "city": "Formigueiro"
+    "city": "Formigueiro",
+    "state": ""
   },
   {
-    "city": "Forquetinha"
+    "city": "Forquetinha",
+    "state": ""
   },
   {
-    "city": "Fortaleza Dos Valos"
+    "city": "Fortaleza Dos Valos",
+    "state": ""
   },
   {
-    "city": "Frederico Westphalen"
+    "city": "Frederico Westphalen",
+    "state": ""
   },
   {
-    "city": "Garibaldi"
+    "city": "Garibaldi",
+    "state": ""
   },
   {
-    "city": "Garruchos"
+    "city": "Garruchos",
+    "state": ""
   },
   {
-    "city": "Gaurama"
+    "city": "Gaurama",
+    "state": ""
   },
   {
-    "city": "General Câmara"
+    "city": "General Câmara",
+    "state": ""
   },
   {
-    "city": "Gentil"
+    "city": "Gentil",
+    "state": ""
   },
   {
-    "city": "Giruá"
+    "city": "Giruá",
+    "state": ""
   },
   {
-    "city": "Gramado"
+    "city": "Gramado",
+    "state": ""
   },
   {
-    "city": "Gramado Dos Loureiros"
+    "city": "Gramado Dos Loureiros",
+    "state": ""
   },
   {
-    "city": "Gramado Xavier"
+    "city": "Gramado Xavier",
+    "state": ""
   },
   {
-    "city": "Gravataí"
+    "city": "Gravataí",
+    "state": ""
   },
   {
-    "city": "Guabiju"
+    "city": "Guabiju",
+    "state": ""
   },
   {
-    "city": "Guaíba"
+    "city": "Guaíba",
+    "state": ""
   },
   {
-    "city": "Guarani Das Missões"
+    "city": "Guarani Das Missões",
+    "state": ""
   },
   {
-    "city": "Harmonia"
+    "city": "Harmonia",
+    "state": ""
   },
   {
-    "city": "Herval"
+    "city": "Herval",
+    "state": ""
   },
   {
-    "city": "Horizontina"
+    "city": "Horizontina",
+    "state": ""
   },
   {
-    "city": "Hulha Negra"
+    "city": "Hulha Negra",
+    "state": ""
   },
   {
-    "city": "Humaitá"
+    "city": "Humaitá",
+    "state": ""
   },
   {
-    "city": "Ibarama"
+    "city": "Ibarama",
+    "state": ""
   },
   {
-    "city": "Ibiaçá"
+    "city": "Ibiaçá",
+    "state": ""
   },
   {
-    "city": "Ibirapuitã"
+    "city": "Ibirapuitã",
+    "state": ""
   },
   {
-    "city": "Ibirubá"
+    "city": "Ibirubá",
+    "state": ""
   },
   {
-    "city": "Igrejinha"
+    "city": "Igrejinha",
+    "state": ""
   },
   {
-    "city": "Ijuí"
+    "city": "Ijuí",
+    "state": ""
   },
   {
-    "city": "Imbé"
+    "city": "Imbé",
+    "state": ""
   },
   {
-    "city": "Independência"
+    "city": "Independência",
+    "state": ""
   },
   {
-    "city": "Inhacorá"
+    "city": "Inhacorá",
+    "state": ""
   },
   {
-    "city": "Ipê"
+    "city": "Ipê",
+    "state": ""
   },
   {
-    "city": "Iraí"
+    "city": "Iraí",
+    "state": ""
   },
   {
-    "city": "Itapuca"
+    "city": "Itapuca",
+    "state": ""
   },
   {
-    "city": "Itaqui"
+    "city": "Itaqui",
+    "state": ""
   },
   {
-    "city": "Ivorá"
+    "city": "Ivorá",
+    "state": ""
   },
   {
-    "city": "Jacuizinho"
+    "city": "Jacuizinho",
+    "state": ""
   },
   {
-    "city": "Jacutinga"
+    "city": "Jacutinga",
+    "state": ""
   },
   {
-    "city": "Jaguarão"
+    "city": "Jaguarão",
+    "state": ""
   },
   {
-    "city": "Jaguari"
+    "city": "Jaguari",
+    "state": ""
   },
   {
-    "city": "Jaquirana"
+    "city": "Jaquirana",
+    "state": ""
   },
   {
-    "city": "Jari"
+    "city": "Jari",
+    "state": ""
   },
   {
-    "city": "Lagoa Bonita Do Sul"
+    "city": "Lagoa Bonita Do Sul",
+    "state": ""
   },
   {
-    "city": "Lagoa Dos Três Cantos"
+    "city": "Lagoa Dos Três Cantos",
+    "state": ""
   },
   {
-    "city": "Lagoa Vermelha"
+    "city": "Lagoa Vermelha",
+    "state": ""
   },
   {
-    "city": "Lagoão"
+    "city": "Lagoão",
+    "state": ""
   },
   {
-    "city": "Lajeado Do Bugre"
+    "city": "Lajeado Do Bugre",
+    "state": ""
   },
   {
-    "city": "Lavras Do Sul"
+    "city": "Lavras Do Sul",
+    "state": ""
   },
   {
-    "city": "Liberato Salzano"
+    "city": "Liberato Salzano",
+    "state": ""
   },
   {
-    "city": "Lindolfo Collor"
+    "city": "Lindolfo Collor",
+    "state": ""
   },
   {
-    "city": "Linha Nova"
+    "city": "Linha Nova",
+    "state": ""
   },
   {
-    "city": "Maçambara"
+    "city": "Maçambara",
+    "state": ""
   },
   {
-    "city": "Machadinho"
+    "city": "Machadinho",
+    "state": ""
   },
   {
-    "city": "Mampituba"
+    "city": "Mampituba",
+    "state": ""
   },
   {
-    "city": "Manoel Viana"
+    "city": "Manoel Viana",
+    "state": ""
   },
   {
-    "city": "Maquiné"
+    "city": "Maquiné",
+    "state": ""
   },
   {
-    "city": "Maratá"
+    "city": "Maratá",
+    "state": ""
   },
   {
-    "city": "Mariana Pimentel"
+    "city": "Mariana Pimentel",
+    "state": ""
   },
   {
-    "city": "Mariano Moro"
+    "city": "Mariano Moro",
+    "state": ""
   },
   {
-    "city": "Marques De Souza"
+    "city": "Marques De Souza",
+    "state": ""
   },
   {
-    "city": "Mata"
+    "city": "Mata",
+    "state": ""
   },
   {
-    "city": "Mato Leitão"
+    "city": "Mato Leitão",
+    "state": ""
   },
   {
-    "city": "Mato Queimado"
+    "city": "Mato Queimado",
+    "state": ""
   },
   {
-    "city": "Maximiliano De Almeida"
+    "city": "Maximiliano De Almeida",
+    "state": ""
   },
   {
-    "city": "Minas Do Leão"
+    "city": "Minas Do Leão",
+    "state": ""
   },
   {
-    "city": "Miraguaí"
+    "city": "Miraguaí",
+    "state": ""
   },
   {
-    "city": "Montauri"
+    "city": "Montauri",
+    "state": ""
   },
   {
-    "city": "Monte Alegre Dos Campos"
+    "city": "Monte Alegre Dos Campos",
+    "state": ""
   },
   {
-    "city": "Monte Belo Do Sul"
+    "city": "Monte Belo Do Sul",
+    "state": ""
   },
   {
-    "city": "Montenegro"
+    "city": "Montenegro",
+    "state": ""
   },
   {
-    "city": "Mormaço"
+    "city": "Mormaço",
+    "state": ""
   },
   {
-    "city": "Morrinhos Do Sul"
+    "city": "Morrinhos Do Sul",
+    "state": ""
   },
   {
-    "city": "Morro Redondo"
+    "city": "Morro Redondo",
+    "state": ""
   },
   {
-    "city": "Morro Reuter"
+    "city": "Morro Reuter",
+    "state": ""
   },
   {
-    "city": "Mostardas"
+    "city": "Mostardas",
+    "state": ""
   },
   {
-    "city": "Muçum"
+    "city": "Muçum",
+    "state": ""
   },
   {
-    "city": "Muliterno"
+    "city": "Muliterno",
+    "state": ""
   },
   {
-    "city": "Não Me Toque"
+    "city": "Não Me Toque",
+    "state": ""
   },
   {
-    "city": "Nicolau Vergueiro"
+    "city": "Nicolau Vergueiro",
+    "state": ""
   },
   {
-    "city": "Nonoai"
+    "city": "Nonoai",
+    "state": ""
   },
   {
-    "city": "Nova Araçá"
+    "city": "Nova Araçá",
+    "state": ""
   },
   {
-    "city": "Nova Bassano"
+    "city": "Nova Bassano",
+    "state": ""
   },
   {
-    "city": "Nova Boa Vista"
+    "city": "Nova Boa Vista",
+    "state": ""
   },
   {
-    "city": "Nova Bréscia"
+    "city": "Nova Bréscia",
+    "state": ""
   },
   {
-    "city": "Nova Candelária"
+    "city": "Nova Candelária",
+    "state": ""
   },
   {
-    "city": "Nova Esperança Do Sul"
+    "city": "Nova Esperança Do Sul",
+    "state": ""
   },
   {
-    "city": "Nova Hartz"
+    "city": "Nova Hartz",
+    "state": ""
   },
   {
-    "city": "Nova Pádua"
+    "city": "Nova Pádua",
+    "state": ""
   },
   {
-    "city": "Nova Palma"
+    "city": "Nova Palma",
+    "state": ""
   },
   {
-    "city": "Nova Petrópolis"
+    "city": "Nova Petrópolis",
+    "state": ""
   },
   {
-    "city": "Nova Prata"
+    "city": "Nova Prata",
+    "state": ""
   },
   {
-    "city": "Nova Ramada"
+    "city": "Nova Ramada",
+    "state": ""
   },
   {
-    "city": "Nova Roma Do Sul"
+    "city": "Nova Roma Do Sul",
+    "state": ""
   },
   {
-    "city": "Nova Santa Rita"
+    "city": "Nova Santa Rita",
+    "state": ""
   },
   {
-    "city": "Novo Barreiro"
+    "city": "Novo Barreiro",
+    "state": ""
   },
   {
-    "city": "Novo Cabrais"
+    "city": "Novo Cabrais",
+    "state": ""
   },
   {
-    "city": "Novo Hamburgo"
+    "city": "Novo Hamburgo",
+    "state": ""
   },
   {
-    "city": "Novo Machado"
+    "city": "Novo Machado",
+    "state": ""
   },
   {
-    "city": "Novo Tiradentes"
+    "city": "Novo Tiradentes",
+    "state": ""
   },
   {
-    "city": "Novo Xingu"
+    "city": "Novo Xingu",
+    "state": ""
   },
   {
-    "city": "Osório"
+    "city": "Osório",
+    "state": ""
   },
   {
-    "city": "Palmares Do Sul"
+    "city": "Palmares Do Sul",
+    "state": ""
   },
   {
-    "city": "Palmeira Das Missões"
+    "city": "Palmeira Das Missões",
+    "state": ""
   },
   {
-    "city": "Palmitinho"
+    "city": "Palmitinho",
+    "state": ""
   },
   {
-    "city": "Panambi"
+    "city": "Panambi",
+    "state": ""
   },
   {
-    "city": "Pântano Grande"
+    "city": "Pântano Grande",
+    "state": ""
   },
   {
-    "city": "Paraí"
+    "city": "Paraí",
+    "state": ""
   },
   {
-    "city": "Pareci Novo"
+    "city": "Pareci Novo",
+    "state": ""
   },
   {
-    "city": "Parobé"
+    "city": "Parobé",
+    "state": ""
   },
   {
-    "city": "Passo Do Sobrado"
+    "city": "Passo Do Sobrado",
+    "state": ""
   },
   {
-    "city": "Passo Fundo"
+    "city": "Passo Fundo",
+    "state": ""
   },
   {
-    "city": "Paulo Bento"
+    "city": "Paulo Bento",
+    "state": ""
   },
   {
-    "city": "Paverama"
+    "city": "Paverama",
+    "state": ""
   },
   {
-    "city": "Pedras Altas"
+    "city": "Pedras Altas",
+    "state": ""
   },
   {
-    "city": "Pedro Osório"
+    "city": "Pedro Osório",
+    "state": ""
   },
   {
-    "city": "Pejuçara"
+    "city": "Pejuçara",
+    "state": ""
   },
   {
-    "city": "Pelotas"
+    "city": "Pelotas",
+    "state": ""
   },
   {
-    "city": "Picada Café"
+    "city": "Picada Café",
+    "state": ""
   },
   {
-    "city": "Pinhal"
+    "city": "Pinhal",
+    "state": ""
   },
   {
-    "city": "Pinhal Grande"
+    "city": "Pinhal Grande",
+    "state": ""
   },
   {
-    "city": "Pinheirinho Do Vale"
+    "city": "Pinheirinho Do Vale",
+    "state": ""
   },
   {
-    "city": "Pinheiro Machado"
+    "city": "Pinheiro Machado",
+    "state": ""
   },
   {
-    "city": "Pirapó"
+    "city": "Pirapó",
+    "state": ""
   },
   {
-    "city": "Planalto"
+    "city": "Planalto",
+    "state": ""
   },
   {
-    "city": "Poço Das Antas"
+    "city": "Poço Das Antas",
+    "state": ""
   },
   {
-    "city": "Pontão"
+    "city": "Pontão",
+    "state": ""
   },
   {
-    "city": "Portão"
+    "city": "Portão",
+    "state": ""
   },
   {
-    "city": "Porto Lucena"
+    "city": "Porto Lucena",
+    "state": ""
   },
   {
-    "city": "Porto Mauá"
+    "city": "Porto Mauá",
+    "state": ""
   },
   {
-    "city": "Porto Vera Cruz"
+    "city": "Porto Vera Cruz",
+    "state": ""
   },
   {
-    "city": "Porto Xavier"
+    "city": "Porto Xavier",
+    "state": ""
   },
   {
-    "city": "Pouso Novo"
+    "city": "Pouso Novo",
+    "state": ""
   },
   {
-    "city": "Presidente Lucena"
+    "city": "Presidente Lucena",
+    "state": ""
   },
   {
-    "city": "Progresso"
+    "city": "Progresso",
+    "state": ""
   },
   {
-    "city": "Protásio Alves"
+    "city": "Protásio Alves",
+    "state": ""
   },
   {
-    "city": "Putinga"
+    "city": "Putinga",
+    "state": ""
   },
   {
-    "city": "Quaraí"
+    "city": "Quaraí",
+    "state": ""
   },
   {
-    "city": "Quevedos"
+    "city": "Quevedos",
+    "state": ""
   },
   {
-    "city": "Quinze De Novembro"
+    "city": "Quinze De Novembro",
+    "state": ""
   },
   {
-    "city": "Redentora"
+    "city": "Redentora",
+    "state": ""
   },
   {
-    "city": "Relvado"
+    "city": "Relvado",
+    "state": ""
   },
   {
-    "city": "Restinga Seca"
+    "city": "Restinga Seca",
+    "state": ""
   },
   {
-    "city": "Rio Dos Índios"
+    "city": "Rio Dos Índios",
+    "state": ""
   },
   {
-    "city": "Rio Grande"
+    "city": "Rio Grande",
+    "state": ""
   },
   {
-    "city": "Rio Pardo"
+    "city": "Rio Pardo",
+    "state": ""
   },
   {
-    "city": "Riozinho"
+    "city": "Riozinho",
+    "state": ""
   },
   {
-    "city": "Roca Sales"
+    "city": "Roca Sales",
+    "state": ""
   },
   {
-    "city": "Rodeio Bonito"
+    "city": "Rodeio Bonito",
+    "state": ""
   },
   {
-    "city": "Rolador"
+    "city": "Rolador",
+    "state": ""
   },
   {
-    "city": "Rolante"
+    "city": "Rolante",
+    "state": ""
   },
   {
-    "city": "Ronda Alta"
+    "city": "Ronda Alta",
+    "state": ""
   },
   {
-    "city": "Rondinha"
+    "city": "Rondinha",
+    "state": ""
   },
   {
-    "city": "Roque Gonzales"
+    "city": "Roque Gonzales",
+    "state": ""
   },
   {
-    "city": "Rosário Do Sul"
+    "city": "Rosário Do Sul",
+    "state": ""
   },
   {
-    "city": "Sagrada Família"
+    "city": "Sagrada Família",
+    "state": ""
   },
   {
-    "city": "Saldanha Marinho"
+    "city": "Saldanha Marinho",
+    "state": ""
   },
   {
-    "city": "Salto Do Jacuí"
+    "city": "Salto Do Jacuí",
+    "state": ""
   },
   {
-    "city": "Salvador Das Missões"
+    "city": "Salvador Das Missões",
+    "state": ""
   },
   {
-    "city": "Salvador Do Sul"
+    "city": "Salvador Do Sul",
+    "state": ""
   },
   {
-    "city": "Sananduva"
+    "city": "Sananduva",
+    "state": ""
   },
   {
-    "city": "Santa Bárbara Do Sul"
+    "city": "Santa Bárbara Do Sul",
+    "state": ""
   },
   {
-    "city": "Santa Cecília Do Sul"
+    "city": "Santa Cecília Do Sul",
+    "state": ""
   },
   {
-    "city": "Santa Clara Do Sul"
+    "city": "Santa Clara Do Sul",
+    "state": ""
   },
   {
-    "city": "Santa Cruz Do Sul"
+    "city": "Santa Cruz Do Sul",
+    "state": ""
   },
   {
-    "city": "Santa Margarida Do Sul"
+    "city": "Santa Margarida Do Sul",
+    "state": ""
   },
   {
-    "city": "Santa Maria"
+    "city": "Santa Maria",
+    "state": ""
   },
   {
-    "city": "Santa Maria Do Herval"
+    "city": "Santa Maria Do Herval",
+    "state": ""
   },
   {
-    "city": "Santa Rosa"
+    "city": "Santa Rosa",
+    "state": ""
   },
   {
-    "city": "Santa Tereza"
+    "city": "Santa Tereza",
+    "state": ""
   },
   {
-    "city": "Santa Vitória Do Palmar"
+    "city": "Santa Vitória Do Palmar",
+    "state": ""
   },
   {
-    "city": "Santana Da Boa Vista"
+    "city": "Santana Da Boa Vista",
+    "state": ""
   },
   {
-    "city": "Santana Do Livramento"
+    "city": "Santana Do Livramento",
+    "state": ""
   },
   {
-    "city": "Santiago"
+    "city": "Santiago",
+    "state": ""
   },
   {
-    "city": "Santo Ângelo"
+    "city": "Santo Ângelo",
+    "state": ""
   },
   {
-    "city": "Santo Antônio Da Patrulha"
+    "city": "Santo Antônio Da Patrulha",
+    "state": ""
   },
   {
-    "city": "Santo Antônio Das Missões"
+    "city": "Santo Antônio Das Missões",
+    "state": ""
   },
   {
-    "city": "Santo Antônio Do Palma"
+    "city": "Santo Antônio Do Palma",
+    "state": ""
   },
   {
-    "city": "Santo Antônio Do Planalto"
+    "city": "Santo Antônio Do Planalto",
+    "state": ""
   },
   {
-    "city": "Santo Augusto"
+    "city": "Santo Augusto",
+    "state": ""
   },
   {
-    "city": "Santo Cristo"
+    "city": "Santo Cristo",
+    "state": ""
   },
   {
-    "city": "Santo Expedito Do Sul"
+    "city": "Santo Expedito Do Sul",
+    "state": ""
   },
   {
-    "city": "São Borja"
+    "city": "São Borja",
+    "state": ""
   },
   {
-    "city": "São Domingos Do Sul"
+    "city": "São Domingos Do Sul",
+    "state": ""
   },
   {
-    "city": "São Francisco De Assis"
+    "city": "São Francisco De Assis",
+    "state": ""
   },
   {
-    "city": "São Francisco De Paula"
+    "city": "São Francisco De Paula",
+    "state": ""
   },
   {
-    "city": "São Gabriel"
+    "city": "São Gabriel",
+    "state": ""
   },
   {
-    "city": "São Jerônimo"
+    "city": "São Jerônimo",
+    "state": ""
   },
   {
-    "city": "São João Da Urtiga"
+    "city": "São João Da Urtiga",
+    "state": ""
   },
   {
-    "city": "São João Do Polêsine"
+    "city": "São João Do Polêsine",
+    "state": ""
   },
   {
-    "city": "São Jorge"
+    "city": "São Jorge",
+    "state": ""
   },
   {
-    "city": "São José Das Missões"
+    "city": "São José Das Missões",
+    "state": ""
   },
   {
-    "city": "São José Do Herval"
+    "city": "São José Do Herval",
+    "state": ""
   },
   {
-    "city": "São José Do Hortêncio"
+    "city": "São José Do Hortêncio",
+    "state": ""
   },
   {
-    "city": "São José Do Inhacorá"
+    "city": "São José Do Inhacorá",
+    "state": ""
   },
   {
-    "city": "São José Do Norte"
+    "city": "São José Do Norte",
+    "state": ""
   },
   {
-    "city": "São José Do Ouro"
+    "city": "São José Do Ouro",
+    "state": ""
   },
   {
-    "city": "São José Do Sul"
+    "city": "São José Do Sul",
+    "state": ""
   },
   {
-    "city": "São José Dos Ausentes"
+    "city": "São José Dos Ausentes",
+    "state": ""
   },
   {
-    "city": "São Leopoldo"
+    "city": "São Leopoldo",
+    "state": ""
   },
   {
-    "city": "São Lourenço Do Sul"
+    "city": "São Lourenço Do Sul",
+    "state": ""
   },
   {
-    "city": "São Luiz Gonzaga"
+    "city": "São Luiz Gonzaga",
+    "state": ""
   },
   {
-    "city": "São Marcos"
+    "city": "São Marcos",
+    "state": ""
   },
   {
-    "city": "São Martinho"
+    "city": "São Martinho",
+    "state": ""
   },
   {
-    "city": "São Martinho Da Serra"
+    "city": "São Martinho Da Serra",
+    "state": ""
   },
   {
-    "city": "São Miguel Das Missões"
+    "city": "São Miguel Das Missões",
+    "state": ""
   },
   {
-    "city": "São Nicolau"
+    "city": "São Nicolau",
+    "state": ""
   },
   {
-    "city": "São Paulo Das Missões"
+    "city": "São Paulo Das Missões",
+    "state": ""
   },
   {
-    "city": "São Pedro Da Serra"
+    "city": "São Pedro Da Serra",
+    "state": ""
   },
   {
-    "city": "São Pedro Das Missões"
+    "city": "São Pedro Das Missões",
+    "state": ""
   },
   {
-    "city": "São Pedro Do Butiá"
+    "city": "São Pedro Do Butiá",
+    "state": ""
   },
   {
-    "city": "São Pedro Do Sul"
+    "city": "São Pedro Do Sul",
+    "state": ""
   },
   {
-    "city": "São Sebastião Do Caí"
+    "city": "São Sebastião Do Caí",
+    "state": ""
   },
   {
-    "city": "São Sepé"
+    "city": "São Sepé",
+    "state": ""
   },
   {
-    "city": "São Valentim"
+    "city": "São Valentim",
+    "state": ""
   },
   {
-    "city": "São Valentim Do Sul"
+    "city": "São Valentim Do Sul",
+    "state": ""
   },
   {
-    "city": "São Valério Do Sul"
+    "city": "São Valério Do Sul",
+    "state": ""
   },
   {
-    "city": "São Vendelino"
+    "city": "São Vendelino",
+    "state": ""
   },
   {
-    "city": "São Vicente Do Sul"
+    "city": "São Vicente Do Sul",
+    "state": ""
   },
   {
-    "city": "Sapiranga"
+    "city": "Sapiranga",
+    "state": ""
   },
   {
-    "city": "Sapucaia Do Sul"
+    "city": "Sapucaia Do Sul",
+    "state": ""
   },
   {
-    "city": "Sarandi"
+    "city": "Sarandi",
+    "state": ""
   },
   {
-    "city": "Seberi"
+    "city": "Seberi",
+    "state": ""
   },
   {
-    "city": "Segredo"
+    "city": "Segredo",
+    "state": ""
   },
   {
-    "city": "Selbach"
+    "city": "Selbach",
+    "state": ""
   },
   {
-    "city": "Senador Salgado Filho"
+    "city": "Senador Salgado Filho",
+    "state": ""
   },
   {
-    "city": "Sentinela Do Sul"
+    "city": "Sentinela Do Sul",
+    "state": ""
   },
   {
-    "city": "Serafina Corrêa"
+    "city": "Serafina Corrêa",
+    "state": ""
   },
   {
-    "city": "Sério"
+    "city": "Sério",
+    "state": ""
   },
   {
-    "city": "Sete De Setembro"
+    "city": "Sete De Setembro",
+    "state": ""
   },
   {
-    "city": "Severiano De Almeida"
+    "city": "Severiano De Almeida",
+    "state": ""
   },
   {
-    "city": "Silveira Martins"
+    "city": "Silveira Martins",
+    "state": ""
   },
   {
-    "city": "Sinimbu"
+    "city": "Sinimbu",
+    "state": ""
   },
   {
-    "city": "Sobradinho"
+    "city": "Sobradinho",
+    "state": ""
   },
   {
-    "city": "Soledade"
+    "city": "Soledade",
+    "state": ""
   },
   {
-    "city": "Tabaí"
+    "city": "Tabaí",
+    "state": ""
   },
   {
-    "city": "Tapera"
+    "city": "Tapera",
+    "state": ""
   },
   {
-    "city": "Taquari"
+    "city": "Taquari",
+    "state": ""
   },
   {
-    "city": "Taquaruçu Do Sul"
+    "city": "Taquaruçu Do Sul",
+    "state": ""
   },
   {
-    "city": "Tavares"
+    "city": "Tavares",
+    "state": ""
   },
   {
-    "city": "Tenente Portela"
+    "city": "Tenente Portela",
+    "state": ""
   },
   {
-    "city": "Terra De Areia"
+    "city": "Terra De Areia",
+    "state": ""
   },
   {
-    "city": "Teutônia"
+    "city": "Teutônia",
+    "state": ""
   },
   {
-    "city": "Tio Hugo"
+    "city": "Tio Hugo",
+    "state": ""
   },
   {
-    "city": "Tiradentes Do Sul"
+    "city": "Tiradentes Do Sul",
+    "state": ""
   },
   {
-    "city": "Toropi"
+    "city": "Toropi",
+    "state": ""
   },
   {
-    "city": "Travesseiro"
+    "city": "Travesseiro",
+    "state": ""
   },
   {
-    "city": "Três Arroios"
+    "city": "Três Arroios",
+    "state": ""
   },
   {
-    "city": "Três Cachoeiras"
+    "city": "Três Cachoeiras",
+    "state": ""
   },
   {
-    "city": "Três Coroas"
+    "city": "Três Coroas",
+    "state": ""
   },
   {
-    "city": "Três De Maio"
+    "city": "Três De Maio",
+    "state": ""
   },
   {
-    "city": "Três Forquilhas"
+    "city": "Três Forquilhas",
+    "state": ""
   },
   {
-    "city": "Três Palmeiras"
+    "city": "Três Palmeiras",
+    "state": ""
   },
   {
-    "city": "Três Passos"
+    "city": "Três Passos",
+    "state": ""
   },
   {
-    "city": "Trindade Do Sul"
+    "city": "Trindade Do Sul",
+    "state": ""
   },
   {
-    "city": "Triunfo"
+    "city": "Triunfo",
+    "state": ""
   },
   {
-    "city": "Tucunduva"
+    "city": "Tucunduva",
+    "state": ""
   },
   {
-    "city": "Tunas"
+    "city": "Tunas",
+    "state": ""
   },
   {
-    "city": "Tupanciretã"
+    "city": "Tupanciretã",
+    "state": ""
   },
   {
-    "city": "Tupandi"
+    "city": "Tupandi",
+    "state": ""
   },
   {
-    "city": "Tuparendi"
+    "city": "Tuparendi",
+    "state": ""
   },
   {
-    "city": "Turuçu"
+    "city": "Turuçu",
+    "state": ""
   },
   {
-    "city": "União Da Serra"
+    "city": "União Da Serra",
+    "state": ""
   },
   {
-    "city": "Unistalda"
+    "city": "Unistalda",
+    "state": ""
   },
   {
-    "city": "Uruguaiana"
+    "city": "Uruguaiana",
+    "state": ""
   },
   {
-    "city": "Vacaria"
+    "city": "Vacaria",
+    "state": ""
   },
   {
-    "city": "Vale Do Sol"
+    "city": "Vale Do Sol",
+    "state": ""
   },
   {
-    "city": "Vale Real"
+    "city": "Vale Real",
+    "state": ""
   },
   {
-    "city": "Vale Verde"
+    "city": "Vale Verde",
+    "state": ""
   },
   {
-    "city": "Vanini"
+    "city": "Vanini",
+    "state": ""
   },
   {
-    "city": "Vera Cruz"
+    "city": "Vera Cruz",
+    "state": ""
   },
   {
-    "city": "Veranópolis"
+    "city": "Veranópolis",
+    "state": ""
   },
   {
-    "city": "Vespasiano Correa"
+    "city": "Vespasiano Correa",
+    "state": ""
   },
   {
-    "city": "Viadutos"
+    "city": "Viadutos",
+    "state": ""
   },
   {
-    "city": "Viamão"
+    "city": "Viamão",
+    "state": ""
   },
   {
-    "city": "Victor Graeff"
+    "city": "Victor Graeff",
+    "state": ""
   },
   {
-    "city": "Vila Flores"
+    "city": "Vila Flores",
+    "state": ""
   },
   {
-    "city": "Vila Lângaro"
+    "city": "Vila Lângaro",
+    "state": ""
   },
   {
-    "city": "Vila Maria"
+    "city": "Vila Maria",
+    "state": ""
   },
   {
-    "city": "Vila Nova Do Sul"
+    "city": "Vila Nova Do Sul",
+    "state": ""
   },
   {
-    "city": "Vista Alegre"
+    "city": "Vista Alegre",
+    "state": ""
   },
   {
-    "city": "Vista Alegre Do Prata"
+    "city": "Vista Alegre Do Prata",
+    "state": ""
   },
   {
-    "city": "Vista Gaúcha"
+    "city": "Vista Gaúcha",
+    "state": ""
   },
   {
-    "city": "Vitória Das Missões"
+    "city": "Vitória Das Missões",
+    "state": ""
   },
   {
-    "city": "Westfália"
+    "city": "Westfália",
+    "state": ""
   },
   {
-    "city": "Xangri Lá"
+    "city": "Xangri Lá",
+    "state": ""
   },
   {
     "city": "Alta Floresta Doeste",

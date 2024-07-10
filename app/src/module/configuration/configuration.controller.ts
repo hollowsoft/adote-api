@@ -1,16 +1,18 @@
-import { Controller, HttpCode, HttpStatus, Post } from '@nestjs/common'
-import { Action, ConfigurationProvider } from '../configuration.provider'
+import { Post, HttpCode, HttpStatus, Controller } from '@nestjs/common'
+
 import { Role } from '@/module/user/user.type'
 import { Permission } from '@/decorator/permission.decorator'
+
+import { ConfigurationProvider } from './provider'
 
 @Controller('/configuration')
 export class ConfigurationController {
   constructor(private readonly provider: ConfigurationProvider) {}
 
-  @Permission(Role.Admin)
   @Post('/location')
   @HttpCode(HttpStatus.OK)
-  async loadLocation(): Promise<void> {
-    await this.provider.action[Action.LoadLocation].run()
+  @Permission(Role.Admin)
+  location(): Promise<void> {
+    return this.provider.location.run()
   }
 }

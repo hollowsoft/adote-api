@@ -2,8 +2,9 @@
   "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
-    "resolveJsonModule": true,
     "removeComments": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
@@ -19,7 +20,9 @@
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": [
+        "./src/*"
+      ]
     }
   }
 }
