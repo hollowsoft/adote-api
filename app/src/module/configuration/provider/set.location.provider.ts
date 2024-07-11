@@ -5,10 +5,10 @@ import location from '@/module/location/location.json'
 import { LocationRepository } from '@/module/location/location.respository'
 
 @Injectable()
-export class SetLocation {
+export class SetLocationProvider {
   constructor(private repository: LocationRepository) {}
 
-  async run() {
+  async run(): Promise<void> {
     await this.repository.remove()
 
     await this.repository.save(location)

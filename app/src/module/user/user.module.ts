@@ -5,12 +5,11 @@ import { UserSchema } from './user.type'
 import { UserRepository } from './user.repository'
 
 import { UserProvider } from './provider'
-
 import { UserController } from './user.controller'
 
 @Module({
-  exports: [UserRepository],
   imports: [MongooseModule.forFeature([UserSchema])],
+  exports: [UserRepository],
   providers: [UserProvider, UserRepository],
   controllers: [UserController]
 })

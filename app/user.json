@@ -1,0 +1,10 @@
+[
+  {
+    "mail": "example@example.com",
+    "name": "Marcos",
+    "role": "admin",
+    "fav": [],
+    "post": [],
+    "enable": true
+  }
+]

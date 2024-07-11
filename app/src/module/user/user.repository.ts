@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { Model } from 'mongoose'
+import { mongo, Model, FilterQuery } from 'mongoose'
 
 import { User } from './user.type'
 
@@ -9,15 +9,19 @@ import { User } from './user.type'
 export class UserRepository {
   constructor(@InjectModel(User.name) private model: Model<User>) {}
 
-  list(): Promise<User[]> {
-    return this.model.find().exec()
+  list(query?: FilterQuery<User>): Promise<User[]> {
+    return this.model.find(query)
   }
 
-  find(): Promise<User> {
-    return this.model.findById('').exec()
+  find(query?: FilterQuery<User>): Promise<User> {
+    return this.model.findOne(query)
   }
 
-  save(): Promise<User> {
-    return new this.model({}).save()
+  save(user: User): Promise<User> {
+    return this.model.create(user)
+  }
+
+  remove(query?: FilterQuery<User>): Promise<mongo.DeleteResult> {
+    return this.model.deleteMany(query)
   }
 }

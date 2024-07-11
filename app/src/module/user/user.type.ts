@@ -28,9 +28,6 @@ export class Contact {
 @Schema({ id: true, collection: 'User' })
 export class User {
   @Prop(String)
-  id: string
-
-  @Prop(String)
   mail: string
 
   @Prop(String)
@@ -61,6 +58,6 @@ export class User {
   enable: boolean
 }
 
-const schema = SchemaFactory.createForClass(User)
+export const schema = SchemaFactory.createForClass(User)
 
 export const UserSchema = { name: User.name, schema }
