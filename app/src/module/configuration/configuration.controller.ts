@@ -22,4 +22,11 @@ export class ConfigurationController {
   location(): Promise<void> {
     return this.provider.location.run()
   }
+
+  @Post('/breed')
+  @HttpCode(HttpStatus.OK)
+  @Permission(Role.Admin)
+  breed(): Promise<void> {
+    return this.provider.breed.run()
+  }
 }
