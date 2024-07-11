@@ -13,8 +13,8 @@ export class BreedRepository {
     return this.model.find().exec()
   }
 
-  save(location: Breed[]): Promise<Breed[]> {
-    return this.model.insertMany(location)
+  save(breed: Breed[]): Promise<Breed[]> {
+    return this.model.insertMany(breed)
   }
 
   remove(query?: FilterQuery<Breed>): Promise<mongo.DeleteResult> {

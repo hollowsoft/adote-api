@@ -9,6 +9,7 @@ import { BreedController } from './breed.controller'
 
 @Module({
   imports: [MongooseModule.forFeature([BreedSchema])],
+  exports: [BreedRepository],
   providers: [BreedProvider, BreedRepository],
   controllers: [BreedController]
 })
