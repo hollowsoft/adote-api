@@ -36,6 +36,6 @@ export class MailAuthProvider {
       return user
     }
 
-    return this.repository.save()
+    return this.repository.save({} as any)
   }
 }

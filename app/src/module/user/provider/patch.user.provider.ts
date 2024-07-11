@@ -7,7 +7,7 @@ export class PatchUserProvider {
   constructor(private readonly repository: UserRepository) {}
 
   async run(request: PatchUserRequest): Promise<UserResponse> {
-    const user = await this.repository.save()
+    const user = await this.repository.save({} as any)
 
     return {
       id: '',

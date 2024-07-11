@@ -9,17 +9,17 @@ import { ConfigurationProvider } from './provider'
 export class ConfigurationController {
   constructor(private readonly provider: ConfigurationProvider) {}
 
-  @Post('/location')
-  @HttpCode(HttpStatus.OK)
-  @Permission(Role.Admin)
-  location(): Promise<void> {
-    return this.provider.location.run()
-  }
-
   @Post('/user')
   @HttpCode(HttpStatus.OK)
   @Permission(Role.Admin)
   user(): Promise<void> {
     return this.provider.user.run()
+  }
+
+  @Post('/location')
+  @HttpCode(HttpStatus.OK)
+  @Permission(Role.Admin)
+  location(): Promise<void> {
+    return this.provider.location.run()
   }
 }
