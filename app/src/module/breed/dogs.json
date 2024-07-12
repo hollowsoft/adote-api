@@ -1,0 +1,2058 @@
+[
+  {
+    "name": "affenpinscher",
+    "kind": "dog"
+  },
+  {
+    "name": "afghan_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "afghan_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "aidi",
+    "kind": "dog"
+  },
+  {
+    "name": "airedale_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "akbash",
+    "kind": "dog"
+  },
+  {
+    "name": "akita",
+    "kind": "dog"
+  },
+  {
+    "name": "alano_español",
+    "kind": "dog"
+  },
+  {
+    "name": "alaskan_husky",
+    "kind": "dog"
+  },
+  {
+    "name": "alaskan_klee_kai",
+    "kind": "dog"
+  },
+  {
+    "name": "alaskan_malamute",
+    "kind": "dog"
+  },
+  {
+    "name": "alaunt",
+    "kind": "dog"
+  },
+  {
+    "name": "alopekis",
+    "kind": "dog"
+  },
+  {
+    "name": "alpine_dachsbracke",
+    "kind": "dog"
+  },
+  {
+    "name": "alpine_mastiff",
+    "kind": "dog"
+  },
+  {
+    "name": "alpine_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "american_akita",
+    "kind": "dog"
+  },
+  {
+    "name": "american_bulldog",
+    "kind": "dog"
+  },
+  {
+    "name": "american_cocker_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "american_english_coonhound",
+    "kind": "dog"
+  },
+  {
+    "name": "american_eskimo_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "american_foxhound",
+    "kind": "dog"
+  },
+  {
+    "name": "american_hairless_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "american_pit_bull_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "american_staffordshire_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "american_water_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "anatolian_shepherd_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "andalusian_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "anglo_français_de_petite_vénerie",
+    "kind": "dog"
+  },
+  {
+    "name": "appenzeller_sennenhund",
+    "kind": "dog"
+  },
+  {
+    "name": "ariegeois",
+    "kind": "dog"
+  },
+  {
+    "name": "armant",
+    "kind": "dog"
+  },
+  {
+    "name": "armenian_gampr_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "artois_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "australian_cattle_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "australian_kelpie",
+    "kind": "dog"
+  },
+  {
+    "name": "australian_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "australian_silky_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "australian_stumpy_tail_cattle_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "australian_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "austrian_black_and_tan_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "austrian_pinscher",
+    "kind": "dog"
+  },
+  {
+    "name": "azawakh",
+    "kind": "dog"
+  },
+  {
+    "name": "bakharwal_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "barbet",
+    "kind": "dog"
+  },
+  {
+    "name": "basenji",
+    "kind": "dog"
+  },
+  {
+    "name": "basque_ratter",
+    "kind": "dog"
+  },
+  {
+    "name": "basque_shepherd_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "basset_artésien_normand",
+    "kind": "dog"
+  },
+  {
+    "name": "basset_bleu_de_gascogne",
+    "kind": "dog"
+  },
+  {
+    "name": "basset_fauve_de_bretagne",
+    "kind": "dog"
+  },
+  {
+    "name": "basset_griffon_vendéen_grand",
+    "kind": "dog"
+  },
+  {
+    "name": "basset_griffon_vendéen_petit",
+    "kind": "dog"
+  },
+  {
+    "name": "basset_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "bavarian_mountain_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "beagle",
+    "kind": "dog"
+  },
+  {
+    "name": "beagle_harrier",
+    "kind": "dog"
+  },
+  {
+    "name": "bearded_collie",
+    "kind": "dog"
+  },
+  {
+    "name": "beauceron",
+    "kind": "dog"
+  },
+  {
+    "name": "bedlington_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "belgian_shepherd_dog_groenendael",
+    "kind": "dog"
+  },
+  {
+    "name": "belgian_shepherd_dog_laekenois",
+    "kind": "dog"
+  },
+  {
+    "name": "belgian_shepherd_dog_malinois",
+    "kind": "dog"
+  },
+  {
+    "name": "belgian_shepherd_dog_tervuren",
+    "kind": "dog"
+  },
+  {
+    "name": "bergamasco_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "berger_blanc_suisse",
+    "kind": "dog"
+  },
+  {
+    "name": "berger_picard",
+    "kind": "dog"
+  },
+  {
+    "name": "bernese_mountain_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "bichon_frise",
+    "kind": "dog"
+  },
+  {
+    "name": "billy",
+    "kind": "dog"
+  },
+  {
+    "name": "black_and_tan_coonhound",
+    "kind": "dog"
+  },
+  {
+    "name": "black_and_tan_virginia_foxhound",
+    "kind": "dog"
+  },
+  {
+    "name": "black_mouth_cur",
+    "kind": "dog"
+  },
+  {
+    "name": "black_norwegian_elkhound",
+    "kind": "dog"
+  },
+  {
+    "name": "black_russian_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "bleu_de_gascogne_grand",
+    "kind": "dog"
+  },
+  {
+    "name": "bleu_de_gascogne_petit",
+    "kind": "dog"
+  },
+  {
+    "name": "bloodhound",
+    "kind": "dog"
+  },
+  {
+    "name": "blue_heeler",
+    "kind": "dog"
+  },
+  {
+    "name": "blue_lacy",
+    "kind": "dog"
+  },
+  {
+    "name": "blue_paul_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "blue_picardy_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "bluetick_coonhound",
+    "kind": "dog"
+  },
+  {
+    "name": "boerboel",
+    "kind": "dog"
+  },
+  {
+    "name": "bohemian_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "bolognese",
+    "kind": "dog"
+  },
+  {
+    "name": "border_collie",
+    "kind": "dog"
+  },
+  {
+    "name": "border_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "borzoi",
+    "kind": "dog"
+  },
+  {
+    "name": "bosnian_coarse_haired_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "boston_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "bouvier_des_ardennes",
+    "kind": "dog"
+  },
+  {
+    "name": "bouvier_des_flandres",
+    "kind": "dog"
+  },
+  {
+    "name": "boxer",
+    "kind": "dog"
+  },
+  {
+    "name": "boykin_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "bracco_italiano",
+    "kind": "dog"
+  },
+  {
+    "name": "braque_dAuvergne",
+    "kind": "dog"
+  },
+  {
+    "name": "braque_de_lAriege",
+    "kind": "dog"
+  },
+  {
+    "name": "braque_du_bourbonnais",
+    "kind": "dog"
+  },
+  {
+    "name": "braque_du_puy",
+    "kind": "dog"
+  },
+  {
+    "name": "braque_francais",
+    "kind": "dog"
+  },
+  {
+    "name": "braque_saint_germain",
+    "kind": "dog"
+  },
+  {
+    "name": "brazilian_dogo",
+    "kind": "dog"
+  },
+  {
+    "name": "brazilian_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "briard",
+    "kind": "dog"
+  },
+  {
+    "name": "briquet_griffon_vendéen",
+    "kind": "dog"
+  },
+  {
+    "name": "brittany",
+    "kind": "dog"
+  },
+  {
+    "name": "broholmer",
+    "kind": "dog"
+  },
+  {
+    "name": "bruno_jura_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "bucovina_shepherd_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "bull_and_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "bull_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "bull_terrier_miniature",
+    "kind": "dog"
+  },
+  {
+    "name": "bulldog",
+    "kind": "dog"
+  },
+  {
+    "name": "bullenbeisser",
+    "kind": "dog"
+  },
+  {
+    "name": "bullmastiff",
+    "kind": "dog"
+  },
+  {
+    "name": "bully_kutta",
+    "kind": "dog"
+  },
+  {
+    "name": "burgos_pointer",
+    "kind": "dog"
+  },
+  {
+    "name": "cairn_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "canaan_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "canadian_eskimo_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "cane_corso",
+    "kind": "dog"
+  },
+  {
+    "name": "cantabrian_water_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "cao_da_Serra_de_aires",
+    "kind": "dog"
+  },
+  {
+    "name": "cao_de_castro_laboreiro",
+    "kind": "dog"
+  },
+  {
+    "name": "cao_de_gado_transmontano",
+    "kind": "dog"
+  },
+  {
+    "name": "cao_fila_de_sao_miguel",
+    "kind": "dog"
+  },
+  {
+    "name": "carolina_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "carpathian_shepherd_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "catahoula_leopard_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "catalan_sheepdog",
+    "kind": "dog"
+  },
+  {
+    "name": "caucasian_shepherd_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "cavalier_king_charles_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "central_asian_shepherd_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "cesky_fousek",
+    "kind": "dog"
+  },
+  {
+    "name": "cesky_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "chesapeake_bay_retriever",
+    "kind": "dog"
+  },
+  {
+    "name": "chien_français_blanc_et_noir",
+    "kind": "dog"
+  },
+  {
+    "name": "chien_français_blanc_et_orange",
+    "kind": "dog"
+  },
+  {
+    "name": "chien_français_tricolore",
+    "kind": "dog"
+  },
+  {
+    "name": "chien_gris",
+    "kind": "dog"
+  },
+  {
+    "name": "chihuahua",
+    "kind": "dog"
+  },
+  {
+    "name": "chilean_fox_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "chinese_chongqing_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "chinese_crested_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "chinese_imperial_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "chinook",
+    "kind": "dog"
+  },
+  {
+    "name": "chippiparai",
+    "kind": "dog"
+  },
+  {
+    "name": "chow_chow",
+    "kind": "dog"
+  },
+  {
+    "name": "cierny_sery",
+    "kind": "dog"
+  },
+  {
+    "name": "cimarron_uruguayo",
+    "kind": "dog"
+  },
+  {
+    "name": "cirneco_dellEtna",
+    "kind": "dog"
+  },
+  {
+    "name": "clumber_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "collie_rough",
+    "kind": "dog"
+  },
+  {
+    "name": "collie_smooth",
+    "kind": "dog"
+  },
+  {
+    "name": "combai",
+    "kind": "dog"
+  },
+  {
+    "name": "cordoba_fighting_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "coton_de_tulear",
+    "kind": "dog"
+  },
+  {
+    "name": "cretan_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "croatian_sheepdog",
+    "kind": "dog"
+  },
+  {
+    "name": "cumberland_sheepdog",
+    "kind": "dog"
+  },
+  {
+    "name": "curly_coated_retriever",
+    "kind": "dog"
+  },
+  {
+    "name": "cursinu",
+    "kind": "dog"
+  },
+  {
+    "name": "czechoslovakian_wolfdog",
+    "kind": "dog"
+  },
+  {
+    "name": "dachshund",
+    "kind": "dog"
+  },
+  {
+    "name": "dalmatian",
+    "kind": "dog"
+  },
+  {
+    "name": "dandie_dinmont_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "danish_swedish_farmdog",
+    "kind": "dog"
+  },
+  {
+    "name": "deutsche_bracke",
+    "kind": "dog"
+  },
+  {
+    "name": "doberman_pinscher",
+    "kind": "dog"
+  },
+  {
+    "name": "dogo_argentino",
+    "kind": "dog"
+  },
+  {
+    "name": "dogo_cubano",
+    "kind": "dog"
+  },
+  {
+    "name": "dogue_de_bordeaux",
+    "kind": "dog"
+  },
+  {
+    "name": "drentse_patrijshond",
+    "kind": "dog"
+  },
+  {
+    "name": "drever",
+    "kind": "dog"
+  },
+  {
+    "name": "dunker",
+    "kind": "dog"
+  },
+  {
+    "name": "dutch_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "dutch_smoushond",
+    "kind": "dog"
+  },
+  {
+    "name": "east_european_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "east_siberian_laika",
+    "kind": "dog"
+  },
+  {
+    "name": "elo",
+    "kind": "dog"
+  },
+  {
+    "name": "english_cocker_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "english_foxhound",
+    "kind": "dog"
+  },
+  {
+    "name": "english_setter",
+    "kind": "dog"
+  },
+  {
+    "name": "english_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "english_springer_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "english_toy_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "english_water_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "english_white_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "entlebucher_mountain_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "estonian_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "estrela_mountain_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "eurasier",
+    "kind": "dog"
+  },
+  {
+    "name": "eurohound",
+    "kind": "dog"
+  },
+  {
+    "name": "field_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "fila_brasileiro",
+    "kind": "dog"
+  },
+  {
+    "name": "finnish_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "finnish_lapphund",
+    "kind": "dog"
+  },
+  {
+    "name": "finnish_spitz",
+    "kind": "dog"
+  },
+  {
+    "name": "flat_coated_retriever",
+    "kind": "dog"
+  },
+  {
+    "name": "fox_terrier_smooth",
+    "kind": "dog"
+  },
+  {
+    "name": "fox_terrier_wire",
+    "kind": "dog"
+  },
+  {
+    "name": "french_brittany",
+    "kind": "dog"
+  },
+  {
+    "name": "french_bulldog",
+    "kind": "dog"
+  },
+  {
+    "name": "french_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "gaddi_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "galgo_espanol",
+    "kind": "dog"
+  },
+  {
+    "name": "galician_cattle_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "garafian_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "gascon_saintongeois",
+    "kind": "dog"
+  },
+  {
+    "name": "georgian_shepherd_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "german_longhaired_pointer",
+    "kind": "dog"
+  },
+  {
+    "name": "german_pinscher",
+    "kind": "dog"
+  },
+  {
+    "name": "german_roughhaired_pointer",
+    "kind": "dog"
+  },
+  {
+    "name": "german_shepherd_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "german_shorthaired_pointer",
+    "kind": "dog"
+  },
+  {
+    "name": "german_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "german_spitz",
+    "kind": "dog"
+  },
+  {
+    "name": "german_wirehaired_pointer",
+    "kind": "dog"
+  },
+  {
+    "name": "giant_schnauzer",
+    "kind": "dog"
+  },
+  {
+    "name": "glen_of_imaal_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "golden_retriever",
+    "kind": "dog"
+  },
+  {
+    "name": "gordon_setter",
+    "kind": "dog"
+  },
+  {
+    "name": "gran_mastín_de_borínquen",
+    "kind": "dog"
+  },
+  {
+    "name": "grand_anglo_français_blanc_et_noir",
+    "kind": "dog"
+  },
+  {
+    "name": "grand_anglo_français_blanc_et_orange",
+    "kind": "dog"
+  },
+  {
+    "name": "grand_anglo_français_tricolore",
+    "kind": "dog"
+  },
+  {
+    "name": "grand_griffon_vendeen",
+    "kind": "dog"
+  },
+  {
+    "name": "great_dane",
+    "kind": "dog"
+  },
+  {
+    "name": "great_pyrenees",
+    "kind": "dog"
+  },
+  {
+    "name": "greater_swiss_mountain_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "greenland_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "greyhound",
+    "kind": "dog"
+  },
+  {
+    "name": "griffon_bleu_de_gascogne",
+    "kind": "dog"
+  },
+  {
+    "name": "griffon_bruxellois",
+    "kind": "dog"
+  },
+  {
+    "name": "griffon_fauve_de_bretagne",
+    "kind": "dog"
+  },
+  {
+    "name": "griffon_nivernais",
+    "kind": "dog"
+  },
+  {
+    "name": "guatemalan_dogo",
+    "kind": "dog"
+  },
+  {
+    "name": "hamiltonstovare",
+    "kind": "dog"
+  },
+  {
+    "name": "hanover_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "hare_indian_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "harrier",
+    "kind": "dog"
+  },
+  {
+    "name": "havanese",
+    "kind": "dog"
+  },
+  {
+    "name": "hawaiian_poi_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "hellenic_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "himalayan_sheepdog",
+    "kind": "dog"
+  },
+  {
+    "name": "hokkaido",
+    "kind": "dog"
+  },
+  {
+    "name": "hortaya_borzaya",
+    "kind": "dog"
+  },
+  {
+    "name": "hovawart",
+    "kind": "dog"
+  },
+  {
+    "name": "huntaway",
+    "kind": "dog"
+  },
+  {
+    "name": "hygenhund",
+    "kind": "dog"
+  },
+  {
+    "name": "ibizan_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "icelandic_sheepdog",
+    "kind": "dog"
+  },
+  {
+    "name": "indian_pariah_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "indian_spitz",
+    "kind": "dog"
+  },
+  {
+    "name": "irish_red_and_white_setter",
+    "kind": "dog"
+  },
+  {
+    "name": "irish_setter",
+    "kind": "dog"
+  },
+  {
+    "name": "irish_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "irish_water_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "irish_wolfhound",
+    "kind": "dog"
+  },
+  {
+    "name": "istrian_coarse_haired_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "istrian_shorthaired_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "italian_greyhound",
+    "kind": "dog"
+  },
+  {
+    "name": "jack_russell_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "jagdterrier",
+    "kind": "dog"
+  },
+  {
+    "name": "jamthund",
+    "kind": "dog"
+  },
+  {
+    "name": "japanese_chin",
+    "kind": "dog"
+  },
+  {
+    "name": "japanese_spitz",
+    "kind": "dog"
+  },
+  {
+    "name": "japanese_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "kai_ken",
+    "kind": "dog"
+  },
+  {
+    "name": "kaikadi",
+    "kind": "dog"
+  },
+  {
+    "name": "kangal_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "kanni",
+    "kind": "dog"
+  },
+  {
+    "name": "karakachan_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "karelian_bear_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "karst_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "keeshond",
+    "kind": "dog"
+  },
+  {
+    "name": "kerry_beagle",
+    "kind": "dog"
+  },
+  {
+    "name": "kerry_blue_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "king_charles_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "king_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "kintamani",
+    "kind": "dog"
+  },
+  {
+    "name": "kishu_ken",
+    "kind": "dog"
+  },
+  {
+    "name": "komondor",
+    "kind": "dog"
+  },
+  {
+    "name": "kooikerhondje",
+    "kind": "dog"
+  },
+  {
+    "name": "koolie",
+    "kind": "dog"
+  },
+  {
+    "name": "korean_jindo",
+    "kind": "dog"
+  },
+  {
+    "name": "kromfohrlander",
+    "kind": "dog"
+  },
+  {
+    "name": "kumaon_mastiff",
+    "kind": "dog"
+  },
+  {
+    "name": "kunming_wolfdog",
+    "kind": "dog"
+  },
+  {
+    "name": "kuri",
+    "kind": "dog"
+  },
+  {
+    "name": "kuvasz",
+    "kind": "dog"
+  },
+  {
+    "name": "kyi_Leo",
+    "kind": "dog"
+  },
+  {
+    "name": "labrador_husky",
+    "kind": "dog"
+  },
+  {
+    "name": "labrador_retriever",
+    "kind": "dog"
+  },
+  {
+    "name": "lagotto_romagnolo",
+    "kind": "dog"
+  },
+  {
+    "name": "lakeland_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "lancashire_heeler",
+    "kind": "dog"
+  },
+  {
+    "name": "landseer",
+    "kind": "dog"
+  },
+  {
+    "name": "lapponian_herder",
+    "kind": "dog"
+  },
+  {
+    "name": "leonberger",
+    "kind": "dog"
+  },
+  {
+    "name": "lhasa_apso",
+    "kind": "dog"
+  },
+  {
+    "name": "lithuanian_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "lowchen",
+    "kind": "dog"
+  },
+  {
+    "name": "mackenzie_river_husky",
+    "kind": "dog"
+  },
+  {
+    "name": "magyar_agar",
+    "kind": "dog"
+  },
+  {
+    "name": "mahratta_greyhound",
+    "kind": "dog"
+  },
+  {
+    "name": "majorca_ratter",
+    "kind": "dog"
+  },
+  {
+    "name": "majorca_shepherd_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "maltese",
+    "kind": "dog"
+  },
+  {
+    "name": "manchester_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "maremma_sheepdog",
+    "kind": "dog"
+  },
+  {
+    "name": "mastiff",
+    "kind": "dog"
+  },
+  {
+    "name": "mcNab",
+    "kind": "dog"
+  },
+  {
+    "name": "mexican_hairless_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "miniature_american_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "miniature_australian_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "miniature_fox_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "miniature_pinscher",
+    "kind": "dog"
+  },
+  {
+    "name": "miniature_schnauzer",
+    "kind": "dog"
+  },
+  {
+    "name": "miniature_shar_pei",
+    "kind": "dog"
+  },
+  {
+    "name": "molossus",
+    "kind": "dog"
+  },
+  {
+    "name": "molossus_of_epirus",
+    "kind": "dog"
+  },
+  {
+    "name": "montenegrin_mountain_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "moscow_watchdog",
+    "kind": "dog"
+  },
+  {
+    "name": "moscow_water_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "mountain_cur",
+    "kind": "dog"
+  },
+  {
+    "name": "mucuchies",
+    "kind": "dog"
+  },
+  {
+    "name": "mudhol_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "mudi",
+    "kind": "dog"
+  },
+  {
+    "name": "munsterlander_large",
+    "kind": "dog"
+  },
+  {
+    "name": "munsterländer_small",
+    "kind": "dog"
+  },
+  {
+    "name": "neapolitan_mastiff",
+    "kind": "dog"
+  },
+  {
+    "name": "new_zealand_heading_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "newfoundland",
+    "kind": "dog"
+  },
+  {
+    "name": "norfolk_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "norfolk_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "norrbottenspets",
+    "kind": "dog"
+  },
+  {
+    "name": "north_country_beagle",
+    "kind": "dog"
+  },
+  {
+    "name": "northern_inuit_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "norwegian_buhund",
+    "kind": "dog"
+  },
+  {
+    "name": "norwegian_elkhound",
+    "kind": "dog"
+  },
+  {
+    "name": "norwegian_lundehund",
+    "kind": "dog"
+  },
+  {
+    "name": "norwich_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "nova_scotia_duck_tolling_retriever",
+    "kind": "dog"
+  },
+  {
+    "name": "old_croatian_sighthound",
+    "kind": "dog"
+  },
+  {
+    "name": "old_danish_pointer",
+    "kind": "dog"
+  },
+  {
+    "name": "old_english_sheepdog",
+    "kind": "dog"
+  },
+  {
+    "name": "old_english_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "old_german_shepherd_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "old_time_farm_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "olde_english_bulldogge",
+    "kind": "dog"
+  },
+  {
+    "name": "otterhound",
+    "kind": "dog"
+  },
+  {
+    "name": "pachon_navarro",
+    "kind": "dog"
+  },
+  {
+    "name": "paisley_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "pandikona_hunting_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "papillon",
+    "kind": "dog"
+  },
+  {
+    "name": "parson_russell_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "patterdale_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "pekingese",
+    "kind": "dog"
+  },
+  {
+    "name": "perro_de_presa_canario",
+    "kind": "dog"
+  },
+  {
+    "name": "perro_de_presa_mallorquin",
+    "kind": "dog"
+  },
+  {
+    "name": "peruvian_hairless_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "phalene",
+    "kind": "dog"
+  },
+  {
+    "name": "pharaoh_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "phu_quoc_ridgeback",
+    "kind": "dog"
+  },
+  {
+    "name": "picardy_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "plott_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "plummer_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "podenco_canario",
+    "kind": "dog"
+  },
+  {
+    "name": "pointer",
+    "kind": "dog"
+  },
+  {
+    "name": "poitevin",
+    "kind": "dog"
+  },
+  {
+    "name": "polish_greyhound",
+    "kind": "dog"
+  },
+  {
+    "name": "polish_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "polish_hunting_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "polish_lowland_sheepdog",
+    "kind": "dog"
+  },
+  {
+    "name": "polish_tatra_sheepdog",
+    "kind": "dog"
+  },
+  {
+    "name": "pomeranian",
+    "kind": "dog"
+  },
+  {
+    "name": "pont_audemer_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "poodle",
+    "kind": "dog"
+  },
+  {
+    "name": "porcelaine",
+    "kind": "dog"
+  },
+  {
+    "name": "portuguese_podengo",
+    "kind": "dog"
+  },
+  {
+    "name": "portuguese_pointer",
+    "kind": "dog"
+  },
+  {
+    "name": "portuguese_water_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "posavac_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "prazsky_krysarik",
+    "kind": "dog"
+  },
+  {
+    "name": "pudelpointer",
+    "kind": "dog"
+  },
+  {
+    "name": "pug",
+    "kind": "dog"
+  },
+  {
+    "name": "puli",
+    "kind": "dog"
+  },
+  {
+    "name": "pumi",
+    "kind": "dog"
+  },
+  {
+    "name": "pungsan_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "pyrenean_mastiff",
+    "kind": "dog"
+  },
+  {
+    "name": "pyrenean_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "rafeiro_do_alentejo",
+    "kind": "dog"
+  },
+  {
+    "name": "rajapalayam",
+    "kind": "dog"
+  },
+  {
+    "name": "rampur_greyhound",
+    "kind": "dog"
+  },
+  {
+    "name": "rastreador_brasileiro",
+    "kind": "dog"
+  },
+  {
+    "name": "rat_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "ratonero_bodeguero_andaluz",
+    "kind": "dog"
+  },
+  {
+    "name": "ratonero_murciano_de_huerta",
+    "kind": "dog"
+  },
+  {
+    "name": "ratonero_valenciano",
+    "kind": "dog"
+  },
+  {
+    "name": "redbone_coonhound",
+    "kind": "dog"
+  },
+  {
+    "name": "rhodesian_ridgeback",
+    "kind": "dog"
+  },
+  {
+    "name": "romanian_mioritic_shepherd_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "rottweiler",
+    "kind": "dog"
+  },
+  {
+    "name": "russell_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "russian_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "russian_toy",
+    "kind": "dog"
+  },
+  {
+    "name": "russian_tracker",
+    "kind": "dog"
+  },
+  {
+    "name": "russo_european_laika",
+    "kind": "dog"
+  },
+  {
+    "name": "saarloos_wolfdog",
+    "kind": "dog"
+  },
+  {
+    "name": "sabueso_espanol",
+    "kind": "dog"
+  },
+  {
+    "name": "sabueso_fino_colombiano",
+    "kind": "dog"
+  },
+  {
+    "name": "saint_usuge_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "sakhalin_husky",
+    "kind": "dog"
+  },
+  {
+    "name": "saluki",
+    "kind": "dog"
+  },
+  {
+    "name": "samoyed",
+    "kind": "dog"
+  },
+  {
+    "name": "sapsali",
+    "kind": "dog"
+  },
+  {
+    "name": "sarplaninac",
+    "kind": "dog"
+  },
+  {
+    "name": "schapendoes",
+    "kind": "dog"
+  },
+  {
+    "name": "schillerstövare",
+    "kind": "dog"
+  },
+  {
+    "name": "schipperke",
+    "kind": "dog"
+  },
+  {
+    "name": "schweizer_laufhund",
+    "kind": "dog"
+  },
+  {
+    "name": "schweizerischer_niederlaufhund",
+    "kind": "dog"
+  },
+  {
+    "name": "scotch_collie",
+    "kind": "dog"
+  },
+  {
+    "name": "scottish_deerhound",
+    "kind": "dog"
+  },
+  {
+    "name": "scottish_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "sealyham_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "segugio_italiano",
+    "kind": "dog"
+  },
+  {
+    "name": "seppala_siberian_sleddog",
+    "kind": "dog"
+  },
+  {
+    "name": "serbian_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "serbian_tricolour_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "seskar_seal_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "shar_pei",
+    "kind": "dog"
+  },
+  {
+    "name": "shetland_sheepdog",
+    "kind": "dog"
+  },
+  {
+    "name": "shiba_inu",
+    "kind": "dog"
+  },
+  {
+    "name": "shih_tzu",
+    "kind": "dog"
+  },
+  {
+    "name": "shikoku",
+    "kind": "dog"
+  },
+  {
+    "name": "shiloh_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "siberian_husky",
+    "kind": "dog"
+  },
+  {
+    "name": "silken_windhound",
+    "kind": "dog"
+  },
+  {
+    "name": "sinhala_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "skye_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "sloughi",
+    "kind": "dog"
+  },
+  {
+    "name": "slovak_cuvac",
+    "kind": "dog"
+  },
+  {
+    "name": "slovakian_rough_haired_pointer",
+    "kind": "dog"
+  },
+  {
+    "name": "slovensky_kopov",
+    "kind": "dog"
+  },
+  {
+    "name": "smalandsstovare",
+    "kind": "dog"
+  },
+  {
+    "name": "small_greek_domestic_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "soft_coated_wheaten_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "south_russian_ovcharka",
+    "kind": "dog"
+  },
+  {
+    "name": "southern_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "spanish_mastiff",
+    "kind": "dog"
+  },
+  {
+    "name": "spanish_water_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "spinone_italiano",
+    "kind": "dog"
+  },
+  {
+    "name": "sporting_lucas_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "st_bernard",
+    "kind": "dog"
+  },
+  {
+    "name": "st_johns_water_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "stabyhoun",
+    "kind": "dog"
+  },
+  {
+    "name": "staffordshire_bull_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "standard_schnauzer",
+    "kind": "dog"
+  },
+  {
+    "name": "stephens_cur",
+    "kind": "dog"
+  },
+  {
+    "name": "styrian_coarse_haired_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "sussex_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "swedish_lapphund",
+    "kind": "dog"
+  },
+  {
+    "name": "swedish_vallhund",
+    "kind": "dog"
+  },
+  {
+    "name": "tahltan_bear_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "taigan",
+    "kind": "dog"
+  },
+  {
+    "name": "taiwan_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "talbot",
+    "kind": "dog"
+  },
+  {
+    "name": "tamaskan_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "teddy_roosevelt_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "telomian",
+    "kind": "dog"
+  },
+  {
+    "name": "tenterfield_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "terceira_mastiff",
+    "kind": "dog"
+  },
+  {
+    "name": "thai_bangkaew_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "thai_ridgeback",
+    "kind": "dog"
+  },
+  {
+    "name": "tibetan_mastiff",
+    "kind": "dog"
+  },
+  {
+    "name": "tibetan_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "tibetan_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "tornjak",
+    "kind": "dog"
+  },
+  {
+    "name": "tosa",
+    "kind": "dog"
+  },
+  {
+    "name": "toy_bulldog",
+    "kind": "dog"
+  },
+  {
+    "name": "toy_fox_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "toy_manchester_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "toy_trawler_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "transylvanian_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "treeing_cur",
+    "kind": "dog"
+  },
+  {
+    "name": "treeing_tennessee_brindle",
+    "kind": "dog"
+  },
+  {
+    "name": "treeing_walker_coonhound",
+    "kind": "dog"
+  },
+  {
+    "name": "trigg_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "tweed_water_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "tyrolean_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "valencian_ratter",
+    "kind": "dog"
+  },
+  {
+    "name": "vanjari_hound",
+    "kind": "dog"
+  },
+  {
+    "name": "villano_de_las_encartaciones",
+    "kind": "dog"
+  },
+  {
+    "name": "vizsla",
+    "kind": "dog"
+  },
+  {
+    "name": "volpino_italiano",
+    "kind": "dog"
+  },
+  {
+    "name": "weimaraner",
+    "kind": "dog"
+  },
+  {
+    "name": "welsh_corgi_cardigan",
+    "kind": "dog"
+  },
+  {
+    "name": "welsh_corgi_pembroke",
+    "kind": "dog"
+  },
+  {
+    "name": "welsh_sheepdog",
+    "kind": "dog"
+  },
+  {
+    "name": "welsh_springer_spaniel",
+    "kind": "dog"
+  },
+  {
+    "name": "welsh_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "west_highland_white_terrier",
+    "kind": "dog"
+  },
+  {
+    "name": "west_siberian_laika",
+    "kind": "dog"
+  },
+  {
+    "name": "westphalian_dachsbracke",
+    "kind": "dog"
+  },
+  {
+    "name": "wetterhoun",
+    "kind": "dog"
+  },
+  {
+    "name": "whippet",
+    "kind": "dog"
+  },
+  {
+    "name": "white_shepherd",
+    "kind": "dog"
+  },
+  {
+    "name": "wirehaired_pointing_griffon",
+    "kind": "dog"
+  },
+  {
+    "name": "wirehaired_vizsla",
+    "kind": "dog"
+  },
+  {
+    "name": "xiasi_dog",
+    "kind": "dog"
+  },
+  {
+    "name": "yorkshire_terrier",
+    "kind": "dog"
+  }
+]

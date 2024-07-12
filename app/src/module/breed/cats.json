@@ -1,0 +1,398 @@
+[
+  {
+    "name": "abyssinian",
+    "kind": "cat"
+  },
+  {
+    "name": "aegean",
+    "kind": "cat"
+  },
+  {
+    "name": "american_bobtail",
+    "kind": "cat"
+  },
+  {
+    "name": "american_curl",
+    "kind": "cat"
+  },
+  {
+    "name": "american_shorthair",
+    "kind": "cat"
+  },
+  {
+    "name": "american_wirehair",
+    "kind": "cat"
+  },
+  {
+    "name": "arabian_mau",
+    "kind": "cat"
+  },
+  {
+    "name": "asian",
+    "kind": "cat"
+  },
+  {
+    "name": "asian_semi_longhair",
+    "kind": "cat"
+  },
+  {
+    "name": "australian_mist",
+    "kind": "cat"
+  },
+  {
+    "name": "balinese",
+    "kind": "cat"
+  },
+  {
+    "name": "bambino",
+    "kind": "cat"
+  },
+  {
+    "name": "bengal",
+    "kind": "cat"
+  },
+  {
+    "name": "birman",
+    "kind": "cat"
+  },
+  {
+    "name": "bombay",
+    "kind": "cat"
+  },
+  {
+    "name": "brazilian_shorthair",
+    "kind": "cat"
+  },
+  {
+    "name": "british_longhair",
+    "kind": "cat"
+  },
+  {
+    "name": "british_semi_longhair",
+    "kind": "cat"
+  },
+  {
+    "name": "british_shorthair",
+    "kind": "cat"
+  },
+  {
+    "name": "burmese",
+    "kind": "cat"
+  },
+  {
+    "name": "burmilla",
+    "kind": "cat"
+  },
+  {
+    "name": "california_spangled",
+    "kind": "cat"
+  },
+  {
+    "name": "chantilly_tiffany",
+    "kind": "cat"
+  },
+  {
+    "name": "chartreux",
+    "kind": "cat"
+  },
+  {
+    "name": "chausie",
+    "kind": "cat"
+  },
+  {
+    "name": "cheetoh",
+    "kind": "cat"
+  },
+  {
+    "name": "colorpoint_shorthair",
+    "kind": "cat"
+  },
+  {
+    "name": "cornish_rex",
+    "kind": "cat"
+  },
+  {
+    "name": "cymric",
+    "kind": "cat"
+  },
+  {
+    "name": "cyprus",
+    "kind": "cat"
+  },
+  {
+    "name": "devon_rex",
+    "kind": "cat"
+  },
+  {
+    "name": "donskoy",
+    "kind": "cat"
+  },
+  {
+    "name": "dragon_li",
+    "kind": "cat"
+  },
+  {
+    "name": "dwarf_cat",
+    "kind": "cat"
+  },
+  {
+    "name": "egyptian_mau",
+    "kind": "cat"
+  },
+  {
+    "name": "european_shorthair",
+    "kind": "cat"
+  },
+  {
+    "name": "exotic_shorthair",
+    "kind": "cat"
+  },
+  {
+    "name": "foldex",
+    "kind": "cat"
+  },
+  {
+    "name": "german_rex",
+    "kind": "cat"
+  },
+  {
+    "name": "havana_brown",
+    "kind": "cat"
+  },
+  {
+    "name": "highlander",
+    "kind": "cat"
+  },
+  {
+    "name": "himalayan",
+    "kind": "cat"
+  },
+  {
+    "name": "japanese_bobtail",
+    "kind": "cat"
+  },
+  {
+    "name": "javanese",
+    "kind": "cat"
+  },
+  {
+    "name": "karelian_bobtail",
+    "kind": "cat"
+  },
+  {
+    "name": "khao_manee",
+    "kind": "cat"
+  },
+  {
+    "name": "korat",
+    "kind": "cat"
+  },
+  {
+    "name": "korean_bobtail",
+    "kind": "cat"
+  },
+  {
+    "name": "korn_ja",
+    "kind": "cat"
+  },
+  {
+    "name": "kurilian_bobtail",
+    "kind": "cat"
+  },
+  {
+    "name": "laperm",
+    "kind": "cat"
+  },
+  {
+    "name": "lykoi",
+    "kind": "cat"
+  },
+  {
+    "name": "maine_coon",
+    "kind": "cat"
+  },
+  {
+    "name": "manx",
+    "kind": "cat"
+  },
+  {
+    "name": "mekong_bobtail",
+    "kind": "cat"
+  },
+  {
+    "name": "minskin",
+    "kind": "cat"
+  },
+  {
+    "name": "munchkin",
+    "kind": "cat"
+  },
+  {
+    "name": "napoleon",
+    "kind": "cat"
+  },
+  {
+    "name": "nebelung",
+    "kind": "cat"
+  },
+  {
+    "name": "norwegian_forest_cat",
+    "kind": "cat"
+  },
+  {
+    "name": "ocicat",
+    "kind": "cat"
+  },
+  {
+    "name": "ojos_azules",
+    "kind": "cat"
+  },
+  {
+    "name": "oregon_rex",
+    "kind": "cat"
+  },
+  {
+    "name": "oriental_bicolor",
+    "kind": "cat"
+  },
+  {
+    "name": "oriental_longhair",
+    "kind": "cat"
+  },
+  {
+    "name": "oriental_shorthair",
+    "kind": "cat"
+  },
+  {
+    "name": "perfold",
+    "kind": "cat"
+  },
+  {
+    "name": "persian_modern_persian_cat",
+    "kind": "cat"
+  },
+  {
+    "name": "persian_traditional_persian_cat",
+    "kind": "cat"
+  },
+  {
+    "name": "peterbald",
+    "kind": "cat"
+  },
+  {
+    "name": "pixie_bob",
+    "kind": "cat"
+  },
+  {
+    "name": "raas",
+    "kind": "cat"
+  },
+  {
+    "name": "ragamuffin",
+    "kind": "cat"
+  },
+  {
+    "name": "ragdoll",
+    "kind": "cat"
+  },
+  {
+    "name": "russian_blue",
+    "kind": "cat"
+  },
+  {
+    "name": "russian_white_black_and_tabby",
+    "kind": "cat"
+  },
+  {
+    "name": "sam_sawet",
+    "kind": "cat"
+  },
+  {
+    "name": "savannah",
+    "kind": "cat"
+  },
+  {
+    "name": "scottish_fold",
+    "kind": "cat"
+  },
+  {
+    "name": "selkirk_rex",
+    "kind": "cat"
+  },
+  {
+    "name": "serengeti",
+    "kind": "cat"
+  },
+  {
+    "name": "serrade_petit",
+    "kind": "cat"
+  },
+  {
+    "name": "siamese",
+    "kind": "cat"
+  },
+  {
+    "name": "siberian",
+    "kind": "cat"
+  },
+  {
+    "name": "singapura",
+    "kind": "cat"
+  },
+  {
+    "name": "snowshoe",
+    "kind": "cat"
+  },
+  {
+    "name": "sokoke",
+    "kind": "cat"
+  },
+  {
+    "name": "somali",
+    "kind": "cat"
+  },
+  {
+    "name": "sphynx",
+    "kind": "cat"
+  },
+  {
+    "name": "suphalak",
+    "kind": "cat"
+  },
+  {
+    "name": "thai",
+    "kind": "cat"
+  },
+  {
+    "name": "thai_lilac",
+    "kind": "cat"
+  },
+  {
+    "name": "tiffany",
+    "kind": "cat"
+  },
+  {
+    "name": "tonkinese",
+    "kind": "cat"
+  },
+  {
+    "name": "toyger",
+    "kind": "cat"
+  },
+  {
+    "name": "turkish_angora",
+    "kind": "cat"
+  },
+  {
+    "name": "turkish_van",
+    "kind": "cat"
+  },
+  {
+    "name": "ukrainian_levkoy",
+    "kind": "cat"
+  },
+  {
+    "name": "york_chocolate",
+    "kind": "cat"
+  }
+]

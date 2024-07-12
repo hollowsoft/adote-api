@@ -17,6 +17,6 @@ export class SetBreedProvider {
 
     await this.repository.remove()
 
-    this.repository.save(breedArray)
+    await this.repository.save(breedArray)
   }
 }
