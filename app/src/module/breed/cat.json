@@ -1,398 +1,299 @@
 [
   {
-    "name": "abyssinian",
-    "kind": "cat"
+    "name": "Abyssinian"
   },
   {
-    "name": "aegean",
-    "kind": "cat"
+    "name": "Aegean"
   },
   {
-    "name": "american_bobtail",
-    "kind": "cat"
+    "name": "American Bobtail"
   },
   {
-    "name": "american_curl",
-    "kind": "cat"
+    "name": "American Curl"
   },
   {
-    "name": "american_shorthair",
-    "kind": "cat"
+    "name": "American Shorthair"
   },
   {
-    "name": "american_wirehair",
-    "kind": "cat"
+    "name": "American Wirehair"
   },
   {
-    "name": "arabian_mau",
-    "kind": "cat"
+    "name": "Arabian Mau"
   },
   {
-    "name": "asian",
-    "kind": "cat"
+    "name": "Asian"
   },
   {
-    "name": "asian_semi_longhair",
-    "kind": "cat"
+    "name": "Asian Semi Longhair"
   },
   {
-    "name": "australian_mist",
-    "kind": "cat"
+    "name": "Australian Mist"
   },
   {
-    "name": "balinese",
-    "kind": "cat"
+    "name": "Balinese"
   },
   {
-    "name": "bambino",
-    "kind": "cat"
+    "name": "Bambino"
   },
   {
-    "name": "bengal",
-    "kind": "cat"
+    "name": "Bengal"
   },
   {
-    "name": "birman",
-    "kind": "cat"
+    "name": "Birman"
   },
   {
-    "name": "bombay",
-    "kind": "cat"
+    "name": "Bombay"
   },
   {
-    "name": "brazilian_shorthair",
-    "kind": "cat"
+    "name": "Brazilian Shorthair"
   },
   {
-    "name": "british_longhair",
-    "kind": "cat"
+    "name": "British Longhair"
   },
   {
-    "name": "british_semi_longhair",
-    "kind": "cat"
+    "name": "British Semi Longhair"
   },
   {
-    "name": "british_shorthair",
-    "kind": "cat"
+    "name": "British Shorthair"
   },
   {
-    "name": "burmese",
-    "kind": "cat"
+    "name": "Burmese"
   },
   {
-    "name": "burmilla",
-    "kind": "cat"
+    "name": "Burmilla"
   },
   {
-    "name": "california_spangled",
-    "kind": "cat"
+    "name": "California Spangled"
   },
   {
-    "name": "chantilly_tiffany",
-    "kind": "cat"
+    "name": "Chantilly Tiffany"
   },
   {
-    "name": "chartreux",
-    "kind": "cat"
+    "name": "Chartreux"
   },
   {
-    "name": "chausie",
-    "kind": "cat"
+    "name": "Chausie"
   },
   {
-    "name": "cheetoh",
-    "kind": "cat"
+    "name": "Cheetoh"
   },
   {
-    "name": "colorpoint_shorthair",
-    "kind": "cat"
+    "name": "Colorpoint Shorthair"
   },
   {
-    "name": "cornish_rex",
-    "kind": "cat"
+    "name": "Cornish Rex"
   },
   {
-    "name": "cymric",
-    "kind": "cat"
+    "name": "Cymric"
   },
   {
-    "name": "cyprus",
-    "kind": "cat"
+    "name": "Cyprus"
   },
   {
-    "name": "devon_rex",
-    "kind": "cat"
+    "name": "Devon Rex"
   },
   {
-    "name": "donskoy",
-    "kind": "cat"
+    "name": "Donskoy"
   },
   {
-    "name": "dragon_li",
-    "kind": "cat"
+    "name": "Dragon Li"
   },
   {
-    "name": "dwarf_cat",
-    "kind": "cat"
+    "name": "Dwarf Cat"
   },
   {
-    "name": "egyptian_mau",
-    "kind": "cat"
+    "name": "Egyptian Mau"
   },
   {
-    "name": "european_shorthair",
-    "kind": "cat"
+    "name": "European Shorthair"
   },
   {
-    "name": "exotic_shorthair",
-    "kind": "cat"
+    "name": "Exotic Shorthair"
   },
   {
-    "name": "foldex",
-    "kind": "cat"
+    "name": "Foldex"
   },
   {
-    "name": "german_rex",
-    "kind": "cat"
+    "name": "German Rex"
   },
   {
-    "name": "havana_brown",
-    "kind": "cat"
+    "name": "Havana Brown"
   },
   {
-    "name": "highlander",
-    "kind": "cat"
+    "name": "Highlander"
   },
   {
-    "name": "himalayan",
-    "kind": "cat"
+    "name": "Himalayan"
   },
   {
-    "name": "japanese_bobtail",
-    "kind": "cat"
+    "name": "Japanese Bobtail"
   },
   {
-    "name": "javanese",
-    "kind": "cat"
+    "name": "Javanese"
   },
   {
-    "name": "karelian_bobtail",
-    "kind": "cat"
+    "name": "Karelian Bobtail"
   },
   {
-    "name": "khao_manee",
-    "kind": "cat"
+    "name": "Khao Manee"
   },
   {
-    "name": "korat",
-    "kind": "cat"
+    "name": "Korat"
   },
   {
-    "name": "korean_bobtail",
-    "kind": "cat"
+    "name": "Korean Bobtail"
   },
   {
-    "name": "korn_ja",
-    "kind": "cat"
+    "name": "Korn Ja"
   },
   {
-    "name": "kurilian_bobtail",
-    "kind": "cat"
+    "name": "Kurilian Bobtail"
   },
   {
-    "name": "laperm",
-    "kind": "cat"
+    "name": "Laperm"
   },
   {
-    "name": "lykoi",
-    "kind": "cat"
+    "name": "Lykoi"
   },
   {
-    "name": "maine_coon",
-    "kind": "cat"
+    "name": "Maine Coon"
   },
   {
-    "name": "manx",
-    "kind": "cat"
+    "name": "Manx"
   },
   {
-    "name": "mekong_bobtail",
-    "kind": "cat"
+    "name": "Mekong Bobtail"
   },
   {
-    "name": "minskin",
-    "kind": "cat"
+    "name": "Minskin"
   },
   {
-    "name": "munchkin",
-    "kind": "cat"
+    "name": "Munchkin"
   },
   {
-    "name": "napoleon",
-    "kind": "cat"
+    "name": "Napoleon"
   },
   {
-    "name": "nebelung",
-    "kind": "cat"
+    "name": "Nebelung"
   },
   {
-    "name": "norwegian_forest_cat",
-    "kind": "cat"
+    "name": "Norwegian Forest Cat"
   },
   {
-    "name": "ocicat",
-    "kind": "cat"
+    "name": "Ocicat"
   },
   {
-    "name": "ojos_azules",
-    "kind": "cat"
+    "name": "Ojos Azules"
   },
   {
-    "name": "oregon_rex",
-    "kind": "cat"
+    "name": "Oregon Rex"
   },
   {
-    "name": "oriental_bicolor",
-    "kind": "cat"
+    "name": "Oriental Bicolor"
   },
   {
-    "name": "oriental_longhair",
-    "kind": "cat"
+    "name": "Oriental Longhair"
   },
   {
-    "name": "oriental_shorthair",
-    "kind": "cat"
+    "name": "Oriental Shorthair"
   },
   {
-    "name": "perfold",
-    "kind": "cat"
+    "name": "Perfold"
   },
   {
-    "name": "persian_modern_persian_cat",
-    "kind": "cat"
+    "name": "Persian Modern Persian Cat"
   },
   {
-    "name": "persian_traditional_persian_cat",
-    "kind": "cat"
+    "name": "Persian Traditional Persian Cat"
   },
   {
-    "name": "peterbald",
-    "kind": "cat"
+    "name": "Peterbald"
   },
   {
-    "name": "pixie_bob",
-    "kind": "cat"
+    "name": "Pixie Bob"
   },
   {
-    "name": "raas",
-    "kind": "cat"
+    "name": "Raas"
   },
   {
-    "name": "ragamuffin",
-    "kind": "cat"
+    "name": "Ragamuffin"
   },
   {
-    "name": "ragdoll",
-    "kind": "cat"
+    "name": "Ragdoll"
   },
   {
-    "name": "russian_blue",
-    "kind": "cat"
+    "name": "Russian Blue"
   },
   {
-    "name": "russian_white_black_and_tabby",
-    "kind": "cat"
+    "name": "Russian White Black And Tabby"
   },
   {
-    "name": "sam_sawet",
-    "kind": "cat"
+    "name": "Sam Sawet"
   },
   {
-    "name": "savannah",
-    "kind": "cat"
+    "name": "Savannah"
   },
   {
-    "name": "scottish_fold",
-    "kind": "cat"
+    "name": "Scottish Fold"
   },
   {
-    "name": "selkirk_rex",
-    "kind": "cat"
+    "name": "Selkirk Rex"
   },
   {
-    "name": "serengeti",
-    "kind": "cat"
+    "name": "Serengeti"
   },
   {
-    "name": "serrade_petit",
-    "kind": "cat"
+    "name": "Serrade Petit"
   },
   {
-    "name": "siamese",
-    "kind": "cat"
+    "name": "Siamese"
   },
   {
-    "name": "siberian",
-    "kind": "cat"
+    "name": "Siberian"
   },
   {
-    "name": "singapura",
-    "kind": "cat"
+    "name": "Singapura"
   },
   {
-    "name": "snowshoe",
-    "kind": "cat"
+    "name": "Snowshoe"
   },
   {
-    "name": "sokoke",
-    "kind": "cat"
+    "name": "Sokoke"
   },
   {
-    "name": "somali",
-    "kind": "cat"
+    "name": "Somali"
   },
   {
-    "name": "sphynx",
-    "kind": "cat"
+    "name": "Sphynx"
   },
   {
-    "name": "suphalak",
-    "kind": "cat"
+    "name": "Suphalak"
   },
   {
-    "name": "thai",
-    "kind": "cat"
+    "name": "Thai"
   },
   {
-    "name": "thai_lilac",
-    "kind": "cat"
+    "name": "Thai Lilac"
   },
   {
-    "name": "tiffany",
-    "kind": "cat"
+    "name": "Tiffany"
   },
   {
-    "name": "tonkinese",
-    "kind": "cat"
+    "name": "Tonkinese"
   },
   {
-    "name": "toyger",
-    "kind": "cat"
+    "name": "Toyger"
   },
   {
-    "name": "turkish_angora",
-    "kind": "cat"
+    "name": "Turkish Angora"
   },
   {
-    "name": "turkish_van",
-    "kind": "cat"
+    "name": "Turkish Van"
   },
   {
-    "name": "ukrainian_levkoy",
-    "kind": "cat"
+    "name": "Ukrainian Levkoy"
   },
   {
-    "name": "york_chocolate",
-    "kind": "cat"
+    "name": "York Chocolate"
   }
 ]
