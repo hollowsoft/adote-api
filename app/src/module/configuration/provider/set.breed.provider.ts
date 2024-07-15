@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 
-import dogs from '@/module/breed/dogs.json'
-import cats from '@/module/breed/cats.json'
+import dog from '@/module/breed/dog.json'
+import cat from '@/module/breed/cat.json'
 
 import { BreedRepository } from '@/module/breed/breed.repository'
 import { Kind } from '@/module/breed/breed.type'
@@ -11,20 +11,17 @@ export class SetBreedProvider {
   constructor(private repository: BreedRepository) {}
 
   async run(): Promise<void> {
-    const breedArray = dogs
+    const breedArray = dog
       .map((dog) => ({
         ...dog,
         kind: Kind['Dog']
       }))
       .concat(
-        cats.map((cat) => ({
+        cat.map((cat) => ({
           ...cat,
           kind: Kind['Cat']
         }))
       )
-      .sort((a, b) => {
-        return a.name.localeCompare(b.name)
-      })
 
     await this.repository.remove()
 
