@@ -10,7 +10,7 @@ export class CreatePostProvider {
   constructor(private readonly repository: PostRepository) {}
 
   async run(request: CreatePostRequest): Promise<PostResponse> {
-    const post = await this.repository.save({
+    const postResponse = await this.repository.save({
       ...request,
       id: '',
       name: '',
@@ -21,19 +21,19 @@ export class CreatePostProvider {
     })
 
     return {
-      ...post,
+      ...postResponse,
       id: '',
       title: '',
-      description: post.description,
-      image: post.image,
+      description: postResponse.description,
+      image: postResponse.image,
       pet: {
-        name: post.pet.name,
-        age: post.pet.age,
-        size: post.pet.size,
-        gender: post.pet.gender,
+        name: postResponse.pet.name,
+        age: postResponse.pet.age,
+        size: postResponse.pet.size,
+        gender: postResponse.pet.gender,
         breed: {
           id: '',
-          name: post.pet.breed.name
+          name: postResponse.pet.breed.name
         }
       },
       location: {
@@ -42,13 +42,13 @@ export class CreatePostProvider {
         state: ''
       },
       user: {
-        name: post.user.name,
-        image: post.user.image,
-        description: post.user.description,
+        name: postResponse.user.name,
+        image: postResponse.user.image,
+        description: postResponse.user.description,
         contact: {
-          mail: post.user.contact.mail,
-          phone: post.user.contact.phone,
-          social: post.user.contact.social
+          mail: postResponse.user.contact.mail,
+          phone: postResponse.user.contact.phone,
+          social: postResponse.user.contact.social
         }
       }
     }
