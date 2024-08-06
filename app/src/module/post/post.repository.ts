@@ -17,8 +17,8 @@ export class PostRepository {
     return this.model.findById('').exec()
   }
 
-  save(): Promise<Post> {
-    return new this.model({}).save()
+  save(post: Post): Promise<Post> {
+    return new this.model(post).save()
   }
 
   remove(): Promise<Post> {

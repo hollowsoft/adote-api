@@ -2,16 +2,28 @@ import { PostRepository } from '../post.repository'
 
 import { PostResponse } from '../post.response'
 import { CreatePostRequest } from '../post.request'
+import { User } from '@/module/user/user.type'
+import { Pet } from '../post.type'
+import { Location } from '@/module/location/location.type'
 
 export class CreatePostProvider {
   constructor(private readonly repository: PostRepository) {}
 
   async run(request: CreatePostRequest): Promise<PostResponse> {
-    const post = await this.repository.find()
+    const post = await this.repository.save({
+      ...request,
+      id: '',
+      name: '',
+      user: new User(),
+      pet: new Pet(),
+      location: new Location(),
+      publish: true
+    })
 
     return {
+      ...post,
       id: '',
-      title: post.name,
+      title: '',
       description: post.description,
       image: post.image,
       pet: {
@@ -36,7 +48,6 @@ export class CreatePostProvider {
         contact: {
           mail: post.user.contact.mail,
           phone: post.user.contact.phone,
-
           social: post.user.contact.social
         }
       }
