@@ -24,18 +24,6 @@ export class CreatePostProvider {
       ...postResponse,
       id: '',
       title: '',
-      description: postResponse.description,
-      image: postResponse.image,
-      pet: {
-        name: postResponse.pet.name,
-        age: postResponse.pet.age,
-        size: postResponse.pet.size,
-        gender: postResponse.pet.gender,
-        breed: {
-          id: '',
-          name: postResponse.pet.breed.name
-        }
-      },
       location: {
         id: '',
         city: '',
