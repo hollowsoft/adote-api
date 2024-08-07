@@ -3,8 +3,7 @@ import { PostRepository } from '../post.repository'
 import { PostResponse } from '../post.response'
 import { CreatePostRequest } from '../post.request'
 import { User } from '@/module/user/user.type'
-import { Pet } from '../post.type'
-import { Location } from '@/module/location/location.type'
+import { Kind } from '@/module/breed/breed.type'
 
 export class CreatePostProvider {
   constructor(private readonly repository: PostRepository) {}
@@ -12,21 +11,48 @@ export class CreatePostProvider {
   async run(request: CreatePostRequest): Promise<PostResponse> {
     const postResponse = await this.repository.save({
       ...request,
-      id: '',
       name: '',
       user: new User(),
-      pet: new Pet(),
-      location: new Location(),
+      pet: {
+        name: request.pet.name,
+
+        age: request.pet.age,
+
+        size: request.pet.size,
+
+        gender: request.pet.gender,
+
+        breed: {
+          id: '',
+          name: request.pet.breed,
+          kind: Kind.Cat
+        }
+      },
+      location: {
+        city: request.location,
+        state: ''
+      },
       publish: true
     })
 
     return {
-      ...postResponse,
       id: '',
       title: '',
+      description: postResponse.description,
+      image: postResponse.image,
+      pet: {
+        name: postResponse.pet.name,
+        age: postResponse.pet.age,
+        size: postResponse.pet.size,
+        gender: postResponse.pet.gender,
+        breed: {
+          id: '',
+          name: postResponse.pet.breed.name
+        }
+      },
       location: {
         id: '',
-        city: '',
+        city: postResponse.location.city,
         state: ''
       },
       user: {
