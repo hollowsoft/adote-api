@@ -37,9 +37,6 @@ export class Pet {
 @Schema({ id: true, collection: 'Post' })
 export class Post {
   @Prop(String)
-  id: string
-
-  @Prop(String)
   name: string
 
   @Prop(String)
