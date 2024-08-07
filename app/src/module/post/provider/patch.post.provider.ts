@@ -1,24 +1,13 @@
-import { User } from '@/module/user/user.type'
 import { PostRepository } from '../post.repository'
 
 import { PatchPostRequest } from '../post.request'
 import { PostResponse } from '../post.response'
-import { Pet } from '../post.type'
-import { Location } from '@/module/location/location.type'
 
 export class PatchPostProvider {
   constructor(private readonly repository: PostRepository) {}
 
   async run(id: string, request: PatchPostRequest): Promise<PostResponse> {
-    const post = await this.repository.save({
-      ...request,
-      id: '',
-      name: '',
-      user: new User(),
-      pet: new Pet(),
-      location: new Location(),
-      publish: true
-    })
+    const post = await this.repository.save()
 
     return {
       id: '',

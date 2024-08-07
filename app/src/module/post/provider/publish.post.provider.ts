@@ -12,7 +12,7 @@ export class PublishPostProvider {
   ): Promise<PublishPostResponse> {
     const { publish } = request
 
-    // await this.repository.save()
+    await this.repository.save()
 
     return {
       id,
