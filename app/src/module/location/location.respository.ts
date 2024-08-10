@@ -13,8 +13,8 @@ export class LocationRepository {
     return this.model.find(query)
   }
 
-  save(location: Location[]): Promise<Location[]> {
-    return this.model.insertMany(location)
+  save(list: Location[]): Promise<Location[]> {
+    return this.model.insertMany(list)
   }
 
   remove(query?: FilterQuery<Location>): Promise<mongo.DeleteResult> {

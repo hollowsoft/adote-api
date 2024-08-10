@@ -16,17 +16,17 @@ export class ConfigurationController {
     return this.provider.user.run()
   }
 
-  @Post('/location')
-  @HttpCode(HttpStatus.OK)
-  @Permission(Role.Admin)
-  location(): Promise<void> {
-    return this.provider.location.run()
-  }
-
   @Post('/breed')
   @HttpCode(HttpStatus.OK)
   @Permission(Role.Admin)
   breed(): Promise<void> {
     return this.provider.breed.run()
+  }
+
+  @Post('/location')
+  @HttpCode(HttpStatus.OK)
+  @Permission(Role.Admin)
+  location(): Promise<void> {
+    return this.provider.location.run()
   }
 }

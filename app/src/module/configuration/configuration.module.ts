@@ -1,14 +1,14 @@
 import { Module } from '@nestjs/common'
 
 import { UserModule } from '../user/user.module'
+import { BreedModule } from '../breed/breed.module'
 import { LocationModule } from '../location/location.module'
 
 import { ConfigurationProvider } from './provider'
 import { ConfigurationController } from './configuration.controller'
-import { BreedModule } from '../breed/breed.module'
 
 @Module({
-  imports: [UserModule, LocationModule, BreedModule],
+  imports: [UserModule, BreedModule, LocationModule],
   providers: [ConfigurationProvider],
   controllers: [ConfigurationController]
 })
