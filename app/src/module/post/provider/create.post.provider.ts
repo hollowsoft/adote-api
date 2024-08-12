@@ -24,14 +24,7 @@ export class CreatePostProvider {
         post.name,
         post.description,
         post.image,
-        {
-          name: post.pet.name,
-          gender: post.pet.gender,
-          age: post.pet.age,
-          size: post.pet.size,
-          breed: post.pet.breed
-        },
-
+        post.pet,
         post.user,
         post.location
       )
