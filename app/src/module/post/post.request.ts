@@ -5,12 +5,12 @@ import {
   IsArray,
   IsNumber,
   IsString,
+  IsBoolean,
+  IsOptional,
   IsNotEmpty,
   ArrayMinSize,
   ArrayMaxSize,
-  ValidateNested,
-  IsOptional,
-  IsBoolean
+  ValidateNested
 } from 'class-validator'
 
 import { Type, Transform, TransformFnParams } from 'class-transformer'
@@ -45,7 +45,7 @@ export class CreatePostRequest {
   @IsString()
   @IsNotEmpty()
   @Transform(({ value }: TransformFnParams) => value?.trim())
-  readonly title: string
+  readonly name: string
 
   @IsString()
   @IsNotEmpty()
@@ -62,6 +62,9 @@ export class CreatePostRequest {
 
   @IsString()
   readonly location: string
+
+  @IsBoolean()
+  readonly publish: boolean
 }
 
 export class ListPostRequest {

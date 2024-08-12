@@ -1,6 +1,9 @@
 import { Get, Put, Post, Delete, Body, Param, Query, HttpCode, HttpStatus, Controller } from '@nestjs/common'
 
+import { Auth } from '@/decorator/auth.decorator'
 import { Public } from '@/decorator/public.decorator'
+
+import { Token } from '@/type/auth.type'
 
 import { PostProvider } from './provider'
 
@@ -24,8 +27,10 @@ export class PostController {
   }
 
   @Post()
-  create(@Body() request: CreatePostRequest): Promise<PostResponse> {
-    return this.provider.create.run(request)
+  create(@Body() request: CreatePostRequest, @Auth() token: Token): Promise<PostResponse> {
+    const { sub } = token
+
+    return this.provider.create.run(request, sub)
   }
 
   @Put(':id')
