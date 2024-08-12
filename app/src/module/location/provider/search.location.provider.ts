@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common'
 import { SearchLocationRequest } from '../location.request'
 import { LocationResponse } from '../location.response'
 
-import { LocationRepository } from '../location.respository'
+import { LocationRepository } from '../location.repository'
 
 @Injectable()
 export class SearchLocationProvider {
