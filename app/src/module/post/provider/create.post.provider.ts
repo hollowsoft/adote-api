@@ -4,15 +4,37 @@ import { PostRepository } from '../post.repository'
 
 import { PostResponse } from '../post.response'
 import { CreatePostRequest } from '../post.request'
+import { Post } from '../post.type'
+import { Document } from 'mongoose'
 
 export class CreatePostProvider {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(request: CreatePostRequest, user: string): Promise<PostResponse> {
+  async run(
+    request: CreatePostRequest,
+    user: string
+  ): Promise<PostResponse> {
     try {
-      const post = await this.repository.save(Object.assign(request, { user }))
+      const post = (await this.repository.save(
+        Object.assign(request, { user })
+      )) as Post & Document
 
-      return {} as PostResponse
+      return new PostResponse(
+        post._id,
+        post.name,
+        post.description,
+        post.image,
+        {
+          name: post.pet.name,
+          gender: post.pet.gender,
+          age: post.pet.age,
+          size: post.pet.size,
+          breed: post.pet.breed
+        },
+
+        post.user,
+        post.location
+      )
     } catch (e) {
       throw new InternalServerErrorException(e)
     }
