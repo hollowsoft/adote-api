@@ -8,12 +8,12 @@ export class RemovePostProvider {
   constructor(private readonly repository: PostRepository) {}
 
   async run(id: string): Promise<void> {
-    const post = await this.repository.find()
+    const post = await this.repository.find(id)
 
     if (isNil(post)) {
       throw new NotFoundException('post not found')
     }
 
-    await this.repository.remove()
+    await this.repository.remove(id)
   }
 }

@@ -13,15 +13,15 @@ export class PostRepository {
     return this.model.find().exec()
   }
 
-  find(): Promise<Post> {
-    return this.model.findById('').exec()
+  find(id: string): Promise<Post> {
+    return this.model.findById(id).exec()
   }
 
   save(post: Post): Promise<Post> {
     return this.model.create(post)
   }
 
-  remove(): Promise<Post> {
-    return this.model.findByIdAndDelete('').exec()
+  remove(id: string): Promise<Post> {
+    return this.model.findByIdAndDelete(id).exec()
   }
 }
