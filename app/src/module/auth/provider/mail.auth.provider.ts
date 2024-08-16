@@ -1,4 +1,4 @@
-import { Injectable, BadRequestException } from '@nestjs/common'
+import { Injectable, BadRequestException, Inject } from '@nestjs/common'
 
 import * as crypto from 'crypto'
 
@@ -11,12 +11,15 @@ import { AuthResponse } from '../auth.response'
 import { isNil } from 'lodash'
 import { Document } from 'mongoose'
 import { MailService } from '../mail.service'
+import { CACHE_MANAGER } from '@nestjs/cache-manager'
+import { Cache } from 'cache-manager'
 
 @Injectable()
 export class MailAuthProvider {
   constructor(
     private readonly repository: UserRepository,
-    private readonly mailService: MailService
+    private readonly mailService: MailService,
+    @Inject(CACHE_MANAGER) private cacheManager: Cache
   ) {}
 
   async run(request: AuthRequest): Promise<AuthResponse> {
@@ -26,8 +29,9 @@ export class MailAuthProvider {
       throw new BadRequestException('')
     }
 
-    // TODO: send mail with token
     const token = crypto.randomBytes(3).toString('hex')
+
+    await this.cacheManager.set('token', token)
 
     await this.mailService.sendMail(
       user.mail,

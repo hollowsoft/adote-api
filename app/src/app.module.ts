@@ -24,9 +24,11 @@ import { RequestConfigProvider } from './request.config.provider'
 import { RepositoryConfigProvider } from './repository.config.provider'
 
 import { isProduction } from './helper/environment'
+import { CacheModule } from '@nestjs/cache-manager'
 
 @Module({
   imports: [
+    CacheModule.register(),
     AuthModule,
     UserModule,
     LocationModule,
