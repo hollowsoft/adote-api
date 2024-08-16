@@ -1,5 +1,7 @@
 import { Injectable, BadRequestException } from '@nestjs/common'
 
+import * as crypto from 'crypto'
+
 import { User } from '@/module/user/user.type'
 import { UserRepository } from '@/module/user/user.repository'
 
@@ -7,22 +9,34 @@ import { AuthRequest } from '../auth.request'
 import { AuthResponse } from '../auth.response'
 
 import { isNil } from 'lodash'
+import { Document } from 'mongoose'
+import { MailService } from '../mail.service'
 
 @Injectable()
 export class MailAuthProvider {
-  constructor(private readonly repository: UserRepository) {}
+  constructor(
+    private readonly repository: UserRepository,
+    private readonly mailService: MailService
+  ) {}
 
   async run(request: AuthRequest): Promise<AuthResponse> {
-    const user = await this.save(request)
+    const user = (await this.save(request)) as User & Document
 
     if (isNil(user)) {
       throw new BadRequestException('')
     }
 
     // TODO: send mail with token
+    const token = crypto.randomBytes(3).toString('hex')
+
+    await this.mailService.sendMail(
+      user.mail,
+      'Your authentication code',
+      `Your authentication code is: ${token}`
+    )
 
     return {
-      id: '',
+      id: user._id,
       mail: user.mail
     }
   }
@@ -30,12 +44,12 @@ export class MailAuthProvider {
   private async save(request: AuthRequest): Promise<User> {
     const { mail } = request
 
-    const user = await this.repository.find()
+    const user = await this.repository.find({ mail: mail })
 
     if (user) {
       return user
     }
 
-    return this.repository.save({} as any)
+    return this.repository.save(request)
   }
 }
