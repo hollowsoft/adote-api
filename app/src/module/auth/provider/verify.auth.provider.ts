@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common'
+import { Inject, Injectable, NotFoundException } from '@nestjs/common'
 
 import { JwtService } from '@nestjs/jwt'
 import { ConfigService } from '@nestjs/config'
@@ -7,26 +7,39 @@ import { VerifyRequest } from '../auth.request'
 import { TokenResponse } from '../auth.response'
 
 import { isNil } from 'lodash'
+import { CACHE_MANAGER } from '@nestjs/cache-manager'
+import { Cache } from 'cache-manager'
+import { UserRepository } from '@/module/user/user.repository'
+import { User } from '@/module/user/user.type'
+import { Document } from 'mongoose'
 
 @Injectable()
 export class VerifyAuthProvider {
   constructor(
     private readonly jwt: JwtService,
-    private readonly configuration: ConfigService
+    private readonly configuration: ConfigService,
+    private readonly repository: UserRepository,
+    @Inject(CACHE_MANAGER) private cacheManager: Cache
   ) {}
 
   async run(request: VerifyRequest): Promise<TokenResponse> {
     const { mail, code } = request
 
-    // TODO: check in the cache for the user
+    const cacheToken = await this.cacheManager.get('token')
 
-    if (isNil(false)) {
+    if (code != cacheToken) {
+      throw new NotFoundException('invalid code')
+    }
+
+    const user = (await this.repository.find({ mail: mail })) as User & Document
+
+    if (isNil(user)) {
       throw new NotFoundException('user not found')
     }
 
     const param = {
-      // sub: user.id,
-      // role: user.role
+      sub: user._id,
+      role: user.role
     }
 
     const token = this.jwt.sign(param, {
