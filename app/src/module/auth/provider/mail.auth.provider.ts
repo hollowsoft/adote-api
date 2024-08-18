@@ -2,7 +2,7 @@ import { Injectable, BadRequestException, Inject } from '@nestjs/common'
 
 import * as crypto from 'crypto'
 
-import { User } from '@/module/user/user.type'
+import { Role, User } from '@/module/user/user.type'
 import { UserRepository } from '@/module/user/user.repository'
 
 import { AuthRequest } from '../auth.request'
@@ -13,6 +13,7 @@ import { Document } from 'mongoose'
 import { MailService } from '../mail.service'
 import { CACHE_MANAGER } from '@nestjs/cache-manager'
 import { Cache } from 'cache-manager'
+import { Post } from '@/module/post/post.type'
 
 @Injectable()
 export class MailAuthProvider {
@@ -26,7 +27,7 @@ export class MailAuthProvider {
     const user = (await this.save(request)) as User & Document
 
     if (isNil(user)) {
-      throw new BadRequestException('')
+      throw new BadRequestException('Unable to create user')
     }
 
     const token = crypto.randomBytes(3).toString('hex')
@@ -45,15 +46,19 @@ export class MailAuthProvider {
     }
   }
 
-  private async save(request: AuthRequest): Promise<User> {
-    const { mail } = request
-
+  private async save({ mail }: AuthRequest): Promise<User> {
     const user = await this.repository.find({ mail: mail })
 
     if (user) {
       return user
     }
 
-    return this.repository.save(request)
+    return await this.repository.save({
+      mail: mail,
+      fav: [] as Post[],
+      post: [] as Post[],
+      role: Role['Member'],
+      enable: true
+    })
   }
 }
