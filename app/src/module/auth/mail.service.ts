@@ -7,9 +7,8 @@ export class MailService {
   private transporter: nodemailer.Transporter
 
   constructor(private readonly configuration: ConfigService) {
-    // Configure the transporter with your SMTP server details
     this.transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com', // For Gmail, for example
+      host: 'smtp.gmail.com', // example for Gmail
       port: 465,
       secure: true, // Use SSL
       auth: {
