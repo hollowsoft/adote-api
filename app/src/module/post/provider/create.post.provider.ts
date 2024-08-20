@@ -20,12 +20,7 @@ export class CreatePostProvider {
         post.description,
         post.image,
         new PetResponse(post.pet.name, post.pet.age, post.pet.size, post.pet.gender, post.pet.breed),
-        new UserResponse(
-          post.user.name,
-          post.user.image,
-          post.user.description,
-          new ContactResponse(post.user.contact.mail, post.user.contact.phone, post.user.contact.social)
-        ),
+        new UserResponse(post.user.name, post.user.image, post.user.description, post.user.contact),
         new LocationResponse(post.location._id, post.location.city, post.location.state)
       )
     } catch (e) {
