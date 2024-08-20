@@ -38,10 +38,8 @@ export class VerifyAuthProvider {
       throw new NotFoundException('user not found')
     }
 
-    const param: Token = {
-      sub: '',
-      iat: 0,
-      exp: 0,
+    const param = {
+      sub: user._id,
       user: {
         id: user._id,
         role: user.role
