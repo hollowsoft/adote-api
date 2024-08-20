@@ -12,6 +12,7 @@ import { Cache } from 'cache-manager'
 import { UserRepository } from '@/module/user/user.repository'
 import { User } from '@/module/user/user.type'
 import { Document } from 'mongoose'
+import { Token } from '@/type/auth.type'
 
 @Injectable()
 export class VerifyAuthProvider {
@@ -37,9 +38,14 @@ export class VerifyAuthProvider {
       throw new NotFoundException('user not found')
     }
 
-    const param = {
-      sub: user._id,
-      role: user.role
+    const param: Token = {
+      sub: '',
+      iat: 0,
+      exp: 0,
+      user: {
+        id: user._id,
+        role: user.role
+      }
     }
 
     const token = this.jwt.sign(param, {
