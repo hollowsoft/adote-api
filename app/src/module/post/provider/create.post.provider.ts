@@ -2,7 +2,7 @@ import { InternalServerErrorException } from '@nestjs/common'
 
 import { PostRepository } from '../post.repository'
 
-import { PostResponse } from '../post.response'
+import { LocationResponse, PetResponse, PostResponse, UserResponse } from '../post.response'
 import { CreatePostRequest } from '../post.request'
 import { Post } from '../post.type'
 import { Document } from 'mongoose'
@@ -19,9 +19,14 @@ export class CreatePostProvider {
         post.name,
         post.description,
         post.image,
-        post.pet,
-        post.user,
-        post.location
+        new PetResponse(post.pet.name, post.pet.age, post.pet.size, post.pet.gender, post.pet.breed),
+        new UserResponse(
+          post.user.name,
+          post.user.image,
+          post.user.description,
+          new ContactResponse(post.user.contact.mail, post.user.contact.phone, post.user.contact.social)
+        ),
+        new LocationResponse(post.location._id, post.location.city, post.location.state)
       )
     } catch (e) {
       throw new InternalServerErrorException(e)
