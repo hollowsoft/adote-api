@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { Model } from 'mongoose'
+import { Model, QueryOptions } from 'mongoose'
 
 import { Post } from './post.type'
 
@@ -13,7 +13,7 @@ export class PostRepository {
     return this.model.find().exec()
   }
 
-  find(id: string): Promise<Post> {
+  find(id: QueryOptions): Promise<Post> {
     return this.model.findById(id).exec()
   }
 
@@ -21,7 +21,7 @@ export class PostRepository {
     return this.model.create(post)
   }
 
-  remove(id: string): Promise<Post> {
+  remove(id: QueryOptions): Promise<Post> {
     return this.model.findByIdAndDelete(id).exec()
   }
 }
