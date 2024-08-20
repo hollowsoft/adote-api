@@ -28,7 +28,7 @@ export class VerifyAuthProvider {
     const cacheToken = await this.cacheManager.get(`${mail}`)
 
     if (code != cacheToken) {
-      throw new NotFoundException('invalid code')
+      throw new NotFoundException('bad request')
     }
 
     const user = (await this.repository.find({ mail: mail })) as User & Document
