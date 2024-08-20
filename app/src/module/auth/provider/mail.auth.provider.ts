@@ -57,7 +57,7 @@ export class MailAuthProvider {
       mail: mail,
       fav: [] as Post[],
       post: [] as Post[],
-      role: Role['Member'],
+      role: Role.Member,
       enable: true
     })
   }
