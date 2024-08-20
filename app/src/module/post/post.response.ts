@@ -14,8 +14,8 @@ export class PostResponse {
     readonly description: string,
     readonly image: string[],
     readonly pet: PetResponse,
-    readonly user: string,
-    readonly location: string
+    readonly user: UserResponse,
+    readonly location: LocationResponse
   ) {}
 }
 
