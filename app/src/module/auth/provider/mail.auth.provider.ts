@@ -19,7 +19,7 @@ import { MailProvider } from '@/module/mail/provider'
 export class MailAuthProvider {
   constructor(
     private readonly repository: UserRepository,
-    private readonly MailProvider: MailProvider,
+    private readonly mailProvider: MailProvider,
     @Inject(CACHE_MANAGER) private cacheManager: Cache
   ) {}
 
@@ -34,7 +34,7 @@ export class MailAuthProvider {
 
     await this.cacheManager.set(`${user.mail}`, token)
 
-    await this.MailProvider.send.run(
+    await this.mailProvider.send.run(
       user.mail,
       'Your authentication code',
       `Your authentication code is: ${token}`
