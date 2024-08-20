@@ -32,7 +32,7 @@ export class MailAuthProvider {
 
     const token = crypto.randomBytes(3).toString('hex')
 
-    await this.cacheManager.set('token', token)
+    await this.cacheManager.set(`${user.mail}`, token)
 
     await this.mailService.sendMail(
       user.mail,

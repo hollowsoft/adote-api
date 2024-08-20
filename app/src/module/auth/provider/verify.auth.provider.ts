@@ -25,7 +25,7 @@ export class VerifyAuthProvider {
   async run(request: VerifyRequest): Promise<TokenResponse> {
     const { mail, code } = request
 
-    const cacheToken = await this.cacheManager.get('token')
+    const cacheToken = await this.cacheManager.get(`${mail}`)
 
     if (code != cacheToken) {
       throw new NotFoundException('invalid code')
