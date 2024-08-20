@@ -10,14 +10,9 @@ import { Document } from 'mongoose'
 export class CreatePostProvider {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(
-    request: CreatePostRequest,
-    user: string
-  ): Promise<PostResponse> {
+  async run(request: CreatePostRequest, user: string): Promise<PostResponse> {
     try {
-      const post = (await this.repository.save(
-        Object.assign(request, { user })
-      )) as Post & Document
+      const post = (await this.repository.save(Object.assign(request, { user }))) as Post & Document
 
       return new PostResponse(
         post._id,
