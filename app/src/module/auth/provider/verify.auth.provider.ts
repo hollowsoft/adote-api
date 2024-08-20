@@ -34,10 +34,6 @@ export class VerifyAuthProvider {
 
     const user = (await this.repository.find({ mail: mail })) as User & Document
 
-    if (isNil(user)) {
-      throw new NotFoundException('user not found')
-    }
-
     const param = {
       sub: user._id,
       user: {
