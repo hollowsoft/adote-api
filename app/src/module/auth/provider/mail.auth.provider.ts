@@ -10,16 +10,16 @@ import { AuthResponse } from '../auth.response'
 
 import { isNil } from 'lodash'
 import { Document } from 'mongoose'
-import { MailService } from '../mail.service'
 import { CACHE_MANAGER } from '@nestjs/cache-manager'
 import { Cache } from 'cache-manager'
 import { Post } from '@/module/post/post.type'
+import { MailProvider } from '@/module/mail/provider'
 
 @Injectable()
 export class MailAuthProvider {
   constructor(
     private readonly repository: UserRepository,
-    private readonly mailService: MailService,
+    private readonly MailProvider: MailProvider,
     @Inject(CACHE_MANAGER) private cacheManager: Cache
   ) {}
 
@@ -34,7 +34,7 @@ export class MailAuthProvider {
 
     await this.cacheManager.set(`${user.mail}`, token)
 
-    await this.mailService.sendMail(
+    await this.MailProvider.send.run(
       user.mail,
       'Your authentication code',
       `Your authentication code is: ${token}`

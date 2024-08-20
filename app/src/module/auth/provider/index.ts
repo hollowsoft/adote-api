@@ -8,9 +8,9 @@ import { RenewAuthProvider } from './renew.auth.provider'
 import { VerifyAuthProvider } from './verify.auth.provider'
 
 import { UserRepository } from '@/module/user/user.repository'
-import { MailService } from '../mail.service'
 import { CACHE_MANAGER } from '@nestjs/cache-manager'
 import { Cache } from 'cache-manager'
+import { MailProvider } from '@/module/mail/provider'
 
 @Injectable()
 export class AuthProvider {
@@ -27,7 +27,7 @@ export class AuthProvider {
     private readonly jwt: JwtService,
     private readonly configuration: ConfigService,
     private readonly repository: UserRepository,
-    private readonly mailService: MailService,
+    private readonly mailService: MailProvider,
     @Inject(CACHE_MANAGER) private cacheManager: Cache
   ) {}
 }
