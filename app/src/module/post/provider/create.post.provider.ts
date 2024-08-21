@@ -19,36 +19,36 @@ export class CreatePostProvider {
     }
 
     try {
-      const savedPost = (await this.repository.save(post)) as Post & Document
+      const postResponse = (await this.repository.save(post)) as Post & Document
 
-      console.log(savedPost)
+      console.log(postResponse)
 
       return new PostResponse(
-        savedPost._id,
-        savedPost.name,
-        savedPost.description,
-        savedPost.image,
+        postResponse._id,
+        postResponse.name,
+        postResponse.description,
+        postResponse.image,
         {
-          ...savedPost.pet,
+          ...postResponse.pet,
           breed: {
             id: '',
-            name: savedPost.pet.breed.name
+            name: postResponse.pet.breed.name
           }
         },
         {
-          name: savedPost.user.name,
-          image: savedPost.user.image,
-          description: savedPost.user.image,
+          name: postResponse.user.name,
+          image: postResponse.user.image,
+          description: postResponse.user.image,
           contact: {
-            mail: savedPost.user.contact.mail,
-            phone: savedPost.user.contact.phone,
-            social: savedPost.user.contact.social
+            mail: postResponse.user.contact.mail,
+            phone: postResponse.user.contact.phone,
+            social: postResponse.user.contact.social
           }
         },
         {
           id: '',
-          city: savedPost.location.city,
-          state: savedPost.location.state
+          city: postResponse.location.city,
+          state: postResponse.location.state
         }
       )
     } catch (e) {
