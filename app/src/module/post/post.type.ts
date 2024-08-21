@@ -3,6 +3,8 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Types } from 'mongoose'
 
 import { Breed } from '@/module/breed/breed.type'
+import { User } from '../user/user.type'
+import { Location } from '../location/location.type'
 
 export enum Size {
   Small = 'small',
@@ -29,7 +31,7 @@ export class Pet {
   gender: Gender
 
   @Prop({ type: Types.ObjectId, ref: 'Breed' })
-  breed: string
+  breed: Breed
 }
 
 @Schema({ id: true, collection: 'Post' })
@@ -47,10 +49,10 @@ export class Post {
   pet: Pet
 
   @Prop({ type: Types.ObjectId, ref: 'User' })
-  user: string
+  user: User
 
   @Prop({ type: Types.ObjectId, ref: 'Location' })
-  location: string
+  location: Location
 
   @Prop(Boolean)
   publish: boolean
