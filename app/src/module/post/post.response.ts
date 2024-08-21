@@ -19,13 +19,13 @@ export class PostResponse {
   ) {}
 }
 
-export class PetResponse {
+class PetResponse {
   constructor(
     readonly name: string,
     readonly age: [number, number],
     readonly size: Size,
     readonly gender: Gender,
-    readonly breed: string
+    readonly breed: BreedResponse
   ) {}
 }
 
@@ -36,7 +36,7 @@ class BreedResponse {
   ) {}
 }
 
-export class UserResponse {
+class UserResponse {
   constructor(
     readonly name: string,
     readonly image: string,
@@ -53,7 +53,7 @@ class ContactResponse {
   ) {}
 }
 
-export class LocationResponse {
+class LocationResponse {
   constructor(
     readonly id: string,
     readonly city: string,
