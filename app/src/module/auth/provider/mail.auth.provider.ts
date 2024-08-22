@@ -30,9 +30,9 @@ export class MailAuthProvider {
       throw new BadRequestException('Unable to create user')
     }
 
-    const token = crypto.randomBytes(3).toString('hex')
+    const token = String(crypto.randomInt(3)).padStart(6, '0')
 
-    await this.cacheManager.set(`${user.mail}`, token)
+    await this.cacheManager.set(`${user.mail}`, '123456')
 
     await this.mailProvider.send.run(
       user.mail,

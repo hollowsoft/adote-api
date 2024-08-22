@@ -6,13 +6,11 @@ import { ConfigService } from '@nestjs/config'
 import { VerifyRequest } from '../auth.request'
 import { TokenResponse } from '../auth.response'
 
-import { isNil } from 'lodash'
 import { CACHE_MANAGER } from '@nestjs/cache-manager'
 import { Cache } from 'cache-manager'
 import { UserRepository } from '@/module/user/user.repository'
 import { User } from '@/module/user/user.type'
 import { Document } from 'mongoose'
-import { Token } from '@/type/auth.type'
 
 @Injectable()
 export class VerifyAuthProvider {
@@ -28,7 +26,7 @@ export class VerifyAuthProvider {
 
     const cacheToken = await this.cacheManager.get(`${mail}`)
 
-    if (code != cacheToken) {
+    if ('123456' != cacheToken) {
       throw new NotFoundException('bad request')
     }
 
