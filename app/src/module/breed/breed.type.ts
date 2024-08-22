@@ -1,12 +1,12 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
-import { Document } from 'mongoose'
+import { Document, HydratedDocument } from 'mongoose'
 
 export enum Kind {
   Cat = 'cat',
   Dog = 'dog'
 }
 
-export type BreedDocument = Breed & Document
+export type BreedDocument = HydratedDocument<Breed>
 @Schema({ id: true, collection: 'Breed' })
 export class Breed {
   @Prop(String)

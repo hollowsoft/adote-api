@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
-import { Document, Types } from 'mongoose'
+import { Document, HydratedDocument, Types } from 'mongoose'
 
 import { Post } from '@/module/post/post.type'
 import { Location } from '@/module/location/location.type'
@@ -26,7 +26,7 @@ export class Contact {
   social?: string
 }
 
-export type UserDocument = User & Document
+export type UserDocument = HydratedDocument<User>
 @Schema({ id: true, collection: 'User' })
 export class User {
   @Prop(String)
@@ -48,7 +48,7 @@ export class User {
   post: Post[]
 
   @Prop({ type: Types.ObjectId, ref: 'Contact' })
-  contact?: Contact
+  contact?: ContactDocument
 
   @Prop({ type: Types.ObjectId, ref: 'Location' })
   location?: Location

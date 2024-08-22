@@ -9,15 +9,8 @@ export class CreatePostProvider {
   constructor(private readonly repository: PostRepository) {}
 
   async run(request: CreatePostRequest, user: string): Promise<PostResponse> {
-    const post = {
-      ...request,
-      user: user,
-      location: request.location,
-      pet: { ...request.pet, breed: request.pet.breed }
-    }
-
     try {
-      const postResponse = await this.repository.save(post)
+      const postResponse = await this.repository.save(request, user)
 
       return new PostResponse(
         postResponse._id,

@@ -1,10 +1,10 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
-import { Document, Types } from 'mongoose'
+import { Document, HydratedDocument, Types } from 'mongoose'
 
 import { BreedDocument } from '@/module/breed/breed.type'
 import { UserDocument } from '../user/user.type'
-import { LocationDocument } from '../location/location.type'
+import { Location, LocationDocument } from '../location/location.type'
 import { CreatePostRequest } from './post.request'
 
 export class CreatePost extends CreatePostRequest {}
@@ -37,7 +37,7 @@ export class Pet {
   breed: BreedDocument
 }
 
-export type PostDocument = Post & Document
+export type PostDocument = HydratedDocument<Post>
 @Schema({ id: true, collection: 'Post' })
 export class Post {
   @Prop(String)
