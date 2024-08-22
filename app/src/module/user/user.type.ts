@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
-import { Types } from 'mongoose'
+import { Document, Types } from 'mongoose'
 
 import { Post } from '@/module/post/post.type'
 import { Location } from '@/module/location/location.type'
@@ -10,6 +10,7 @@ export enum Role {
   Member = 'member'
 }
 
+export type ContactDocument = Contact & Document
 @Schema({ id: true, collection: 'Contact' })
 export class Contact {
   @Prop(String)
@@ -25,6 +26,7 @@ export class Contact {
   social?: string
 }
 
+export type UserDocument = User & Document
 @Schema({ id: true, collection: 'User' })
 export class User {
   @Prop(String)

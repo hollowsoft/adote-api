@@ -1,5 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
+import { Document } from 'mongoose'
 
+export type LocationDocument = Location & Document
 @Schema({ id: true, collection: 'Location' })
 export class Location {
   @Prop(String)

@@ -4,8 +4,6 @@ import { PostRepository } from '../post.repository'
 
 import { PostResponse } from '../post.response'
 import { CreatePostRequest } from '../post.request'
-import { Post } from '../post.type'
-import { Document } from 'mongoose'
 
 export class CreatePostProvider {
   constructor(private readonly repository: PostRepository) {}
@@ -19,9 +17,7 @@ export class CreatePostProvider {
     }
 
     try {
-      const postResponse = (await this.repository.save(post)) as Post & Document
-
-      console.log(postResponse)
+      const postResponse = await this.repository.save(post)
 
       return new PostResponse(
         postResponse._id,
@@ -31,7 +27,7 @@ export class CreatePostProvider {
         {
           ...postResponse.pet,
           breed: {
-            id: '',
+            id: postResponse.pet.breed._id,
             name: postResponse.pet.breed.name
           }
         },
@@ -46,7 +42,7 @@ export class CreatePostProvider {
           }
         },
         {
-          id: '',
+          id: postResponse.location._id,
           city: postResponse.location.city,
           state: postResponse.location.state
         }

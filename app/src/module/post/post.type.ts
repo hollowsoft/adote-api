@@ -1,10 +1,13 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
-import { Types } from 'mongoose'
+import { Document, Types } from 'mongoose'
 
-import { Breed } from '@/module/breed/breed.type'
-import { User } from '../user/user.type'
-import { Location } from '../location/location.type'
+import { BreedDocument } from '@/module/breed/breed.type'
+import { UserDocument } from '../user/user.type'
+import { LocationDocument } from '../location/location.type'
+import { CreatePostRequest } from './post.request'
+
+export class CreatePost extends CreatePostRequest {}
 
 export enum Size {
   Small = 'small',
@@ -31,9 +34,10 @@ export class Pet {
   gender: Gender
 
   @Prop({ type: Types.ObjectId, ref: 'Breed' })
-  breed: Breed
+  breed: BreedDocument
 }
 
+export type PostDocument = Post & Document
 @Schema({ id: true, collection: 'Post' })
 export class Post {
   @Prop(String)
@@ -49,10 +53,10 @@ export class Post {
   pet: Pet
 
   @Prop({ type: Types.ObjectId, ref: 'User' })
-  user: User
+  user: UserDocument
 
   @Prop({ type: Types.ObjectId, ref: 'Location' })
-  location: Location
+  location: LocationDocument
 
   @Prop(Boolean)
   publish: boolean
