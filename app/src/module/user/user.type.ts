@@ -7,6 +7,8 @@ import { Location } from '@/module/location/location.type'
 
 export type UserDocument = HydratedDocument<User>
 
+export type ContactDocument = HydratedDocument<Contact>
+
 export enum Role {
   Admin = 'admin',
   Member = 'member'
@@ -48,7 +50,7 @@ export class User {
   post: Post[] = []
 
   @Prop({ type: Types.ObjectId, ref: 'Contact' })
-  contact?: Contact
+  contact?: ContactDocument
 
   @Prop({ type: Types.ObjectId, ref: 'Location' })
   location?: Location

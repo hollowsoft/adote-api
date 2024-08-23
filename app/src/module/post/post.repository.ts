@@ -3,7 +3,33 @@ import { InjectModel } from '@nestjs/mongoose'
 
 import { Model } from 'mongoose'
 
-import { Post, PostDocument } from './post.type'
+import { Gender, Post, PostDocument, Size } from './post.type'
+
+class CreatePost {
+  name: string
+
+  description: string
+
+  image: string[]
+
+  pet: {
+    name: string
+
+    age: [number, number]
+
+    size: Size
+
+    gender: Gender
+
+    breed: string
+  }
+
+  user: string
+
+  location: string
+
+  publish: boolean
+}
 
 @Injectable()
 export class PostRepository {
@@ -17,11 +43,16 @@ export class PostRepository {
     return this.model.findById('').exec()
   }
 
-  async save(post: any): Promise<PostDocument> {
+  async save(post: CreatePost): Promise<PostDocument> {
     return this.model
       .create(post)
       .then((model) =>
-        model.populate([{ path: 'location' }, { path: 'user' }, { path: 'pet.breed', model: 'Breed' }])
+        model.populate([
+          { path: 'user.contact', model: 'Contact' },
+          { path: 'location' },
+          { path: 'user' },
+          { path: 'pet.breed', model: 'Breed' }
+        ])
       )
   }
 
