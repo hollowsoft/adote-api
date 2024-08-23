@@ -17,7 +17,7 @@ export class PostRepository {
     return this.model.findById('').exec()
   }
 
-  async save(post: Post): Promise<PostDocument> {
+  async save(post: any): Promise<PostDocument> {
     return this.model
       .create(post)
       .then((model) =>

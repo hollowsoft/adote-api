@@ -1,3 +1,4 @@
+import { Types } from 'mongoose'
 import { Size, Gender } from './post.type'
 
 export class PublishPostResponse {
@@ -9,7 +10,7 @@ export class PublishPostResponse {
 
 export class PostResponse {
   constructor(
-    readonly id: string,
+    readonly id: Types.ObjectId,
     readonly title: string,
     readonly description: string,
     readonly image: string[],
@@ -31,7 +32,7 @@ class PetResponse {
 
 class BreedResponse {
   constructor(
-    readonly id: string,
+    readonly id: Types.ObjectId,
     readonly name: string
   ) {}
 }
@@ -55,7 +56,7 @@ class ContactResponse {
 
 class LocationResponse {
   constructor(
-    readonly id: string,
+    readonly id: Types.ObjectId,
     readonly city: string,
     readonly state: string
   ) {}
