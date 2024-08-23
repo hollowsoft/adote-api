@@ -1,9 +1,11 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
-import { Types } from 'mongoose'
+import { Types, HydratedDocument } from 'mongoose'
 
 import { Post } from '@/module/post/post.type'
 import { Location } from '@/module/location/location.type'
+
+export type UserDocument = HydratedDocument<User>
 
 export enum Role {
   Admin = 'admin',
@@ -27,7 +29,7 @@ export class Contact {
 
 @Schema({ id: true, collection: 'User' })
 export class User {
-  @Prop(String)
+  @Prop({ type: String, unique: true, required: true })
   mail: string
 
   @Prop(String)
@@ -39,11 +41,11 @@ export class User {
   @Prop(String)
   description?: string
 
-  @Prop({ type: [{ type: Types.ObjectId, ref: 'Post' }] })
-  fav: Post[]
+  @Prop({ type: [{ type: Types.ObjectId, ref: 'Post' }], default: [] })
+  fav: Post[] = []
 
-  @Prop({ type: [{ type: Types.ObjectId, ref: 'Post' }] })
-  post: Post[]
+  @Prop({ type: [{ type: Types.ObjectId, ref: 'Post' }], default: [] })
+  post: Post[] = []
 
   @Prop({ type: Types.ObjectId, ref: 'Contact' })
   contact?: Contact
@@ -51,11 +53,11 @@ export class User {
   @Prop({ type: Types.ObjectId, ref: 'Location' })
   location?: Location
 
-  @Prop(Role)
-  role: Role
+  @Prop({ type: String, enum: Role, default: Role.Member })
+  role: Role = Role.Member
 
-  @Prop(Boolean)
-  enable: boolean
+  @Prop({ type: Boolean, default: true })
+  enable: boolean = true
 }
 
 export const schema = SchemaFactory.createForClass(User)
