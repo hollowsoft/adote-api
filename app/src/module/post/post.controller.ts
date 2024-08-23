@@ -28,9 +28,9 @@ export class PostController {
 
   @Post()
   create(@Body() request: CreatePostRequest, @Auth() token: Token): Promise<PostResponse> {
-    const { sub } = token
+    const { user } = token
 
-    return this.provider.create.run(request, sub)
+    return this.provider.create.run(request, user.id)
   }
 
   @Put(':id')

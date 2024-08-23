@@ -38,6 +38,8 @@ class PetRequest {
   readonly gender: Gender
 
   @IsString()
+  @IsNotEmpty()
+  @Transform(({ value }: TransformFnParams) => value?.trim())
   readonly breed: string
 }
 
@@ -54,6 +56,7 @@ export class CreatePostRequest {
 
   @IsArray()
   @IsString({ each: true })
+  @IsNotEmpty()
   readonly image: string[]
 
   @Type(() => PetRequest)
@@ -61,6 +64,8 @@ export class CreatePostRequest {
   readonly pet: PetRequest
 
   @IsString()
+  @IsNotEmpty()
+  @Transform(({ value }: TransformFnParams) => value?.trim())
   readonly location: string
 
   @IsBoolean()
@@ -91,6 +96,8 @@ export class PatchPostRequest {
 
   @IsArray()
   @IsString({ each: true })
+  @IsNotEmpty()
+  @Transform(({ value }: TransformFnParams) => value?.trim())
   readonly image: string[]
 
   @Type(() => PetRequest)
@@ -98,5 +105,7 @@ export class PatchPostRequest {
   readonly pet: PetRequest
 
   @IsString()
+  @IsNotEmpty()
+  @Transform(({ value }: TransformFnParams) => value?.trim())
   readonly location: string
 }
