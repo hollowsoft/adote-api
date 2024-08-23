@@ -1,4 +1,5 @@
-import { Size, Gender } from '@/module/post/post.type'
+import { Size } from '@/module/post/type/size.enum'
+import { Gender } from '@/module/post/type/gender.enum'
 
 import { FavResponse } from '../fav.response'
 

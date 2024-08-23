@@ -1,11 +1,12 @@
-import { Size, Gender } from '@/module/post/post.type'
+import { Size } from '@/module/post/type/size.enum'
+import { Gender } from '@/module/post/type/gender.enum'
 
 export class HistoryResponse {
   constructor(
     readonly id: string,
     readonly name: string,
     readonly image: string,
-    readonly age: [number, number],
+    readonly age: number,
     readonly size: Size,
     readonly gender: Gender,
     readonly breed: string
