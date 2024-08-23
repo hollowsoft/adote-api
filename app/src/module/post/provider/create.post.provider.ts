@@ -15,14 +15,14 @@ export class CreatePostProvider {
       console.log(post)
 
       return {
-        id: post._id,
+        id: post.id,
         title: post.name,
         description: post.description,
         image: post.image,
         pet: {
           ...post.pet,
           breed: {
-            id: post.pet.breed._id,
+            id: post.pet.breed.id,
             name: post.pet.name
           }
         },
@@ -37,7 +37,7 @@ export class CreatePostProvider {
           }
         },
         location: {
-          id: post.location._id,
+          id: post.location.id,
           city: post.location.city,
           state: post.location.state
         }
