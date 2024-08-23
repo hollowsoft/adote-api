@@ -1,4 +1,4 @@
-import { Length, IsEmail } from 'class-validator'
+import { Length, IsEmail, IsString } from 'class-validator'
 
 export class AuthRequest {
   @IsEmail()
@@ -9,6 +9,7 @@ export class VerifyRequest {
   @IsEmail()
   readonly mail: string
 
+  @IsString()
   @Length(6, 6)
   readonly code: string
 }

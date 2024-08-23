@@ -13,7 +13,7 @@ import { UserRepository } from '@/module/user/user.repository'
 export class AuthProvider {
   readonly mail: MailAuthProvider = new MailAuthProvider(this.repository)
   readonly renew: RenewAuthProvider = new RenewAuthProvider(this.jwt, this.configuration)
-  readonly verify: VerifyAuthProvider = new VerifyAuthProvider(this.jwt, this.configuration)
+  readonly verify: VerifyAuthProvider = new VerifyAuthProvider(this.jwt, this.configuration, this.repository)
 
   constructor(
     private readonly jwt: JwtService,
