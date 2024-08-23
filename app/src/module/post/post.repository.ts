@@ -17,8 +17,12 @@ export class PostRepository {
     return this.model.findById('').exec()
   }
 
-  save(post: Post): Promise<PostDocument> {
-    return this.model.create(post)
+  async save(post: Post): Promise<PostDocument> {
+    return this.model
+      .create(post)
+      .then((model) =>
+        model.populate([{ path: 'location' }, { path: 'user' }, { path: 'pet.breed', model: 'Breed' }])
+      )
   }
 
   remove(): Promise<PostDocument> {
