@@ -14,37 +14,39 @@ export class ListPostProvider {
 
     const list = await this.repository.list()
 
-    return list.map((post) => ({
-      id: '',
-      title: post.name,
-      description: post.description,
-      image: post.image,
-      pet: {
-        name: post.pet.name,
-        age: post.pet.age,
-        size: post.pet.size,
-        gender: post.pet.gender,
-        breed: {
-          id: '',
-          name: post.pet.breed.name
-        }
-      },
-      location: {
-        id: '',
-        city: '',
-        state: ''
-      },
-      user: {
-        name: post.user.name,
-        image: post.user.image,
-        description: post.user.description,
-        contact: {
-          mail: post.user.contact.mail,
-          phone: post.user.contact.phone,
+    // return list.map((post) => ({
+    //   id: '',
+    //   title: post.name,
+    //   description: post.description,
+    //   image: post.image,
+    //   pet: {
+    //     name: post.pet.name,
+    //     age: post.pet.age,
+    //     size: post.pet.size,
+    //     gender: post.pet.gender,
+    //     breed: {
+    //       id: '',
+    //       name: post.pet.breed.name
+    //     }
+    //   },
+    //   location: {
+    //     id: '',
+    //     city: '',
+    //     state: ''
+    //   },
+    //   user: {
+    //     name: post.user.name,
+    //     image: post.user.image,
+    //     description: post.user.description,
+    //     contact: {
+    //       mail: post.user.contact.mail,
+    //       phone: post.user.contact.phone,
 
-          social: post.user.contact.social
-        }
-      }
-    }))
+    //       social: post.user.contact.social
+    //     }
+    //   }
+    // }))
+
+    return []
   }
 }

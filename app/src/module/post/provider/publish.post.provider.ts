@@ -9,7 +9,7 @@ export class PublishPostProvider {
   async run(id: string, request: PublishPostRequest): Promise<PublishPostResponse> {
     const { publish } = request
 
-    await this.repository.save()
+    // await this.repository.save()
 
     return {
       id,
