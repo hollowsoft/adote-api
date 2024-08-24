@@ -10,9 +10,11 @@ export class CreatePostProvider {
 
   async run(request: CreatePostRequest, user: string): Promise<PostResponse> {
     try {
-      const post = await this.repository.save(Object.assign(request, { user }))
+      const post = await this.repository
+        .save(Object.assign(request, { user }))
+        .then((type) => type.populate(['user', 'location']))
 
-      return {} as PostResponse
+      return new PostResponse(post)
     } catch (e) {
       throw new InternalServerErrorException(e)
     }

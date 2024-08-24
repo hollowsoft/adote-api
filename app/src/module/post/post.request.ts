@@ -8,14 +8,13 @@ import {
   IsBoolean,
   IsOptional,
   IsNotEmpty,
-  ArrayMinSize,
-  ArrayMaxSize,
   ValidateNested
 } from 'class-validator'
 
 import { Type, Transform, TransformFnParams } from 'class-transformer'
 
-import { Size, Gender } from './post.type'
+import { Size } from './type/size.enum'
+import { Gender } from './type/gender.enum'
 
 class PetRequest {
   @IsString()
@@ -23,13 +22,10 @@ class PetRequest {
   @Transform(({ value }: TransformFnParams) => value?.trim())
   readonly name: string
 
-  @IsArray()
-  @ArrayMinSize(2)
-  @ArrayMaxSize(2)
-  @IsNumber({}, { each: true })
-  @Min(1, { each: true })
-  @Max(20, { each: true })
-  readonly age: [number, number]
+  @IsNumber()
+  @Min(1)
+  @Max(20)
+  readonly age: number
 
   @IsEnum(Size)
   readonly size: Size
