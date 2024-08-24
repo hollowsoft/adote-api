@@ -14,8 +14,8 @@ export class History {
   @Prop(String)
   image: string
 
-  @Prop([Number, Number])
-  age: [number, number]
+  @Prop(Number)
+  age: number
 
   @Prop(Size)
   size: Size

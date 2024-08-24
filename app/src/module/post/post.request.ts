@@ -16,7 +16,7 @@ import { Type, Transform, TransformFnParams } from 'class-transformer'
 import { Size } from './type/size.enum'
 import { Gender } from './type/gender.enum'
 
-class PetRequest {
+export class PetRequest {
   @IsString()
   @IsNotEmpty()
   @Transform(({ value }: TransformFnParams) => value?.trim())
