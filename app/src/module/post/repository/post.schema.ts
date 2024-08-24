@@ -2,8 +2,8 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
 import { Types, HydratedDocument } from 'mongoose'
 
-import { Size } from './size.enum'
-import { Gender } from './gender.enum'
+import { Size } from '../type/size.enum'
+import { Gender } from '../type/gender.enum'
 
 import { User, UserDocument } from '@/module/user/user.type'
 import { Breed, BreedDocument } from '@/module/breed/breed.type'

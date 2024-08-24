@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common'
 import { PostResponse } from '../post.response'
 import { ListPostRequest } from '../post.request'
 
-import { PostRepository } from '../post.repository'
+import { PostRepository } from '../repository/post.repository'
 
 @Injectable()
 export class ListPostProvider {

@@ -2,7 +2,7 @@ import { Injectable, NotFoundException } from '@nestjs/common'
 
 import { PostResponse } from '../post.response'
 
-import { PostRepository } from '../post.repository'
+import { PostRepository } from '../repository/post.repository'
 
 import { isNil } from 'lodash'
 

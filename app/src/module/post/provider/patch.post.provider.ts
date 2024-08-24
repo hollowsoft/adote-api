@@ -1,4 +1,4 @@
-import { PostRepository } from '../post.repository'
+import { PostRepository } from '../repository/post.repository'
 
 import { PatchPostRequest } from '../post.request'
 import { PostResponse } from '../post.response'

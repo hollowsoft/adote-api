@@ -1,7 +1,7 @@
 import { Size } from './type/size.enum'
 import { Gender } from './type/gender.enum'
 
-import { Pet, PostDocument } from './type/post.schema'
+import { Pet, PostDocument } from './repository/post.schema'
 
 import { User, Contact } from '@/module/user/user.type'
 import { BreedDocument } from '@/module/breed/breed.type'
@@ -56,13 +56,11 @@ class BreedResponse {
 class UserResponse {
   readonly name: string
   readonly image: string
-  readonly description: string
   readonly contact: ContactResponse
 
   constructor(user: User) {
     this.name = user.name
     this.image = user.image
-    this.description = user.description
     this.contact = new ContactResponse(user.contact)
   }
 }

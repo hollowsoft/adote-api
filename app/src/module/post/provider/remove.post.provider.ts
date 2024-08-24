@@ -1,6 +1,6 @@
 import { NotFoundException } from '@nestjs/common'
 
-import { PostRepository } from '../post.repository'
+import { PostRepository } from '../repository/post.repository'
 
 import { isNil } from 'lodash'
 

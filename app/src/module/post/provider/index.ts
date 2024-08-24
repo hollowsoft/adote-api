@@ -7,7 +7,7 @@ import { PatchPostProvider } from './patch.post.provider'
 import { PublishPostProvider } from './publish.post.provider'
 import { RemovePostProvider } from './remove.post.provider'
 
-import { PostRepository } from '../post.repository'
+import { PostRepository } from '../repository/post.repository'
 
 @Injectable()
 export class PostProvider {
