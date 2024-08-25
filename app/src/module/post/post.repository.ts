@@ -5,6 +5,8 @@ import { Model, QueryOptions } from 'mongoose'
 
 import { Post } from './post.type'
 
+import { DeleteResult } from 'mongodb'
+
 @Injectable()
 export class PostRepository {
   constructor(@InjectModel(Post.name) private model: Model<Post>) {}
@@ -21,7 +23,7 @@ export class PostRepository {
     return this.model.create(post)
   }
 
-  remove(id: QueryOptions): Promise<Post> {
-    return this.model.findByIdAndDelete(id).exec()
+  remove(query: QueryOptions): Promise<DeleteResult> {
+    return this.model.deleteOne(query).exec()
   }
 }
