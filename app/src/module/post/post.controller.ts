@@ -45,7 +45,9 @@ export class PostController {
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param('id') id: string): Promise<void> {
-    return this.provider.remove.run(id)
+  remove(@Param('id') id: string, @Auth() token: Token): Promise<void> {
+    const { user } = token
+
+    return this.provider.remove.run(id, user.id)
   }
 }

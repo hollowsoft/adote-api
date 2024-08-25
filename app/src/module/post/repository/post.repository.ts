@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { Model } from 'mongoose'
+import { mongo, Model, FilterQuery } from 'mongoose'
 
 import { CreatePost } from './create.post.model'
 
@@ -23,7 +23,7 @@ export class PostRepository {
     return this.model.create(post)
   }
 
-  remove(): Promise<PostDocument> {
-    return this.model.findByIdAndDelete('').exec()
+  remove(query?: FilterQuery<Post>): Promise<mongo.DeleteResult> {
+    return this.model.deleteOne(query).exec()
   }
 }
