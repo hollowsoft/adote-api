@@ -3,13 +3,13 @@ import { InjectModel } from '@nestjs/mongoose'
 
 import { mongo, Model, FilterQuery } from 'mongoose'
 
-import { Breed } from './breed.type'
+import { Breed, BreedDocument } from './breed.type'
 
 @Injectable()
 export class BreedRepository {
   constructor(@InjectModel(Breed.name) private model: Model<Breed>) {}
 
-  list(query?: FilterQuery<Breed>): Promise<Breed[]> {
+  list(query?: FilterQuery<Breed>): Promise<BreedDocument[]> {
     return this.model.find(query)
   }
 
