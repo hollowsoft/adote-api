@@ -71,7 +71,10 @@ export class CreatePostRequest {
 export class ListPostRequest {
   @IsEnum(Size)
   @IsOptional()
-  readonly size?: Size
+  readonly size?: number
+
+  @IsOptional()
+  readonly page?: number
 }
 
 export class PublishPostRequest {

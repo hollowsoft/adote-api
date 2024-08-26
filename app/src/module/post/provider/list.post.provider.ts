@@ -10,9 +10,11 @@ export class ListPostProvider {
   constructor(private readonly repository: PostRepository) {}
 
   async run(request: ListPostRequest): Promise<PostResponse[]> {
-    const { size } = request
+    const { page = 1, size = 10 } = request
 
-    const list = await this.repository.list().then((posts) =>
+    const skip = (page - 1) * size
+
+    const list = await this.repository.list(skip, size).then((posts) =>
       Promise.all(
         posts.map((post) =>
           post.populate([
