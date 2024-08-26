@@ -10,8 +10,8 @@ import { Post, PostDocument } from './post.schema'
 export class PostRepository {
   constructor(@InjectModel(Post.name) private model: Model<Post>) {}
 
-  list(skip: number, limit: number): Promise<PostDocument[]> {
-    return this.model.find().skip(skip).limit(limit).exec()
+  list(skip: number, limit: number, query: FilterQuery<Post>): Promise<PostDocument[]> {
+    return this.model.find(query).skip(skip).limit(limit).exec()
   }
 
   find(): Promise<PostDocument> {
