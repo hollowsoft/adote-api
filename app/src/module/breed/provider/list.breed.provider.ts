@@ -4,7 +4,7 @@ import { BreedResponse } from '../breed.response'
 import { ListBreedRequest } from '../breed.request'
 
 import { BreedRepository } from '../breed.repository'
-import { Breed, BreedDocument } from '../breed.type'
+import { BreedDocument } from '../breed.type'
 
 @Injectable()
 export class ListBreedProvider {
@@ -15,9 +15,6 @@ export class ListBreedProvider {
 
     const list: BreedDocument[] = await this.repository.list({ kind: kind })
 
-    return list.map((breed) => ({
-      id: breed.id,
-      name: breed.name
-    }))
+    return list.map((breed) => new BreedResponse(breed))
   }
 }
