@@ -6,13 +6,11 @@ import { FavRepository } from '../fav.repository'
 export class AddFavProvider {
   constructor(private readonly repository: FavRepository) {}
 
-  async run(request: AddFavRequest): Promise<AddFavResponse> {
+  async run(request: AddFavRequest, user: string): Promise<AddFavResponse> {
     const { post } = request
 
-    // const fav = await this.repository.save({} as any)
+    const fav = await this.repository.save(post, user)
 
-    return {
-      id: ''
-    }
+    return new AddFavResponse(fav._id)
   }
 }

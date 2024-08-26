@@ -3,14 +3,14 @@ import { InjectModel } from '@nestjs/mongoose'
 
 import { Model } from 'mongoose'
 
-import { User } from '@/module/user/user.type'
+import { User, UserDocument } from '@/module/user/user.type'
 
 @Injectable()
 export class FavRepository {
   constructor(@InjectModel(User.name) private model: Model<User>) {}
 
-  save(id: string): Promise<User> {
-    return new this.model({}).save()
+  save(post: string, id: string): Promise<UserDocument> {
+    return new this.model({ id: id }).save()
   }
 
   remove(id: string): Promise<User> {

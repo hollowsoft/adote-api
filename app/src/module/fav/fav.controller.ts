@@ -4,6 +4,8 @@ import { FavProvider } from './provider'
 
 import { AddFavRequest, RemoveFavRequest } from './fav.request'
 import { FavResponse, AddFavResponse } from './fav.response'
+import { Auth } from '@/decorator/auth.decorator'
+import { Token } from '@/type/auth.type'
 
 @Controller('fav')
 export class FavController {
@@ -15,8 +17,10 @@ export class FavController {
   }
 
   @Post()
-  add(@Body() request: AddFavRequest): Promise<AddFavResponse> {
-    return this.provider.add.run(request)
+  add(@Body() request: AddFavRequest, @Auth() token: Token): Promise<AddFavResponse> {
+    const { user } = token
+
+    return this.provider.add.run(request, user)
   }
 
   @Delete(':id')

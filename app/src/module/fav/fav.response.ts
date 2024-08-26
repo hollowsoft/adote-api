@@ -1,8 +1,9 @@
 import { Size } from '@/module/post/type/size.enum'
 import { Gender } from '@/module/post/type/gender.enum'
+import { Types } from 'mongoose'
 
 export class AddFavResponse {
-  constructor(readonly id: string) {}
+  constructor(readonly id: Types.ObjectId) {}
 }
 
 export class FavResponse {
