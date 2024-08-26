@@ -74,7 +74,7 @@ export class ListPostRequest {
   readonly size?: number
 
   @IsOptional()
-  readonly page?: number
+  readonly page: number
 }
 
 export class PublishPostRequest {
