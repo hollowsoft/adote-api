@@ -9,7 +9,7 @@ export class SendMailProvider {
 
   async run(body: string, subject: string, to: string) {
     AWS.config.update({
-      region: 'REGION',
+      region: this.config.get<string>('AWS_REGION'),
       credentials: {
         secretAccessKey: this.config.get<string>('SECRET_ACCESS_KEY'),
         accessKeyId: this.config.get<string>('ACCESS_KEY_ID')
@@ -25,10 +25,10 @@ export class SendMailProvider {
       },
       Message: {
         Body: {
-          Html: {
-            Charset: 'UTF-8',
-            Data: body
-          },
+          // Html: {
+          //   Charset: 'UTF-8',
+          //   Data: body
+          // },
           Text: {
             Charset: 'UTF-8',
             Data: body
