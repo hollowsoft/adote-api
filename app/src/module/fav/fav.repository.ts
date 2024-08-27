@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { Model } from 'mongoose'
+import { Model, Types } from 'mongoose'
 
 import { User, UserDocument } from '@/module/user/user.type'
 
@@ -9,7 +9,7 @@ import { User, UserDocument } from '@/module/user/user.type'
 export class FavRepository {
   constructor(@InjectModel(User.name) private model: Model<User>) {}
 
-  async save(post: string, id: string): Promise<UserDocument> {
+  async save(post: string, id: Types.ObjectId): Promise<UserDocument> {
     return this.model.findByIdAndUpdate(id, { $push: { fav: post } }, { new: true }).exec()
   }
 
