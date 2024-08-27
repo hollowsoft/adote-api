@@ -8,7 +8,13 @@ export class SendMailProvider {
   constructor(private readonly config: ConfigService) {}
 
   async run(body: string, subject: string, to: string) {
-    AWS.config.update({ region: 'REGION' })
+    AWS.config.update({
+      region: 'REGION',
+      credentials: {
+        secretAccessKey: this.config.get<string>('SECRET_ACCESS_KEY'),
+        accessKeyId: this.config.get<string>('ACCESS_KEY_ID')
+      }
+    })
 
     const sender = this.config.get<string>('SENDER_EMAIL')
 
@@ -36,7 +42,7 @@ export class SendMailProvider {
       Source: sender
     }
 
-    var sendPromise = new AWS.SES({ apiVersion: '2010-12-01' }).sendEmail(params).promise()
+    const sendPromise = new AWS.SES({ apiVersion: '2010-12-01' }).sendEmail(params).promise()
 
     sendPromise
       .then(function (data) {
