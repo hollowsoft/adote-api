@@ -1,11 +1,8 @@
-import { Injectable } from '@nestjs/common'
-
 import { BreedResponse } from '../breed.response'
 import { ListBreedRequest } from '../breed.request'
 
 import { BreedRepository } from '../breed.repository'
 
-@Injectable()
 export class ListBreedProvider {
   constructor(private readonly repository: BreedRepository) {}
 
