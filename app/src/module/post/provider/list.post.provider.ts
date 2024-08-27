@@ -14,17 +14,7 @@ export class ListPostProvider {
 
     const skip = (page - 1) * size
 
-    const list = await this.repository.list(skip, size, {}).then((posts) =>
-      Promise.all(
-        posts.map((type) =>
-          type.populate([
-            { path: 'pet.breed', model: 'Breed' },
-            { path: 'user.contact', model: 'Contact' },
-            { path: 'location', model: 'Location' }
-          ])
-        )
-      )
-    )
+    const list = await this.repository.list(skip, size, {})
 
     return list.map((post) => new PostResponse(post))
   }
