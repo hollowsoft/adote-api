@@ -20,7 +20,7 @@ export class FavController {
   add(@Body() request: AddFavRequest, @Auth() token: Token): Promise<AddFavResponse> {
     const { user } = token
 
-    return this.provider.add.run(request, user)
+    return this.provider.add.run(request, user.id)
   }
 
   @Delete(':id')
