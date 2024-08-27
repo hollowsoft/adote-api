@@ -14,6 +14,11 @@ export class ListBreedProvider {
 
     const list = await this.repository.list({ kind })
 
-    return list.map((breed) => new BreedResponse(breed))
+    return list.map((breed) => {
+      return {
+        id: breed._id,
+        name: breed.name
+      }
+    })
   }
 }
