@@ -1,9 +1,9 @@
 import { Size } from '@/module/post/type/size.enum'
 import { Gender } from '@/module/post/type/gender.enum'
-import { Types } from 'mongoose'
+import { HttpStatus } from '@nestjs/common'
 
 export class AddFavResponse {
-  constructor(readonly id: Types.ObjectId) {}
+  constructor(readonly status: HttpStatus) {}
 }
 
 export class FavResponse {

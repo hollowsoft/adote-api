@@ -10,8 +10,8 @@ export class AddFavProvider {
   async run(request: AddFavRequest, user: string): Promise<AddFavResponse> {
     const { post } = request
 
-    const fav = await this.repository.save(post, new Types.ObjectId(user))
+    await this.repository.save(post, new Types.ObjectId(user))
 
-    return new AddFavResponse(fav._id)
+    return new AddFavResponse(204)
   }
 }
