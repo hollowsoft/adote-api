@@ -5,10 +5,14 @@ import { UserRepository } from '@/module/user/user.repository'
 
 import { AuthRequest } from '../auth.request'
 import { AuthResponse } from '../auth.response'
+import { SendMailProvider } from '@/module/mail/provider/send.mail.provider'
 
 @Injectable()
 export class MailAuthProvider {
-  constructor(private readonly repository: UserRepository) {}
+  constructor(
+    private readonly repository: UserRepository,
+    private readonly sendMailProvider: SendMailProvider
+  ) {}
 
   async run(request: AuthRequest): Promise<AuthResponse> {
     const { mail } = request
@@ -16,7 +20,9 @@ export class MailAuthProvider {
     try {
       const user = await this.get(mail)
 
-      // TODO: generate and send the code
+      const code = ''
+
+      this.sendMailProvider.run(`This is your authentication code: ${code}`, 'Your verification code', mail)
 
       return new AuthResponse(user)
     } catch (e) {

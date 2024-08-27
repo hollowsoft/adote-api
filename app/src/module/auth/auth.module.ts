@@ -15,9 +15,10 @@ import { TokenRenewStrategy } from './strategy/token.renew.strategy'
 import { AuthProvider } from './provider'
 
 import { AuthController } from './auth.controller'
+import { SendMailProvider } from '../mail/provider/send.mail.provider'
 
 @Module({
-  imports: [JwtModule, PassportModule, UserModule],
+  imports: [JwtModule, PassportModule, UserModule, SendMailProvider],
   providers: [
     AuthProvider,
     TokenStrategy,
