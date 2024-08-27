@@ -8,15 +8,18 @@ export class SendMailProvider {
   constructor(private readonly config: ConfigService) {}
 
   async run(body: string, subject: string, to: string) {
+    const sender = this.config.get<string>('SENDER_EMAIL')
+    const secretKey = this.config.get<string>('SECRET_ACCESS_KEY')
+    const accessKey = this.config.get<string>('ACCESS_KEY_ID')
+    const awsRegion = this.config.get<string>('AWS_REGION')
+
     AWS.config.update({
-      region: this.config.get<string>('AWS_REGION'),
+      region: awsRegion,
       credentials: {
-        secretAccessKey: this.config.get<string>('SECRET_ACCESS_KEY'),
-        accessKeyId: this.config.get<string>('ACCESS_KEY_ID')
+        secretAccessKey: secretKey,
+        accessKeyId: accessKey
       }
     })
-
-    const sender = this.config.get<string>('SENDER_EMAIL')
 
     var params = {
       Destination: {
