@@ -10,7 +10,7 @@ export class FavRepository {
   constructor(@InjectModel(User.name) private model: Model<User>) {}
 
   async save(post: string, id: Types.ObjectId): Promise<UserDocument> {
-    return this.model.findByIdAndUpdate(id, { $push: { fav: post } }, { new: true }).exec()
+    return this.model.findOneAndUpdate(id, { $push: { fav: post } }, { new: true }).exec()
   }
 
   remove(id: string): Promise<User> {
