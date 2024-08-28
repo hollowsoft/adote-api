@@ -9,8 +9,8 @@ import { User, UserDocument } from '@/module/user/user.type'
 export class FavRepository {
   constructor(@InjectModel(User.name) private model: Model<User>) {}
 
-  save(post: Types.ObjectId, id: Types.ObjectId): Promise<UserDocument> {
-    return this.model.findOneAndUpdate(id, { $push: { fav: post } }, { new: true }).exec()
+  save(post: Types.ObjectId, user: Types.ObjectId): Promise<UserDocument> {
+    return this.model.findOneAndUpdate(user, { $push: { fav: post } }, { new: true }).exec()
   }
 
   remove(id: string): Promise<User> {
