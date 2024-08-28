@@ -13,7 +13,7 @@ export class ListBreedProvider {
 
     return list.map((breed) => {
       return {
-        id: breed._id,
+        id: breed.id,
         name: breed.name
       }
     })
