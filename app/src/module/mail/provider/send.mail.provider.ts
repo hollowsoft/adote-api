@@ -21,7 +21,7 @@ export class SendMailProvider {
       }
     })
 
-    var params = {
+    const params = {
       Destination: {
         CcAddresses: [to],
         ToAddresses: [to]
