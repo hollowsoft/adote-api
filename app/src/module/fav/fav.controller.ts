@@ -17,7 +17,8 @@ export class FavController {
   }
 
   @Post()
-  add(@Body() request: AddFavRequest, @Auth() token: Token): Promise<AddFavResponse> {
+  @HttpCode(HttpStatus.NO_CONTENT)
+  add(@Body() request: AddFavRequest, @Auth() token: Token): Promise<void> {
     const { user } = token
 
     return this.provider.add.run(request, user.id)
