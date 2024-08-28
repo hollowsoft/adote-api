@@ -70,10 +70,12 @@ export class CreatePostRequest {
 
 export class ListPostRequest {
   @IsEnum(Size)
-  @IsOptional()
-  readonly size?: number
+  @IsNumber()
+  @IsNotEmpty()
+  readonly size: number
 
-  @IsOptional()
+  @IsNumber()
+  @IsNotEmpty()
   readonly page: number
 }
 

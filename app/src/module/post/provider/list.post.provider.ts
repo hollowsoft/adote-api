@@ -10,7 +10,7 @@ export class ListPostProvider {
   constructor(private readonly repository: PostRepository) {}
 
   async run(request: ListPostRequest): Promise<PostResponse[]> {
-    const { page, size = 10 } = request
+    const { page, size } = request
 
     const skip = (page - 1) * size
 
