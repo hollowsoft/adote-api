@@ -69,13 +69,10 @@ export class CreatePostRequest {
 }
 
 export class ListPostRequest {
-  @IsEnum(Size)
   @IsNumber()
-  @IsNotEmpty()
-  readonly size: number
+  readonly amount: number
 
   @IsNumber()
-  @IsNotEmpty()
   readonly page: number
 }
 
