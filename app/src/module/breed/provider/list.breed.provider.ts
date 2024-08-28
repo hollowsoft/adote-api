@@ -1,5 +1,3 @@
-import { Injectable } from '@nestjs/common'
-
 import { BreedResponse } from '../breed.response'
 import { ListBreedRequest } from '../breed.request'
 
@@ -11,11 +9,8 @@ export class ListBreedProvider {
   async run(request: ListBreedRequest): Promise<BreedResponse[]> {
     const { kind } = request
 
-    const list = await this.repository.list()
+    const list = await this.repository.list({ kind })
 
-    return list.map((breed) => ({
-      id: '',
-      name: breed.name
-    }))
+    return list.map((breed) => new BreedResponse(breed))
   }
 }

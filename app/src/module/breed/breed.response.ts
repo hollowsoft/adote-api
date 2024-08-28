@@ -1,6 +1,11 @@
+import { BreedDocument } from './breed.type'
+
 export class BreedResponse {
-  constructor(
-    readonly id: string,
-    readonly name: string
-  ) {}
+  readonly id: string
+  readonly name: string
+
+  constructor(breed: BreedDocument) {
+    this.id = breed.id
+    this.name = breed.name
+  }
 }
