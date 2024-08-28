@@ -45,14 +45,12 @@ export class SendMailProvider {
       Source: sender
     }
 
-    const sendPromise = new AWS.SES({ apiVersion: '2010-12-01' }).sendEmail(params).promise()
+    try {
+      const sendMailResponse = await new AWS.SES({ apiVersion: '2010-12-01' }).sendEmail(params).promise()
 
-    sendPromise
-      .then(function (data) {
-        console.log(data.MessageId)
-      })
-      .catch(function (err) {
-        console.error(err, err.stack)
-      })
+      console.log(sendMailResponse.MessageId)
+    } catch (e) {
+      console.error(`Failed to send email: Error: ${e}`)
+    }
   }
 }
