@@ -11,7 +11,7 @@ import {
 
 import { Type, Transform, TransformFnParams } from 'class-transformer'
 
-class ContactRequest {
+export class ContactRequest {
   @IsEmail()
   @IsOptional()
   readonly mail?: string
