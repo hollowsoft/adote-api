@@ -2,7 +2,7 @@ import { IsString } from 'class-validator'
 
 export class AddFavRequest {
   @IsString()
-  readonly post: string
+  readonly id: string
 }
 
 export class RemoveFavRequest {
