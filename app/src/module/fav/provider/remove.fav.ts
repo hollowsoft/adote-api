@@ -1,7 +1,13 @@
 import { RemoveFavRequest } from '../fav.request'
+import { FavRepository } from '../fav.repository'
+import { Types } from 'mongoose'
 
 export class RemoveFavProvider {
-  async run(request: RemoveFavRequest): Promise<void> {
+  constructor(readonly repository: FavRepository) {}
+
+  async run(request: RemoveFavRequest, user: string): Promise<void> {
     const { id } = request
+
+    await this.repository.remove(new Types.ObjectId(id), { user })
   }
 }

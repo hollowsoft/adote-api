@@ -13,7 +13,7 @@ export class FavRepository {
     return this.model.findOneAndUpdate(query, { fav: { $ne: post } }).exec()
   }
 
-  remove(id: string): Promise<User> {
-    return this.model.findByIdAndDelete('').exec()
+  remove(post: Types.ObjectId, query?: FilterQuery<User>): Promise<UserDocument> {
+    return this.model.findOneAndUpdate(query, { $pull: { fav: post } }).exec()
   }
 }

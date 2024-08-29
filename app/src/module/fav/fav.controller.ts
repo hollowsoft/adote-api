@@ -28,7 +28,9 @@ export class FavController {
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param() request: RemoveFavRequest): Promise<void> {
-    return this.provider.remove.run(request)
+  remove(@Param() request: RemoveFavRequest, @Auth() token: Token): Promise<void> {
+    const { user } = token
+
+    return this.provider.remove.run(request, user)
   }
 }
