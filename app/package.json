@@ -17,12 +17,7 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json",
-    "typeorm": "typeorm-ts-node-commonjs",
-    "seed:run": "yarn typeorm migration:run -d config/repository/seed.ts",
-    "seed:revert": "yarn typeorm migration:revert -d config/repository/seed.ts",
-    "migration:run": "yarn typeorm migration:run -d config/repository/migration.ts",
-    "migration:revert": "yarn typeorm migration:revert -d config/repository/migration.ts"
+    "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
     "@fastify/compress": "^6.5.0",
