@@ -7,8 +7,8 @@ import { PatchPost } from '../repository/update.post.model'
 export class PatchPostProvider {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(id: string, request: PatchPostRequest): Promise<PostResponse> {
-    const post = await this.repository.update({ _id: id }, new PatchPost(request)).then((type) =>
+  async run(post: string, request: PatchPostRequest): Promise<PostResponse> {
+    const post = await this.repository.update({ _id: post }, new PatchPost(request)).then((type) =>
       type.populate([
         { path: 'pet.breed', model: 'Breed' },
         { path: 'user.contact', model: 'Contact' },
