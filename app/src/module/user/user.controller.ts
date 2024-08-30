@@ -9,6 +9,9 @@ import { UserProvider } from './provider'
 import { ListUserRequest, PatchUserRequest } from './user.request'
 import { UserResponse } from './user.response'
 
+import { Auth } from '@/decorator/auth.decorator'
+import { Token } from '@/type/auth.type'
+
 @Controller('user')
 export class UserController {
   constructor(private readonly provider: UserProvider) {}
@@ -37,7 +40,9 @@ export class UserController {
   }
 
   @Put()
-  patch(@Body() request: PatchUserRequest): Promise<UserResponse> {
-    return this.provider.patch.run(request)
+  patch(@Body() request: PatchUserRequest, @Auth() token: Token): Promise<UserResponse> {
+    const { user } = token
+
+    return this.provider.patch.run(request, user.id)
   }
 }

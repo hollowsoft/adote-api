@@ -7,7 +7,7 @@ import { PatchUser } from '../patch.user.model'
 export class PatchUserProvider {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(request: PatchUserRequest): Promise<UserResponse> {
+  async run(request: PatchUserRequest, userId: string): Promise<UserResponse> {
     const user = await this.repository
       .update(new PatchUser(request), { name: request.name })
       .then((type) => type.populate([{ path: 'location', model: 'Location' }]))
