@@ -6,5 +6,25 @@
   "jsxSingleQuote": true,
   "trailingComma": "none",
   "bracketSameLine": true,
-  "singleAttributePerLine": true
+  "singleAttributePerLine": true,
+  "plugins": ["@ianvs/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "<BUILTIN_MODULES>",
+    "",
+    "^@nestjs/(.*)$",
+    "",
+    "<THIRD_PARTY_MODULES>",
+    "",
+    "^@/type/(.*)$",
+    "",
+    "^@/decorator/(.*)$",
+    "",
+    "^@/module/(.*)$",
+    "",
+    "^@/helper/(.*)$",
+    "",
+    "^[./]"
+  ],
+  "importOrderParserPlugins": ["typescript", "decorators-legacy"],
+  "importOrderTypeScriptVersion": "5.2.2"
 }
