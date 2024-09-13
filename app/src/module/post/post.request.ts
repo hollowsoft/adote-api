@@ -1,42 +1,25 @@
+import { Transform, TransformFnParams, Type } from 'class-transformer'
 import {
-  Min,
-  Max,
-  IsEnum,
   IsArray,
+  IsBoolean,
+  IsEnum,
+  IsNotEmpty,
   IsNumber,
   IsString,
-  IsBoolean,
-  IsOptional,
-  IsNotEmpty,
+  Max,
+  Min,
   ValidateNested
 } from 'class-validator'
 
-import { Type, Transform, TransformFnParams } from 'class-transformer'
-
-import { Size } from './type/size.enum'
 import { Gender } from './type/gender.enum'
+import { Size } from './type/size.enum'
 
-export class PetRequest {
-  @IsString()
-  @IsNotEmpty()
-  @Transform(({ value }: TransformFnParams) => value?.trim())
-  readonly name: string
+export class ListPostRequest {
+  @IsNumber()
+  readonly page: number
 
   @IsNumber()
-  @Min(1)
-  @Max(20)
-  readonly age: number
-
-  @IsEnum(Size)
-  readonly size: Size
-
-  @IsEnum(Gender)
-  readonly gender: Gender
-
-  @IsString()
-  @IsNotEmpty()
-  @Transform(({ value }: TransformFnParams) => value?.trim())
-  readonly breed: string
+  readonly amount: number
 }
 
 export class CreatePostRequest {
@@ -68,19 +51,6 @@ export class CreatePostRequest {
   readonly publish: boolean
 }
 
-export class ListPostRequest {
-  @IsNumber()
-  readonly amount: number
-
-  @IsNumber()
-  readonly page: number
-}
-
-export class PublishPostRequest {
-  @IsBoolean()
-  readonly publish: boolean
-}
-
 export class PatchPostRequest {
   @IsString()
   @IsNotEmpty()
@@ -106,4 +76,32 @@ export class PatchPostRequest {
   @IsNotEmpty()
   @Transform(({ value }: TransformFnParams) => value?.trim())
   readonly location: string
+}
+
+export class PetRequest {
+  @IsString()
+  @IsNotEmpty()
+  @Transform(({ value }: TransformFnParams) => value?.trim())
+  readonly name: string
+
+  @IsNumber()
+  @Min(1)
+  @Max(20)
+  readonly age: number
+
+  @IsEnum(Size)
+  readonly size: Size
+
+  @IsEnum(Gender)
+  readonly gender: Gender
+
+  @IsString()
+  @IsNotEmpty()
+  @Transform(({ value }: TransformFnParams) => value?.trim())
+  readonly breed: string
+}
+
+export class PublishPostRequest {
+  @IsBoolean()
+  readonly publish: boolean
 }

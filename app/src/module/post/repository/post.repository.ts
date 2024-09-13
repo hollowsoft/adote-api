@@ -10,19 +10,28 @@ import { Post, PostDocument } from './post.schema'
 export class PostRepository {
   constructor(@InjectModel(Post.name) private model: Model<Post>) {}
 
-  async list(skip: number, amount: number, query: FilterQuery<Post>): Promise<PostDocument[]> {
-    return this.model.find(query).skip(skip).limit(amount).exec()
+  list(query: FilterQuery<Post>, skip: number, limit: number): Promise<PostDocument[]> {
+    return this.model
+      .find(query)
+      .skip(skip)
+      .limit(limit)
+      .populate([
+        { path: 'pet.breed', model: 'Breed' },
+        { path: 'user.contact', model: 'Contact' },
+        { path: 'location', model: 'Location' }
+      ])
+      .exec()
   }
 
-  find(): Promise<PostDocument> {
-    return this.model.findById('').exec()
+  find(query: FilterQuery<Post>): Promise<PostDocument> {
+    return this.model.findOne(query).exec()
   }
 
   save(post: CreatePost): Promise<PostDocument> {
     return this.model.create(post)
   }
 
-  remove(query?: FilterQuery<Post>): Promise<mongo.DeleteResult> {
+  remove(query: FilterQuery<Post>): Promise<mongo.DeleteResult> {
     return this.model.deleteOne(query).exec()
   }
 }

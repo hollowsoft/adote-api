@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common'
 
-import { PostResponse } from '../post.response'
 import { ListPostRequest } from '../post.request'
-
+import { PostResponse } from '../post.response'
 import { PostRepository } from '../repository/post.repository'
 
 @Injectable()
@@ -14,17 +13,7 @@ export class ListPostProvider {
 
     const skip = (page - 1) * amount
 
-    const list = await this.repository.list(skip, amount, {}).then((posts) =>
-      Promise.all(
-        posts.map((type) =>
-          type.populate([
-            { path: 'pet.breed', model: 'Breed' },
-            { path: 'user.contact', model: 'Contact' },
-            { path: 'location', model: 'Location' }
-          ])
-        )
-      )
-    )
+    const list = await this.repository.list({}, skip, amount)
 
     return list.map((post) => new PostResponse(post))
   }
