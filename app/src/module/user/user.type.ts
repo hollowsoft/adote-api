@@ -1,9 +1,9 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
-import { Types, HydratedDocument } from 'mongoose'
+import { HydratedDocument, Types } from 'mongoose'
 
+import { LocationDocument } from '@/module/location/location.type'
 import { Post } from '@/module/post/repository/post.schema'
-import { Location } from '@/module/location/location.type'
 
 export type UserDocument = HydratedDocument<User>
 
@@ -51,7 +51,7 @@ export class User {
   contact?: Contact
 
   @Prop({ type: Types.ObjectId, ref: 'Location' })
-  location?: Location
+  location?: LocationDocument
 
   @Prop({ type: String, enum: Role, default: Role.Member })
   role: Role = Role.Member

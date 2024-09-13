@@ -1,30 +1,16 @@
-import { UserRepository } from '../user.repository'
+import { UserToken } from '@/type/auth.type'
 
-import { UserResponse } from '../user.response'
+import { PatchUser } from '../patch.user.model'
+import { UserRepository } from '../user.repository'
 import { PatchUserRequest } from '../user.request'
+import { UserResponse } from '../user.response'
 
 export class PatchUserProvider {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(request: PatchUserRequest): Promise<UserResponse> {
-    const user = await this.repository.save({} as any)
+  async run(request: PatchUserRequest, { id }: UserToken): Promise<UserResponse> {
+    const user = await this.repository.update({ _id: id }, new PatchUser(request))
 
-    return {
-      id: '',
-      mail: user.mail,
-      name: user.name,
-      image: user.image,
-      description: user.description,
-      contact: {
-        mail: user.contact.mail,
-        phone: user.contact.phone,
-        social: user.contact.social
-      },
-      location: {
-        id: '',
-        city: user.location.city,
-        state: user.location.state
-      }
-    }
+    return new UserResponse(user)
   }
 }

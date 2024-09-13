@@ -1,13 +1,14 @@
-import { Get, Put, Post, Body, Param, Query, HttpCode, HttpStatus, Controller } from '@nestjs/common'
+import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post, Put, Query } from '@nestjs/common'
 
-import { Role } from './user.type'
+import { Token } from '@/type/auth.type'
 
+import { Auth } from '@/decorator/auth.decorator'
 import { Permission } from '@/decorator/permission.decorator'
 
 import { UserProvider } from './provider'
-
 import { ListUserRequest, PatchUserRequest } from './user.request'
 import { UserResponse } from './user.response'
+import { Role } from './user.type'
 
 @Controller('user')
 export class UserController {
@@ -37,7 +38,9 @@ export class UserController {
   }
 
   @Put()
-  patch(@Body() request: PatchUserRequest): Promise<UserResponse> {
-    return this.provider.patch.run(request)
+  patch(@Body() request: PatchUserRequest, @Auth() token: Token): Promise<UserResponse> {
+    const { user } = token
+
+    return this.provider.patch.run(request, user)
   }
 }
