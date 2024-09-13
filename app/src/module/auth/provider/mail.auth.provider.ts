@@ -1,14 +1,17 @@
-import { Injectable, InternalServerErrorException } from '@nestjs/common'
+import { InternalServerErrorException } from '@nestjs/common'
 
-import { User, UserDocument } from '@/module/user/user.type'
+import { SendMailProvider } from '@/module/mail/provider/send.mail.provider'
 import { UserRepository } from '@/module/user/user.repository'
+import { User, UserDocument } from '@/module/user/user.type'
 
 import { AuthRequest } from '../auth.request'
 import { AuthResponse } from '../auth.response'
 
-@Injectable()
 export class MailAuthProvider {
-  constructor(private readonly repository: UserRepository) {}
+  constructor(
+    private readonly send: SendMailProvider,
+    private readonly repository: UserRepository
+  ) {}
 
   async run(request: AuthRequest): Promise<AuthResponse> {
     const { mail } = request
@@ -16,7 +19,7 @@ export class MailAuthProvider {
     try {
       const user = await this.get(mail)
 
-      // TODO: generate and send the code
+      this.send.run('', '', '')
 
       return new AuthResponse(user)
     } catch (e) {
