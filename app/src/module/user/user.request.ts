@@ -1,20 +1,18 @@
+import { Transform, TransformFnParams, Type } from 'class-transformer'
 import {
-  IsString,
-  MaxLength,
-  IsNotEmpty,
   IsBoolean,
   IsEmail,
+  IsNotEmpty,
   IsOptional,
   IsPhoneNumber,
+  IsString,
+  MaxLength,
   ValidateNested
 } from 'class-validator'
 
-import { Type, Transform, TransformFnParams } from 'class-transformer'
-
 export class ContactRequest {
   @IsEmail()
-  @IsOptional()
-  readonly mail?: string
+  readonly mail: string
 
   @IsPhoneNumber('BR')
   @IsOptional()
@@ -47,7 +45,7 @@ export class PatchUserRequest {
   @Type(() => ContactRequest)
   @IsOptional()
   @ValidateNested()
-  readonly contact?: ContactRequest
+  readonly contact: ContactRequest
 
   @IsString()
   readonly location: string

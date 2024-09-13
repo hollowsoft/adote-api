@@ -1,4 +1,5 @@
 import { Types } from 'mongoose'
+
 import { ContactRequest, PatchUserRequest } from './user.request'
 
 class PatchContact {
