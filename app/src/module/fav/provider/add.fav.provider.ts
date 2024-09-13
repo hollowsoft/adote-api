@@ -1,11 +1,8 @@
 import { InternalServerErrorException } from '@nestjs/common'
 
-import { Types } from 'mongoose'
-
 import { UserToken } from '@/type/auth.type'
 
 import { FavRepository } from '../fav.repository'
-
 import { AddFavRequest } from '../fav.request'
 
 export class AddFavProvider {
@@ -15,7 +12,7 @@ export class AddFavProvider {
     const { id } = request
 
     try {
-      await this.repository.save(new Types.ObjectId(id), { _id: user.id })
+      await this.repository.save(id, { _id: user.id })
     } catch (e) {
       throw new InternalServerErrorException(e)
     }
