@@ -1,27 +1,21 @@
-import { APP_GUARD } from '@nestjs/core'
-
 import { Module } from '@nestjs/common'
+import { APP_GUARD } from '@nestjs/core'
 import { JwtModule } from '@nestjs/jwt'
 import { PassportModule } from '@nestjs/passport'
 
+import { MailModule } from '@/module/mail/mail.module'
 import { UserModule } from '@/module/user/user.module'
 
-import { TokenGuard } from './guard/token.guard'
-import { PermissionGuard } from './guard/permission.guard'
-
-import { TokenStrategy } from './strategy/token.strategy'
-import { TokenRenewStrategy } from './strategy/token.renew.strategy'
-
-import { AuthProvider } from './provider'
-
 import { AuthController } from './auth.controller'
-import { MailModule } from '../mail/mail.module'
-import { SendMailProvider } from '../mail/provider/send.mail.provider'
+import { PermissionGuard } from './guard/permission.guard'
+import { TokenGuard } from './guard/token.guard'
+import { AuthProvider } from './provider'
+import { TokenRenewStrategy } from './strategy/token.renew.strategy'
+import { TokenStrategy } from './strategy/token.strategy'
 
 @Module({
   imports: [JwtModule, PassportModule, UserModule, MailModule],
   providers: [
-    SendMailProvider,
     AuthProvider,
     TokenStrategy,
     TokenRenewStrategy,

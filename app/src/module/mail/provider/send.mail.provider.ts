@@ -1,9 +1,7 @@
-import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 
 import AWS from 'aws-sdk'
 
-@Injectable()
 export class SendMailProvider {
   constructor(private readonly config: ConfigService) {}
 
