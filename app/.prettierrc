@@ -23,7 +23,9 @@
     "",
     "^@/helper/(.*)$",
     "",
-    "^[./]"
+    "^./(.*)$",
+    "",
+    "^../(.*)$"
   ],
   "importOrderParserPlugins": ["typescript", "decorators-legacy"],
   "importOrderTypeScriptVersion": "5.2.2"

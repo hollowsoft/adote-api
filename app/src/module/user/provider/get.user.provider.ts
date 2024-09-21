@@ -1,10 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
 
-import { UserResponse } from '../user.response'
+import { isNil } from 'lodash'
 
 import { UserRepository } from '../user.repository'
-
-import { isNil } from 'lodash'
+import { UserResponse } from '../user.response'
 
 @Injectable()
 export class GetUserProvider {

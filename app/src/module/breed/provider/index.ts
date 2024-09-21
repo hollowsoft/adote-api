@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common'
 
 import { ListBreedProvider } from './list.breed.provider'
+
 import { BreedRepository } from '../breed.repository'
 
 @Injectable()

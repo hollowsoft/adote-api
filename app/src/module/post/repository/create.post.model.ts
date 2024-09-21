@@ -1,9 +1,8 @@
 import { Types } from 'mongoose'
 
-import { Size } from '../type/size.enum'
+import { CreatePostRequest, PetRequest } from '../post.request'
 import { Gender } from '../type/gender.enum'
-
-import { PetRequest, CreatePostRequest } from '../post.request'
+import { Size } from '../type/size.enum'
 
 class CreatePet {
   readonly name: string

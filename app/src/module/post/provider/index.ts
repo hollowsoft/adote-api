@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common'
 
+import { CreatePostProvider } from './create.post.provider'
 import { GetPostProvider } from './get.post.provider'
 import { ListPostProvider } from './list.post.provider'
-import { CreatePostProvider } from './create.post.provider'
 import { PatchPostProvider } from './patch.post.provider'
 import { PublishPostProvider } from './publish.post.provider'
 import { RemovePostProvider } from './remove.post.provider'

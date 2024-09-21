@@ -1,13 +1,13 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
-import { Types, HydratedDocument } from 'mongoose'
+import { HydratedDocument, Types } from 'mongoose'
 
-import { Size } from '../type/size.enum'
-import { Gender } from '../type/gender.enum'
-
-import { User, UserDocument } from '@/module/user/user.type'
 import { Breed, BreedDocument } from '@/module/breed/breed.type'
 import { Location, LocationDocument } from '@/module/location/location.type'
+import { User, UserDocument } from '@/module/user/user.type'
+
+import { Gender } from '../type/gender.enum'
+import { Size } from '../type/size.enum'
 
 export type PostDocument = HydratedDocument<Post>
 

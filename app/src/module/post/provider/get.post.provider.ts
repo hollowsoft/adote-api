@@ -1,10 +1,9 @@
 import { Injectable, NotFoundException } from '@nestjs/common'
 
-import { PostResponse } from '../post.response'
-
-import { PostRepository } from '../repository/post.repository'
-
 import { isNil } from 'lodash'
+
+import { PostResponse } from '../post.response'
+import { PostRepository } from '../repository/post.repository'
 
 export class GetPostProvider {
   constructor(private readonly repository: PostRepository) {}

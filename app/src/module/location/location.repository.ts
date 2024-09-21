@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { mongo, Model, FilterQuery } from 'mongoose'
+import { FilterQuery, Model, mongo } from 'mongoose'
 
 import { Location } from './location.type'
 

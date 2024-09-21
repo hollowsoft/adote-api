@@ -1,13 +1,11 @@
-import { Post, Body, HttpCode, UseGuards, HttpStatus, Controller } from '@nestjs/common'
+import { Body, Controller, HttpCode, HttpStatus, Post, UseGuards } from '@nestjs/common'
 
 import { Public } from '@/decorator/public.decorator'
 
-import { TokenRenewGuard } from './guard/token.renew.guard'
-
-import { AuthProvider } from './provider'
-
 import { AuthRequest, VerifyRequest } from './auth.request'
 import { AuthResponse, TokenResponse } from './auth.response'
+import { TokenRenewGuard } from './guard/token.renew.guard'
+import { AuthProvider } from './provider'
 
 @Controller('auth')
 export class AuthController {

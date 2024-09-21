@@ -1,10 +1,9 @@
-import { NestFactory } from '@nestjs/core'
 import { ValidationPipe } from '@nestjs/common'
-
+import { NestFactory } from '@nestjs/core'
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
 
-import helmet from '@fastify/helmet'
 import compress from '@fastify/compress'
+import helmet from '@fastify/helmet'
 
 import { AppModule } from './app.module'
 

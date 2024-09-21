@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common'
 
-import { GetUserProvider } from './get.user.provider'
-import { GetCurrentProvider } from './get.current.provider'
-import { ListUserProvider } from './list.user.provider'
 import { AddImageProvider } from './add.image.provider'
+import { GetCurrentProvider } from './get.current.provider'
+import { GetUserProvider } from './get.user.provider'
+import { ListUserProvider } from './list.user.provider'
 import { PatchUserProvider } from './patch.user.provider'
 
 import { UserRepository } from '../user.repository'

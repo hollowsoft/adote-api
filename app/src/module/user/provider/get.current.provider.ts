@@ -1,5 +1,4 @@
 import { UserRepository } from '../user.repository'
-
 import { UserResponse } from '../user.response'
 
 export class GetCurrentProvider {

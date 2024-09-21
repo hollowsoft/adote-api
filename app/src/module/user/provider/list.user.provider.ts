@@ -1,9 +1,8 @@
 import { Injectable } from '@nestjs/common'
 
-import { UserResponse } from '../user.response'
-import { ListUserRequest } from '../user.request'
-
 import { UserRepository } from '../user.repository'
+import { ListUserRequest } from '../user.request'
+import { UserResponse } from '../user.response'
 
 @Injectable()
 export class ListUserProvider {

@@ -1,5 +1,6 @@
-import { LocationDocument } from '../location/location.type'
 import { Contact, UserDocument } from './user.type'
+
+import { LocationDocument } from '../location/location.type'
 
 export class UserResponse {
   readonly id: string

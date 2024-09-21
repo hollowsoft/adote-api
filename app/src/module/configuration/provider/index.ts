@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common'
 
-import { SetUserProvider } from './set.user.provider'
-import { SetBreedProvider } from './set.breed.provider'
-import { SetLocationProvider } from './set.location.provider'
-
-import { UserRepository } from '@/module/user/user.repository'
 import { BreedRepository } from '@/module/breed/breed.repository'
 import { LocationRepository } from '@/module/location/location.repository'
+import { UserRepository } from '@/module/user/user.repository'
+
+import { SetBreedProvider } from './set.breed.provider'
+import { SetLocationProvider } from './set.location.provider'
+import { SetUserProvider } from './set.user.provider'
 
 @Injectable()
 export class ConfigurationProvider {

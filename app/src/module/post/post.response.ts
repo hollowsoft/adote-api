@@ -1,11 +1,10 @@
-import { Size } from './type/size.enum'
-import { Gender } from './type/gender.enum'
-
-import { Pet, PostDocument } from './repository/post.schema'
-
-import { User, Contact } from '@/module/user/user.type'
 import { BreedDocument } from '@/module/breed/breed.type'
 import { LocationDocument } from '@/module/location/location.type'
+import { Contact, User } from '@/module/user/user.type'
+
+import { Pet, PostDocument } from './repository/post.schema'
+import { Gender } from './type/gender.enum'
+import { Size } from './type/size.enum'
 
 export class PostResponse {
   readonly id: string

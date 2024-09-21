@@ -1,11 +1,10 @@
-import { Get, Query, Controller } from '@nestjs/common'
+import { Controller, Get, Query } from '@nestjs/common'
 
 import { Public } from '@/decorator/public.decorator'
 
-import { BreedProvider } from './provider'
-
 import { ListBreedRequest } from './breed.request'
 import { BreedResponse } from './breed.response'
+import { BreedProvider } from './provider'
 
 @Controller('breed')
 export class BreedController {

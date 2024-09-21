@@ -1,7 +1,6 @@
-import { PostRepository } from '../repository/post.repository'
-
 import { PublishPostRequest } from '../post.request'
 import { PublishPostResponse } from '../post.response'
+import { PostRepository } from '../repository/post.repository'
 
 export class PublishPostProvider {
   constructor(private readonly repository: PostRepository) {}

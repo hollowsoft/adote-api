@@ -1,13 +1,12 @@
 import { Injectable } from '@nestjs/common'
-
-import { JwtService } from '@nestjs/jwt'
 import { ConfigService } from '@nestjs/config'
+import { JwtService } from '@nestjs/jwt'
+
+import { UserRepository } from '@/module/user/user.repository'
 
 import { MailAuthProvider } from './mail.auth.provider'
 import { RenewAuthProvider } from './renew.auth.provider'
 import { VerifyAuthProvider } from './verify.auth.provider'
-
-import { UserRepository } from '@/module/user/user.repository'
 
 @Injectable()
 export class AuthProvider {

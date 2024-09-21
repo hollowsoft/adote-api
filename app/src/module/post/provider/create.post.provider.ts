@@ -1,10 +1,9 @@
 import { InternalServerErrorException } from '@nestjs/common'
 
+import { CreatePostRequest } from '../post.request'
+import { PostResponse } from '../post.response'
 import { CreatePost } from '../repository/create.post.model'
 import { PostRepository } from '../repository/post.repository'
-
-import { PostResponse } from '../post.response'
-import { CreatePostRequest } from '../post.request'
 
 export class CreatePostProvider {
   constructor(private readonly repository: PostRepository) {}

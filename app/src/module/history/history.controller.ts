@@ -1,9 +1,8 @@
-import { Get, Query, Controller } from '@nestjs/common'
-
-import { HistoryProvider } from './provider'
+import { Controller, Get, Query } from '@nestjs/common'
 
 import { ListHistoryRequest } from './history.request'
 import { HistoryResponse } from './history.response'
+import { HistoryProvider } from './provider'
 
 @Controller('history')
 export class HistoryController {

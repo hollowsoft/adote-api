@@ -1,7 +1,6 @@
-import { BreedResponse } from '../breed.response'
-import { ListBreedRequest } from '../breed.request'
-
 import { BreedRepository } from '../breed.repository'
+import { ListBreedRequest } from '../breed.request'
+import { BreedResponse } from '../breed.response'
 
 export class ListBreedProvider {
   constructor(private readonly repository: BreedRepository) {}

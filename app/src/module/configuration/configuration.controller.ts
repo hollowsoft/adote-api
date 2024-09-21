@@ -1,7 +1,8 @@
-import { Post, HttpCode, HttpStatus, Controller } from '@nestjs/common'
+import { Controller, HttpCode, HttpStatus, Post } from '@nestjs/common'
+
+import { Permission } from '@/decorator/permission.decorator'
 
 import { Role } from '@/module/user/user.type'
-import { Permission } from '@/decorator/permission.decorator'
 
 import { ConfigurationProvider } from './provider'
 

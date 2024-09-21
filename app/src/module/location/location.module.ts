@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common'
 import { MongooseModule } from '@nestjs/mongoose'
 
-import { LocationSchema } from './location.type'
-import { LocationRepository } from './location.repository'
-
-import { LocationProvider } from './provider'
 import { LocationController } from './location.controller'
+import { LocationRepository } from './location.repository'
+import { LocationSchema } from './location.type'
+import { LocationProvider } from './provider'
 
 @Module({
   imports: [MongooseModule.forFeature([LocationSchema])],

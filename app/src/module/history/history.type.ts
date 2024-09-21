@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
-import { Size } from '@/module/post/type/size.enum'
 import { Gender } from '@/module/post/type/gender.enum'
+import { Size } from '@/module/post/type/size.enum'
 
 @Schema({ id: true, collection: 'History' })
 export class History {
