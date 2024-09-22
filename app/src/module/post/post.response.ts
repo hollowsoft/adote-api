@@ -1,4 +1,4 @@
-import { BreedDocument } from '@/module/breed/breed.type'
+import { BreedDocument } from '@/module/breed/type/breed.type'
 import { LocationDocument } from '@/module/location/location.type'
 import { Contact, User } from '@/module/user/user.type'
 

@@ -1,6 +1,6 @@
 import { IsEnum } from 'class-validator'
 
-import { Kind } from './breed.type'
+import { Kind } from './type/kind.enum'
 
 export class ListBreedRequest {
   @IsEnum(Kind)

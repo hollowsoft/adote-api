@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
 import { HydratedDocument, Types } from 'mongoose'
 
-import { Breed, BreedDocument } from '@/module/breed/breed.type'
+import { Breed, BreedDocument } from '@/module/breed/type/breed.type'
 import { Location, LocationDocument } from '@/module/location/location.type'
 import { User, UserDocument } from '@/module/user/user.type'
 
