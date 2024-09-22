@@ -2,7 +2,7 @@ import { InternalServerErrorException } from '@nestjs/common'
 
 import { UserCurrent } from '@/type/auth.type'
 
-import { FavRepository } from '../fav.repository'
+import { FavRepository } from '../repository/fav.repository'
 
 export class RemoveFavProvider {
   constructor(private readonly repository: FavRepository) {}

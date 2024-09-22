@@ -2,8 +2,8 @@ import { InternalServerErrorException } from '@nestjs/common'
 
 import { UserCurrent } from '@/type/auth.type'
 
-import { FavRepository } from '../fav.repository'
 import { AddFavRequest } from '../fav.request'
+import { FavRepository } from '../repository/fav.repository'
 
 export class AddFavProvider {
   constructor(private readonly repository: FavRepository) {}
