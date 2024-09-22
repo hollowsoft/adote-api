@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose'
 
 import { FilterQuery, Model, mongo } from 'mongoose'
 
-import { Breed, BreedDocument } from './type/breed.type'
+import { Breed, BreedDocument } from './breed.schema'
 
 @Injectable()
 export class BreedRepository {

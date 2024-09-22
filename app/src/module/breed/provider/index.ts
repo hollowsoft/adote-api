@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 
 import { ListBreedProvider } from './list.breed.provider'
 
-import { BreedRepository } from '../breed.repository'
+import { BreedRepository } from '../repository/breed.repository'
 
 @Injectable()
 export class BreedProvider {
