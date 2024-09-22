@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 
 import { ListHistoryProvider } from './list.history.provider'
 
-import { HistoryRepository } from '../history.repository'
+import { HistoryRepository } from '../repository/history.repository'
 
 @Injectable()
 export class HistoryProvider {
