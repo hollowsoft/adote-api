@@ -1,9 +1,9 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common'
 
-import { Token } from '@/type/auth.type'
+import { UserToken } from '@/type/auth.type'
 
 export const User = createParamDecorator((_: unknown, context: ExecutionContext) => {
-  const { user } = context.switchToHttp().getRequest<Token>()
+  const { user } = context.switchToHttp().getRequest<UserToken>()
 
   return user
 })

@@ -4,7 +4,7 @@ import { UserToken } from '@/type/auth.type'
 
 import { User } from '@/decorator/user.decorator'
 
-import { AddFavRequest, RemoveFavRequest } from './fav.request'
+import { AddFavRequest } from './fav.request'
 import { FavResponse } from './fav.response'
 import { FavProvider } from './provider'
 
@@ -30,6 +30,6 @@ export class FavController {
   remove(@Param('id') id: string, @User() token: UserToken): Promise<void> {
     const { user } = token
 
-    return this.provider.remove.run(request, user)
+    return this.provider.remove.run(id, user)
   }
 }

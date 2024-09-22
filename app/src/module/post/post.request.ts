@@ -14,6 +14,29 @@ import {
 import { Gender } from './type/gender.enum'
 import { Size } from './type/size.enum'
 
+export class PetRequest {
+  @IsString()
+  @IsNotEmpty()
+  @Transform(({ value }: TransformFnParams) => value?.trim())
+  readonly name: string
+
+  @IsNumber()
+  @Min(1)
+  @Max(20)
+  readonly age: number
+
+  @IsEnum(Size)
+  readonly size: Size
+
+  @IsEnum(Gender)
+  readonly gender: Gender
+
+  @IsString()
+  @IsNotEmpty()
+  @Transform(({ value }: TransformFnParams) => value?.trim())
+  readonly breed: string
+}
+
 export class ListPostRequest {
   @IsNumber()
   readonly page: number
@@ -76,29 +99,6 @@ export class PatchPostRequest {
   @IsNotEmpty()
   @Transform(({ value }: TransformFnParams) => value?.trim())
   readonly location: string
-}
-
-export class PetRequest {
-  @IsString()
-  @IsNotEmpty()
-  @Transform(({ value }: TransformFnParams) => value?.trim())
-  readonly name: string
-
-  @IsNumber()
-  @Min(1)
-  @Max(20)
-  readonly age: number
-
-  @IsEnum(Size)
-  readonly size: Size
-
-  @IsEnum(Gender)
-  readonly gender: Gender
-
-  @IsString()
-  @IsNotEmpty()
-  @Transform(({ value }: TransformFnParams) => value?.trim())
-  readonly breed: string
 }
 
 export class PublishPostRequest {

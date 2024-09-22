@@ -10,7 +10,7 @@ import { FavRepository } from '../fav.repository'
 export class FavProvider {
   readonly add: AddFavProvider = new AddFavProvider(this.repository)
   readonly list: ListFavProvider = new ListFavProvider()
-  readonly remove: RemoveFavProvider = new RemoveFavProvider()
+  readonly remove: RemoveFavProvider = new RemoveFavProvider(this.repository)
 
   constructor(private readonly repository: FavRepository) {}
 }

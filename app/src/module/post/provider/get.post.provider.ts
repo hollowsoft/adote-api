@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException } from '@nestjs/common'
+import { NotFoundException } from '@nestjs/common'
 
 import { isNil } from 'lodash'
 
@@ -9,7 +9,7 @@ export class GetPostProvider {
   constructor(private readonly repository: PostRepository) {}
 
   async run(id: string): Promise<PostResponse> {
-    const post = await this.repository.find()
+    const post = await this.repository.find({})
 
     if (isNil(post)) {
       throw new NotFoundException('post not found')
