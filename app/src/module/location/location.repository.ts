@@ -9,15 +9,15 @@ import { Location } from './location.type'
 export class LocationRepository {
   constructor(@InjectModel(Location.name) private model: Model<Location>) {}
 
-  list(query?: FilterQuery<Location>): Promise<Location[]> {
-    return this.model.find(query)
+  list(query: FilterQuery<Location>): Promise<Location[]> {
+    return this.model.find(query).exec()
   }
 
   save(list: Location[]): Promise<Location[]> {
     return this.model.insertMany(list)
   }
 
-  remove(query?: FilterQuery<Location>): Promise<mongo.DeleteResult> {
-    return this.model.deleteMany(query)
+  remove(query: FilterQuery<Location>): Promise<mongo.DeleteResult> {
+    return this.model.deleteMany(query).exec()
   }
 }

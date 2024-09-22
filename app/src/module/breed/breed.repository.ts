@@ -9,15 +9,15 @@ import { Breed, BreedDocument } from './breed.type'
 export class BreedRepository {
   constructor(@InjectModel(Breed.name) private model: Model<Breed>) {}
 
-  list(query?: FilterQuery<Breed>): Promise<BreedDocument[]> {
-    return this.model.find(query)
+  list(query: FilterQuery<Breed>): Promise<BreedDocument[]> {
+    return this.model.find(query).exec()
   }
 
-  save(list: Breed[]): Promise<Breed[]> {
+  save(list: Breed[]): Promise<BreedDocument[]> {
     return this.model.insertMany(list)
   }
 
-  remove(query?: FilterQuery<Breed>): Promise<mongo.DeleteResult> {
-    return this.model.deleteMany(query)
+  remove(query: FilterQuery<Breed>): Promise<mongo.DeleteResult> {
+    return this.model.deleteMany(query).exec()
   }
 }

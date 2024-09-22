@@ -10,11 +10,11 @@ import { User, UserDocument } from './user.type'
 export class UserRepository {
   constructor(@InjectModel(User.name) private model: Model<User>) {}
 
-  list(query?: FilterQuery<User>): Promise<UserDocument[]> {
+  list(query: FilterQuery<User>): Promise<UserDocument[]> {
     return this.model.find(query).exec()
   }
 
-  find(query?: FilterQuery<User>): Promise<UserDocument> {
+  find(query: FilterQuery<User>): Promise<UserDocument> {
     return this.model.findOne(query).exec()
   }
 
@@ -22,7 +22,7 @@ export class UserRepository {
     return this.model.create(user)
   }
 
-  update(query: FilterQuery<User>, user: PatchUser): Promise<UserDocument> {
+  update(user: PatchUser, query: FilterQuery<User>): Promise<UserDocument> {
     return this.model
       .findOneAndUpdate(query, user)
       .populate([
@@ -33,6 +33,6 @@ export class UserRepository {
   }
 
   remove(query: FilterQuery<User>): Promise<mongo.DeleteResult> {
-    return this.model.deleteMany(query).exec()
+    return this.model.deleteOne(query).exec()
   }
 }
