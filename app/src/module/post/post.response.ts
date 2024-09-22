@@ -1,5 +1,5 @@
 import { BreedDocument } from '@/module/breed/repository/breed.schema'
-import { LocationDocument } from '@/module/location/location.type'
+import { LocationDocument } from '@/module/location/repository/location.schema'
 import { Contact, User } from '@/module/user/repository/user.schema'
 
 import { Pet, PostDocument } from './repository/post.schema'

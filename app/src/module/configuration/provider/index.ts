@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 
 import { BreedRepository } from '@/module/breed/repository/breed.repository'
-import { LocationRepository } from '@/module/location/location.repository'
+import { LocationRepository } from '@/module/location/repository/location.repository'
 import { UserRepository } from '@/module/user/repository/user.repository'
 
 import { SetBreedProvider } from './set.breed.provider'

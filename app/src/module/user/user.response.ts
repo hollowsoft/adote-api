@@ -1,6 +1,6 @@
 import { Contact, UserDocument } from './repository/user.schema'
 
-import { LocationDocument } from '../location/location.type'
+import { LocationDocument } from '../location/repository/location.schema'
 
 export class UserResponse {
   readonly id: string

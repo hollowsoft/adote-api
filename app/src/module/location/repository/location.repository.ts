@@ -3,17 +3,17 @@ import { InjectModel } from '@nestjs/mongoose'
 
 import { FilterQuery, Model, mongo } from 'mongoose'
 
-import { Location } from './location.type'
+import { Location, LocationDocument } from '../repository/location.schema'
 
 @Injectable()
 export class LocationRepository {
   constructor(@InjectModel(Location.name) private model: Model<Location>) {}
 
-  list(query: FilterQuery<Location>): Promise<Location[]> {
+  list(query: FilterQuery<Location>): Promise<LocationDocument[]> {
     return this.model.find(query).exec()
   }
 
-  save(list: Location[]): Promise<Location[]> {
+  save(list: Location[]): Promise<LocationDocument[]> {
     return this.model.insertMany(list)
   }
 

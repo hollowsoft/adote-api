@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
 import { HydratedDocument, Types } from 'mongoose'
 
-import { LocationDocument } from '@/module/location/location.type'
+import { LocationDocument } from '@/module/location/repository/location.schema'
 import { Post } from '@/module/post/repository/post.schema'
 
 import { Role } from '../type/role.enum'
