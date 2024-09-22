@@ -1,8 +1,8 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post } from '@nestjs/common'
 
-import { Token } from '@/type/auth.type'
+import { UserToken } from '@/type/auth.type'
 
-import { Auth } from '@/decorator/auth.decorator'
+import { User } from '@/decorator/user.decorator'
 
 import { AddFavRequest, RemoveFavRequest } from './fav.request'
 import { FavResponse } from './fav.response'
@@ -19,7 +19,7 @@ export class FavController {
 
   @Post()
   @HttpCode(HttpStatus.NO_CONTENT)
-  add(@Body() request: AddFavRequest, @Auth() token: Token): Promise<void> {
+  add(@Body() request: AddFavRequest, @User() token: UserToken): Promise<void> {
     const { user } = token
 
     return this.provider.add.run(request, user)
@@ -27,7 +27,7 @@ export class FavController {
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param('id') id: string, @Auth() token: Token): Promise<void> {
+  remove(@Param('id') id: string, @User() token: UserToken): Promise<void> {
     const { user } = token
 
     return this.provider.remove.run(request, user)

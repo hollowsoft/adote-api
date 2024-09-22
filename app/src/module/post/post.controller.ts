@@ -1,9 +1,9 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Put, Query } from '@nestjs/common'
 
-import { Token } from '@/type/auth.type'
+import { UserToken } from '@/type/auth.type'
 
-import { Auth } from '@/decorator/auth.decorator'
 import { Public } from '@/decorator/public.decorator'
+import { User } from '@/decorator/user.decorator'
 
 import { CreatePostRequest, ListPostRequest, PatchPostRequest, PublishPostRequest } from './post.request'
 import { PostResponse, PublishPostResponse } from './post.response'
@@ -26,7 +26,7 @@ export class PostController {
   }
 
   @Post()
-  create(@Body() request: CreatePostRequest, @Auth() token: Token): Promise<PostResponse> {
+  create(@Body() request: CreatePostRequest, @User() token: UserToken): Promise<PostResponse> {
     const { user } = token
 
     return this.provider.create.run(request, user.id)
@@ -44,7 +44,7 @@ export class PostController {
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param('id') id: string, @Auth() token: Token): Promise<void> {
+  remove(@Param('id') id: string, @User() token: UserToken): Promise<void> {
     const { user } = token
 
     return this.provider.remove.run(id, user.id)

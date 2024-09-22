@@ -1,13 +1,13 @@
 import { Role } from '@/module/user/user.type'
 
-export type UserToken = {
+export type UserCurrent = {
   readonly id: string
   readonly role: Role
 }
 
-export type Token = {
+export type UserToken = {
   readonly sub: string
   readonly iat: number
   readonly exp: number
-  readonly user: UserToken
+  readonly user: UserCurrent
 }

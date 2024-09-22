@@ -1,6 +1,6 @@
 import { InternalServerErrorException } from '@nestjs/common'
 
-import { UserToken } from '@/type/auth.type'
+import { UserCurrent } from '@/type/auth.type'
 
 import { FavRepository } from '../fav.repository'
 import { RemoveFavRequest } from '../fav.request'
@@ -8,7 +8,7 @@ import { RemoveFavRequest } from '../fav.request'
 export class RemoveFavProvider {
   constructor(private readonly repository: FavRepository) {}
 
-  async run(request: RemoveFavRequest, user: UserToken): Promise<void> {
+  async run(request: RemoveFavRequest, user: UserCurrent): Promise<void> {
     const { id } = request
 
     try {

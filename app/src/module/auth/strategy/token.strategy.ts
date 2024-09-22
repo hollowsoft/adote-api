@@ -3,7 +3,7 @@ import { PassportStrategy } from '@nestjs/passport'
 
 import { ExtractJwt, Strategy } from 'passport-jwt'
 
-import { Token } from '@/type/auth.type'
+import { UserToken } from '@/type/auth.type'
 
 @Injectable()
 export class TokenStrategy extends PassportStrategy(Strategy, 'Token') {
@@ -14,7 +14,7 @@ export class TokenStrategy extends PassportStrategy(Strategy, 'Token') {
     })
   }
 
-  validate(token: Token): Token {
+  validate(token: UserToken): UserToken {
     return token
   }
 }

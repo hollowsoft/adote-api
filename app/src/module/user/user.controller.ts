@@ -1,9 +1,9 @@
 import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post, Put, Query } from '@nestjs/common'
 
-import { Token } from '@/type/auth.type'
+import { UserToken } from '@/type/auth.type'
 
-import { Auth } from '@/decorator/auth.decorator'
 import { Permission } from '@/decorator/permission.decorator'
+import { User } from '@/decorator/user.decorator'
 
 import { UserProvider } from './provider'
 import { ListUserRequest, PatchUserRequest } from './user.request'
@@ -38,7 +38,7 @@ export class UserController {
   }
 
   @Put()
-  patch(@Body() request: PatchUserRequest, @Auth() token: Token): Promise<UserResponse> {
+  patch(@Body() request: PatchUserRequest, @User() token: UserToken): Promise<UserResponse> {
     const { user } = token
 
     return this.provider.patch.run(request, user)
