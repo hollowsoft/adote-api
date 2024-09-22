@@ -10,7 +10,7 @@ export class GetUserProvider {
   constructor(private readonly repository: UserRepository) {}
 
   async run(id: string): Promise<UserResponse> {
-    const user = await this.repository.find()
+    const user = await this.repository.find({})
 
     if (isNil(user)) {
       throw new NotFoundException('user not found')

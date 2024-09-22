@@ -11,7 +11,7 @@ export class SearchLocationProvider {
   async run(request: SearchLocationRequest): Promise<LocationResponse[]> {
     const { term } = request
 
-    const list = await this.repository.list()
+    const list = await this.repository.list({})
 
     return list.map((location) => ({
       id: '',

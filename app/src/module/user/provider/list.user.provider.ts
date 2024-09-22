@@ -11,7 +11,7 @@ export class ListUserProvider {
   async run(request: ListUserRequest): Promise<UserResponse[]> {
     const { enable } = request
 
-    const list = await this.repository.list()
+    const list = await this.repository.list({})
 
     return list.map((user) => ({
       id: 'user.id',

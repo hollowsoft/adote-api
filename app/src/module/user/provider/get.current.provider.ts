@@ -5,7 +5,7 @@ export class GetCurrentProvider {
   constructor(private readonly repository: UserRepository) {}
 
   async run(): Promise<UserResponse> {
-    const user = await this.repository.find()
+    const user = await this.repository.find({})
 
     return {
       id: '',

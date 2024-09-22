@@ -8,7 +8,7 @@ export class SetLocationProvider {
   constructor(private repository: LocationRepository) {}
 
   async run(): Promise<void> {
-    await this.repository.remove()
+    await this.repository.remove({})
 
     await this.repository.save(location)
   }

@@ -9,7 +9,7 @@ export class ListHistoryProvider {
   constructor(private readonly repository: HistoryRepository) {}
 
   async run(request: ListHistoryRequest): Promise<HistoryResponse[]> {
-    const list = await this.repository.list()
+    const list = await this.repository.list({})
 
     return list.map((history) => ({
       id: '',

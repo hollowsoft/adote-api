@@ -8,9 +8,9 @@ import { UserResponse } from '../user.response'
 export class PatchUserProvider {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(request: PatchUserRequest, { id }: UserCurrent): Promise<UserResponse> {
-    const user = await this.repository.update({ _id: id }, new PatchUser(request))
+  async run(request: PatchUserRequest, user: UserCurrent): Promise<UserResponse> {
+    const result = await this.repository.update(new PatchUser(request), { _id: user.id })
 
-    return new UserResponse(user)
+    return new UserResponse(result)
   }
 }

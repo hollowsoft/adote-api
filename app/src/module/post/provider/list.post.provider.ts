@@ -13,7 +13,7 @@ export class ListPostProvider {
 
     const skip = (page - 1) * amount
 
-    const list = await this.repository.list({}, skip, amount)
+    const list = await this.repository.list(skip, amount, {})
 
     return list.map((post) => new PostResponse(post))
   }
