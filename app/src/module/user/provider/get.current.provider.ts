@@ -1,4 +1,4 @@
-import { UserRepository } from '../user.repository'
+import { UserRepository } from '../repository/user.repository'
 import { UserResponse } from '../user.response'
 
 export class GetCurrentProvider {

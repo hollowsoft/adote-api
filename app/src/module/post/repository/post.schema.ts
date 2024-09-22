@@ -2,9 +2,9 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
 import { HydratedDocument, Types } from 'mongoose'
 
-import { Breed, BreedDocument } from '@/module/breed/type/breed.type'
+import { Breed, BreedDocument } from '@/module/breed/repository/breed.schema'
 import { Location, LocationDocument } from '@/module/location/location.type'
-import { User, UserDocument } from '@/module/user/user.type'
+import { User, UserDocument } from '@/module/user/repository/user.schema'
 
 import { Gender } from '../type/gender.enum'
 import { Size } from '../type/size.enum'

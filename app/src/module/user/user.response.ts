@@ -1,4 +1,4 @@
-import { Contact, UserDocument } from './user.type'
+import { Contact, UserDocument } from './repository/user.schema'
 
 import { LocationDocument } from '../location/location.type'
 
@@ -38,6 +38,7 @@ class LocationResponse {
   readonly id: string
   readonly city: string
   readonly state: string
+
   constructor(location: LocationDocument) {
     this.id = location.id
     this.city = location.city

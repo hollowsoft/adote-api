@@ -1,8 +1,8 @@
 import { Types } from 'mongoose'
 
-import { ContactRequest, PatchUserRequest } from './user.request'
+import { ContactRequest, PatchUserRequest } from '../user.request'
 
-class PatchContact {
+class SaveContact {
   readonly mail: string
   readonly phone: string
   readonly social: string
@@ -14,7 +14,15 @@ class PatchContact {
   }
 }
 
-export class PatchUser {
+export class CreateUser {
+  readonly mail: string
+
+  constructor(mail: string) {
+    this.mail = mail
+  }
+}
+
+export class SaveUser {
   readonly name: string
   readonly description?: string
   readonly contact?: ContactRequest
@@ -23,7 +31,7 @@ export class PatchUser {
   constructor(user: PatchUserRequest) {
     this.name = user.name
     this.description = user.description
-    this.contact = new PatchContact(user.contact)
+    this.contact = new SaveContact(user.contact)
     this.location = new Types.ObjectId(user.location)
   }
 }

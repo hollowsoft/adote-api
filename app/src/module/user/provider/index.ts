@@ -6,7 +6,7 @@ import { GetUserProvider } from './get.user.provider'
 import { ListUserProvider } from './list.user.provider'
 import { PatchUserProvider } from './patch.user.provider'
 
-import { UserRepository } from '../user.repository'
+import { UserRepository } from '../repository/user.repository'
 
 @Injectable()
 export class UserProvider {

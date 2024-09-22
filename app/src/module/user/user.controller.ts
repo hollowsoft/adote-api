@@ -6,16 +6,16 @@ import { Permission } from '@/decorator/permission.decorator'
 import { User } from '@/decorator/user.decorator'
 
 import { UserProvider } from './provider'
+import { Role } from './type/role.enum'
 import { ListUserRequest, PatchUserRequest } from './user.request'
 import { UserResponse } from './user.response'
-import { Role } from './user.type'
 
 @Controller('user')
 export class UserController {
   constructor(private readonly provider: UserProvider) {}
 
   @Get(':id')
-  @Permission(Role.Admin)
+  @Permission(Role.ADMIN)
   get(@Param('id') id: string): Promise<UserResponse> {
     return this.provider.get.run(id)
   }
@@ -26,7 +26,7 @@ export class UserController {
   }
 
   @Get()
-  @Permission(Role.Admin)
+  @Permission(Role.ADMIN)
   list(@Query() request: ListUserRequest): Promise<UserResponse[]> {
     return this.provider.list.run(request)
   }

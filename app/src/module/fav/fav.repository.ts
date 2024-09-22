@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose'
 
 import { FilterQuery, Model, Types } from 'mongoose'
 
-import { User, UserDocument } from '@/module/user/user.type'
+import { User, UserDocument } from '@/module/user/repository/user.schema'
 
 @Injectable()
 export class FavRepository {

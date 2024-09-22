@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { JwtService } from '@nestjs/jwt'
 
-import { UserRepository } from '@/module/user/user.repository'
+import { UserRepository } from '@/module/user/repository/user.repository'
 
 import { VerifyRequest } from '../auth.request'
 import { TokenResponse } from '../auth.response'

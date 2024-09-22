@@ -1,6 +1,6 @@
-import { BreedDocument } from '@/module/breed/type/breed.type'
+import { BreedDocument } from '@/module/breed/repository/breed.schema'
 import { LocationDocument } from '@/module/location/location.type'
-import { Contact, User } from '@/module/user/user.type'
+import { Contact, User } from '@/module/user/repository/user.schema'
 
 import { Pet, PostDocument } from './repository/post.schema'
 import { Gender } from './type/gender.enum'

@@ -3,7 +3,7 @@ import { Reflector } from '@nestjs/core'
 
 import { isNil } from 'lodash'
 
-import { Role } from '@/module/user/user.type'
+import { Role } from '@/module/user/type/role.enum'
 
 @Injectable()
 export class PermissionGuard implements CanActivate {

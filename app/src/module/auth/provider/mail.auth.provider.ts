@@ -1,8 +1,8 @@
 import { InternalServerErrorException } from '@nestjs/common'
 
 import { SendMailProvider } from '@/module/mail/provider/send.mail.provider'
-import { UserRepository } from '@/module/user/user.repository'
-import { User, UserDocument } from '@/module/user/user.type'
+import { UserRepository } from '@/module/user/repository/user.repository'
+import { UserDocument } from '@/module/user/repository/user.schema'
 
 import { AuthRequest } from '../auth.request'
 import { AuthResponse } from '../auth.response'
@@ -34,6 +34,6 @@ export class MailAuthProvider {
       return user
     }
 
-    return this.repository.save(<User>{ mail })
+    return this.repository.save({ mail })
   }
 }

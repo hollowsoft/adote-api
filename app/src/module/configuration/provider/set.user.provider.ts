@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common'
 
-import user from '@/module/user/user.json'
-import { UserRepository } from '@/module/user/user.repository'
-import { Role } from '@/module/user/user.type'
+import { UserRepository } from '@/module/user/repository/user.repository'
+import { Role } from '@/module/user/type/role.enum'
+import user from '@/module/user/type/user.json'
 
 @Injectable()
 export class SetUserProvider {

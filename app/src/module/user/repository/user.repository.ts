@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { FilterQuery, Model, mongo, Types } from 'mongoose'
+import { FilterQuery, Model, mongo } from 'mongoose'
 
-import { PatchUser } from './patch.user.model'
-import { User, UserDocument } from './user.type'
+import { CreateUser, SaveUser } from './save.user.model'
+import { User, UserDocument } from './user.schema'
 
 @Injectable()
 export class UserRepository {
@@ -18,11 +18,11 @@ export class UserRepository {
     return this.model.findOne(query).exec()
   }
 
-  save(user: User): Promise<UserDocument> {
+  save(user: CreateUser): Promise<UserDocument> {
     return this.model.create(user)
   }
 
-  update(user: PatchUser, query: FilterQuery<User>): Promise<UserDocument> {
+  update(user: SaveUser, query: FilterQuery<User>): Promise<UserDocument> {
     return this.model
       .findOneAndUpdate(query, user)
       .populate([

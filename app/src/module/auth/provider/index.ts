@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config'
 import { JwtService } from '@nestjs/jwt'
 
 import { SendMailProvider } from '@/module/mail/provider/send.mail.provider'
-import { UserRepository } from '@/module/user/user.repository'
+import { UserRepository } from '@/module/user/repository/user.repository'
 
 import { MailAuthProvider } from './mail.auth.provider'
 import { RenewAuthProvider } from './renew.auth.provider'

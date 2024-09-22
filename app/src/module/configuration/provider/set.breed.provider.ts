@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common'
 
-import { BreedRepository } from '@/module/breed/breed.repository'
-import cat from '@/module/breed/cat.json'
-import dog from '@/module/breed/dog.json'
-import { Kind } from '@/module/breed/type/breed.type'
+import { BreedRepository } from '@/module/breed/repository/breed.repository'
+import cat from '@/module/breed/type/cat.json'
+import dog from '@/module/breed/type/dog.json'
+import { Kind } from '@/module/breed/type/kind.enum'
 
 @Injectable()
 export class SetBreedProvider {
