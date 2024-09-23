@@ -7,7 +7,7 @@ import helmet from '@fastify/helmet'
 
 import { AppModule } from './app.module'
 
-(async () => {
+const application = async () => {
   const application = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter({ logger: true }),
@@ -22,4 +22,6 @@ import { AppModule } from './app.module'
   application.useGlobalPipes(new ValidationPipe({ transform: true }))
 
   await application.listen(process.env.PORT ?? 8000, '0.0.0.0')
-})()
+}
+
+application()

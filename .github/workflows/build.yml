@@ -1,0 +1,22 @@
+name: Build App
+
+on:
+  pull_request:
+    branches: main
+
+defaults:
+  run:
+    working-directory: ./app
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: install
+        run: yarn install
+      - name: prettier
+        run: npx prettier . --check
+      - name: build
+        run: yarn build
