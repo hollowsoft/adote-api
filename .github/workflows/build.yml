@@ -18,5 +18,7 @@ jobs:
         run: yarn install
       - name: format check
         run: yarn format:check
+      - name: lint check
+        run: yarn lint:check
       - name: build
         run: yarn build
