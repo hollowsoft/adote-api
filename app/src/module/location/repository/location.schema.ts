@@ -6,10 +6,10 @@ export type LocationDocument = HydratedDocument<Location>
 
 @Schema({ id: true, collection: 'Location' })
 export class Location {
-  @Prop(String)
+  @Prop({ type: String, required: true })
   city: string
 
-  @Prop(String)
+  @Prop({ type: String, required: true })
   state: string
 }
 

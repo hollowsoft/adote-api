@@ -9,18 +9,14 @@ import { Role } from '../type/role.enum'
 
 export type UserDocument = HydratedDocument<User>
 
-@Schema({ id: true, collection: 'Contact' })
 export class Contact {
-  @Prop(String)
-  id: string
+  @Prop({ type: String, required: true })
+  mail: string
 
-  @Prop(String)
-  mail?: string
-
-  @Prop(String)
+  @Prop({ type: String })
   phone?: string
 
-  @Prop(String)
+  @Prop({ type: String })
   social?: string
 }
 
@@ -29,13 +25,13 @@ export class User {
   @Prop({ type: String, unique: true, required: true })
   mail: string
 
-  @Prop(String)
+  @Prop({ type: String })
   name?: string
 
-  @Prop(String)
+  @Prop({ type: String })
   image?: string
 
-  @Prop(String)
+  @Prop({ type: String })
   description?: string
 
   @Prop({ type: [{ type: Types.ObjectId, ref: 'Post' }], default: [] })
@@ -44,8 +40,8 @@ export class User {
   @Prop({ type: [{ type: Types.ObjectId, ref: 'Post' }], default: [] })
   post: Post[] = []
 
-  @Prop({ type: Types.ObjectId, ref: 'Contact' })
-  contact?: Contact
+  @Prop({ type: Contact, required: true })
+  contact: Contact
 
   @Prop({ type: Types.ObjectId, ref: 'Location' })
   location?: LocationDocument

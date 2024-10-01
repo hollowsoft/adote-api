@@ -31,9 +31,6 @@ export class Pet {
 @Schema({ id: true, collection: 'Post' })
 export class Post {
   @Prop({ type: String, required: true })
-  name: string
-
-  @Prop({ type: String, required: true })
   description: string
 
   @Prop({ type: [String], required: true })
