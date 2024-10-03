@@ -8,7 +8,6 @@ import { Size } from './type/size.enum'
 
 export class PostResponse {
   readonly id: string
-  readonly name: string
   readonly description: string
   readonly image: string[]
   readonly pet: PetResponse
@@ -17,7 +16,6 @@ export class PostResponse {
 
   constructor(post: PostDocument) {
     this.id = post.id
-    this.name = post.name
     this.description = post.description
     this.image = post.image
     this.pet = new PetResponse(post.pet)

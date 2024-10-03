@@ -19,7 +19,7 @@ export class MailAuthProvider {
     try {
       const user = await this.get(mail)
 
-      this.send.run('', '', '')
+      this.send.run('', '')
 
       return new AuthResponse(user)
     } catch (e) {
