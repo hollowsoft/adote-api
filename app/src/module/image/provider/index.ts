@@ -1,12 +1,13 @@
 import { Injectable } from '@nestjs/common'
+import { ConfigService } from '@nestjs/config'
 
-import { AddImageProvider } from './add.image.provider'
 import { RemoveImageProvider } from './remove.image.provider'
+import { SaveImageProvider } from './save.image.provider'
 
 @Injectable()
 export class ImageProvider {
-  readonly add: AddImageProvider = new AddImageProvider()
+  readonly save: SaveImageProvider = new SaveImageProvider(this.config)
   readonly remove: RemoveImageProvider = new RemoveImageProvider()
 
-  constructor() {}
+  constructor(private readonly config: ConfigService) {}
 }
