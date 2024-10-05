@@ -28,7 +28,11 @@ export class Pet {
   breed: BreedDocument
 }
 
-@Schema({ id: true, collection: 'Post' })
+@Schema({
+  id: true,
+  timestamps: { createdAt: 'create', updatedAt: 'update' },
+  collection: 'Post'
+})
 export class Post {
   @Prop({ type: String, required: true })
   description: string

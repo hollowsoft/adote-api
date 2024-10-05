@@ -6,7 +6,11 @@ import { Kind } from '../type/kind.enum'
 
 export type BreedDocument = HydratedDocument<Breed>
 
-@Schema({ id: true, collection: 'Breed' })
+@Schema({
+  id: true,
+  timestamps: { createdAt: 'create', updatedAt: 'update' },
+  collection: 'Breed'
+})
 export class Breed {
   @Prop({ type: String, required: true })
   name: string

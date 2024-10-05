@@ -20,7 +20,11 @@ export class Contact {
   social?: string
 }
 
-@Schema({ id: true, collection: 'User' })
+@Schema({
+  id: true,
+  timestamps: { createdAt: 'create', updatedAt: 'update' },
+  collection: 'User'
+})
 export class User {
   @Prop({ type: String, unique: true, required: true })
   mail: string
