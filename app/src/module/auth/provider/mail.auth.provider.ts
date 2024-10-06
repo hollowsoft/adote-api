@@ -1,6 +1,7 @@
-import { InternalServerErrorException } from '@nestjs/common'
+import { isNil } from 'lodash'
 
 import { SendMailProvider } from '@/module/mail/provider/send.mail.provider'
+import { CreateUser } from '@/module/user/repository/user.model'
 import { UserRepository } from '@/module/user/repository/user.repository'
 import { UserDocument } from '@/module/user/repository/user.schema'
 
@@ -16,24 +17,20 @@ export class MailAuthProvider {
   async run(request: AuthRequest): Promise<AuthResponse> {
     const { mail } = request
 
-    try {
-      const user = await this.get(mail)
+    const user = await this.save(mail)
 
-      this.send.run('', '')
+    this.send.run('', '')
 
-      return new AuthResponse(user)
-    } catch (e) {
-      throw new InternalServerErrorException()
-    }
+    return new AuthResponse(user)
   }
 
-  private async get(mail: string): Promise<UserDocument> {
+  private async save(mail: string): Promise<UserDocument> {
     const user = await this.repository.find({ mail })
 
-    if (user) {
-      return user
+    if (isNil(user)) {
+      return this.repository.save(new CreateUser(mail))
     }
 
-    return this.repository.save({ mail })
+    return user
   }
 }
