@@ -11,6 +11,6 @@ export class SetUserProvider {
   async run(): Promise<void> {
     const role = Role[user.role]
 
-    this.repository.save(Object.assign(user, { role }))
+    this.repository.admin(Object.assign(user, { role }))
   }
 }

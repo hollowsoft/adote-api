@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose'
 
 import { FilterQuery, Model, mongo } from 'mongoose'
 
-import { CreateUser, SaveUser } from './save.user.model'
+import { CreateAdmin, CreateUser, SaveUser } from './user.model'
 import { User, UserDocument } from './user.schema'
 
 @Injectable()
@@ -18,11 +18,15 @@ export class UserRepository {
     return this.model.findOne(query).exec()
   }
 
-  save(user: CreateUser): Promise<UserDocument> {
+  admin(user: CreateAdmin): Promise<UserDocument> {
     return this.model.create(user)
   }
 
-  update(user: SaveUser, query: FilterQuery<User>): Promise<UserDocument> {
+  create(user: CreateUser): Promise<UserDocument> {
+    return this.model.create(user)
+  }
+
+  save(query: FilterQuery<User>, user: SaveUser): Promise<UserDocument> {
     return this.model
       .findOneAndUpdate(query, user)
       .populate([
