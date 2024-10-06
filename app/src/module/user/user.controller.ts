@@ -7,7 +7,7 @@ import { User } from '@/decorator/user.decorator'
 
 import { UserProvider } from './provider'
 import { Role } from './type/role.enum'
-import { ListUserRequest, PatchUserRequest } from './user.request'
+import { ListUserRequest, SaveUserRequest } from './user.request'
 import { UserResponse } from './user.response'
 
 @Controller('user')
@@ -38,7 +38,7 @@ export class UserController {
   }
 
   @Put()
-  patch(@Body() request: PatchUserRequest, @User() token: UserToken): Promise<UserResponse> {
+  patch(@Body() request: SaveUserRequest, @User() token: UserToken): Promise<UserResponse> {
     const { user } = token
 
     return this.provider.patch.run(request, user)

@@ -30,7 +30,7 @@ export class ListUserRequest {
   readonly enable?: boolean
 }
 
-export class PatchUserRequest {
+export class SaveUserRequest {
   @IsString()
   @IsNotEmpty()
   @Transform(({ value }: TransformFnParams) => value?.trim())
