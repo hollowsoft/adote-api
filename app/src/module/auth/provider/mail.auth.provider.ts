@@ -19,7 +19,7 @@ export class MailAuthProvider {
 
     const user = await this.save(mail)
 
-    this.send.run('', '')
+    this.send.run(mail, '')
 
     return new AuthResponse(user)
   }
@@ -28,7 +28,7 @@ export class MailAuthProvider {
     const user = await this.repository.find({ mail })
 
     if (isNil(user)) {
-      return this.repository.save(new CreateUser(mail))
+      return this.repository.create(new CreateUser(mail))
     }
 
     return user
