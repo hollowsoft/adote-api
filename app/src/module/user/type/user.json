@@ -3,6 +3,9 @@
   "mail": "dev@hollowsoft.com",
   "fav": [],
   "post": [],
+  "contact": {
+    "mail": "dev@hollowsoft.com"
+  },
   "role": "admin",
   "enable": true
 }
