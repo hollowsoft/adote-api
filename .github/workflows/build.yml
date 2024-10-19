@@ -20,6 +20,8 @@ jobs:
         run: yarn format:check
       - name: lint check
         run: yarn lint:check
+      - name: setup test
+        uses: supercharge/mongodb-github-action@1.11.0
       - name: run test
         run: yarn test
       - name: build
