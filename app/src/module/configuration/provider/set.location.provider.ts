@@ -1,15 +1,16 @@
 import { Injectable } from '@nestjs/common'
 
 import { LocationRepository } from '@/module/location/repository/location.repository'
-import location from '@/module/location/type/location.json'
+
+import Location from '@/location.json'
 
 @Injectable()
 export class SetLocationProvider {
-  constructor(private repository: LocationRepository) {}
+  constructor(private readonly repository: LocationRepository) {}
 
   async run(): Promise<void> {
     await this.repository.remove({})
 
-    await this.repository.save(location)
+    await this.repository.save(Location)
   }
 }
