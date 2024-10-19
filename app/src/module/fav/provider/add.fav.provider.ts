@@ -11,10 +11,6 @@ export class AddFavProvider {
   async run(request: AddFavRequest, user: UserCurrent): Promise<void> {
     const { id } = request
 
-    try {
-      await this.repository.save(id, { _id: user.id })
-    } catch (e) {
-      throw new InternalServerErrorException(e)
-    }
+    await this.repository.save(id.ObjectId, { _id: user.id })
   }
 }
