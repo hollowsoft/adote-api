@@ -9,7 +9,6 @@ import { BreedModule } from '@/module/breed/breed.module'
 import { ConfigurationModule } from '@/module/configuration/configuration.module'
 import { FavModule } from '@/module/fav/fav.module'
 import { HealthModule } from '@/module/health/health.module'
-import { HistoryModule } from '@/module/history/history.module'
 import { ImageModule } from '@/module/image/image.module'
 import { LocationModule } from '@/module/location/location.module'
 import { MailModule } from '@/module/mail/mail.module'
@@ -24,16 +23,15 @@ import { RequestConfigProvider } from './request.config.provider'
 @Module({
   imports: [
     AuthModule,
-    UserModule,
-    LocationModule,
-    FavModule,
-    PostModule,
     BreedModule,
-    HistoryModule,
-    MailModule,
-    ImageModule,
-    HealthModule,
     ConfigurationModule,
+    FavModule,
+    HealthModule,
+    ImageModule,
+    LocationModule,
+    MailModule,
+    PostModule,
+    UserModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: `.env.${process.env.ENV}`,
