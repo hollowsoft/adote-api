@@ -18,11 +18,11 @@ export class UserRepository {
     return this.model.findOne(query).exec()
   }
 
-  admin(user: CreateAdmin): Promise<UserDocument> {
+  create(user: CreateUser): Promise<UserDocument> {
     return this.model.create(user)
   }
 
-  create(user: CreateUser): Promise<UserDocument> {
+  admin(user: CreateAdmin): Promise<UserDocument> {
     return this.model.create(user)
   }
 

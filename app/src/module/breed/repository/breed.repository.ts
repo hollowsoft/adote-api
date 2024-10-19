@@ -8,9 +8,9 @@ import { Breed, BreedDocument } from './breed.schema'
 
 @Injectable()
 export class BreedRepository {
-  constructor(@InjectModel(Breed.name) private model: Model<Breed>) {}
+  constructor(@InjectModel(Breed.name) private readonly model: Model<Breed>) {}
 
-  list(query: FilterQuery<Breed>): Promise<BreedDocument[]> {
+  list(query: FilterQuery<BreedDocument>): Promise<BreedDocument[]> {
     return this.model.find(query).exec()
   }
 

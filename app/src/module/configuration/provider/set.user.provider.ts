@@ -1,16 +1,17 @@
 import { Injectable } from '@nestjs/common'
 
+import { CreateAdmin } from '@/module/user/repository/user.model'
 import { UserRepository } from '@/module/user/repository/user.repository'
-import { Role } from '@/module/user/type/role.enum'
-import user from '@/module/user/type/user.json'
+
+import User from '@/user.json'
 
 @Injectable()
 export class SetUserProvider {
-  constructor(private repository: UserRepository) {}
+  constructor(private readonly repository: UserRepository) {}
 
   async run(): Promise<void> {
-    const role = Role[user.role]
+    const { mail, name } = User
 
-    this.repository.admin(Object.assign(user, { role }))
+    await this.repository.admin(new CreateAdmin(mail, name))
   }
 }

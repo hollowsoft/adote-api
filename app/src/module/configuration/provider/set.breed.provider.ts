@@ -9,7 +9,7 @@ import Dog from '@/dog.json'
 
 @Injectable()
 export class SetBreedProvider {
-  constructor(private repository: BreedRepository) {}
+  constructor(private readonly repository: BreedRepository) {}
 
   async run(): Promise<void> {
     await this.repository.remove({})
