@@ -5,7 +5,7 @@ import { HealthModule } from '@/module/health/health.module'
 
 import { SpecApplication } from './spec.application'
 
-describe('Health', () => {
+describe('Health Module', () => {
   const spec = new SpecApplication()
 
   beforeAll(async () => {
@@ -22,7 +22,7 @@ describe('Health', () => {
     spec.setApplication(application)
   })
 
-  it('get health', async () => {
+  it('health', async () => {
     const { statusCode: status } = await spec.getApplication().inject({
       url: '/health',
       method: 'get'
