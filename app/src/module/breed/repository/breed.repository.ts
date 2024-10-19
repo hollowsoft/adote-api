@@ -3,6 +3,7 @@ import { InjectModel } from '@nestjs/mongoose'
 
 import { FilterQuery, Model, mongo } from 'mongoose'
 
+import { SaveBreed } from './breed.model'
 import { Breed, BreedDocument } from './breed.schema'
 
 @Injectable()
@@ -13,8 +14,8 @@ export class BreedRepository {
     return this.model.find(query).exec()
   }
 
-  save(list: Breed[]): Promise<BreedDocument[]> {
-    return this.model.insertMany(list)
+  save(breed: SaveBreed[]): Promise<BreedDocument[]> {
+    return this.model.insertMany(breed)
   }
 
   remove(query: FilterQuery<Breed>): Promise<mongo.DeleteResult> {

@@ -1,9 +1,11 @@
 import { Injectable } from '@nestjs/common'
 
+import { SaveBreed } from '@/module/breed/repository/breed.model'
 import { BreedRepository } from '@/module/breed/repository/breed.repository'
-import cat from '@/module/breed/type/cat.json'
-import dog from '@/module/breed/type/dog.json'
 import { Kind } from '@/module/breed/type/kind.enum'
+
+import Cat from '@/cat.json'
+import Dog from '@/dog.json'
 
 @Injectable()
 export class SetBreedProvider {
@@ -12,7 +14,10 @@ export class SetBreedProvider {
   async run(): Promise<void> {
     await this.repository.remove({})
 
-    await this.repository.save(cat.map((e) => ({ ...e, kind: Kind.Cat })))
-    await this.repository.save(dog.map((e) => ({ ...e, kind: Kind.Dog })))
+    const cat = Cat.map((e) => new SaveBreed(e.name, Kind.Cat))
+    const dog = Dog.map((e) => new SaveBreed(e.name, Kind.Dog))
+
+    await this.repository.save(cat)
+    await this.repository.save(dog)
   }
 }
