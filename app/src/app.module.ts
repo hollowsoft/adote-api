@@ -36,6 +36,7 @@ import { RequestConfigProvider } from './request.config.provider'
     ConfigurationModule,
     ConfigModule.forRoot({
       isGlobal: true,
+      envFilePath: `.env.${process.env.ENV}`,
       ignoreEnvFile: isProduction
     }),
     MongooseModule.forRootAsync({
