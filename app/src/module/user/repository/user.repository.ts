@@ -26,7 +26,7 @@ export class UserRepository {
     return this.model.create(user)
   }
 
-  save(query: FilterQuery<User>, user: SaveUser): Promise<UserDocument> {
+  save(user: SaveUser, query: FilterQuery<User>): Promise<UserDocument> {
     return this.model
       .findOneAndUpdate(query, user)
       .populate([

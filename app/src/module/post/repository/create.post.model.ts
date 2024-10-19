@@ -16,7 +16,7 @@ class CreatePet {
     this.age = pet.age
     this.size = pet.size
     this.gender = pet.gender
-    this.breed = new Types.ObjectId(pet.breed)
+    this.breed = pet.breed.ObjectId
   }
 }
 
@@ -34,8 +34,8 @@ export class CreatePost {
     this.description = post.description
     this.image = post.image
     this.pet = new CreatePet(post.pet)
-    this.user = new Types.ObjectId(user)
-    this.location = new Types.ObjectId(post.location)
+    this.user = user.ObjectId
+    this.location = post.location.ObjectId
     this.publish = post.publish
   }
 }

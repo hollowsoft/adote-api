@@ -9,11 +9,11 @@ import { User, UserDocument } from '@/module/user/repository/user.schema'
 export class FavRepository {
   constructor(@InjectModel(User.name) private model: Model<User>) {}
 
-  save(post: string, query: FilterQuery<User>): Promise<UserDocument> {
-    return this.model.findOneAndUpdate(query, { fav: { $ne: new Types.ObjectId(post) } }).exec()
+  save(post: Types.ObjectId, query: FilterQuery<User>): Promise<UserDocument> {
+    return this.model.findOneAndUpdate(query, { fav: { $ne: post } }).exec()
   }
 
-  remove(id: string, query: FilterQuery<User>): Promise<UserDocument> {
-    return this.model.findOneAndUpdate(query, { $pull: { fav: new Types.ObjectId(id) } }).exec()
+  remove(id: Types.ObjectId, query: FilterQuery<User>): Promise<UserDocument> {
+    return this.model.findOneAndUpdate(query, { $pull: { fav: id } }).exec()
   }
 }
