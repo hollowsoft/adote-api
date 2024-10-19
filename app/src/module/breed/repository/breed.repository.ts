@@ -10,7 +10,7 @@ import { Breed, BreedDocument } from './breed.schema'
 export class BreedRepository {
   constructor(@InjectModel(Breed.name) private readonly model: Model<Breed>) {}
 
-  list(query: FilterQuery<BreedDocument>): Promise<BreedDocument[]> {
+  list(query: FilterQuery<Breed>): Promise<BreedDocument[]> {
     return this.model.find(query).exec()
   }
 
