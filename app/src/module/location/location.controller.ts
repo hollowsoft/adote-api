@@ -10,7 +10,7 @@ import { LocationProvider } from './provider'
 export class LocationController {
   constructor(private readonly provider: LocationProvider) {}
 
-  @Get('search')
+  @Get()
   @Public()
   search(@Query() request: SearchLocationRequest): Promise<LocationResponse[]> {
     return this.provider.search.run(request)

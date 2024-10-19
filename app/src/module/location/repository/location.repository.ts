@@ -7,7 +7,7 @@ import { Location, LocationDocument } from '../repository/location.schema'
 
 @Injectable()
 export class LocationRepository {
-  constructor(@InjectModel(Location.name) private model: Model<Location>) {}
+  constructor(@InjectModel(Location.name) private readonly model: Model<Location>) {}
 
   list(query: FilterQuery<Location>): Promise<LocationDocument[]> {
     return this.model.find(query).exec()
