@@ -1,30 +1,21 @@
-import { ConfigService } from '@nestjs/config'
+import { MailerService } from '@nestjs-modules/mailer'
 
-import { SendEmailCommand, SESClient } from '@aws-sdk/client-ses'
+import { Template } from '../type/template.enum'
 
 export class SendMailProvider {
-  private readonly client = new SESClient()
+  constructor(private readonly mailer: MailerService) {}
 
-  constructor(private readonly config: ConfigService) {}
-
-  async run(to: string, subject: string): Promise<void> {
-    const param = {
-      Source: this.config.get<string>(''),
-      Destination: {
-        ToAddresses: [to]
-      },
-      Message: {
-        Subject: {
-          Data: subject
-        },
-        Body: {
-          Html: {
-            Data: ''
-          }
-        }
-      }
-    }
-
-    await this.client.send(new SendEmailCommand(param))
+  async run(
+    to: string,
+    subject: string,
+    template: Template,
+    context: { [key: string]: string }
+  ): Promise<void> {
+    await this.mailer.sendMail({
+      to,
+      subject,
+      template,
+      context
+    })
   }
 }
