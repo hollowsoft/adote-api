@@ -14,8 +14,8 @@ export class SetBreedProvider {
   async run(): Promise<void> {
     await this.repository.remove({})
 
-    const cat = Cat.map((e) => new SaveBreed(e.name, Kind.Cat))
-    const dog = Dog.map((e) => new SaveBreed(e.name, Kind.Dog))
+    const cat = Cat.map((e) => new SaveBreed(e.name, Kind.CAT))
+    const dog = Dog.map((e) => new SaveBreed(e.name, Kind.DOG))
 
     await this.repository.save(cat)
     await this.repository.save(dog)

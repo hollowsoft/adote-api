@@ -25,8 +25,8 @@ export class ListFavProvider {
       pet: {
         name: '',
         age: [1, 1],
-        size: Size.Large,
-        gender: Gender.Female
+        size: Size.LARGE,
+        gender: Gender.FEMALE
       },
       location: {
         city: '',
