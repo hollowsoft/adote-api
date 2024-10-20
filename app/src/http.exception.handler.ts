@@ -14,12 +14,12 @@ export class HttpExceptionHandler implements ExceptionFilter<HttpException> {
     const request = context.getRequest<FastifyRequest>()
     const response = context.getResponse<FastifyReply>()
 
-    const code = e.getStatus()
+    const status = e.getStatus()
 
-    response.status(code).send({
+    response.status(status).send({
       path: request.url,
       message: e.message,
-      code
+      status
     })
   }
 }
