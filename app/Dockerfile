@@ -1,11 +1,11 @@
-FROM node:21-alpine
+FROM oven/bun:latest
 
 WORKDIR /app
 
 COPY . .
 
-RUN yarn
+RUN bun install
 
-RUN yarn build
+EXPOSE 9000
 
-CMD ["yarn", "start:prod"]
+CMD ["bun", "./src/main.ts"]
