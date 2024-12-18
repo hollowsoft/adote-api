@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
 import { ConfigModule } from '@nestjs/config'
-import { APP_GUARD } from '@nestjs/core'
+import { APP_GUARD, RouterModule } from '@nestjs/core'
 import { MongooseModule } from '@nestjs/mongoose'
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler'
 
@@ -17,8 +17,9 @@ import { UserModule } from '@/module/user/user.module'
 
 import { isProduction } from '@/helper/environment'
 
-import { RepositoryConfigProvider } from './repository.config.provider'
-import { RequestConfigProvider } from './request.config.provider'
+import { RepositoryConfigFactory } from './repository.config.factory'
+import { RequestConfigFactory } from './request.config.factory'
+import { RouteConfig } from './router.config.factory'
 
 @Module({
   imports: [
@@ -32,16 +33,17 @@ import { RequestConfigProvider } from './request.config.provider'
     MailModule,
     PostModule,
     UserModule,
+    RouterModule.register(RouteConfig),
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: `.env.${process.env.ENV}`,
       ignoreEnvFile: isProduction
     }),
     MongooseModule.forRootAsync({
-      useClass: RepositoryConfigProvider
+      useClass: RepositoryConfigFactory
     }),
     ThrottlerModule.forRootAsync({
-      useClass: RequestConfigProvider
+      useClass: RequestConfigFactory
     })
   ],
   providers: [{ provide: APP_GUARD, useClass: ThrottlerGuard }]

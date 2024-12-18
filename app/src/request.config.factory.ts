@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config'
 import { ThrottlerModuleOptions, ThrottlerOptionsFactory } from '@nestjs/throttler'
 
 @Injectable()
-export class RequestConfigProvider implements ThrottlerOptionsFactory {
+export class RequestConfigFactory implements ThrottlerOptionsFactory {
   constructor(private readonly config: ConfigService) {}
 
   createThrottlerOptions(): ThrottlerModuleOptions {
