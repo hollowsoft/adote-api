@@ -1,6 +1,9 @@
-import { IsString } from 'class-validator'
+import { Transform, TransformFnParams } from 'class-transformer'
+import { IsNotEmpty, IsString } from 'class-validator'
 
 export class AddFavRequest {
   @IsString()
-  readonly id: string
+  @IsNotEmpty()
+  @Transform(({ value }: TransformFnParams) => value?.trim())
+  readonly post: string
 }

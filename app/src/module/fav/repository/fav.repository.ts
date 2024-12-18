@@ -7,13 +7,13 @@ import { User, UserDocument } from '@/module/user/repository/user.schema'
 
 @Injectable()
 export class FavRepository {
-  constructor(@InjectModel(User.name) private model: Model<User>) {}
+  constructor(@InjectModel(User.name) private readonly model: Model<User>) {}
 
   save(post: Types.ObjectId, query: FilterQuery<User>): Promise<UserDocument> {
     return this.model.findOneAndUpdate(query, { fav: { $ne: post } }).exec()
   }
 
-  remove(id: Types.ObjectId, query: FilterQuery<User>): Promise<UserDocument> {
-    return this.model.findOneAndUpdate(query, { $pull: { fav: id } }).exec()
+  remove(post: Types.ObjectId, query: FilterQuery<User>): Promise<UserDocument> {
+    return this.model.findOneAndUpdate(query, { $pull: { fav: post } }).exec()
   }
 }
