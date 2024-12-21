@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { FilterQuery, Model, mongo } from 'mongoose'
+import { Model, mongo, type FilterQuery } from 'mongoose'
 
 import { CreatePost } from './create.post.model'
-import { Post, PostDocument } from './post.schema'
+import { Post, type PostDocument } from './post.schema'
 
 @Injectable()
 export class PostRepository {

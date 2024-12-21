@@ -1,4 +1,4 @@
-import { BreedDocument } from './repository/breed.schema'
+import type { BreedDocument } from './repository/breed.schema'
 
 export class BreedResponse {
   readonly id: string

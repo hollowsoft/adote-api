@@ -1,4 +1,4 @@
-import { UserCurrent } from '@/type/auth.type'
+import type { UserCurrent } from '@/type/auth.type'
 
 import { FavRepository } from '../repository/fav.repository'
 

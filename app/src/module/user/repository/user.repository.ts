@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { FilterQuery, Model, mongo } from 'mongoose'
+import { Model, mongo, type FilterQuery } from 'mongoose'
 
 import { CreateAdmin, CreateUser, SaveUser } from './user.model'
-import { User, UserDocument } from './user.schema'
+import { User, type UserDocument } from './user.schema'
 
 @Injectable()
 export class UserRepository {

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 
 import { SESClient } from '@aws-sdk/client-ses'
-import { MailerOptions, MailerOptionsFactory } from '@nestjs-modules/mailer'
+import type { MailerOptions, MailerOptionsFactory } from '@nestjs-modules/mailer'
 
 @Injectable()
 export class MailerConfigProvider implements MailerOptionsFactory {

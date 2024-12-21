@@ -1,4 +1,4 @@
-import { LocationDocument } from './repository/location.schema'
+import type { LocationDocument } from './repository/location.schema'
 
 export class LocationResponse {
   readonly id: string

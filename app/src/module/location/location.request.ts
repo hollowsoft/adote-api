@@ -1,4 +1,4 @@
-import { Transform, TransformFnParams } from 'class-transformer'
+import { Transform, type TransformFnParams } from 'class-transformer'
 import { IsString, MinLength } from 'class-validator'
 
 export class SearchLocationRequest {

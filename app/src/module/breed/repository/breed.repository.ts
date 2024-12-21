@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { FilterQuery, Model, mongo } from 'mongoose'
+import { Model, mongo, type FilterQuery } from 'mongoose'
 
 import { SaveBreed } from './breed.model'
-import { Breed, BreedDocument } from './breed.schema'
+import { Breed, type BreedDocument } from './breed.schema'
 
 @Injectable()
 export class BreedRepository {

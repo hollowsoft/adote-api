@@ -1,4 +1,4 @@
-import { Transform, TransformFnParams, Type } from 'class-transformer'
+import { Transform, Type, type TransformFnParams } from 'class-transformer'
 import {
   IsArray,
   IsBoolean,

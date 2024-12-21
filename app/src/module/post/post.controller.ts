@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Put, Query } from '@nestjs/common'
 
-import { UserToken } from '@/type/auth.type'
+import type { UserToken } from '@/type/auth.type'
 
 import { Public } from '@/decorator/public.decorator'
 import { User } from '@/decorator/user.decorator'

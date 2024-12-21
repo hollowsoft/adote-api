@@ -1,4 +1,4 @@
-import { UserCurrent } from '@/type/auth.type'
+import type { UserCurrent } from '@/type/auth.type'
 
 import { SaveUser } from '../repository/user.model'
 import { UserRepository } from '../repository/user.repository'

@@ -4,7 +4,7 @@ import { MailProvider } from '@/module/mail/provider'
 import { Template } from '@/module/mail/type/template.enum'
 import { CreateUser } from '@/module/user/repository/user.model'
 import { UserRepository } from '@/module/user/repository/user.repository'
-import { UserDocument } from '@/module/user/repository/user.schema'
+import type { UserDocument } from '@/module/user/repository/user.schema'
 
 import { AuthRequest } from '../auth.request'
 import { AuthResponse } from '../auth.response'

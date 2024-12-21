@@ -1,4 +1,4 @@
-import { UserDocument } from '../user/repository/user.schema'
+import type { UserDocument } from '../user/repository/user.schema'
 
 export class AuthResponse {
   readonly id: string
