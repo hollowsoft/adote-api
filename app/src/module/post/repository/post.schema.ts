@@ -2,9 +2,9 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 
 import { HydratedDocument, Types } from 'mongoose'
 
-import { Breed, BreedDocument } from '@/module/breed/repository/breed.schema'
-import { Location, LocationDocument } from '@/module/location/repository/location.schema'
-import { User, UserDocument } from '@/module/user/repository/user.schema'
+import { BreedDocument } from '@/module/breed/repository/breed.schema'
+import { LocationDocument } from '@/module/location/repository/location.schema'
+import { UserDocument } from '@/module/user/repository/user.schema'
 
 import { Gender } from '../type/gender.enum'
 import { Size } from '../type/size.enum'
@@ -24,7 +24,7 @@ export class Pet {
   @Prop({ type: String, enum: Gender, required: true })
   gender: Gender
 
-  @Prop({ type: Types.ObjectId, ref: Breed.name, required: true })
+  @Prop({ type: Types.ObjectId, ref: 'Breed', required: true })
   breed: BreedDocument
 }
 
@@ -43,10 +43,10 @@ export class Post {
   @Prop({ type: Pet, required: true })
   pet: Pet
 
-  @Prop({ type: Types.ObjectId, ref: User.name, required: true })
+  @Prop({ type: Types.ObjectId, ref: 'User', required: true })
   user: UserDocument
 
-  @Prop({ type: Types.ObjectId, ref: Location.name, required: true })
+  @Prop({ type: Types.ObjectId, ref: 'Location', required: true })
   location: LocationDocument
 
   @Prop({ type: Boolean, required: true })
