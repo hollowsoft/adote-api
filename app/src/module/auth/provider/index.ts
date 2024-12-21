@@ -22,7 +22,7 @@ export class AuthProvider {
     private readonly repository: UserRepository
   ) {
     this.mail = new MailAuthProvider(this._mail, this.repository)
-    this.renew = new RenewAuthProvider(this.jwt, this.config)
+    this.renew = new RenewAuthProvider(this.jwt, this.config, this.repository)
     this.verify = new VerifyAuthProvider(this.jwt, this.config, this.repository)
   }
 }

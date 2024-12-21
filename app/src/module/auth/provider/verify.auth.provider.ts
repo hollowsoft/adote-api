@@ -1,13 +1,14 @@
-import { Injectable } from '@nestjs/common'
+import { BadRequestException, UnauthorizedException } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { JwtService } from '@nestjs/jwt'
+
+import { isNil } from 'lodash'
 
 import { UserRepository } from '@/module/user/repository/user.repository'
 
 import { VerifyRequest } from '../auth.request'
 import { TokenResponse } from '../auth.response'
 
-@Injectable()
 export class VerifyAuthProvider {
   constructor(
     private readonly jwt: JwtService,
@@ -18,14 +19,18 @@ export class VerifyAuthProvider {
   async run(request: VerifyRequest): Promise<TokenResponse> {
     const { mail, code } = request
 
-    // TDOO: check in the cache for the user
-
+    // TODO: check code
     const user = await this.repository.find({ mail })
+
+    if (isNil(user)) {
+      throw new BadRequestException()
+    }
 
     const param = {
       sub: user.id,
       user: {
         id: user.id,
+        mail: user.mail,
         role: user.role
       }
     }

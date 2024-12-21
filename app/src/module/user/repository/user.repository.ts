@@ -14,7 +14,7 @@ export class UserRepository {
     return this.model.find(query).exec()
   }
 
-  find(query: FilterQuery<User>): Promise<UserDocument> {
+  find(query: FilterQuery<User>): Promise<UserDocument | null> {
     return this.model.findOne(query).exec()
   }
 
@@ -26,7 +26,7 @@ export class UserRepository {
     return this.model.create(user)
   }
 
-  save(user: SaveUser, query: FilterQuery<User>): Promise<UserDocument> {
+  save(user: SaveUser, query: FilterQuery<User>): Promise<UserDocument | null> {
     return this.model
       .findOneAndUpdate(query, user)
       .populate([

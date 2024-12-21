@@ -20,6 +20,7 @@ export class MailAuthProvider {
 
     const user = await this.save(mail)
 
+    // TODO: send mail with code
     this.provider.send.run(mail, '', Template.CODE, {})
 
     return new AuthResponse(user)
@@ -29,7 +30,7 @@ export class MailAuthProvider {
     const user = await this.repository.find({ mail })
 
     if (isNil(user)) {
-      return this.repository.create(new CreateUser(mail))
+      return await this.repository.create(new CreateUser(mail))
     }
 
     return user
