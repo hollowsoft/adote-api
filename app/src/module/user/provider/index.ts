@@ -10,11 +10,17 @@ import { UserRepository } from '../repository/user.repository'
 
 @Injectable()
 export class UserProvider {
-  readonly get: GetUserProvider = new GetUserProvider(this.repository)
-  readonly current: GetCurrentProvider = new GetCurrentProvider(this.repository)
-  readonly list: ListUserProvider = new ListUserProvider(this.repository)
-  readonly image: AddImageProvider = new AddImageProvider(this.repository)
-  readonly patch: PatchUserProvider = new PatchUserProvider(this.repository)
+  readonly get: GetUserProvider
+  readonly current: GetCurrentProvider
+  readonly list: ListUserProvider
+  readonly image: AddImageProvider
+  readonly patch: PatchUserProvider
 
-  constructor(private readonly repository: UserRepository) {}
+  constructor(private readonly repository: UserRepository) {
+    this.get = new GetUserProvider(this.repository)
+    this.current = new GetCurrentProvider(this.repository)
+    this.list = new ListUserProvider(this.repository)
+    this.image = new AddImageProvider(this.repository)
+    this.patch = new PatchUserProvider(this.repository)
+  }
 }

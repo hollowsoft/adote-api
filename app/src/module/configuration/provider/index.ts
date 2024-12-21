@@ -10,13 +10,17 @@ import { SetUserProvider } from './set.user.provider'
 
 @Injectable()
 export class ConfigurationProvider {
-  readonly user: SetUserProvider = new SetUserProvider(this._user)
-  readonly breed: SetBreedProvider = new SetBreedProvider(this._breed)
-  readonly location: SetLocationProvider = new SetLocationProvider(this._location)
+  readonly user: SetUserProvider
+  readonly breed: SetBreedProvider
+  readonly location: SetLocationProvider
 
   constructor(
     private readonly _user: UserRepository,
     private readonly _breed: BreedRepository,
     private readonly _location: LocationRepository
-  ) {}
+  ) {
+    this.user = new SetUserProvider(this._user)
+    this.breed = new SetBreedProvider(this._breed)
+    this.location = new SetLocationProvider(this._location)
+  }
 }

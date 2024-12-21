@@ -6,7 +6,9 @@ import { BreedRepository } from '../repository/breed.repository'
 
 @Injectable()
 export class BreedProvider {
-  readonly list: ListBreedProvider = new ListBreedProvider(this.repository)
+  readonly list: ListBreedProvider
 
-  constructor(private readonly repository: BreedRepository) {}
+  constructor(private readonly repository: BreedRepository) {
+    this.list = new ListBreedProvider(this.repository)
+  }
 }

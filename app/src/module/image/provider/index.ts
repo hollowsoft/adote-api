@@ -6,8 +6,11 @@ import { SaveImageProvider } from './save.image.provider'
 
 @Injectable()
 export class ImageProvider {
-  readonly save: SaveImageProvider = new SaveImageProvider(this.config)
-  readonly remove: RemoveImageProvider = new RemoveImageProvider()
+  readonly save: SaveImageProvider
+  readonly remove: RemoveImageProvider
 
-  constructor(private readonly config: ConfigService) {}
+  constructor(private readonly config: ConfigService) {
+    this.save = new SaveImageProvider(this.config)
+    this.remove = new RemoveImageProvider()
+  }
 }

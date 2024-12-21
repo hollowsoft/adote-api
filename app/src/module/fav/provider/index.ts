@@ -7,8 +7,11 @@ import { FavRepository } from '../repository/fav.repository'
 
 @Injectable()
 export class FavProvider {
-  readonly add: AddFavProvider = new AddFavProvider(this.repository)
-  readonly remove: RemoveFavProvider = new RemoveFavProvider(this.repository)
+  readonly add: AddFavProvider
+  readonly remove: RemoveFavProvider
 
-  constructor(private readonly repository: FavRepository) {}
+  constructor(private readonly repository: FavRepository) {
+    this.add = new AddFavProvider(this.repository)
+    this.remove = new RemoveFavProvider(this.repository)
+  }
 }

@@ -11,12 +11,19 @@ import { PostRepository } from '../repository/post.repository'
 
 @Injectable()
 export class PostProvider {
-  readonly get: GetPostProvider = new GetPostProvider(this.repository)
-  readonly list: ListPostProvider = new ListPostProvider(this.repository)
-  readonly create: CreatePostProvider = new CreatePostProvider(this.repository)
-  readonly patch: PatchPostProvider = new PatchPostProvider(this.repository)
-  readonly publish: PublishPostProvider = new PublishPostProvider(this.repository)
-  readonly remove: RemovePostProvider = new RemovePostProvider(this.repository)
+  readonly get: GetPostProvider
+  readonly list: ListPostProvider
+  readonly create: CreatePostProvider
+  readonly patch: PatchPostProvider
+  readonly publish: PublishPostProvider
+  readonly remove: RemovePostProvider
 
-  constructor(private readonly repository: PostRepository) {}
+  constructor(private readonly repository: PostRepository) {
+    this.get = new GetPostProvider(this.repository)
+    this.list = new ListPostProvider(this.repository)
+    this.create = new CreatePostProvider(this.repository)
+    this.patch = new PatchPostProvider(this.repository)
+    this.publish = new PublishPostProvider(this.repository)
+    this.remove = new RemovePostProvider(this.repository)
+  }
 }

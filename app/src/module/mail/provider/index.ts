@@ -1,11 +1,14 @@
 import { Injectable } from '@nestjs/common'
-import { ConfigService } from '@nestjs/config'
+
+import { MailerService } from '@nestjs-modules/mailer'
 
 import { SendMailProvider } from './send.mail.provider'
 
 @Injectable()
 export class MailProvider {
-  readonly send: SendMailProvider = new SendMailProvider(this.config)
+  readonly send: SendMailProvider
 
-  constructor(private readonly config: ConfigService) {}
+  constructor(private readonly mailer: MailerService) {
+    this.send = new SendMailProvider(this.mailer)
+  }
 }
