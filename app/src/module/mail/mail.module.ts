@@ -3,8 +3,7 @@ import { Module } from '@nestjs/common'
 import { MailerModule } from '@nestjs-modules/mailer'
 
 import { MailerConfigProvider } from './mailer.config.provider'
-import { MailProvider } from './provider/index'
-import { SendMailProvider } from './provider/send.mail.provider'
+import { MailProvider } from './provider'
 
 @Module({
   imports: [
@@ -12,7 +11,7 @@ import { SendMailProvider } from './provider/send.mail.provider'
       useClass: MailerConfigProvider
     })
   ],
-  exports: [SendMailProvider],
+  exports: [MailProvider],
   providers: [MailProvider]
 })
 export class MailModule {}
