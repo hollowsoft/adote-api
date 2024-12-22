@@ -6,8 +6,10 @@ import { UserRepository } from './repository/user.repository'
 import { User, UserSchema } from './repository/user.schema'
 import { UserController } from './user.controller'
 
+import { ImageModule } from '../image/image.module'
+
 @Module({
-  imports: [MongooseModule.forFeature([{ name: User.name, schema: UserSchema }])],
+  imports: [ImageModule, MongooseModule.forFeature([{ name: User.name, schema: UserSchema }])],
   exports: [UserRepository],
   providers: [UserProvider, UserRepository],
   controllers: [UserController]

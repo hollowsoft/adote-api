@@ -1,4 +1,4 @@
-import { Body, Controller, Get, HttpCode, HttpStatus, Param, Post, Put, Query } from '@nestjs/common'
+import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Put, Query } from '@nestjs/common'
 
 import type { UserToken } from '@/type/auth.type'
 
@@ -21,8 +21,12 @@ export class UserController {
   }
 
   @Get('current')
-  current(): Promise<UserResponse> {
-    return this.provider.current.run()
+  current(@User() token: UserToken): Promise<UserResponse> {
+    const {
+      user: { id }
+    } = token
+
+    return this.provider.get.run(id)
   }
 
   @Get()
@@ -31,16 +35,27 @@ export class UserController {
     return this.provider.list.run(request)
   }
 
-  @Post('image')
-  @HttpCode(HttpStatus.OK)
-  image(): Promise<void> {
-    return this.provider.image.run()
-  }
-
   @Put()
-  patch(@Body() request: SaveUserRequest, @User() token: UserToken): Promise<UserResponse> {
+  save(@Body() request: SaveUserRequest, @User() token: UserToken): Promise<UserResponse> {
     const { user } = token
 
-    return this.provider.patch.run(request, user)
+    return this.provider.save.run(request, user)
+  }
+
+  @Post('image')
+  image(@User() token: UserToken): Promise<any> {
+    const { user } = token
+
+    return this.provider.image.run(user)
+  }
+
+  @Delete()
+  @HttpCode(HttpStatus.NO_CONTENT)
+  remove(@User() token: UserToken): Promise<void> {
+    const {
+      user: { id }
+    } = token
+
+    return this.provider.remove.run(id)
   }
 }

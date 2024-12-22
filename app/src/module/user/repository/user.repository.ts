@@ -22,8 +22,8 @@ export class UserRepository {
     return this.model.create(user)
   }
 
-  admin(user: CreateAdmin): Promise<UserDocument> {
-    return this.model.create(user)
+  admin(admin: CreateAdmin): Promise<UserDocument> {
+    return this.model.create(admin)
   }
 
   save(user: SaveUser, query: FilterQuery<User>): Promise<UserDocument | null> {

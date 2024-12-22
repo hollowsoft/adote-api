@@ -1,25 +1,21 @@
 import { Transform, Type, type TransformFnParams } from 'class-transformer'
 import {
   IsBoolean,
-  IsEmail,
-  IsNotEmpty,
+  IsMongoId,
   IsOptional,
   IsPhoneNumber,
   IsString,
-  MaxLength,
+  IsUrl,
+  Length,
   ValidateNested
 } from 'class-validator'
 
-export class ContactRequest {
-  @IsEmail()
-  readonly mail: string
-
+class ContactRequest {
   @IsPhoneNumber('BR')
   @IsOptional()
   readonly phone?: string
 
-  @IsString()
-  @MaxLength(20)
+  @IsUrl()
   @IsOptional()
   readonly social?: string
 }
@@ -32,12 +28,12 @@ export class ListUserRequest {
 
 export class SaveUserRequest {
   @IsString()
-  @IsNotEmpty()
+  @Length(2, 20)
   @Transform(({ value }: TransformFnParams) => value?.trim())
   readonly name: string
 
   @IsString()
-  @MaxLength(400)
+  @Length(4, 400)
   @IsOptional()
   @Transform(({ value }: TransformFnParams) => value?.trim())
   readonly description?: string
@@ -47,6 +43,6 @@ export class SaveUserRequest {
   @ValidateNested()
   readonly contact: ContactRequest
 
-  @IsString()
+  @IsMongoId()
   readonly location: string
 }

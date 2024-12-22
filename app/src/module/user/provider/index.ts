@@ -1,26 +1,31 @@
 import { Injectable } from '@nestjs/common'
 
-import { AddImageProvider } from './add.image.provider'
-import { GetCurrentProvider } from './get.current.provider'
+import { ImageProvider } from '@/module/image/provider'
+
 import { GetUserProvider } from './get.user.provider'
 import { ListUserProvider } from './list.user.provider'
-import { PatchUserProvider } from './patch.user.provider'
+import { RemoveUserProvider } from './remove.user.provider'
+import { SaveImageProvider } from './save.image.provider'
+import { SaveUserProvider } from './save.user.provider'
 
 import { UserRepository } from '../repository/user.repository'
 
 @Injectable()
 export class UserProvider {
   readonly get: GetUserProvider
-  readonly current: GetCurrentProvider
   readonly list: ListUserProvider
-  readonly image: AddImageProvider
-  readonly patch: PatchUserProvider
+  readonly save: SaveUserProvider
+  readonly image: SaveImageProvider
+  readonly remove: RemoveUserProvider
 
-  constructor(private readonly repository: UserRepository) {
+  constructor(
+    private readonly _image: ImageProvider,
+    private readonly repository: UserRepository
+  ) {
     this.get = new GetUserProvider(this.repository)
-    this.current = new GetCurrentProvider(this.repository)
     this.list = new ListUserProvider(this.repository)
-    this.image = new AddImageProvider(this.repository)
-    this.patch = new PatchUserProvider(this.repository)
+    this.save = new SaveUserProvider(this.repository)
+    this.image = new SaveImageProvider(this._image, this.repository)
+    this.remove = new RemoveUserProvider(this.repository)
   }
 }
