@@ -5,32 +5,19 @@ import { SaveUserRequest } from '../user.request'
 
 export class CreateUser {
   readonly mail: string
+  readonly name?: string
   readonly contact: {
     mail: string
   }
+  readonly role?: Role
 
-  constructor(mail: string) {
-    this.mail = mail
-    this.contact = {
-      mail
-    }
-  }
-}
-
-export class CreateAdmin {
-  readonly mail: string
-  readonly name: string
-  readonly contact: {
-    mail: string
-  }
-  readonly role: Role = Role.ADMIN
-
-  constructor(mail: string, name: string) {
+  constructor(mail: string, name?: string, role?: Role) {
     this.mail = mail
     this.name = name
     this.contact = {
       mail
     }
+    this.role = role
   }
 }
 

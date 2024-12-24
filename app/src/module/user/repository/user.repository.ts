@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose'
 
 import { Model, mongo, type FilterQuery } from 'mongoose'
 
-import { CreateAdmin, CreateUser, SaveUser } from './user.model'
+import { CreateUser, SaveUser } from './user.model'
 import { User, type UserDocument } from './user.schema'
 
 @Injectable()
@@ -20,10 +20,6 @@ export class UserRepository {
 
   create(user: CreateUser): Promise<UserDocument> {
     return this.model.create(user)
-  }
-
-  admin(admin: CreateAdmin): Promise<UserDocument> {
-    return this.model.create(admin)
   }
 
   save(user: SaveUser, query: FilterQuery<User>): Promise<UserDocument | null> {

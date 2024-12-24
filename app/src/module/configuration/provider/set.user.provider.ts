@@ -1,7 +1,8 @@
 import { Injectable } from '@nestjs/common'
 
-import { CreateAdmin } from '@/module/user/repository/user.model'
+import { CreateUser } from '@/module/user/repository/user.model'
 import { UserRepository } from '@/module/user/repository/user.repository'
+import { Role } from '@/module/user/type/role.enum'
 
 import User from '@/user.json'
 
@@ -12,6 +13,6 @@ export class SetUserProvider {
   async run(): Promise<void> {
     const { mail, name } = User
 
-    await this.repository.admin(new CreateAdmin(mail, name))
+    await this.repository.create(new CreateUser(mail, name, Role.ADMIN))
   }
 }
