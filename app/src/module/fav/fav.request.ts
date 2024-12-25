@@ -1,9 +1,6 @@
-import { Transform, type TransformFnParams } from 'class-transformer'
-import { IsNotEmpty, IsString } from 'class-validator'
+import { IsMongoId } from 'class-validator'
 
 export class AddFavRequest {
-  @IsString()
-  @IsNotEmpty()
-  @Transform(({ value }: TransformFnParams) => value?.trim())
+  @IsMongoId()
   readonly post: string
 }

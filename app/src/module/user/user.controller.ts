@@ -14,6 +14,12 @@ import { UserResponse } from './user.response'
 export class UserController {
   constructor(private readonly provider: UserProvider) {}
 
+  @Get()
+  @Permission(Role.ADMIN)
+  list(@Query() request: ListUserRequest): Promise<UserResponse[]> {
+    return this.provider.list.run(request)
+  }
+
   @Get(':id')
   @Permission(Role.ADMIN)
   get(@Param('id') id: string): Promise<UserResponse> {
@@ -27,12 +33,6 @@ export class UserController {
     } = token
 
     return this.provider.get.run(id)
-  }
-
-  @Get()
-  @Permission(Role.ADMIN)
-  list(@Query() request: ListUserRequest): Promise<UserResponse[]> {
-    return this.provider.list.run(request)
   }
 
   @Put()

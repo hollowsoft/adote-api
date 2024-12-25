@@ -43,7 +43,6 @@ export class UserResponse {
     this.name = user.name
     this.image = user.image
     this.description = user.description
-
     this.contact = new ContactResponse(contact)
 
     if (location) {
