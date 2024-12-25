@@ -3,24 +3,6 @@ import { Types } from 'mongoose'
 import { Role } from '../type/role.enum'
 import { SaveUserRequest } from '../user.request'
 
-export class CreateUser {
-  readonly mail: string
-  readonly name?: string
-  readonly contact: {
-    mail: string
-  }
-  readonly role?: Role
-
-  constructor(mail: string, name?: string, role?: Role) {
-    this.mail = mail
-    this.name = name
-    this.contact = {
-      mail
-    }
-    this.role = role
-  }
-}
-
 export class SaveUser {
   readonly name: string
   readonly description?: string
@@ -39,6 +21,24 @@ export class SaveUser {
       phone: contact?.phone,
       social: contact?.social
     }
-    this.location = location.ObjectId
+    this.location = location.ObjectId // types.ObjectId
+  }
+}
+
+export class CreateUser {
+  readonly mail: string
+  readonly name?: string
+  readonly contact: {
+    mail: string
+  }
+  readonly role?: Role
+
+  constructor(mail: string, name?: string, role?: Role) {
+    this.mail = mail
+    this.name = name
+    this.contact = {
+      mail
+    }
+    this.role = role
   }
 }
