@@ -1,6 +1,6 @@
 import { ValidationPipe } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
-import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify'
+import { FastifyAdapter, type NestFastifyApplication } from '@nestjs/platform-fastify'
 
 import compress from '@fastify/compress'
 import helmet from '@fastify/helmet'

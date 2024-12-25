@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
-import { ThrottlerModuleOptions, ThrottlerOptionsFactory } from '@nestjs/throttler'
+import type { ThrottlerModuleOptions, ThrottlerOptionsFactory } from '@nestjs/throttler'
 
 @Injectable()
 export class RequestConfigFactory implements ThrottlerOptionsFactory {

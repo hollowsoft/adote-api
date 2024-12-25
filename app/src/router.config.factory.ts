@@ -1,4 +1,4 @@
-import { Routes } from '@nestjs/core'
+import type { Routes } from '@nestjs/core'
 
 import { FavModule } from './module/fav/fav.module'
 import { UserModule } from './module/user/user.module'
