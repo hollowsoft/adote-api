@@ -5,8 +5,8 @@ import type { UserToken } from '@/type/auth.type'
 import { Public } from '@/decorator/public.decorator'
 import { User } from '@/decorator/user.decorator'
 
-import { CreatePostRequest, ListPostRequest, PatchPostRequest, PublishPostRequest } from './post.request'
-import { PostResponse, PublishPostResponse } from './post.response'
+import { ListPostRequest, SavePostRequest, SavePublishPostRequest } from './post.request'
+import { PostResponse } from './post.response'
 import { PostProvider } from './provider'
 
 @Controller('post')
@@ -26,20 +26,33 @@ export class PostController {
   }
 
   @Post()
-  create(@Body() request: CreatePostRequest, @User() token: UserToken): Promise<PostResponse> {
+  create(@Body() request: SavePostRequest, @User() token: UserToken): Promise<PostResponse> {
     const { user } = token
 
-    return this.provider.create.run(request, user.id)
+    return this.provider.create.run(request, user)
   }
 
   @Put(':id')
-  patch(@Param('id') id: string, @Body() request: PatchPostRequest): Promise<PostResponse> {
-    return this.provider.patch.run(id, request)
+  edit(
+    @Param('id') id: string,
+    @Body() request: SavePostRequest,
+    @User() token: UserToken
+  ): Promise<PostResponse> {
+    const { user } = token
+
+    return this.provider.save.run(id, request, user)
   }
 
   @Put(':id/publish')
-  publish(@Param('id') id: string, @Body() request: PublishPostRequest): Promise<PublishPostResponse> {
-    return this.provider.publish.run(id, request)
+  @HttpCode(HttpStatus.NO_CONTENT)
+  publish(
+    @Param('id') id: string,
+    @Body() request: SavePublishPostRequest,
+    @User() token: UserToken
+  ): Promise<void> {
+    const { user } = token
+
+    return this.provider.publish.run(id, request, user)
   }
 
   @Delete(':id')
@@ -47,6 +60,6 @@ export class PostController {
   remove(@Param('id') id: string, @User() token: UserToken): Promise<void> {
     const { user } = token
 
-    return this.provider.remove.run(id, user.id)
+    return this.provider.remove.run(id, user)
   }
 }

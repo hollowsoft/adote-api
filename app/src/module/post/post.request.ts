@@ -2,11 +2,14 @@ import { Transform, Type, type TransformFnParams } from 'class-transformer'
 import {
   IsArray,
   IsBoolean,
+  IsDate,
   IsEnum,
-  IsNotEmpty,
+  IsMongoId,
   IsNumber,
+  IsOptional,
   IsString,
-  Max,
+  IsUUID,
+  Length,
   Min,
   ValidateNested
 } from 'class-validator'
@@ -16,14 +19,12 @@ import { Size } from './type/size.enum'
 
 export class PetRequest {
   @IsString()
-  @IsNotEmpty()
+  @Length(2, 20)
   @Transform(({ value }: TransformFnParams) => value?.trim())
   readonly name: string
 
-  @IsNumber()
-  @Min(1)
-  @Max(20)
-  readonly age: number
+  @IsDate()
+  readonly birth: Date
 
   @IsEnum(Size)
   readonly size: Size
@@ -31,77 +32,43 @@ export class PetRequest {
   @IsEnum(Gender)
   readonly gender: Gender
 
-  @IsString()
-  @IsNotEmpty()
-  @Transform(({ value }: TransformFnParams) => value?.trim())
+  @IsMongoId()
   readonly breed: string
 }
 
 export class ListPostRequest {
   @IsNumber()
+  @Min(1)
   readonly page: number
 
   @IsNumber()
+  @Min(1)
   readonly amount: number
+
+  @IsMongoId()
+  @IsOptional()
+  readonly location: string
 }
 
-export class CreatePostRequest {
+export class SavePostRequest {
   @IsString()
-  @IsNotEmpty()
-  @Transform(({ value }: TransformFnParams) => value?.trim())
-  readonly name: string
-
-  @IsString()
-  @IsNotEmpty()
+  @Length(4, 400)
   @Transform(({ value }: TransformFnParams) => value?.trim())
   readonly description: string
 
   @IsArray()
-  @IsString({ each: true })
-  @IsNotEmpty()
+  @IsUUID(4, { each: true })
   readonly image: string[]
 
   @Type(() => PetRequest)
   @ValidateNested()
   readonly pet: PetRequest
-
-  @IsString()
-  @IsNotEmpty()
-  @Transform(({ value }: TransformFnParams) => value?.trim())
-  readonly location: string
 
   @IsBoolean()
   readonly publish: boolean
 }
 
-export class PatchPostRequest {
-  @IsString()
-  @IsNotEmpty()
-  @Transform(({ value }: TransformFnParams) => value?.trim())
-  readonly title: string
-
-  @IsString()
-  @IsNotEmpty()
-  @Transform(({ value }: TransformFnParams) => value?.trim())
-  readonly description: string
-
-  @IsArray()
-  @IsString({ each: true })
-  @IsNotEmpty()
-  @Transform(({ value }: TransformFnParams) => value?.trim())
-  readonly image: string[]
-
-  @Type(() => PetRequest)
-  @ValidateNested()
-  readonly pet: PetRequest
-
-  @IsString()
-  @IsNotEmpty()
-  @Transform(({ value }: TransformFnParams) => value?.trim())
-  readonly location: string
-}
-
-export class PublishPostRequest {
+export class SavePublishPostRequest {
   @IsBoolean()
   readonly publish: boolean
 }

@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose'
 
 import { Model, mongo, type FilterQuery } from 'mongoose'
 
-import { CreatePost } from './create.post.model'
+import { SavePost, SavePublishPost } from './post.model'
 import { Post, type PostDocument } from './post.schema'
 
 @Injectable()
@@ -18,24 +18,41 @@ export class PostRepository {
       .populate([
         { path: 'pet.breed', model: 'Breed' },
         { path: 'user.contact', model: 'Contact' },
-        { path: 'location', model: 'Location' }
+        { path: 'user.location', model: 'Location' }
       ])
       .exec()
   }
 
-  find(query: FilterQuery<Post>): Promise<PostDocument> {
+  find(query: FilterQuery<Post>): Promise<PostDocument | null> {
     return this.model
       .findOne(query)
       .populate([
         { path: 'pet.breed', model: 'Breed' },
         { path: 'user.contact', model: 'Contact' },
-        { path: 'location', model: 'Location' }
+        { path: 'user.location', model: 'Location' }
       ])
       .exec()
   }
 
-  save(post: CreatePost): Promise<PostDocument> {
-    return this.model.create(post)
+  create(post: SavePost): Promise<PostDocument> {
+    return this.model.create(post).then((type) =>
+      type.populate([
+        { path: 'pet.breed', model: 'Breed' },
+        { path: 'user.contact', model: 'Contact' },
+        { path: 'user.location', model: 'Location' }
+      ])
+    )
+  }
+
+  save(post: SavePost | SavePublishPost, query: FilterQuery<Post>): Promise<PostDocument | null> {
+    return this.model
+      .findOneAndUpdate(query, post)
+      .populate([
+        { path: 'pet.breed', model: 'Breed' },
+        { path: 'user.contact', model: 'Contact' },
+        { path: 'user.location', model: 'Location' }
+      ])
+      .exec()
   }
 
   remove(query: FilterQuery<Post>): Promise<mongo.DeleteResult> {

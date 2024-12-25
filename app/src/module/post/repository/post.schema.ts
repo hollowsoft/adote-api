@@ -3,7 +3,6 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 import { Types, type HydratedDocument } from 'mongoose'
 
 import type { BreedDocument } from '@/module/breed/repository/breed.schema'
-import type { LocationDocument } from '@/module/location/repository/location.schema'
 import type { UserDocument } from '@/module/user/repository/user.schema'
 
 import { Gender } from '../type/gender.enum'
@@ -15,8 +14,8 @@ export class Pet {
   @Prop({ type: String, required: true })
   name: string
 
-  @Prop({ type: Number, required: true })
-  age: number
+  @Prop({ type: Date, required: true })
+  birth: Date
 
   @Prop({ type: String, enum: Size, required: true })
   size: Size
@@ -45,9 +44,6 @@ export class Post {
 
   @Prop({ type: Types.ObjectId, ref: 'User', required: true })
   user: UserDocument
-
-  @Prop({ type: Types.ObjectId, ref: 'Location', required: true })
-  location: LocationDocument
 
   @Prop({ type: Boolean, required: true })
   publish: boolean
