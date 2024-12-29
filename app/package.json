@@ -9,7 +9,7 @@
     "format:check": "prettier --check \"src/**/*.ts\" \"spec/**/*.ts\"",
     "lint": "eslint \"{src,apps,libs,spec}/**/*.ts\" --fix",
     "lint:check": "eslint \"{src,apps,libs,spec}/**/*.ts\"",
-    "start": "bun ./src/main.ts --watch",
+    "start": "bun --watch ./src/main.ts",
     "test": "jest",
     "test:watch": "jest --watch"
   },
@@ -44,6 +44,7 @@
     "@nestjs/cli": "^10.2.1",
     "@nestjs/schematics": "^10.0.3",
     "@nestjs/testing": "^10.2.7",
+    "@stylistic/eslint-plugin-ts": "^2.12.1",
     "@types/bun": "^1.1.14",
     "@types/jest": "29.5.7",
     "@types/lodash": "^4.14.200",

@@ -1,0 +1,29 @@
+{
+  "root": true,
+  "env": {
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "*/tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "@stylistic/ts"
+  ],
+  "extends": [
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "@stylistic/ts/member-delimiter-style": [
+      "error",
+      {
+        "singleline": {
+          "delimiter": "comma"
+        }
+      }
+    ]
+  }
+}
