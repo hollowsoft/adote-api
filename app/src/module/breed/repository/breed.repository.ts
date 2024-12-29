@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { Model, mongo, type FilterQuery } from 'mongoose'
+import { Model, type FilterQuery } from 'mongoose'
 
-import { SaveBreed } from './breed.model'
 import { Breed, type BreedDocument } from './breed.schema'
+
+import { Kind } from '../type/kind.enum'
 
 @Injectable()
 export class BreedRepository {
@@ -14,11 +15,14 @@ export class BreedRepository {
     return this.model.find(query).exec()
   }
 
-  save(breed: SaveBreed[]): Promise<BreedDocument[]> {
-    return this.model.insertMany(breed)
+  // prettier-ignore
+  create(list: { name: string, kind: Kind }[]): Promise<BreedDocument[]> {
+    return this.model.insertMany(list)
   }
 
-  remove(query: FilterQuery<Breed>): Promise<mongo.DeleteResult> {
-    return this.model.deleteMany(query).exec()
+  async remove(query: FilterQuery<Breed>): Promise<number> {
+    const { deletedCount: amount } = await this.model.deleteMany(query).exec()
+
+    return amount
   }
 }

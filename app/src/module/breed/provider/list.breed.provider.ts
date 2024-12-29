@@ -6,9 +6,7 @@ export class ListBreedProvider {
   constructor(private readonly repository: BreedRepository) {}
 
   async run(request: ListBreedRequest): Promise<BreedResponse[]> {
-    const { kind } = request
-
-    const list = await this.repository.list({ kind })
+    const list = await this.repository.list(request)
 
     return list.map((e) => new BreedResponse(e))
   }
