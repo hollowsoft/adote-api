@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { Model, mongo, type FilterQuery } from 'mongoose'
+import { Model, type FilterQuery } from 'mongoose'
 
 import { Location, type LocationDocument } from '../repository/location.schema'
 
@@ -13,11 +13,14 @@ export class LocationRepository {
     return this.model.find(query).exec()
   }
 
-  save(location: Location[]): Promise<LocationDocument[]> {
-    return this.model.insertMany(location)
+  // prettier-ignore
+  create(list: { city: string, state: string }[]): Promise<LocationDocument[]> {
+    return this.model.insertMany(list)
   }
 
-  remove(query: FilterQuery<Location>): Promise<mongo.DeleteResult> {
-    return this.model.deleteMany(query).exec()
+  async remove(query: FilterQuery<Location>): Promise<number> {
+    const { deletedCount: amount } = await this.model.deleteMany(query).exec()
+
+    return amount
   }
 }
