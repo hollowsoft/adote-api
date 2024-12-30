@@ -1,14 +1,11 @@
-import type { UserCurrent } from '@/type/auth.type'
+import { Types } from 'mongoose'
 
-import { AddFavRequest } from '../fav.request'
 import { FavRepository } from '../repository/fav.repository'
 
 export class AddFavProvider {
   constructor(private readonly repository: FavRepository) {}
 
-  async run(request: AddFavRequest, user: UserCurrent): Promise<void> {
-    const { post } = request
-
-    await this.repository.save(post.ObjectId, { _id: user.id })
+  async run(post: string, user: string): Promise<void> {
+    await this.repository.save(new Types.ObjectId(post), new Types.ObjectId(user))
   }
 }
