@@ -4,8 +4,6 @@ import { JwtService } from '@nestjs/jwt'
 
 import { isNil } from 'lodash'
 
-import type { UserCurrent } from '@/type/auth.type'
-
 import type { UserRepository } from '@/module/user/repository/user.repository'
 
 import { TokenResponse } from '../auth.response'

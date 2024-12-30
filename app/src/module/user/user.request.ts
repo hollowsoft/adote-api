@@ -1,6 +1,5 @@
 import { Transform, Type, type TransformFnParams } from 'class-transformer'
 import {
-  IsBoolean,
   IsBooleanString,
   IsMongoId,
   IsOptional,

@@ -6,7 +6,6 @@ import { isNil } from 'lodash'
 
 import { UserRepository } from '@/module/user/repository/user.repository'
 
-import { VerifyRequest } from '../auth.request'
 import { TokenResponse } from '../auth.response'
 
 export class VerifyAuthProvider {
@@ -16,7 +15,7 @@ export class VerifyAuthProvider {
     private readonly repository: UserRepository
   ) {}
 
-  async run(mail: string, code: string): Promise<TokenResponse> {
+  async run(mail: string, _code: string): Promise<TokenResponse> {
     // TODO: check code
     const user = await this.repository.find({ mail })
 
