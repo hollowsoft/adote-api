@@ -9,7 +9,7 @@ export class GetPostProvider {
   constructor(private readonly repository: PostRepository) {}
 
   async run(id: string): Promise<PostResponse> {
-    const post = await this.repository.find({ _id: id.ObjectId })
+    const post = await this.repository.find({ _id: id })
 
     if (isNil(post)) {
       throw new NotFoundException()

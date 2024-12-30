@@ -45,8 +45,8 @@ export class Post {
   @Prop({ type: Types.ObjectId, ref: 'User', required: true })
   user: UserDocument
 
-  @Prop({ type: Boolean, required: true })
-  publish: boolean
+  @Prop({ type: Boolean, default: true })
+  publish: boolean = true
 }
 
 export const PostSchema = SchemaFactory.createForClass(Post)

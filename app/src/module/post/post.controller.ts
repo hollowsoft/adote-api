@@ -27,9 +27,11 @@ export class PostController {
 
   @Post()
   create(@Body() request: SavePostRequest, @User() token: UserToken): Promise<PostResponse> {
-    const { user } = token
+    const {
+      user: { id }
+    } = token
 
-    return this.provider.create.run(request, user)
+    return this.provider.create.run(request, id)
   }
 
   @Put(':id')
@@ -38,7 +40,9 @@ export class PostController {
     @Body() request: SavePostRequest,
     @User() token: UserToken
   ): Promise<PostResponse> {
-    const { user } = token
+    const {
+      user: { id: user }
+    } = token
 
     return this.provider.save.run(id, request, user)
   }
@@ -50,15 +54,21 @@ export class PostController {
     @Body() request: SavePublishPostRequest,
     @User() token: UserToken
   ): Promise<void> {
-    const { user } = token
+    const { publish } = request
 
-    return this.provider.publish.run(id, request, user)
+    const {
+      user: { id: user }
+    } = token
+
+    return this.provider.publish.run(id, publish, user)
   }
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
   remove(@Param('id') id: string, @User() token: UserToken): Promise<void> {
-    const { user } = token
+    const {
+      user: { id: user }
+    } = token
 
     return this.provider.remove.run(id, user)
   }

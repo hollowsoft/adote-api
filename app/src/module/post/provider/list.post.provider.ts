@@ -12,6 +12,6 @@ export class ListPostProvider {
 
     const list = await this.repository.list(skip, amount, { location })
 
-    return list.map((post) => new PostResponse(post))
+    return list.map((e) => new PostResponse(e))
   }
 }

@@ -1,13 +1,15 @@
-import type { UserCurrent } from '@/type/auth.type'
+import { Types } from 'mongoose'
 
-import { SavePublishPostRequest } from '../post.request'
-import { SavePublishPost } from '../repository/post.model'
 import { PostRepository } from '../repository/post.repository'
 
 export class PublishPostProvider {
   constructor(private readonly repository: PostRepository) {}
 
-  async run(id: string, request: SavePublishPostRequest, user: UserCurrent): Promise<void> {
-    await this.repository.save(new SavePublishPost(request), { id, user: user.id })
+  async run(id: string, publish: boolean, user: string): Promise<void> {
+    const map: { [key: string]: unknown } = {
+      publish: publish
+    }
+
+    await this.repository.save(id, map, { user: new Types.ObjectId(user) })
   }
 }

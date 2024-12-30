@@ -63,9 +63,6 @@ export class SavePostRequest {
   @Type(() => PetRequest)
   @ValidateNested()
   readonly pet: PetRequest
-
-  @IsBoolean()
-  readonly publish: boolean
 }
 
 export class SavePublishPostRequest {

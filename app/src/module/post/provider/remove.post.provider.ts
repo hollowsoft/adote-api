@@ -1,6 +1,6 @@
 import { NotFoundException } from '@nestjs/common'
 
-import type { UserCurrent } from '@/type/auth.type'
+import { Types } from 'mongoose'
 
 import { PostRepository } from '../repository/post.repository'
 
@@ -9,8 +9,8 @@ export class RemovePostProvider {
 
   constructor(private readonly repository: PostRepository) {}
 
-  async run(id: string, user: UserCurrent): Promise<void> {
-    const { deletedCount: amount } = await this.repository.remove({ _id: id, user: user.id })
+  async run(id: string, user: string): Promise<void> {
+    const amount = await this.repository.remove({ _id: id, user: new Types.ObjectId(user) })
 
     if (this.empty === amount) {
       throw new NotFoundException()

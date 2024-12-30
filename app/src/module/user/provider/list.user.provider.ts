@@ -6,10 +6,8 @@ export class ListUserProvider {
   constructor(private readonly repository: UserRepository) {}
 
   async run(request: ListUserRequest): Promise<UserResponse[]> {
-    const { enable } = request
+    const list = await this.repository.list(request)
 
-    const list = await this.repository.list({ enable })
-
-    return list.map((user) => new UserResponse(user))
+    return list.map((e) => new UserResponse(e))
   }
 }
