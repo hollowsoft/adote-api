@@ -13,6 +13,8 @@ export class BreedController {
   @Get()
   @Public()
   list(@Query() request: ListBreedRequest): Promise<BreedResponse[]> {
-    return this.provider.list.run(request)
+    const { kind } = request
+
+    return this.provider.list.run(kind)
   }
 }
