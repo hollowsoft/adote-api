@@ -11,6 +11,6 @@ export class SetLocationProvider {
   async run(): Promise<void> {
     await this.repository.remove({})
 
-    await this.repository.save(Location)
+    await this.repository.create(Location)
   }
 }
