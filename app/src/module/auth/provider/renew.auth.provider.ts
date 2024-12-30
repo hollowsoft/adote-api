@@ -17,9 +17,7 @@ export class RenewAuthProvider {
     private readonly repository: UserRepository
   ) {}
 
-  async run(current: UserCurrent): Promise<TokenResponse> {
-    const { mail } = current
-
+  async run(mail: string): Promise<TokenResponse> {
     const user = await this.repository.find({ mail })
 
     if (isNil(user)) {

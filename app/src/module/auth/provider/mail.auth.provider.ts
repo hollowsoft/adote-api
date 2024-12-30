@@ -2,11 +2,9 @@ import { isNil } from 'lodash'
 
 import { MailProvider } from '@/module/mail/provider'
 import { Template } from '@/module/mail/type/template.enum'
-import { CreateUser } from '@/module/user/repository/user.model'
 import { UserRepository } from '@/module/user/repository/user.repository'
 import type { UserDocument } from '@/module/user/repository/user.schema'
 
-import { AuthRequest } from '../auth.request'
 import { AuthResponse } from '../auth.response'
 
 export class MailAuthProvider {
@@ -15,13 +13,11 @@ export class MailAuthProvider {
     private readonly repository: UserRepository
   ) {}
 
-  async run(request: AuthRequest): Promise<AuthResponse> {
-    const { mail } = request
-
+  async run(mail: string): Promise<AuthResponse> {
     const user = await this.save(mail)
 
     // TODO: send mail with code
-    this.provider.send.run(mail, '', Template.CODE, {})
+    //this.provider.send.run(mail, '', Template.CODE, {})
 
     return new AuthResponse(user)
   }
@@ -30,7 +26,14 @@ export class MailAuthProvider {
     const user = await this.repository.find({ mail })
 
     if (isNil(user)) {
-      return await this.repository.create(new CreateUser(mail))
+      const create = {
+        mail,
+        contact: {
+          mail
+        }
+      }
+
+      return await this.repository.create(create)
     }
 
     return user

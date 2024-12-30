@@ -18,14 +18,18 @@ export class AuthController {
   @Public()
   @HttpCode(HttpStatus.OK)
   mail(@Body() request: AuthRequest): Promise<AuthResponse> {
-    return this.provider.mail.run(request)
+    const { mail } = request
+
+    return this.provider.mail.run(mail)
   }
 
   @Post('verify')
   @Public()
   @HttpCode(HttpStatus.OK)
   code(@Body() request: VerifyRequest): Promise<TokenResponse> {
-    return this.provider.verify.run(request)
+    const { mail, code } = request
+
+    return this.provider.verify.run(mail, code)
   }
 
   @Post('renew')
@@ -33,8 +37,10 @@ export class AuthController {
   @HttpCode(HttpStatus.OK)
   @UseGuards(TokenRenewGuard)
   renew(@User() token: UserToken): Promise<TokenResponse> {
-    const { user } = token
+    const {
+      user: { mail }
+    } = token
 
-    return this.provider.renew.run(user)
+    return this.provider.renew.run(mail)
   }
 }

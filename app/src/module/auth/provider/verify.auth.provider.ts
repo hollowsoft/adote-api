@@ -1,4 +1,4 @@
-import { BadRequestException, UnauthorizedException } from '@nestjs/common'
+import { BadRequestException } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { JwtService } from '@nestjs/jwt'
 
@@ -16,9 +16,7 @@ export class VerifyAuthProvider {
     private readonly repository: UserRepository
   ) {}
 
-  async run(request: VerifyRequest): Promise<TokenResponse> {
-    const { mail, code } = request
-
+  async run(mail: string, code: string): Promise<TokenResponse> {
     // TODO: check code
     const user = await this.repository.find({ mail })
 
