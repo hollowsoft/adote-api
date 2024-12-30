@@ -5,7 +5,7 @@ import { UserModule } from './module/user/user.module'
 
 export const RouteConfig: Routes = [
   {
-    path: 'user',
+    path: '/',
     module: UserModule,
     children: [
       {
