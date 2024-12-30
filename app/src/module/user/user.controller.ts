@@ -37,16 +37,20 @@ export class UserController {
 
   @Put()
   save(@Body() request: SaveUserRequest, @User() token: UserToken): Promise<UserResponse> {
-    const { user } = token
+    const {
+      user: { id }
+    } = token
 
-    return this.provider.save.run(request, user)
+    return this.provider.save.run(id, request)
   }
 
   @Post('image')
   image(@User() token: UserToken): Promise<any> {
-    const { user } = token
+    const {
+      user: { id }
+    } = token
 
-    return this.provider.image.run(user)
+    return this.provider.image.run(id)
   }
 
   @Delete()

@@ -1,6 +1,7 @@
 import { Transform, Type, type TransformFnParams } from 'class-transformer'
 import {
   IsBoolean,
+  IsBooleanString,
   IsMongoId,
   IsOptional,
   IsPhoneNumber,
@@ -21,7 +22,7 @@ class ContactRequest {
 }
 
 export class ListUserRequest {
-  @IsBoolean()
+  @IsBooleanString()
   @IsOptional()
   readonly enable?: boolean
 }

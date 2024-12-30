@@ -9,6 +9,7 @@ import { Role } from '../type/role.enum'
 
 export type UserDocument = HydratedDocument<User>
 
+@Schema({ _id: false })
 export class Contact {
   @Prop({ type: String, required: true })
   mail: string

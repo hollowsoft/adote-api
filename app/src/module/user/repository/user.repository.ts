@@ -1,10 +1,11 @@
 import { Injectable } from '@nestjs/common'
 import { InjectModel } from '@nestjs/mongoose'
 
-import { Model, mongo, type FilterQuery } from 'mongoose'
+import { Model, type FilterQuery } from 'mongoose'
 
-import { CreateUser, SaveUser } from './user.model'
 import { User, type UserDocument } from './user.schema'
+
+import type { Role } from '../type/role.enum'
 
 @Injectable()
 export class UserRepository {
@@ -18,13 +19,18 @@ export class UserRepository {
     return this.model.findOne(query).exec()
   }
 
-  create(user: CreateUser): Promise<UserDocument> {
+  create(user: {
+    mail: string
+    name?: string
+    contact: { mail: string }
+    role?: Role
+  }): Promise<UserDocument> {
     return this.model.create(user)
   }
 
-  save(user: SaveUser, query: FilterQuery<User>): Promise<UserDocument | null> {
+  save(id: string, user: { [key: string]: unknown }, query: FilterQuery<User>): Promise<UserDocument | null> {
     return this.model
-      .findOneAndUpdate(query, user)
+      .findByIdAndUpdate(id, user, query)
       .populate([
         { path: 'contact', model: 'Contact' },
         { path: 'location', model: 'Location' }
@@ -32,7 +38,9 @@ export class UserRepository {
       .exec()
   }
 
-  remove(query: FilterQuery<User>): Promise<mongo.DeleteResult> {
-    return this.model.deleteOne(query).exec()
+  async remove(query: FilterQuery<User>): Promise<number> {
+    const { deletedCount: amount } = await this.model.deleteOne(query).exec()
+
+    return amount
   }
 }
