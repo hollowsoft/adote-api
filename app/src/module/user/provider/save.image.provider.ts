@@ -10,7 +10,7 @@ export class SaveImageProvider {
     private readonly repository: UserRepository
   ) {}
 
-  async run(user: UserCurrent) {
+  async run(user: string) {
     // TODO: save image
     const a = await this.image.save.run('', '', {})
 

@@ -1,10 +1,8 @@
 import { BadRequestException } from '@nestjs/common'
 
 import { isNil } from 'lodash'
+import { Types } from 'mongoose'
 
-import type { UserCurrent } from '@/type/auth.type'
-
-import { SaveUser } from '../repository/user.model'
 import { UserRepository } from '../repository/user.repository'
 import { SaveUserRequest } from '../user.request'
 import { UserResponse } from '../user.response'
@@ -12,8 +10,18 @@ import { UserResponse } from '../user.response'
 export class SaveUserProvider {
   constructor(private readonly repository: UserRepository) {}
 
-  async run(request: SaveUserRequest, current: UserCurrent): Promise<UserResponse> {
-    const user = await this.repository.save(new SaveUser(request), { _id: current.id })
+  async run(id: string, request: SaveUserRequest): Promise<UserResponse> {
+    const { name, description, contact, location } = request
+
+    const map: { [key: string]: unknown } = {
+      'name': name,
+      'description': description,
+      'contact.phone': contact.phone,
+      'contact.social': contact.social,
+      'location': new Types.ObjectId(location)
+    }
+
+    const user = await this.repository.save(id, map, { new: true })
 
     if (isNil(user)) {
       throw new BadRequestException()
