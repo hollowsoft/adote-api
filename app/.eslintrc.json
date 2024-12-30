@@ -20,6 +20,9 @@
     "@stylistic/ts/member-delimiter-style": [
       "error",
       {
+        "multiline": {
+          "delimiter": "none"
+        },
         "singleline": {
           "delimiter": "comma"
         }
