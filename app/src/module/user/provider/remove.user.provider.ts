@@ -8,7 +8,7 @@ export class RemoveUserProvider {
   constructor(private readonly repository: UserRepository) {}
 
   async run(id: string): Promise<void> {
-    const amount = await this.repository.remove({ id })
+    const amount = await this.repository.remove({ _id: id })
 
     if (this.empty === amount) {
       throw new NotFoundException()
