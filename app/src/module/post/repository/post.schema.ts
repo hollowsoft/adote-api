@@ -10,6 +10,7 @@ import { Size } from '../type/size.enum'
 
 export type PostDocument = HydratedDocument<Post>
 
+@Schema({ _id: false })
 export class Pet {
   @Prop({ type: String, required: true })
   name: string

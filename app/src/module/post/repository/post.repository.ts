@@ -18,9 +18,8 @@ export class PostRepository {
       .skip(skip)
       .limit(limit)
       .populate([
-        { path: 'pet.breed', model: 'Breed' },
-        { path: 'user.contact', model: 'Contact' },
-        { path: 'user.location', model: 'Location' }
+        { path: 'pet', populate: { path: 'breed' } },
+        { path: 'user', populate: { path: 'location' } }
       ])
       .exec()
   }
@@ -29,9 +28,8 @@ export class PostRepository {
     return this.model
       .findOne(query)
       .populate([
-        { path: 'pet.breed', model: 'Breed' },
-        { path: 'user.contact', model: 'Contact' },
-        { path: 'user.location', model: 'Location' }
+        { path: 'pet', populate: { path: 'breed' } },
+        { path: 'user', populate: { path: 'location' } }
       ])
       .exec()
   }
@@ -50,9 +48,8 @@ export class PostRepository {
   }): Promise<PostDocument> {
     return this.model.create(post).then((type) =>
       type.populate([
-        { path: 'pet.breed', model: 'Breed' },
-        { path: 'user.contact', model: 'Contact' },
-        { path: 'user.location', model: 'Location' }
+        { path: 'pet', populate: { path: 'breed' } },
+        { path: 'user', populate: { path: 'location' } }
       ])
     )
   }
@@ -61,9 +58,8 @@ export class PostRepository {
     return this.model
       .findByIdAndUpdate(id, post, query)
       .populate([
-        { path: 'pet.breed', model: 'Breed' },
-        { path: 'user.contact', model: 'Contact' },
-        { path: 'user.location', model: 'Location' }
+        { path: 'pet', populate: { path: 'breed' } },
+        { path: 'user', populate: { path: 'location' } }
       ])
       .exec()
   }
