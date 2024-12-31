@@ -24,7 +24,10 @@ export class SavePostProvider {
       'user': new Types.ObjectId(user)
     }
 
-    const post = await this.repository.save(id, map, { user: new Types.ObjectId(user) })
+    const post = await this.repository.save(id, map, {
+      new: true,
+      user: new Types.ObjectId(user)
+    })
 
     if (isNil(post)) {
       throw new BadRequestException()
