@@ -6,13 +6,13 @@ import { User } from '@/decorator/user.decorator'
 
 import { FavProvider } from './provider'
 
-@Controller('fav')
+@Controller()
 export class FavController {
   constructor(private readonly provider: FavProvider) {}
 
-  @Post()
+  @Post(':post')
   @HttpCode(HttpStatus.NO_CONTENT)
-  add(@Param() post: string, @User() token: UserToken): Promise<void> {
+  add(@Param('post') post: string, @User() token: UserToken): Promise<void> {
     const {
       user: { id }
     } = token

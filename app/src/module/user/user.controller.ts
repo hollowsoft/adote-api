@@ -10,7 +10,7 @@ import { Role } from './type/role.enum'
 import { ListUserRequest, SaveUserRequest } from './user.request'
 import { UserResponse } from './user.response'
 
-@Controller('user')
+@Controller()
 export class UserController {
   constructor(private readonly provider: UserProvider) {}
 
