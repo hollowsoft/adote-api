@@ -24,6 +24,7 @@ export class PetRequest {
   readonly name: string
 
   @IsDate()
+  @Type(() => Date)
   readonly birth: Date
 
   @IsEnum(Size)
@@ -39,10 +40,12 @@ export class PetRequest {
 export class ListPostRequest {
   @IsNumber()
   @Min(1)
+  @Type(() => Number)
   readonly page: number
 
   @IsNumber()
   @Min(1)
+  @Type(() => Number)
   readonly amount: number
 
   @IsMongoId()
@@ -67,5 +70,6 @@ export class SavePostRequest {
 
 export class SavePublishPostRequest {
   @IsBoolean()
+  @Type(() => Boolean)
   readonly publish: boolean
 }
