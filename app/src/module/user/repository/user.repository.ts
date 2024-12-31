@@ -12,11 +12,17 @@ export class UserRepository {
   constructor(@InjectModel(User.name) private model: Model<User>) {}
 
   list(query: FilterQuery<User>): Promise<UserDocument[]> {
-    return this.model.find(query).exec()
+    return this.model
+      .find(query)
+      .populate([{ path: 'location' }])
+      .exec()
   }
 
   find(query: FilterQuery<User>): Promise<UserDocument | null> {
-    return this.model.findOne(query).exec()
+    return this.model
+      .findOne(query)
+      .populate([{ path: 'location' }])
+      .exec()
   }
 
   create(user: {
@@ -31,10 +37,7 @@ export class UserRepository {
   save(id: string, user: { [key: string]: unknown }, query: FilterQuery<User>): Promise<UserDocument | null> {
     return this.model
       .findByIdAndUpdate(id, user, query)
-      .populate([
-        { path: 'contact', model: 'Contact' },
-        { path: 'location', model: 'Location' }
-      ])
+      .populate([{ path: 'location' }])
       .exec()
   }
 
