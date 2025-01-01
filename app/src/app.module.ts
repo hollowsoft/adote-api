@@ -7,11 +7,13 @@ import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler'
 import { AuthModule } from '@/module/auth/auth.module'
 import { BreedModule } from '@/module/breed/breed.module'
 import { ConfigurationModule } from '@/module/configuration/configuration.module'
+import { FavModule } from '@/module/fav/fav.module'
 import { HealthModule } from '@/module/health/health.module'
 import { ImageModule } from '@/module/image/image.module'
 import { LocationModule } from '@/module/location/location.module'
 import { MailModule } from '@/module/mail/mail.module'
 import { PostModule } from '@/module/post/post.module'
+import { UserModule } from '@/module/user/user.module'
 
 import { isProduction } from '@/helper/environment'
 
@@ -24,11 +26,13 @@ import { RouteConfig } from './router.config.factory'
     AuthModule,
     BreedModule,
     ConfigurationModule,
+    FavModule,
     HealthModule,
     ImageModule,
     LocationModule,
     MailModule,
     PostModule,
+    UserModule,
     RouterModule.register(RouteConfig),
     ConfigModule.forRoot({
       isGlobal: true,
