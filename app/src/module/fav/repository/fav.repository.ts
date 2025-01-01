@@ -10,7 +10,7 @@ export class FavRepository {
   constructor(@InjectModel(User.name) private readonly model: Model<User>) {}
 
   save(post: Types.ObjectId, user: Types.ObjectId): Promise<UserDocument | null> {
-    return this.model.findByIdAndUpdate(user, { fav: { $ne: post } }).exec()
+    return this.model.findByIdAndUpdate(user, { $addToSet: { fav: post } }).exec()
   }
 
   remove(post: Types.ObjectId, user: Types.ObjectId): Promise<UserDocument | null> {

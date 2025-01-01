@@ -6,6 +6,6 @@ export class RemoveFavProvider {
   constructor(private readonly repository: FavRepository) {}
 
   async run(post: string, user: string): Promise<void> {
-    await this.repository.save(new Types.ObjectId(post), new Types.ObjectId(user))
+    await this.repository.remove(new Types.ObjectId(post), new Types.ObjectId(user))
   }
 }

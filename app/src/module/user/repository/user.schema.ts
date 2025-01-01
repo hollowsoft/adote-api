@@ -42,9 +42,6 @@ export class User {
   @Prop({ type: [{ type: Types.ObjectId, ref: 'Post' }], default: [] })
   fav: Post[] = []
 
-  @Prop({ type: [{ type: Types.ObjectId, ref: 'Post' }], default: [] })
-  post: Post[] = []
-
   @Prop({ type: Contact, required: true })
   contact: Contact
 
