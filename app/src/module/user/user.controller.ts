@@ -1,9 +1,9 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Put, Query } from '@nestjs/common'
 
-import type { UserToken } from '@/type/auth.type'
+import type { User, UserToken } from '@/type/auth.type'
 
 import { Permission } from '@/decorator/permission.decorator'
-import { User } from '@/decorator/user.decorator'
+import { UserCurrent } from '@/decorator/user.current.decorator'
 
 import { UserProvider } from './provider'
 import { Role } from './type/role.enum'
@@ -27,38 +27,30 @@ export class UserController {
   }
 
   @Get('current')
-  current(@User() token: UserToken): Promise<UserResponse> {
-    const {
-      user: { id }
-    } = token
+  current(@UserCurrent() user: User): Promise<UserResponse> {
+    const { id } = user
 
     return this.provider.get.run(id)
   }
 
   @Put()
-  save(@Body() request: SaveUserRequest, @User() token: UserToken): Promise<UserResponse> {
-    const {
-      user: { id }
-    } = token
+  save(@Body() request: SaveUserRequest, @UserCurrent() user: User): Promise<UserResponse> {
+    const { id } = user
 
     return this.provider.save.run(id, request)
   }
 
   @Post('image')
-  image(@User() token: UserToken): Promise<any> {
-    const {
-      user: { id }
-    } = token
+  image(@UserCurrent() user: User): Promise<any> {
+    const { id } = user
 
     return this.provider.image.run(id)
   }
 
   @Delete()
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@User() token: UserToken): Promise<void> {
-    const {
-      user: { id }
-    } = token
+  remove(@UserCurrent() user: User): Promise<void> {
+    const { id } = user
 
     return this.provider.remove.run(id)
   }

@@ -1,9 +1,9 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Put, Query } from '@nestjs/common'
 
-import type { UserToken } from '@/type/auth.type'
+import type { User } from '@/type/auth.type'
 
 import { Public } from '@/decorator/public.decorator'
-import { User } from '@/decorator/user.decorator'
+import { UserCurrent } from '@/decorator/user.current.decorator'
 
 import { ListPostRequest, SavePostRequest, SavePublishPostRequest } from './post.request'
 import { PostResponse } from './post.response'
@@ -26,10 +26,8 @@ export class PostController {
   }
 
   @Post()
-  create(@Body() request: SavePostRequest, @User() token: UserToken): Promise<PostResponse> {
-    const {
-      user: { id }
-    } = token
+  create(@Body() request: SavePostRequest, @UserCurrent() user: User): Promise<PostResponse> {
+    const { id } = user
 
     return this.provider.create.run(request, id)
   }
@@ -38,13 +36,11 @@ export class PostController {
   edit(
     @Param('id') id: string,
     @Body() request: SavePostRequest,
-    @User() token: UserToken
+    @UserCurrent() user: User
   ): Promise<PostResponse> {
-    const {
-      user: { id: user }
-    } = token
+    const { id: current } = user
 
-    return this.provider.save.run(id, request, user)
+    return this.provider.save.run(id, request, current)
   }
 
   @Put(':id/publish')
@@ -52,24 +48,20 @@ export class PostController {
   publish(
     @Param('id') id: string,
     @Body() request: SavePublishPostRequest,
-    @User() token: UserToken
+    @UserCurrent() user: User
   ): Promise<void> {
     const { publish } = request
 
-    const {
-      user: { id: user }
-    } = token
+    const { id: current } = user
 
-    return this.provider.publish.run(id, publish, user)
+    return this.provider.publish.run(id, publish, current)
   }
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param('id') id: string, @User() token: UserToken): Promise<void> {
-    const {
-      user: { id: user }
-    } = token
+  remove(@Param('id') id: string, @UserCurrent() user: User): Promise<void> {
+    const { id: current } = user
 
-    return this.provider.remove.run(id, user)
+    return this.provider.remove.run(id, current)
   }
 }
