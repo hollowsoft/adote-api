@@ -12,21 +12,21 @@ export class ConfigurationController {
 
   @Post('/user')
   @HttpCode(HttpStatus.OK)
-  @Permission(Role.ADMIN)
+  @Permission([Role.ADMIN])
   user(): Promise<void> {
     return this.provider.user.run()
   }
 
   @Post('/breed')
   @HttpCode(HttpStatus.OK)
-  @Permission(Role.ADMIN)
+  @Permission([Role.ADMIN])
   breed(): Promise<void> {
     return this.provider.breed.run()
   }
 
   @Post('/location')
   @HttpCode(HttpStatus.OK)
-  @Permission(Role.ADMIN)
+  @Permission([Role.ADMIN])
   location(): Promise<void> {
     return this.provider.location.run()
   }

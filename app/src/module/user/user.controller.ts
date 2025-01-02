@@ -15,13 +15,13 @@ export class UserController {
   constructor(private readonly provider: UserProvider) {}
 
   @Get()
-  @Permission(Role.ADMIN)
+  @Permission([Role.ADMIN])
   list(@Query() request: ListUserRequest): Promise<UserResponse[]> {
     return this.provider.list.run(request)
   }
 
   @Get(':id')
-  @Permission(Role.ADMIN)
+  @Permission([Role.ADMIN])
   get(@Param() param: GetUserParam): Promise<UserResponse> {
     const { id } = param
 
