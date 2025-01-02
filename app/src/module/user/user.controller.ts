@@ -1,13 +1,13 @@
 import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, Post, Put, Query } from '@nestjs/common'
 
-import type { User, UserToken } from '@/type/auth.type'
+import type { User } from '@/type/auth.type'
 
 import { Permission } from '@/decorator/permission.decorator'
 import { UserCurrent } from '@/decorator/user.current.decorator'
 
 import { UserProvider } from './provider'
 import { Role } from './type/role.enum'
-import { ListUserRequest, SaveUserRequest } from './user.request'
+import { GetUserParam, ListUserRequest, SaveUserRequest } from './user.request'
 import { UserResponse } from './user.response'
 
 @Controller()
@@ -22,7 +22,9 @@ export class UserController {
 
   @Get(':id')
   @Permission(Role.ADMIN)
-  get(@Param('id') id: string): Promise<UserResponse> {
+  get(@Param() param: GetUserParam): Promise<UserResponse> {
+    const { id } = param
+
     return this.provider.get.run(id)
   }
 

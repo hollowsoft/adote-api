@@ -5,7 +5,15 @@ import type { User } from '@/type/auth.type'
 import { Public } from '@/decorator/public.decorator'
 import { UserCurrent } from '@/decorator/user.current.decorator'
 
-import { ListPostRequest, SavePostRequest, SavePublishPostRequest } from './post.request'
+import {
+  GetPostParam,
+  ListPostRequest,
+  RemovePostParam,
+  SavePostParam,
+  SavePostRequest,
+  SavePublishPostParam,
+  SavePublishPostRequest
+} from './post.request'
 import { PostResponse } from './post.response'
 import { PostProvider } from './provider'
 
@@ -21,7 +29,9 @@ export class PostController {
 
   @Get(':id')
   @Public()
-  get(@Param('id') id: string): Promise<PostResponse> {
+  get(@Param() param: GetPostParam): Promise<PostResponse> {
+    const { id } = param
+
     return this.provider.get.run(id)
   }
 
@@ -34,10 +44,11 @@ export class PostController {
 
   @Put(':id')
   edit(
-    @Param('id') id: string,
+    @Param() param: SavePostParam,
     @Body() request: SavePostRequest,
     @UserCurrent() user: User
   ): Promise<PostResponse> {
+    const { id } = param
     const { id: current } = user
 
     return this.provider.save.run(id, request, current)
@@ -46,12 +57,12 @@ export class PostController {
   @Put(':id/publish')
   @HttpCode(HttpStatus.NO_CONTENT)
   publish(
-    @Param('id') id: string,
+    @Param() param: SavePublishPostParam,
     @Body() request: SavePublishPostRequest,
     @UserCurrent() user: User
   ): Promise<void> {
+    const { id } = param
     const { publish } = request
-
     const { id: current } = user
 
     return this.provider.publish.run(id, publish, current)
@@ -59,7 +70,8 @@ export class PostController {
 
   @Delete(':id')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param('id') id: string, @UserCurrent() user: User): Promise<void> {
+  remove(@Param() param: RemovePostParam, @UserCurrent() user: User): Promise<void> {
+    const { id } = param
     const { id: current } = user
 
     return this.provider.remove.run(id, current)

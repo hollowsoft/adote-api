@@ -17,7 +17,27 @@ import {
 import { Gender } from './type/gender.enum'
 import { Size } from './type/size.enum'
 
-export class PetRequest {
+export class GetPostParam {
+  @IsMongoId({ message: 'the id is invalid' })
+  readonly id: string
+}
+
+export class SavePostParam {
+  @IsMongoId({ message: 'the id is invalid' })
+  readonly id: string
+}
+
+export class SavePublishPostParam {
+  @IsMongoId({ message: 'the id is invalid' })
+  readonly id: string
+}
+
+export class RemovePostParam {
+  @IsMongoId({ message: 'the id is invalid' })
+  readonly id: string
+}
+
+class PetRequest {
   @IsString()
   @Length(2, 20)
   @Transform(({ value }: TransformFnParams) => value?.trim())
@@ -33,7 +53,7 @@ export class PetRequest {
   @IsEnum(Gender)
   readonly gender: Gender
 
-  @IsMongoId()
+  @IsMongoId({ message: 'the id is invalid' })
   readonly breed: string
 }
 
@@ -48,7 +68,7 @@ export class ListPostRequest {
   @Type(() => Number)
   readonly amount: number
 
-  @IsMongoId()
+  @IsMongoId({ message: 'the id is invalid' })
   @IsOptional()
   readonly location: string
 }

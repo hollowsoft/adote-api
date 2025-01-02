@@ -4,6 +4,7 @@ import type { User } from '@/type/auth.type'
 
 import { UserCurrent } from '@/decorator/user.current.decorator'
 
+import { AddFavParam, RemoveFavParam } from './fav.request'
 import { FavProvider } from './provider'
 
 @Controller()
@@ -12,16 +13,18 @@ export class FavController {
 
   @Post(':post')
   @HttpCode(HttpStatus.NO_CONTENT)
-  add(@Param('post') post: string, @UserCurrent() user: User): Promise<void> {
+  add(@Param() param: AddFavParam, @UserCurrent() user: User): Promise<void> {
     const { id } = user
+    const { post } = param
 
     return this.provider.add.run(post, id)
   }
 
   @Delete(':post')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param('post') post: string, @UserCurrent() user: User): Promise<void> {
+  remove(@Param() param: RemoveFavParam, @UserCurrent() user: User): Promise<void> {
     const { id } = user
+    const { post } = param
 
     return this.provider.remove.run(post, id)
   }
